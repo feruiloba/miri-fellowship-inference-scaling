@@ -1,46 +1,156 @@
-display_name,base_model,release_date,organization,country,training_compute_flop,best_reasoning_level,num_benchmarks,aider_polyglot (Percent correct),apex_agents (Pass@1 score),arc_agi (Score),arc_agi_2 (Score),balrog (Average progress),cad_eval (Overall pass (%)),chess_puzzles (mean_score),cybench (Unguided % Solved),deepresearchbench (Average score),fictionlivebench (120k token score),frontiermath (mean_score),frontiermath_tier_4 (mean_score),gdpval (Win Rate (%)),geobench (ACW Avg Score),gpqa_diamond (mean_score),gso (Score OPT@1),hle (Accuracy),lech_mazur_writing (Mean score),live_bench (Global average),math_level_5 (mean_score),metr_time_horizons (Time horizon),os_world (Score),otis_mock_aime_2024_2025 (mean_score),posttrainbench (Average (%)),simplebench (Score (AVG@5)),simpleqa_verified (mean_score),swe_bench_bash (% Resolved),swe_bench_verified (mean_score),terminalbench (Accuracy mean),vpct (Correct),webdev_arena (Arena Score),weirdml (Accuracy)
-GPT-5.5,gpt-5.5,2026-04-23,OpenAI,United States of America,,unknown,6,,0.384,0.95,0.85,,,,,,,,,,,,0.402,,,,,,,,,0.69,,,,0.8200000000000001,,,
-GPT-5.5 Pro,gpt-5.5-pro-pre-release,2026-04-23,OpenAI,United States of America,,xhigh,5,,,,,,,,,,,0.524,0.396,,,0.9392135642135644,,,,,,,,1.0,,,0.645,,,,,,
-GPT-5.5 Pro,gpt-5.5-pro,2026-04-23,OpenAI,United States of America,,unknown,3,,,0.965,0.8458,,,,,,,,,,,,,,,,,,,,,0.769,,,,,,,
-GPT-5.5,gpt-5.5-pre-release,2026-04-23,OpenAI,United States of America,,xhigh,7,,,,,,,0.54,,,,0.517,0.354,,,0.9400252525252524,,,,,,,,1.0,,,0.631,,0.8057851239669421,,,,
-Claude Opus 4.7,claude-opus-4-7,2026-04-16,Anthropic,United States of America,,unknown,15,,0.339,0.935,0.758,,,0.3,,,,0.4379310344827586,0.2291666666666666,,,0.9015151515151516,0.441,0.362,,,,,,0.978,0.2856,0.629,0.506,,0.8347107438016529,,,,0.764
-GPT-5.4 mini,gpt-5.4-mini-2026-03-17,2026-03-17,OpenAI,United States of America,,high,8,,,0.58,0.1319,,,0.18,,,,0.2828,0.0208,,,0.8358585858585859,,,,,,,,0.8722222222222222,,,0.286,,,,,,
-GPT-5.4 nano,gpt-5.4-nano-2026-03-17,2026-03-17,OpenAI,United States of America,,high,8,,,0.3817,0.0361,,,0.3,,,,0.2586,0.0625,,,0.7847,,,,,,,,0.8778,,,0.12,,,,,,
-GPT-5.4 Pro,gpt-5.4-pro-2026-03-05,2026-03-05,OpenAI,United States of America,,xhigh,8,,,0.945,0.8333,,,0.586,,,,0.5,,,,0.946,,0.4432,,,,,,,,0.741,0.478,,,,,,
-GPT-5.4,gpt-5.4-2026-03-05,2026-03-05,OpenAI,United States of America,,xhigh,15,,0.359,0.9367,0.7395,,,0.44,,,,0.476,0.271,,,0.933,0.3137,,,,,341.735276,,0.953,0.2023,,0.4483450351053159,,0.768595041322314,0.818,,,0.777
-Claude Sonnet 4.6,claude-sonnet-4-6,2026-02-17,Anthropic,United States of America,,medium,9,,,0.865,0.6042,,,0.13,,,,0.324,0.083,,,0.8737373737373737,,,,,,,,0.857936507936508,,,0.29,,,,,,0.6607
-GPT-5.3 Codex,gpt-5.3-codex,2026-02-05,OpenAI,United States of America,,xhigh,4,,0.317,,,,,,,,,,,,,,,,,,,,,,0.1776,,,,0.7479338842975206,,,,0.793
-Claude Opus 4.6,claude-opus-4-6,2026-02-05,Anthropic,United States of America,,unknown,17,,0.317,0.94,0.6917,,,0.17,0.93,,,0.407,0.229,,,0.9053030303030304,0.412,0.3444,,,,718.80683,,0.9444444444444444,0.2316,,0.464859437751004,,,0.798,,1556.29,0.779
-GPT-5.2 Pro,gpt-5.2-pro-2025-12-11,2025-12-11,OpenAI,United States of America,,xhigh,2,,,0.905,0.5416,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-GPT-5.2,gpt-5.2-2025-12-11,2025-12-11,OpenAI,United States of America,,xhigh,20,,0.3429999999999999,0.862,0.5291,,,0.49,,,,0.407,0.188,,,0.914,0.274,0.278,,,,352.249302,,0.9611111111111112,0.2138,0.458,0.389,0.718,0.737603305785124,0.649,0.84,1480.0,0.722
-Claude Opus 4.5 (no thinking),claude-opus-4-5-20251101,2025-11-24,Anthropic,United States of America,,16K,19,,0.184,0.8,0.3764,0.43,,0.12,0.82,,,0.2068965517241379,0.0416666666666666,,,0.860479797979798,0.2647,0.252,,,,288.904952,,0.8611111111111112,,0.62,0.418,,,0.631,0.4,1512.0,0.637
-GPT-5.1,gpt-5.1-2025-11-13,2025-11-13,OpenAI,United States of America,,high,19,,0.175,0.728,0.1764,,,0.32,,,,0.3103448275862069,0.125,,,0.8762626262626263,0.137,0.2368,,78.79,,,,0.8861111111111111,,0.532,0.489,0.66,0.6797520661157025,0.476,0.587,1387.0,0.6077
-Claude Haiku 4.5,claude-haiku-4-5-20251001,2025-10-15,Anthropic,United States of America,,16K,10,,,0.4767,0.0403,,,,,,,0.0590277777777777,0.0208333333333333,,,0.7121212121212122,,,,,0.9636087945413192,,,0.6666666666666666,,,0.059,,,0.355,,,0.441
-GPT-5 Pro,gpt-5-pro-2025-10-06,2025-10-07,OpenAI,United States of America,,high,6,,,0.702,0.1833,,,,,,,,0.146,,,,,0.3164,,,,,,,,0.616,,,,,,,0.6039
-Claude Sonnet 4.5 (no thinking),claude-sonnet-4-5-20250929,2025-09-29,Anthropic,United States of America,,16K,19,,,0.6367,0.1361,,,0.12,0.6,0.526,,0.1522491349480969,0.0416666666666666,,,0.8232323232323232,0.1471,0.1372,,,0.9773413897280968,121.946588,,0.7777777777777778,,0.543,0.236,,,0.465,0.398,1391.0,0.4771
-Gemini 2.5 Flash,gemini-2.5-flash-preview-09-2025,2025-09-25,Google DeepMind,United States of America,,16k,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.4191
-GPT-5-codex,gpt-5-codex,2025-09-15,OpenAI,United States of America,,high,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.5453
-GPT-5 mini,gpt-5-mini-2025-08-07,2025-08-07,OpenAI,United States of America,,high,15,,,0.5433,0.0444,,,,,,0.625,0.2724137931034482,0.0625,,,0.75,,0.1944,,,0.978474320241692,,,0.8666666666666667,,,0.21,0.598,0.6466942148760331,0.348,0.402,,0.5267
-GPT-5 nano,gpt-5-nano-2025-08-07,2025-08-07,OpenAI,United States of America,,high,13,,,0.2071,0.0261,,,,,,0.219,0.0827586206896551,0.0208333333333333,,,0.6944444444444444,,,,,0.952416918429003,,,0.8111111111111111,,,0.122,0.348,,0.115,0.372,,0.3806
-GPT-5,gpt-5-2025-08-07,2025-08-07,OpenAI,United States of America,6.6e+25,high,26,88.0,0.183,0.657,0.0986,,,0.37,,0.5513,0.969,0.3241379310344827,0.125,0.348,3937.0,0.8617424242424242,0.069,0.2532,8.723,,0.9813066465256798,203.012577,,0.9138888888888888,,0.567,0.506,0.65,0.7355371900826446,0.496,0.66,1395.0,0.607
-gpt-oss-20b,gpt-oss-20b,2025-08-05,OpenAI,United States of America,5.49e+23,high,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.034,,,0.4093
-Claude Opus 4.1,claude-opus-4-1-20250805,2025-08-05,Anthropic,United States of America,,16K,11,,,,,,,,,,,0.0724137931034482,0.0416666666666666,,,0.7727272727272727,,0.1152,,,,113.68507,,0.6888888888888889,,0.6,0.348,,,0.38,0.33,,0.4276
-gpt-oss-120b,gpt-oss-120b,2025-08-05,OpenAI,United States of America,4.94e+24,high,4,41.8,0.047,,,,,,,,,,,,,,,,,,,,,,,,,,,0.187,,,0.4817
-gpt-oss-120b,openai/gpt-oss-120b,2025-08-05,OpenAI,United States of America,4.94e+24,high,6,41.8,,,,,,0.2,,,,,,,,0.7575757575757576,,,,,,,,0.8888888888888888,,,0.139,,,,,,0.4817
-Grok 4,grok-4-0709,2025-07-09,xAI,United States of America,5.0000000000001e+26,high,2,79.6,,,,,,,,,,,,0.211,,,,,,,,,,,,,,,,,,,
-Grok 3 mini,grok-3-mini,2025-06-24,xAI,United States of America,,high,3,,,0.165,0.0042,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.4258
-Gemini 2.5 Flash-Lite,gemini-2.5-flash-lite-preview-06-17,2025-06-17,Google DeepMind,United States of America,,16K,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.3522
-Gemini 2.5 Pro (Jun 2025),gemini-2.5-pro,2025-06-17,Google DeepMind,United States of America,,16K,3,,,0.41,0.0486,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.5403
-o3-pro,o3-pro-2025-06-10,2025-06-10,OpenAI,United States of America,,high,6,84.9,,0.593,0.0486,,,,,,0.889,,,,,,,,8.628,,,,,,,,,,,,,,0.5821
-Gemini 2.5 Pro Preview (Jun 2025),gemini-2.5-pro-preview-06-05,2025-06-05,Google DeepMind,United States of America,,1K,3,83.1,,0.313,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Claude Sonnet 4,claude-sonnet-4-20250514,2025-05-22,Anthropic,United States of America,,16K,13,61.3,,0.4,0.0593,,,,,0.478,,,,,2369.0,0.7828282828282829,0.049,0.0776,,,,74.942015,,0.7111111111111111,,0.455,,,,,0.34,,0.4611
-Claude Opus 4,claude-opus-4-20250514,2025-05-22,Anthropic,United States of America,,16K,15,72.0,,0.357,0.0861,,,,,0.49,,0.0413793103448275,0.0416666666666666,,2915.0,0.7626262626262627,0.0686,0.1072,,,,100.366123,,0.6444444444444445,,0.588,,,,,0.38,,0.434
-Gemini 2.5 Flash,gemini-2.5-flash-preview-05-20,2025-05-20,Google DeepMind,United States of America,,16K,4,55.1,,0.333,0.0254,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.4095
-o4-mini,o4-mini-2025-04-16,2025-04-16,OpenAI,United States of America,,high,22,72.0,,0.587,0.0611,,0.62,0.26,,,0.625,0.2482758620689655,0.0625,0.253,3717.0,0.7960858585858586,0.036,0.1808,7.5,,0.978285498489426,76.509015,,0.8166666666666667,,0.387,0.239,0.45,,,0.575,,0.5256
-o3,o3-2025-04-16,2025-04-16,OpenAI,United States of America,,high,24,81.3,,0.608,0.0653,,0.74,,,0.466,1.0,0.1868512110726643,0.0208333333333333,0.308,3930.0,0.8181818181818182,0.088,0.2032,8.39,,0.9777190332326284,119.732634,23.0,0.8388888888888889,,0.531,0.53,0.584,0.6231884057971014,,0.52,,0.5242
-Grok-3 mini,grok-3-mini-beta,2025-04-09,xAI,United States of America,,high,10,49.3,,0.165,,,,,,,0.656,0.0586206896551724,,,,0.7626262626262627,,,7.35,,0.9093655589123868,,,0.7777777777777778,,,0.211,,,,,,0.4258
-o1 Pro,o1-pro-2025-03-19,2025-03-19,OpenAI,United States of America,,low,1,,,0.233,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Claude 3.7 Sonnet,claude-3-7-sonnet-20250219,2025-02-24,Anthropic,United States of America,3.3499999999999998e+25,64K,16,64.9,,0.286,0.009,,,,,0.436,0.531,0.0413793103448275,,,3844.0,0.7850378787878788,0.038,0.0804,8.11,,0.9116314199395772,56.09162,,0.5777777777777777,,0.464,,,,,0.35,,
-o3-mini,o3-mini-2025-01-31,2025-01-31,OpenAI,United States of America,,high,17,60.4,,0.345,0.0299,,0.54,0.17,0.225,,0.438,0.1241379310344827,0.0416666666666666,,,0.7702020202020202,0.013,,6.17,75.88,0.9648791540785498,,,0.7694444444444445,,0.228,,,,,,,0.437
-o1,o1-2024-12-17,2024-12-17,OpenAI,United States of America,,high,15,61.7,,0.307,,,0.56,,,,0.531,0.093103448275862,,,3925.0,0.7676767676767676,,,7.02,75.67,0.947129909365559,39.206576,,0.7333333333333333,,0.401,,,,,0.37,,0.4382
-o1-mini,o1-mini-2024-09-12,2024-09-12,OpenAI,United States of America,,medium,12,32.9,,0.14,0.0083,,,,0.1,,,0.0172413793103448,,,,0.6237373737373737,,,6.49,57.76,0.8918051359516617,,,0.4694444444444444,,0.181,,,,,,,0.3632
+display_name,base_model,reasoning_level,release_date,organization,country,training_compute_flop,num_benchmarks,aider_polyglot (Percent correct),apex_agents (Pass@1 score),arc_agi (Score),arc_agi_2 (Score),balrog (Average progress),cad_eval (Overall pass (%)),chess_puzzles (mean_score),cybench (Unguided % Solved),deepresearchbench (Average score),fictionlivebench (120k token score),frontiermath (mean_score),frontiermath_tier_4 (mean_score),gdpval (Win Rate (%)),geobench (ACW Avg Score),gpqa_diamond (mean_score),gso (Score OPT@1),hle (Accuracy),lech_mazur_writing (Mean score),live_bench (Global average),math_level_5 (mean_score),metr_time_horizons (Time horizon),os_world (Score),otis_mock_aime_2024_2025 (mean_score),posttrainbench (Average (%)),simplebench (Score (AVG@5)),simpleqa_verified (mean_score),swe_bench_bash (% Resolved),swe_bench_verified (mean_score),terminalbench (Accuracy mean),vpct (Correct),webdev_arena (Arena Score),weirdml (Accuracy)
+GPT-5.5,gpt-5.5,low,2026-04-23,OpenAI,United States of America,,2,,,0.7617,0.3333,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+GPT-5.5,gpt-5.5,medium,2026-04-23,OpenAI,United States of America,,2,,,0.9217,0.7042,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+GPT-5.5,gpt-5.5,high,2026-04-23,OpenAI,United States of America,,2,,,0.945,0.8333,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+GPT-5.5,gpt-5.5,xhigh,2026-04-23,OpenAI,United States of America,,4,,0.384,0.95,0.85,,,,,,,,,,,,0.402,,,,,,,,,,,,,,,,
+GPT-5.5,gpt-5.5,unknown,2026-04-23,OpenAI,United States of America,,2,,,,,,,,,,,,,,,,,,,,,,,,,0.69,,,,0.8200000000000001,,,
+GPT-5.5,gpt-5.5-pre-release,xhigh,2026-04-23,OpenAI,United States of America,,7,,,,,,,0.54,,,,0.517,0.354,,,0.9400252525252524,,,,,,,,1.0,,,0.631,,0.8057851239669421,,,,
+GPT-5.5 Pro,gpt-5.5-pro,high,2026-04-23,OpenAI,United States of America,,2,,,0.965,0.8458,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+GPT-5.5 Pro,gpt-5.5-pro,xhigh,2026-04-23,OpenAI,United States of America,,2,,,0.95,0.8416,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+GPT-5.5 Pro,gpt-5.5-pro,unknown,2026-04-23,OpenAI,United States of America,,1,,,,,,,,,,,,,,,,,,,,,,,,,0.769,,,,,,,
+GPT-5.5 Pro,gpt-5.5-pro-pre-release,high,2026-04-23,OpenAI,United States of America,,2,,,,,,,,,,,0.524,0.396,,,,,,,,,,,,,,,,,,,,
+GPT-5.5 Pro,gpt-5.5-pro-pre-release,xhigh,2026-04-23,OpenAI,United States of America,,5,,,,,,,,,,,0.51,0.396,,,0.9392135642135644,,,,,,,,1.0,,,0.645,,,,,,
+Claude Opus 4.7,claude-opus-4-7,high,2026-04-16,Anthropic,United States of America,,4,,,0.935,0.683,,,,,,,,,,,,0.441,,,,,,,,,,,,,,,,0.764
+Claude Opus 4.7,claude-opus-4-7,xhigh,2026-04-16,Anthropic,United States of America,,7,,,,,,,0.3,,,,0.4379310344827586,0.2291666666666666,,,0.9015151515151516,,,,,,,,0.978,0.2856,,0.506,,,,,,
+Claude Opus 4.7,claude-opus-4-7,max,2026-04-16,Anthropic,United States of America,,4,,0.339,0.92,0.758,,,,,,,,,,,,,,,,,,,,,,,,0.8347107438016529,,,,
+Claude Opus 4.7,claude-opus-4-7,unknown,2026-04-16,Anthropic,United States of America,,3,,,,,,,,,,,,,,,,,0.362,,,,,,,,0.629,,,,,,,0.764
+GPT-5.4 mini,gpt-5.4-mini-2026-03-17,high,2026-03-17,OpenAI,United States of America,,8,,,0.58,0.1319,,,0.18,,,,0.2828,0.0208,,,0.8358585858585859,,,,,,,,0.8722222222222222,,,0.286,,,,,,
+GPT-5.4 nano,gpt-5.4-nano-2026-03-17,high,2026-03-17,OpenAI,United States of America,,8,,,0.3817,0.0361,,,0.3,,,,0.2586,0.0625,,,0.7847,,,,,,,,0.8778,,,0.12,,,,,,
+GPT-5.4,gpt-5.4-2026-03-05,low,2026-03-05,OpenAI,United States of America,,2,,,0.6817000000000001,0.2917,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+GPT-5.4,gpt-5.4-2026-03-05,medium,2026-03-05,OpenAI,United States of America,,2,,,0.8617,0.5542,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+GPT-5.4,gpt-5.4-2026-03-05,high,2026-03-05,OpenAI,United States of America,,5,,,0.9267,0.675,,,,,,,,,,,,0.2549,,,,,,,,0.2023,,,,0.768595041322314,,,,
+GPT-5.4,gpt-5.4-2026-03-05,xhigh,2026-03-05,OpenAI,United States of America,,12,,0.359,0.9367,0.7395,,,0.44,,,,0.476,0.271,,,0.933,0.3137,,,,,341.735276,,0.953,,,0.4483450351053159,,,,,,0.777
+GPT-5.4,gpt-5.4-2026-03-05,unknown,2026-03-05,OpenAI,United States of America,,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.818,,,
+GPT-5.4 Pro,gpt-5.4-pro-2026-03-05,xhigh,2026-03-05,OpenAI,United States of America,,6,,,0.945,0.8333,,,0.586,,,,0.5,,,,0.946,,,,,,,,,,,0.478,,,,,,
+GPT-5.4 Pro,gpt-5.4-pro-2026-03-05,unknown,2026-03-05,OpenAI,United States of America,,2,,,,,,,,,,,,,,,,,0.4432,,,,,,,,0.741,,,,,,,
+Claude Sonnet 4.6,claude-sonnet-4-6,medium,2026-02-17,Anthropic,United States of America,,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.6607
+Claude Sonnet 4.6,claude-sonnet-4-6,high,2026-02-17,Anthropic,United States of America,,2,,,0.865,0.6042,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Claude Sonnet 4.6,claude-sonnet-4-6,max,2026-02-17,Anthropic,United States of America,,2,,,0.86,0.5833,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Claude Sonnet 4.6,claude-sonnet-4-6,16K,2026-02-17,Anthropic,United States of America,,2,,,,,,,,,,,0.324,0.083,,,,,,,,,,,,,,,,,,,,
+Claude Sonnet 4.6,claude-sonnet-4-6,32K,2026-02-17,Anthropic,United States of America,,4,,,,,,,0.13,,,,,,,,0.8737373737373737,,,,,,,,0.857936507936508,,,0.29,,,,,,
+Claude Opus 4.6,claude-opus-4-6,high,2026-02-05,Anthropic,United States of America,,2,,,,,,,,,,,,,,,,0.412,,,,,,,,0.2316,,,,,,,,
+Claude Opus 4.6,claude-opus-4-6,max,2026-02-05,Anthropic,United States of America,,5,,0.317,,,,,,,,,0.407,0.229,,,,,0.3444,,,,,,,,,0.4104104104104104,,,,,,
+Claude Opus 4.6,claude-opus-4-6,unknown,2026-02-05,Anthropic,United States of America,,7,,0.298,,,,,,0.93,,,,,,,,0.3333,,,,,718.80683,,,,,,,,0.798,,1556.29,0.779
+Claude Opus 4.6,claude-opus-4-6,64K,2026-02-05,Anthropic,United States of America,,5,,,,,,,0.1,,,,0.396551724137931,0.2083333333333333,,,0.8876262626262627,,,,,,,,0.9444444444444444,,,,,,,,,
+Claude Opus 4.6,claude-opus-4-6,120K,2026-02-05,Anthropic,United States of America,,3,,,0.94,0.6917,,,0.13,,,,,,,,,,,,,,,,,,,,,,,,,
+Claude Opus 4.6,claude-opus-4-6,32K,2026-02-05,Anthropic,United States of America,,6,,,,,,,0.17,,,,0.4,0.2083333333333333,,,0.9053030303030304,,,,,,,,0.9305555555555556,,,0.464859437751004,,,,,,
+GPT-5.3 Codex,gpt-5.3-codex,high,2026-02-05,OpenAI,United States of America,,3,,0.317,,,,,,,,,,,,,,,,,,,,,,0.1776,,,,0.7479338842975206,,,,
+GPT-5.3 Codex,gpt-5.3-codex,xhigh,2026-02-05,OpenAI,United States of America,,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.793
+GPT-5.2,gpt-5.2-2025-12-11,low,2025-12-11,OpenAI,United States of America,,10,,,0.5567,0.0972,,,0.23,,,,0.2655172413793103,0.0625,,,0.827020202020202,,,,,,,,0.7888888888888889,,,0.347,0.69,,,,,0.496
+GPT-5.2,gpt-5.2-2025-12-11,medium,2025-12-11,OpenAI,United States of America,,12,,,0.7267,0.2667,,,0.4,,,,0.3689655172413793,0.167,,,0.8787878787878788,,,,,,,,0.9388888888888888,0.2138,,0.354,,,0.649,,1394.0,0.634
+GPT-5.2,gpt-5.2-2025-12-11,high,2025-12-11,OpenAI,United States of America,,16,,0.23,0.787,0.4333,,,0.4,,,,0.4034482758620689,0.188,,,0.8819444444444444,0.274,,,,,352.249302,,0.9611111111111112,,0.458,0.382,0.718,0.737603305785124,,0.67,1480.0,
+GPT-5.2,gpt-5.2-2025-12-11,xhigh,2025-12-11,OpenAI,United States of America,,11,,0.3429999999999999,0.862,0.5291,,,0.49,,,,0.407,0.188,,,0.914,,,,,,,,0.961,,,0.389,,,,0.84,,0.722
+GPT-5.2,gpt-5.2-2025-12-11,unknown,2025-12-11,OpenAI,United States of America,,5,,,0.1233,0.0083,,,,,,,,,,,,,0.278,,,,,,,,0.4579999999999999,,,,0.649,,,
+GPT-5.2 Pro,gpt-5.2-pro-2025-12-11,medium,2025-12-11,OpenAI,United States of America,,2,,,0.8117000000000001,0.3847,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+GPT-5.2 Pro,gpt-5.2-pro-2025-12-11,high,2025-12-11,OpenAI,United States of America,,2,,,0.8567,0.5416,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+GPT-5.2 Pro,gpt-5.2-pro-2025-12-11,xhigh,2025-12-11,OpenAI,United States of America,,1,,,0.905,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Claude Opus 4.5 (no thinking),claude-opus-4-5-20251101,unknown,2025-11-24,Anthropic,United States of America,,6,,0.184,,,,,,0.82,,,,,,,,0.2647,0.252,,,,,,,,0.62,,,,0.631,,,
+Claude Opus 4.5 (no thinking),claude-opus-4-5-20251101,128K,2025-11-24,Anthropic,United States of America,,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.591,,,
+Claude Opus 4.5 (no thinking),claude-opus-4-5-20251101,16K,2025-11-24,Anthropic,United States of America,,8,,,0.72,0.2278,,,,,,,0.2034482758620689,0.0208333333333333,,,0.8547979797979798,,,,,,288.904952,,0.8166666666666667,,,,,,,,,0.637
+Claude Opus 4.5 (no thinking),claude-opus-4-5-20251101,32K,2025-11-24,Anthropic,United States of America,,9,,,0.758,,,,0.12,,,,0.2068965517241379,0.0416666666666666,,,0.860479797979798,,,,,,,,0.8611111111111112,,,0.418,,,,0.4,1512.0,
+Claude Opus 4.5 (no thinking),claude-opus-4-5-20251101,8K,2025-11-24,Anthropic,United States of America,,2,,,0.5867,0.1389,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Claude Opus 4.5 (no thinking),claude-opus-4-5-20251101,64K,2025-11-24,Anthropic,United States of America,,3,,,0.8,0.3764,0.43,,,,,,,,,,,,,,,,,,,,,,,,,,,
+GPT-5.1,gpt-5.1-2025-11-13,low,2025-11-13,OpenAI,United States of America,,5,,,0.3317,0.0194,,,,,,,0.1730103806228373,,,,,,,,,,,,0.6388888888888888,,,,,,,,1359.0,
+GPT-5.1,gpt-5.1-2025-11-13,medium,2025-11-13,OpenAI,United States of America,,10,,,0.577,0.0653,,,,,,,0.2689655172413793,0.0416666666666666,,,0.8503787878787878,,,,,,,,0.8555555555555555,,,,0.66,,0.476,0.533,1387.0,
+GPT-5.1,gpt-5.1-2025-11-13,high,2025-11-13,OpenAI,United States of America,,15,,0.175,0.728,0.1764,,,0.32,,,,0.3103448275862069,0.125,,,0.8762626262626263,0.137,,,78.79,,,,0.8861111111111111,,0.532,0.489,,0.6797520661157025,,0.587,,0.6077
+GPT-5.1,gpt-5.1-2025-11-13,unknown,2025-11-13,OpenAI,United States of America,,2,,,,,,,,,,,,,,,,,0.2368,,,,,,,,,,,,0.476,,,
+Claude Haiku 4.5,claude-haiku-4-5-20251001,unknown,2025-10-15,Anthropic,United States of America,,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.355,,,
+Claude Haiku 4.5,claude-haiku-4-5-20251001,16K,2025-10-15,Anthropic,United States of America,,3,,,0.3733000000000001,0.0278,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.441
+Claude Haiku 4.5,claude-haiku-4-5-20251001,32K,2025-10-15,Anthropic,United States of America,,8,,,0.4767,0.0403,,,,,,,0.0590277777777777,0.0208333333333333,,,0.7121212121212122,,,,,0.9636087945413192,,,0.6666666666666666,,,0.059,,,,,,
+Claude Haiku 4.5,claude-haiku-4-5-20251001,8K,2025-10-15,Anthropic,United States of America,,2,,,0.255,0.0167,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Claude Haiku 4.5,claude-haiku-4-5-20251001,1K,2025-10-15,Anthropic,United States of America,,2,,,0.1683,0.0125,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+GPT-5 Pro,gpt-5-pro-2025-10-06,high,2025-10-07,OpenAI,United States of America,,4,,,0.702,,,,,,,,,0.146,,,,,,,,,,,,,0.616,,,,,,,0.6039
+GPT-5 Pro,gpt-5-pro-2025-10-06,unknown,2025-10-07,OpenAI,United States of America,,4,,,0.7017,0.1833,,,,,,,,,,,,,0.3164,,,,,,,,0.616,,,,,,,
+Claude Sonnet 4.5 (no thinking),claude-sonnet-4-5-20250929,unknown,2025-09-29,Anthropic,United States of America,,5,,,,,,,,0.6,,,,,,,,0.1471,0.1372,,,,,,,,0.543,,,,0.465,,,
+Claude Sonnet 4.5 (no thinking),claude-sonnet-4-5-20250929,32K,2025-09-29,Anthropic,United States of America,,10,,,0.6367,0.1361,,,0.12,,,,0.1522491349480969,0.0416666666666666,,,0.817258883248731,,,,,0.9773413897280968,,,0.7777777777777778,,,,,,,0.398,1391.0,
+Claude Sonnet 4.5 (no thinking),claude-sonnet-4-5-20250929,12K,2025-09-29,Anthropic,United States of America,,1,,,,,,,,,,,,,,,,,,,,,,,,,0.543,,,,,,,
+Claude Sonnet 4.5 (no thinking),claude-sonnet-4-5-20250929,8K,2025-09-29,Anthropic,United States of America,,2,,,0.465,0.0694,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Claude Sonnet 4.5 (no thinking),claude-sonnet-4-5-20250929,1K,2025-09-29,Anthropic,United States of America,,2,,,0.31,0.0583,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Claude Sonnet 4.5 (no thinking),claude-sonnet-4-5-20250929,59K,2025-09-29,Anthropic,United States of America,,4,,,,,,,,,,,0.1349480968858131,,,,0.8232323232323232,,,,,,,,0.7777777777777778,,,0.236,,,,,,
+Claude Sonnet 4.5 (no thinking),claude-sonnet-4-5-20250929,2K,2025-09-29,Anthropic,United States of America,,1,,,,,,,,,0.526,,,,,,,,,,,,,,,,,,,,,,,
+Claude Sonnet 4.5 (no thinking),claude-sonnet-4-5-20250929,16K,2025-09-29,Anthropic,United States of America,,6,,,0.4833,0.0694,,,,,,,,,,,0.7878787878787878,,,,,,121.946588,,0.7111111111111111,,,,,,,,,0.4771
+Gemini 2.5 Flash,gemini-2.5-flash-preview-09-2025,16k,2025-09-25,Google DeepMind,United States of America,,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.4191
+GPT-5-codex,gpt-5-codex,high,2025-09-15,OpenAI,United States of America,,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.5453
+GPT-5,gpt-5-2025-08-07,low,2025-08-07,OpenAI,United States of America,6.6e+25,4,81.3,,0.44,0.0194,,,,,0.51,,,,,,,,,,,,,,,,,,,,,,,
+GPT-5,gpt-5-2025-08-07,medium,2025-08-07,OpenAI,United States of America,6.6e+25,19,86.7,,0.562,0.0749,,,,,0.495,0.969,0.2724137931034482,0.0625,0.348,3937.0,0.8535353535353535,,,8.723,,0.9792296072507553,137.318539,,0.8722222222222222,,,,0.65,0.7148760330578512,0.496,0.632,1395.0,
+GPT-5,gpt-5-2025-08-07,high,2025-08-07,OpenAI,United States of America,6.6e+25,19,88.0,0.183,0.657,0.0986,,,0.37,,0.486,,0.3241379310344827,0.125,,,0.8617424242424242,0.069,0.2532,,,0.9813066465256798,203.012577,,0.9138888888888888,,0.567,0.506,,0.7355371900826446,,0.66,,0.607
+GPT-5,gpt-5-2025-08-07,unknown,2025-08-07,OpenAI,United States of America,6.6e+25,3,,,,,,,,,0.5513,,,,,,,,0.2532,,,,,,,,,,,,0.496,,,
+GPT-5 mini,gpt-5-mini-2025-08-07,low,2025-08-07,OpenAI,United States of America,,2,,,0.2633,0.0083,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+GPT-5 mini,gpt-5-mini-2025-08-07,medium,2025-08-07,OpenAI,United States of America,,12,,,0.3733000000000001,0.0403,,,,,,0.625,0.2034482758620689,0.0416666666666666,,,0.7165404040404041,,,,,0.9679003021148036,,,0.7833333333333333,,,,0.598,0.6466942148760331,0.319,0.402,,
+GPT-5 mini,gpt-5-mini-2025-08-07,high,2025-08-07,OpenAI,United States of America,,10,,,0.5433,0.0444,,,,,,,0.2724137931034482,0.0625,,,0.75,,,,,0.978474320241692,,,0.8666666666666667,,,0.21,,,,0.39,,0.5267
+GPT-5 mini,gpt-5-mini-2025-08-07,unknown,2025-08-07,OpenAI,United States of America,,2,,,,,,,,,,,,,,,,,0.1944,,,,,,,,,,,,0.348,,,
+GPT-5 nano,gpt-5-nano-2025-08-07,low,2025-08-07,OpenAI,United States of America,,2,,,0.0404,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+GPT-5 nano,gpt-5-nano-2025-08-07,medium,2025-08-07,OpenAI,United States of America,,11,,,0.2071,0.0088,,,,,,0.219,0.0724137931034482,0.0208333333333333,,,0.6742424242424242,,,,,0.952416918429003,,,0.7416666666666667,,,,0.348,,0.115,0.354,,
+GPT-5 nano,gpt-5-nano-2025-08-07,high,2025-08-07,OpenAI,United States of America,,10,,,0.1667,0.0261,,,,,,,0.0827586206896551,0.0,,,0.6944444444444444,,,,,0.9490181268882176,,,0.8111111111111111,,,0.122,,,,0.372,,0.3806
+GPT-5 nano,gpt-5-nano-2025-08-07,unknown,2025-08-07,OpenAI,United States of America,,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.115,,,
+Claude Opus 4.1,claude-opus-4-1-20250805,unknown,2025-08-05,Anthropic,United States of America,,3,,,,,,,,,,,,,,,,,0.1152,,,,,,,,0.6,,,,0.38,,,
+Claude Opus 4.1,claude-opus-4-1-20250805,16K,2025-08-05,Anthropic,United States of America,,5,,,,,,,,,,,,,,,0.7727272727272727,,,,,,113.68507,,0.6444444444444445,,,,,,,0.33,,0.4276
+Claude Opus 4.1,claude-opus-4-1-20250805,27K,2025-08-05,Anthropic,United States of America,,5,,,,,,,,,,,0.0724137931034482,0.0416666666666666,,,0.7676767676767676,,,,,,,,0.6888888888888889,,,0.348,,,,,,
+gpt-oss-120b,gpt-oss-120b,medium,2025-08-05,OpenAI,United States of America,4.94e+24,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.4188
+gpt-oss-120b,gpt-oss-120b,high,2025-08-05,OpenAI,United States of America,4.94e+24,3,41.8,0.047,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.4817
+gpt-oss-120b,gpt-oss-120b,unknown,2025-08-05,OpenAI,United States of America,4.94e+24,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.187,,,
+gpt-oss-20b,gpt-oss-20b,medium,2025-08-05,OpenAI,United States of America,5.49e+23,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.3683
+gpt-oss-20b,gpt-oss-20b,high,2025-08-05,OpenAI,United States of America,5.49e+23,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.4093
+gpt-oss-20b,gpt-oss-20b,unknown,2025-08-05,OpenAI,United States of America,5.49e+23,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.034,,,
+gpt-oss-120b,openai/gpt-oss-120b,high,2025-08-05,OpenAI,United States of America,4.94e+24,6,41.8,,,,,,0.2,,,,,,,,0.7575757575757576,,,,,,,,0.8888888888888888,,,0.139,,,,,,0.4817
+Grok 4,grok-4-0709,high,2025-07-09,xAI,United States of America,5.0000000000001e+26,2,79.6,,,,,,,,,,,,0.211,,,,,,,,,,,,,,,,,,,
+Grok 3 mini,grok-3-mini,low,2025-06-24,xAI,United States of America,,2,,,0.165,0.0042,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Grok 3 mini,grok-3-mini,high,2025-06-24,xAI,United States of America,,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.4258
+Gemini 2.5 Flash-Lite,gemini-2.5-flash-lite-preview-06-17,16K,2025-06-17,Google DeepMind,United States of America,,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.3522
+Gemini 2.5 Pro (Jun 2025),gemini-2.5-pro,32K,2025-06-17,Google DeepMind,United States of America,,2,,,0.37,0.0486,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Gemini 2.5 Pro (Jun 2025),gemini-2.5-pro,8K,2025-06-17,Google DeepMind,United States of America,,2,,,0.295,0.0292,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Gemini 2.5 Pro (Jun 2025),gemini-2.5-pro,16K,2025-06-17,Google DeepMind,United States of America,,3,,,0.41,0.0403,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.5403
+o3-pro,o3-pro-2025-06-10,low,2025-06-10,OpenAI,United States of America,,2,,,0.443,0.0205,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+o3-pro,o3-pro-2025-06-10,medium,2025-06-10,OpenAI,United States of America,,4,,,0.57,0.0194,,,,,,0.889,,,,,,,,8.628,,,,,,,,,,,,,,
+o3-pro,o3-pro-2025-06-10,high,2025-06-10,OpenAI,United States of America,,4,84.9,,0.593,0.0486,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.5821
+Gemini 2.5 Pro Preview (Jun 2025),gemini-2.5-pro-preview-06-05,32K,2025-06-05,Google DeepMind,United States of America,,1,83.1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Gemini 2.5 Pro Preview (Jun 2025),gemini-2.5-pro-preview-06-05,1K,2025-06-05,Google DeepMind,United States of America,,2,,,0.313,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Claude Opus 4,claude-opus-4-20250514,unknown,2025-05-22,Anthropic,United States of America,,4,,,,,,,,,,,,,,,,0.0686,0.1072,,,,100.366123,,,,0.588,,,,,,,
+Claude Opus 4,claude-opus-4-20250514,2K,2025-05-22,Anthropic,United States of America,,1,,,,,,,,,0.49,,,,,,,,,,,,,,,,,,,,,,,
+Claude Opus 4,claude-opus-4-20250514,32K,2025-05-22,Anthropic,United States of America,,2,72.0,,,,,,,,,,,,,2915.0,,,,,,,,,,,,,,,,,,
+Claude Opus 4,claude-opus-4-20250514,12K,2025-05-22,Anthropic,United States of America,,1,,,,,,,,,,,,,,,,,,,,,,,,,0.588,,,,,,,
+Claude Opus 4,claude-opus-4-20250514,1K,2025-05-22,Anthropic,United States of America,,2,,,0.27,0.0,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Claude Opus 4,claude-opus-4-20250514,8K,2025-05-22,Anthropic,United States of America,,2,,,0.307,0.0452,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Claude Opus 4,claude-opus-4-20250514,27K,2025-05-22,Anthropic,United States of America,,3,,,,,,,,,,,0.0413793103448275,0.0416666666666666,,,,,,,,,,,0.6444444444444445,,,,,,,,,
+Claude Opus 4,claude-opus-4-20250514,16K,2025-05-22,Anthropic,United States of America,,7,,,0.357,0.0861,,,,,,,,,,,0.7626262626262627,,,,,,85.556627,,0.6,,,,,,,0.38,,0.434
+Claude Sonnet 4,claude-sonnet-4-20250514,unknown,2025-05-22,Anthropic,United States of America,,3,,,,,,,,,,,,,,,,0.049,0.0776,,,,,,,,0.455,,,,,,,
+Claude Sonnet 4,claude-sonnet-4-20250514,59K,2025-05-22,Anthropic,United States of America,,2,,,,,,,,,,,,,,,0.7781991873045173,,,,,,,,0.6888888888888889,,,,,,,,,
+Claude Sonnet 4,claude-sonnet-4-20250514,2K,2025-05-22,Anthropic,United States of America,,1,,,,,,,,,0.478,,,,,,,,,,,,,,,,,,,,,,,
+Claude Sonnet 4,claude-sonnet-4-20250514,16K,2025-05-22,Anthropic,United States of America,,6,,,0.4,0.0593,,,,,,,,,,,0.7575757575757576,,,,,,74.942015,,0.5333333333333333,,,,,,,,,0.4611
+Claude Sonnet 4,claude-sonnet-4-20250514,32K,2025-05-22,Anthropic,United States of America,,5,61.3,,,,,,,,,,,,,2369.0,0.7828282828282829,,,,,,,,0.7111111111111111,,,,,,,0.34,,
+Claude Sonnet 4,claude-sonnet-4-20250514,12K,2025-05-22,Anthropic,United States of America,,1,,,,,,,,,,,,,,,,,,,,,,,,,0.455,,,,,,,
+Claude Sonnet 4,claude-sonnet-4-20250514,8K,2025-05-22,Anthropic,United States of America,,2,,,0.29,0.0212,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Claude Sonnet 4,claude-sonnet-4-20250514,1K,2025-05-22,Anthropic,United States of America,,2,,,0.28,0.0085,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Gemini 2.5 Flash,gemini-2.5-flash-preview-05-20,8K,2025-05-20,Google DeepMind,United States of America,,2,,,0.258,0.0212,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Gemini 2.5 Flash,gemini-2.5-flash-preview-05-20,23K,2025-05-20,Google DeepMind,United States of America,,3,55.1,,0.3233,0.0254,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Gemini 2.5 Flash,gemini-2.5-flash-preview-05-20,16K,2025-05-20,Google DeepMind,United States of America,,3,,,0.333,0.0198,,,,,,,,,,,,,,,,,,,,,,,,,,,,0.4095
+Gemini 2.5 Flash,gemini-2.5-flash-preview-05-20,1K,2025-05-20,Google DeepMind,United States of America,,2,,,0.16,0.0216,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+o3,o3-2025-04-16,low,2025-04-16,OpenAI,United States of America,,3,,,0.415,0.0199,,,,,,,0.0972222222222222,,,,,,,,,,,,,,,,,,,,,
+o3,o3-2025-04-16,medium,2025-04-16,OpenAI,United States of America,,16,76.9,,0.538,0.0298,,0.74,,,0.466,1.0,0.1689655172413793,,0.308,3858.0,,,0.192,8.39,,,91.271355,23.0,,,,,0.584,0.6231884057971014,,0.52,,
+o3,o3-2025-04-16,high,2025-04-16,OpenAI,United States of America,,14,81.3,,0.608,0.0653,,,,,,,0.1868512110726643,0.0208333333333333,,3930.0,0.8181818181818182,0.088,0.2032,,,0.9777190332326284,,,0.8388888888888889,,0.531,0.53,,,,,,0.5242
+o3,o3-2025-04-16,unknown,2025-04-16,OpenAI,United States of America,,2,76.9,,,,,,,,,,,,,,,,,,,,119.732634,,,,,,,,,,,
+o4-mini,o4-mini-2025-04-16,low,2025-04-16,OpenAI,United States of America,,3,,,0.213,0.0167,,,,,,,0.1068965517241379,,,,,,,,,,,,,,,,,,,,,
+o4-mini,o4-mini-2025-04-16,medium,2025-04-16,OpenAI,United States of America,,12,,,0.418,0.0236,,0.62,,,,0.625,0.1896551724137931,0.0208333333333333,,3651.0,,,0.1428,7.5,,,76.509015,,,,,,0.45,,,0.575,,
+o4-mini,o4-mini-2025-04-16,high,2025-04-16,OpenAI,United States of America,,16,72.0,,0.587,0.0611,,,0.26,,,,0.2482758620689655,0.0625,0.253,3717.0,0.7960858585858586,0.036,0.1808,,,0.978285498489426,,,0.8166666666666667,,0.387,0.239,,,,,,0.5256
+Grok-3 mini,grok-3-mini-beta,low,2025-04-09,xAI,United States of America,,7,34.7,,0.165,,,,,,,,0.0275862068965517,,,,0.7626262626262627,,,7.35,,0.9093655589123868,,,0.6222222222222222,,,,,,,,,
+Grok-3 mini,grok-3-mini-beta,medium,2025-04-09,xAI,United States of America,,1,,,,,,,,,,0.656,,,,,,,,,,,,,,,,,,,,,,
+Grok-3 mini,grok-3-mini-beta,high,2025-04-09,xAI,United States of America,,7,49.3,,,,,,,,,,0.0586206896551724,,,,0.7462121212121212,,,,,0.8806646525679759,,,0.7777777777777778,,,0.211,,,,,,0.4258
+o1 Pro,o1-pro-2025-03-19,low,2025-03-19,OpenAI,United States of America,,1,,,0.233,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Claude 3.7 Sonnet,claude-3-7-sonnet-20250219,unknown,2025-02-24,Anthropic,United States of America,3.3499999999999998e+25,3,,,,,,,,,,,,,,,,0.038,0.0804,,,,,,,,0.4639999999999999,,,,,,,
+Claude 3.7 Sonnet,claude-3-7-sonnet-20250219,8K,2025-02-24,Anthropic,United States of America,3.3499999999999998e+25,3,,,0.212,0.009,,,,,,0.531,,,,,,,,,,,,,,,,,,,,,,
+Claude 3.7 Sonnet,claude-3-7-sonnet-20250219,64K,2025-02-24,Anthropic,United States of America,3.3499999999999998e+25,5,,,,,,,,,,,0.0310344827586206,,,,0.7850378787878788,,,,,0.9116314199395772,,,0.5777777777777777,,,,,,,0.35,,
+Claude 3.7 Sonnet,claude-3-7-sonnet-20250219,2K,2025-02-24,Anthropic,United States of America,3.3499999999999998e+25,1,,,,,,,,,0.436,,,,,,,,,,,,,,,,,,,,,,,
+Claude 3.7 Sonnet,claude-3-7-sonnet-20250219,16K,2025-02-24,Anthropic,United States of America,3.3499999999999998e+25,8,,,0.286,0.007,,,,,,,0.0413793103448275,,,,0.7676767676767676,,,8.11,,0.8625377643504532,56.09162,,0.4666666666666667,,,,,,,,,
+Claude 3.7 Sonnet,claude-3-7-sonnet-20250219,12K,2025-02-24,Anthropic,United States of America,3.3499999999999998e+25,1,,,,,,,,,,,,,,,,,,,,,,,,,0.464,,,,,,,
+Claude 3.7 Sonnet,claude-3-7-sonnet-20250219,1K,2025-02-24,Anthropic,United States of America,3.3499999999999998e+25,2,,,0.116,0.004,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+Claude 3.7 Sonnet,claude-3-7-sonnet-20250219,15K,2025-02-24,Anthropic,United States of America,3.3499999999999998e+25,1,,,,,,,,,,,,,,3844.0,,,,,,,,,,,,,,,,,,
+Claude 3.7 Sonnet,claude-3-7-sonnet-20250219,32K,2025-02-24,Anthropic,United States of America,3.3499999999999998e+25,5,64.9,,,,,,,,,,0.0344827586206896,,,,0.7676767676767676,,,,,0.9003021148036254,,,0.5333333333333333,,,,,,,,,
+o3-mini,o3-mini-2025-01-31,low,2025-01-31,OpenAI,United States of America,,3,,,0.145,0.0,,,,,,,,,,,,,,,62.45,,,,,,,,,,,,,
+o3-mini,o3-mini-2025-01-31,medium,2025-01-31,OpenAI,United States of America,,12,53.8,,0.223,0.0208,,0.54,,0.225,,0.438,0.0808189655172413,,,,0.742739898989899,,,6.15,70.01,0.9516616314199396,,,0.6388888888888888,,,,,,,,,
+o3-mini,o3-mini-2025-01-31,high,2025-01-31,OpenAI,United States of America,,14,60.4,,0.345,0.0299,,,0.17,,,,0.1241379310344827,0.0416666666666666,,,0.7702020202020202,0.013,,6.17,75.88,0.9648791540785498,,,0.7694444444444445,,0.228,,,,,,,0.437
+o1,o1-2024-12-17,low,2024-12-17,OpenAI,United States of America,,1,,,0.272,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+o1,o1-2024-12-17,medium,2024-12-17,OpenAI,United States of America,,11,,,0.307,,,0.56,,,,0.531,,,,3925.0,0.7575757575757576,,,7.02,,0.9441087613293052,39.206576,,0.7333333333333333,,0.367,,,,,0.37,,
+o1,o1-2024-12-17,high,2024-12-17,OpenAI,United States of America,,7,61.7,,,,,,,,,,0.093103448275862,,,,0.7676767676767676,,,,75.67,0.947129909365559,,,,,0.401,,,,,,,0.4382
+o1-mini,o1-mini-2024-09-12,medium,2024-09-12,OpenAI,United States of America,,10,,,0.14,,,,,0.1,,,0.0172413793103448,,,,0.5950126262626263,,,6.49,57.76,0.8425226586102719,,,0.4472222222222222,,0.181,,,,,,,0.3632
+o1-mini,o1-mini-2024-09-12,high,2024-09-12,OpenAI,United States of America,,4,,,,,,,,,,,0.0137931034482758,,,,0.6237373737373737,,,,,0.8918051359516617,,,0.4694444444444444,,,,,,,,,
+o1-mini,o1-mini-2024-09-12,unknown,2024-09-12,OpenAI,United States of America,,3,32.9,,0.14,0.0083,,,,,,,,,,,,,,,,,,,,,,,,,,,,
