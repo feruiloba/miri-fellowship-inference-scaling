@@ -1,0 +1,73 @@
+Model version,% Resolved,Release date,Organization,Country,Training compute (FLOP),Training compute notes,Avg. Cost ($),Date run,Notes,Source,Source link,SWE-Agent Release Version,id
+claude-opus-4-5-20251101,0.768,2025-11-24,Anthropic,United States of America,,Flagship model from a leading developer in mid-2025; very likely it used >1e25 FLOP.,0.75,2026-02-17,,swebench.com leaderboard (bash only),https://www.swebench.com/,2.0.0,recLrUUr2xkS6AftK
+MiniMax-M2.5,0.758,2026-02-12,MiniMax,China,,,0.07,2026-02-17,,swebench.com leaderboard (bash only),https://www.swebench.com/index.html,2.0.0,reckRDm7Uctnnaaez
+gemini-3-pro-preview,0.742,2025-11-18,Google DeepMind,United States of America,,Almost certainly >1e25,0.46,2025-11-18,,swebench.com leaderboard (bash only),https://www.swebench.com/,1.15.0,recMGWQTIOvP7iQ0w
+glm-5,0.728,2026-02-11,Z.ai (Zhipu AI),China,,,0.53,2026-02-17,,swebench.com leaderboard (bash only),https://www.swebench.com/index.html,2.0.0,reccd0WsM39JlIMkF
+gpt-5.2-2025-12-11_high,0.718,2025-12-11,OpenAI,United States of America,,,0.52,2025-12-11,,swebench.com leaderboard (bash only),https://www.swebench.com/,1.17.2,reczwiHLcyIvypxkL
+kimi-k2.5,0.708,2026-01-27,Moonshot,China,,,0.15,2026-02-17,,swebench.com leaderboard (bash only),https://www.swebench.com/index.html,2.0.0,recBsQve3Hwa81iM2
+claude-sonnet-4-5-20250929,0.706,2025-09-29,Anthropic,United States of America,,,0.56,2025-09-29,,swebench.com leaderboard (bash only),https://www.swebench.com/,1.13.3,rec9tlwdEZS7deisP
+deepseek/deepseek-v3.2,0.7,2025-12-01,DeepSeek,China,4.2e+24,"Pre-trained base was DeepSeek-V3.1-Terminus
+3.594058e+24 FLOP [base model] + 2.095014e+23 FLOP = 3.8035594e+24 FLOP for pre-training plus continued pre-training
+
+Then, ""this framework allocates a
+post-training computational budget exceeding 10% of the pre-training cost"", so 4.18e24",0.45,2026-02-17,,swebench.com leaderboard (bash only),https://www.swebench.com/index.html,2.0.0,recudFm9bKPS9zwSo
+gpt-5.2-2025-12-11_low,0.69,2025-12-11,OpenAI,United States of America,,,0.27,2025-12-11,,swebench.com leaderboard (bash only),https://www.swebench.com/,1.17.2,recM0qz0oq16SIWqs
+claude-opus-4-20250514,0.676,2025-05-22,Anthropic,United States of America,,Flagship model from a leading developer in mid-2025; very likely it used >1e25 FLOP.,1.13,2025-08-02,,swebench.com leaderboard (bash only),https://www.swebench.com/,1.0.0,rec2RoAC30xJF4Gfe
+gpt-5.1-codex,0.66,2025-11-12,OpenAI,United States of America,,,0.59,2025-11-24,,swebench.com leaderboard (bash only),,,rec9VqTkUkiel3VEZ
+gpt-5.1-2025-11-13_medium,0.66,2025-11-13,OpenAI,United States of America,,"Almost certainly > 1e25
+",0.31,2025-11-20,,swebench.com leaderboard (bash only),,,recXZwJBquTs31Q8v
+gpt-5-2025-08-07_medium,0.65,2025-08-07,OpenAI,United States of America,6.6e+25,"Likely around 6e25 [CI: 2e25 to 2e26] FLOP. See document below for details
+
+https://docs.google.com/document/d/1V2jIk365LnhH4WDoCw5dYJjZr1Htw8IHaK1noMf5Y48/edit?tab=t.z871imftkus",0.28,2025-08-07,,swebench.com leaderboard (bash only),https://www.swebench.com/,1.7.0,recx1k2X2wJaqpCHk
+claude-sonnet-4-20250514,0.6493,2025-05-22,Anthropic,United States of America,,Flagship model from a leading developer in mid-2025; very likely it used >1e25 FLOP.,0.37,2025-07-26,,swebench.com leaderboard (bash only),https://www.swebench.com/,1.0.0,recbHvbWL9huL9WDI
+kimi-k2-thinking,0.634,2025-11-06,Moonshot,China,4.2e+24,"Assuming the additional post-training contributed between 1% and 100% of Kimi K2's training compute (which we confidently estimate at 2.976e+24), we get a range of 3.0e24 to 6.0e24, and a geometric mean of 4.2e24.",0.44,2025-12-10,,swebench.com leaderboard (bash only),,,recQPZ5c6yg4HfSyY
+gpt-5-mini-2025-08-07_medium,0.598,2025-08-07,OpenAI,United States of America,,,0.04,2025-08-07,,swebench.com leaderboard (bash only),https://www.swebench.com/,1.7.0,recG2hsNgcOyFffnI
+o3-2025-04-16_medium,0.584,2025-04-16,OpenAI,United States of America,,,0.33,2025-07-26,Assuming Medium based on GPT-5 using medium,swebench.com leaderboard (bash only),https://www.swebench.com/,1.0.0,rec0llwypF3cPxTiY
+Qwen3-Coder-480B-A35B-Instruct,0.554,2025-07-31,Alibaba,China,1.575e+24,6 FLOP / parameter / token * 35 * 10^9 active parameters * 7.5 * 10^12 tokens = 1.575e+24 FLOP`,0.25,2025-08-02,,swebench.com leaderboard (bash only),https://www.swebench.com/,1.0.0,recGRkbDsVzCpcFPE
+glm-4.5,0.542,2025-08-03,"Z.ai (Zhipu AI),Tsinghua University",China,4.42e+24,(6 FLOP/token/parameter) * (23T tokens) * (32B active parameters) = 4.42e24 FLOP,0.3,2025-08-22,,swebench.com leaderboard (bash only),https://www.swebench.com/,1.9.1,recUrtesZH4L7V2yV
+gemini-2.5-pro-preview-05-06,0.536,2025-05-06,Google DeepMind,United States of America,,Flagship model from a leading developer in mid-2025; very likely it used >1e25 FLOP.,0.29,2025-07-26,,swebench.com leaderboard (bash only),https://www.swebench.com/,1.0.0,recqxpUKYudO05Ayn
+claude-3-7-sonnet-20250219,0.528,2025-02-24,Anthropic,United States of America,3.35e+25,https://docs.google.com/spreadsheets/d/10bhwdVrfHI8tysVIz62ZxtvQ30L-HojYvmU18_b-WIM/edit?gid=0#gid=0,0.35,2025-07-20,,swebench.com leaderboard (bash only),https://www.swebench.com/,0.0.0,reccl0hrktOeZ5aPy
+o4-mini-2025-04-16_medium,0.45,2025-04-16,OpenAI,United States of America,,"We can’t make a precise estimate, but seems unlikely to exceed 10^25 FLOP. We think active parameter count is 10-30B. This would require >55T tokens to reach 10^25 FLOP at the large size, i.e. well beyond 10x overtraining relative to Chinchilla.",0.21,2025-07-26,,swebench.com leaderboard (bash only),https://www.swebench.com/,1.0.0,recAP4NeesXmoouxh
+Kimi-K2-Instruct,0.438,2025-07-12,Moonshot,China,2.976e+24,6 FLOP / parameter / token * 32 * 10^9 activated parameters * 15.5 * 10^12 tokens = 2.976e+24 FLOP,0.53,2025-08-07,,swebench.com leaderboard (bash only),https://www.swebench.com/,1.7.0,rec7pT7smb24EEOTV
+gpt-4.1-2025-04-14,0.3958,2025-04-14,OpenAI,United States of America,,Flagship model from a leading developer in mid-2025; very likely it used >1e25 FLOP.,0.15,2025-07-26,,swebench.com leaderboard (bash only),https://www.swebench.com/,1.0.0,recIkYNZmQkvnZQy5
+gpt-5-nano-2025-08-07_medium,0.348,2025-08-07,OpenAI,United States of America,,,0.04,2025-08-07,,swebench.com leaderboard (bash only),https://www.swebench.com/,1.7.0,recbGmfi1SLJ9Kz04
+gemini-2.5-flash-preview-04-17,0.2873,2025-04-17,Google DeepMind,United States of America,,,0.13,2025-07-26,,swebench.com leaderboard (bash only),https://www.swebench.com/,1.0.0,rechFgXJCKekEtUPk
+gpt-oss-120b,0.26,2025-08-05,OpenAI,United States of America,4.94e+24,"""The training run for gpt-oss-120b required 2.1 million H100-hours to complete""
+(2.1e6 hours)*(1,979 H100 FLOP/s)*(30% utilization)*(60*60) = 4.49e24
+They also do post training similar to o3, which we assume adds at least 10% as much compute, so we multiply this estimate by 1.1 to get 4.94e24
+
+",0.06,2025-08-07,,swebench.com leaderboard (bash only),https://www.swebench.com/,1.7.0,recRZuzHmjltQmQsj
+gpt-4.1-mini-2025-04-14,0.2394,2025-04-14,OpenAI,United States of America,,,0.44,2025-07-20,,swebench.com leaderboard (bash only),https://www.swebench.com/,0.0.0,recVxIzFs333HE8QQ
+gpt-4o-2024-11-20,0.2162,2024-11-20,OpenAI,United States of America,,Training compute estimated to be 3.8e25 FLOP from benchmark scores. https://colab.research.google.com/drive/1r3pUMhB7Kh0Gls9eG-v_XefWrye9fVQR?usp=sharing,1.53,2025-07-20,,swebench.com leaderboard (bash only),https://www.swebench.com/,0.0.0,recE4Ky1iiRV5WsoN
+Llama-4-Maverick-17B-128E-Instruct,0.2104,2025-04-05,Meta AI,United States of America,2.244000000001e+24,"22T training tokens per model card:
+
+https://github.com/meta-llama/llama-models/blob/main/models/llama4/MODEL_CARD.md   
+
+Maverick was trained using co-distillation from Llama 4 Behemoth. It isn't 100% clear that all 22T tokens used distillation, but we assume this for the time being.
+
+Estimating training compute from parameters and tokens:
+Compute = 6 FLOP per token per parameter * 17B active parameters * 22T tokens = 2.244e24 FLOP
+(Implying mean throughput was 262 TFLOPS/GPU, or 13.2% MFU in FP8)
+
+
+The model card also states that Llama 4 Maverick used 2.38M H100-hours.
+The blog post gives a figure of 390 TFLOPS/GPU, but this may have been the utilization rate for Behemoth, or all of the models together. Using this utilization, we have:
+Compute = 390 TFLOP/s * 2.38 million hours = 3.342e24 FLOP
+(This value is higher than the compute implied by parameters and tokens, and suggests utilization may have been lower for Maverick than for Behemoth.)",0.31,2025-07-20,,swebench.com leaderboard (bash only),https://www.swebench.com/,0.0.0,recf0eQVcdVaGgDjX
+gemini-2.0-flash-001,0.1352,2025-02-05,"Google DeepMind,Google",United States of America,,"""We used Trillium TPUs to train the new Gemini 2.0, Google’s most capable AI model yet"" according to https://cloud.google.com/blog/products/compute/trillium-tpu-is-ga",,2025-07-26,,swebench.com leaderboard (bash only),https://www.swebench.com/,0.0.0,recPKEuIMKL9tfIWu
+Llama-4-Scout-17B-16E-Instruct,0.0906,2025-04-05,Meta AI,United States of America,4.08e+24,"40T training tokens per model card:
+
+https://github.com/meta-llama/llama-models/blob/main/models/llama4/MODEL_CARD.md  
+
+Estimating training compute from parameters and tokens:
+6 FLOP per token per parameter * 17B active parameters * 40T tokens = 4.08e24 FLOP
+(Implying mean throughput was 227 TFLOPS/GPU, or 11.5% MFU in FP8)
+
+
+The model card also states that Llama 4 Scout used 5.0M H100-hours.
+The blog post gives a figure of 390 TFLOPS/GPU, but this may have been the utilization rate for Behemoth, or all of the models together. Using this utilization, we have:
+Compute = 390 TFLOP/s * 5 million hours = 7.02e24 FLOP
+(This value is higher than the compute implied by parameters and tokens, and suggests utilization may have been lower for Scout than for Behemoth.)",0.12,2025-07-20,,swebench.com leaderboard (bash only),https://www.swebench.com/,0.0.0,recqKTd9CeJpoQOHT
+Qwen2.5-Coder-32B-Instruct,0.09,2024-11-21,Alibaba,China,1.0725e+24,"Assuming 1 epoch
+
+6ND = 6*32.5 parameters *10^9*5.5*10^12 tokens = 1.0725e+24",0.07,2025-08-03,,swebench.com leaderboard (bash only),https://www.swebench.com/,1.0.0,reccv5KWIynb6Yz6k

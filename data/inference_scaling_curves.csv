@@ -1,0 +1,132 @@
+model,benchmark,x_value,x_unit,score,score_unit,data_quality,source_detail,source_url,human_verified
+Gemini 2.5 Flash,AIME 2025,1024.0,thinking_tokens,0.674,accuracy,figure_estimate,Gemini 2.5 Technical Report Fig 4,https://storage.googleapis.com/deepmind-media/gemini/gemini_v2_5_report.pdf,yes
+Gemini 2.5 Flash,AIME 2025,2048.0,thinking_tokens,0.69,accuracy,figure_estimate,Gemini 2.5 Technical Report Fig 4,https://storage.googleapis.com/deepmind-media/gemini/gemini_v2_5_report.pdf,yes
+Gemini 2.5 Flash,AIME 2025,4096.0,thinking_tokens,0.709,accuracy,figure_estimate,Gemini 2.5 Technical Report Fig 4,https://storage.googleapis.com/deepmind-media/gemini/gemini_v2_5_report.pdf,yes
+Gemini 2.5 Flash,AIME 2025,8192.0,thinking_tokens,0.81,accuracy,figure_estimate,Gemini 2.5 Technical Report Fig 4,https://storage.googleapis.com/deepmind-media/gemini/gemini_v2_5_report.pdf,yes
+Gemini 2.5 Flash,AIME 2025,16384.0,thinking_tokens,0.875,accuracy,figure_estimate,Gemini 2.5 Technical Report Fig 4,https://storage.googleapis.com/deepmind-media/gemini/gemini_v2_5_report.pdf,yes
+Gemini 2.5 Flash,AIME 2025,32768.0,thinking_tokens,0.88,accuracy,figure_estimate,Gemini 2.5 Technical Report Fig 4,https://storage.googleapis.com/deepmind-media/gemini/gemini_v2_5_report.pdf,yes
+Gemini 2.5 Flash,LiveCodeBench,1024.0,thinking_tokens,0.485,accuracy,figure_estimate,Gemini 2.5 Technical Report Fig 4,https://storage.googleapis.com/deepmind-media/gemini/gemini_v2_5_report.pdf,yes
+Gemini 2.5 Flash,LiveCodeBench,2048.0,thinking_tokens,0.509,accuracy,figure_estimate,Gemini 2.5 Technical Report Fig 4,https://storage.googleapis.com/deepmind-media/gemini/gemini_v2_5_report.pdf,yes
+Gemini 2.5 Flash,LiveCodeBench,4096.0,thinking_tokens,0.58,accuracy,figure_estimate,Gemini 2.5 Technical Report Fig 4,https://storage.googleapis.com/deepmind-media/gemini/gemini_v2_5_report.pdf,yes
+Gemini 2.5 Flash,LiveCodeBench,8192.0,thinking_tokens,0.729,accuracy,figure_estimate,Gemini 2.5 Technical Report Fig 4,https://storage.googleapis.com/deepmind-media/gemini/gemini_v2_5_report.pdf,yes
+Gemini 2.5 Flash,LiveCodeBench,16384.0,thinking_tokens,0.755,accuracy,figure_estimate,Gemini 2.5 Technical Report Fig 4,https://storage.googleapis.com/deepmind-media/gemini/gemini_v2_5_report.pdf,yes
+Gemini 2.5 Flash,LiveCodeBench,32768.0,thinking_tokens,0.76,accuracy,figure_estimate,Gemini 2.5 Technical Report Fig 4,https://storage.googleapis.com/deepmind-media/gemini/gemini_v2_5_report.pdf,yes
+Gemini 2.5 Flash,GPQA Diamond,1024.0,thinking_tokens,0.8,accuracy,figure_estimate,Gemini 2.5 Technical Report Fig 4,https://storage.googleapis.com/deepmind-media/gemini/gemini_v2_5_report.pdf,yes
+Gemini 2.5 Flash,GPQA Diamond,2048.0,thinking_tokens,0.803,accuracy,figure_estimate,Gemini 2.5 Technical Report Fig 4,https://storage.googleapis.com/deepmind-media/gemini/gemini_v2_5_report.pdf,yes
+Gemini 2.5 Flash,GPQA Diamond,4096.0,thinking_tokens,0.822,accuracy,figure_estimate,Gemini 2.5 Technical Report Fig 4,https://storage.googleapis.com/deepmind-media/gemini/gemini_v2_5_report.pdf,yes
+Gemini 2.5 Flash,GPQA Diamond,8192.0,thinking_tokens,0.849,accuracy,figure_estimate,Gemini 2.5 Technical Report Fig 4,https://storage.googleapis.com/deepmind-media/gemini/gemini_v2_5_report.pdf,yes
+Gemini 2.5 Flash,GPQA Diamond,16384.0,thinking_tokens,0.848,accuracy,figure_estimate,Gemini 2.5 Technical Report Fig 4,https://storage.googleapis.com/deepmind-media/gemini/gemini_v2_5_report.pdf,yes
+Gemini 2.5 Flash,GPQA Diamond,32768.0,thinking_tokens,0.862,accuracy,figure_estimate,Gemini 2.5 Technical Report Fig 4,https://storage.googleapis.com/deepmind-media/gemini/gemini_v2_5_report.pdf,yes
+o3-mini (low),AIME 2024,low,effort_level,0.6,accuracy,exact_text,OpenAI o3-mini blog Jan 2025,https://openai.com/index/openai-o3-mini/,yes
+o3-mini (medium),AIME 2024,medium,effort_level,0.796,accuracy,exact_text,OpenAI o3-mini blog Jan 2025,https://openai.com/index/openai-o3-mini/,yes
+o3-mini (high),AIME 2024,high,effort_level,0.873,accuracy,exact_text,OpenAI o3-mini blog Jan 2025,https://openai.com/index/openai-o3-mini/,yes
+o3-mini (low),GPQA Diamond,low,effort_level,0.706,accuracy,exact_text,OpenAI o3-mini blog Jan 2025,https://openai.com/index/openai-o3-mini/,yes
+o3-mini (medium),GPQA Diamond,medium,effort_level,0.768,accuracy,exact_text,OpenAI o3-mini blog Jan 2025,https://openai.com/index/openai-o3-mini/,yes
+o3-mini (high),GPQA Diamond,high,effort_level,0.797,accuracy,exact_text,OpenAI o3-mini blog Jan 2025,https://openai.com/index/openai-o3-mini/,yes
+o3-mini (high),FrontierMath,1.0,pass_at_k,0.092,accuracy,exact_text,OpenAI o3-mini blog Jan 2025,https://openai.com/index/openai-o3-mini/,yes
+o3-mini (high),FrontierMath,4.0,pass_at_k,0.166,accuracy,exact_text,OpenAI o3-mini blog Jan 2025,https://openai.com/index/openai-o3-mini/,yes
+o3-mini (high),FrontierMath,8.0,pass_at_k,0.2,accuracy,exact_text,OpenAI o3-mini blog Jan 2025,https://openai.com/index/openai-o3-mini/,yes
+o3-mini (low),Codeforces,low,effort_level,1831,ELO,exact_text,OpenAI o3-mini blog Jan 2025,https://openai.com/index/openai-o3-mini/,yes
+o3-mini (medium),Codeforces,medium,effort_level,2036,ELO,exact_text,OpenAI o3-mini blog Jan 2025,https://openai.com/index/openai-o3-mini/,yes
+o3-mini (high),Codeforces,high,effort_level,2130,ELO,exact_text,OpenAI o3-mini blog Jan 2025,https://openai.com/index/openai-o3-mini/,yes
+o1-preview,AIME 2024,,effort_level,0.444,accuracy,exact_text,OpenAI Learning to Reason Sept 2024,https://openai.com/index/learning-to-reason-with-llms/,
+o1-preview (cons@64),AIME 2024,,consensus_64,0.933,accuracy,exact_text,OpenAI Learning to Reason Sept 2024,https://openai.com/index/learning-to-reason-with-llms/,
+o1,AIME 2024,,effort_level,0.833,accuracy,exact_text,OpenAI Learning to Reason Sept 2024,https://openai.com/index/learning-to-reason-with-llms/,
+o1-preview,GPQA Diamond,,effort_level,0.733,accuracy,exact_text,OpenAI Learning to Reason Sept 2024,https://openai.com/index/learning-to-reason-with-llms/,
+o1,GPQA Diamond,,effort_level,0.78,accuracy,exact_text,OpenAI Learning to Reason Sept 2024,https://openai.com/index/learning-to-reason-with-llms/,
+o1-mini,MATH,,effort_level,0.9,accuracy,exact_text,OpenAI Learning to Reason Sept 2024,https://openai.com/index/learning-to-reason-with-llms/,
+o1-preview,MATH,,effort_level,0.855,accuracy,exact_text,OpenAI Learning to Reason Sept 2024,https://openai.com/index/learning-to-reason-with-llms/,
+o1,MATH,,effort_level,0.948,accuracy,exact_text,OpenAI Learning to Reason Sept 2024,https://openai.com/index/learning-to-reason-with-llms/,
+GPT-4o,MATH,,effort_level,0.603,accuracy,exact_text,OpenAI Learning to Reason Sept 2024,https://openai.com/index/learning-to-reason-with-llms/,
+GPT-4o,GPQA Diamond,,effort_level,0.536,accuracy,exact_text,OpenAI Learning to Reason Sept 2024,https://openai.com/index/learning-to-reason-with-llms/,
+DeepSeek-R1-Zero,AIME 2024,3000.0,avg_response_tokens,0.156,pass@1,figure_estimate,DeepSeek-R1 paper Fig 1,https://arxiv.org/abs/2501.12948,
+DeepSeek-R1-Zero,AIME 2024,5000.0,avg_response_tokens,0.35,pass@1,figure_estimate,DeepSeek-R1 paper Fig 1,https://arxiv.org/abs/2501.12948,
+DeepSeek-R1-Zero,AIME 2024,8000.0,avg_response_tokens,0.5,pass@1,figure_estimate,DeepSeek-R1 paper Fig 1,https://arxiv.org/abs/2501.12948,
+DeepSeek-R1-Zero,AIME 2024,12000.0,avg_response_tokens,0.65,pass@1,figure_estimate,DeepSeek-R1 paper Fig 1,https://arxiv.org/abs/2501.12948,
+DeepSeek-R1-Zero,AIME 2024,18000.0,avg_response_tokens,0.779,pass@1,figure_estimate,DeepSeek-R1 paper Fig 1,https://arxiv.org/abs/2501.12948,
+DeepSeek-R1,AIME 2024,1.0,pass_at_k,0.798,accuracy,exact_text,DeepSeek-R1 paper Table 3/Supp E,https://arxiv.org/abs/2501.12948,
+DeepSeek-R1,AIME 2024,64.0,consensus_at_k,0.867,accuracy,exact_text,DeepSeek-R1 paper Supp E,https://arxiv.org/abs/2501.12948,
+DeepSeek-R1,AIME 2024,64.0,pass_at_k,0.9,accuracy,exact_text,DeepSeek-R1 paper Supp E,https://arxiv.org/abs/2501.12948,
+GPT-4o,AIME 2024,1.0,pass_at_k,0.093,accuracy,exact_text,DeepSeek-R1 paper Supp E,https://arxiv.org/abs/2501.12948,
+GPT-4o,AIME 2024,64.0,majority_vote,0.134,accuracy,exact_text,DeepSeek-R1 paper Supp E,https://arxiv.org/abs/2501.12948,
+DeepSeek-R1,Math Competitions 2024 (easy),7000.0,avg_thinking_tokens,0.9,pass@1,figure_estimate,DeepSeek-R1 paper Fig 18,https://arxiv.org/abs/2501.12948,
+DeepSeek-R1,Math Competitions 2024 (medium),10000.0,avg_thinking_tokens,0.6,pass@1,figure_estimate,DeepSeek-R1 paper Fig 18,https://arxiv.org/abs/2501.12948,
+DeepSeek-R1,Math Competitions 2024 (hard),18000.0,avg_thinking_tokens,0.2,pass@1,figure_estimate,DeepSeek-R1 paper Fig 18,https://arxiv.org/abs/2501.12948,
+DeepSeek-R1-Distill-Qwen-1.5B,AIME 2024,1.0,pass_at_k,0.289,accuracy,exact_text,DeepSeek-R1 paper Table 15,https://arxiv.org/abs/2501.12948,
+DeepSeek-R1-Distill-Qwen-1.5B,AIME 2024,64.0,consensus_at_k,0.527,accuracy,exact_text,DeepSeek-R1 paper Table 15,https://arxiv.org/abs/2501.12948,
+DeepSeek-R1-Distill-Qwen-7B,AIME 2024,1.0,pass_at_k,0.555,accuracy,exact_text,DeepSeek-R1 paper Table 15,https://arxiv.org/abs/2501.12948,
+DeepSeek-R1-Distill-Qwen-7B,AIME 2024,64.0,consensus_at_k,0.833,accuracy,exact_text,DeepSeek-R1 paper Table 15,https://arxiv.org/abs/2501.12948,
+DeepSeek-R1-Distill-Qwen-14B,AIME 2024,1.0,pass_at_k,0.697,accuracy,exact_text,DeepSeek-R1 paper Table 15,https://arxiv.org/abs/2501.12948,
+DeepSeek-R1-Distill-Qwen-14B,AIME 2024,64.0,consensus_at_k,0.8,accuracy,exact_text,DeepSeek-R1 paper Table 15,https://arxiv.org/abs/2501.12948,
+DeepSeek-R1-Distill-Qwen-32B,AIME 2024,1.0,pass_at_k,0.726,accuracy,exact_text,DeepSeek-R1 paper Table 15,https://arxiv.org/abs/2501.12948,
+DeepSeek-R1-Distill-Qwen-32B,AIME 2024,64.0,consensus_at_k,0.833,accuracy,exact_text,DeepSeek-R1 paper Table 15,https://arxiv.org/abs/2501.12948,
+DeepSeek-R1-Distill-Llama-8B,AIME 2024,1.0,pass_at_k,0.504,accuracy,exact_text,DeepSeek-R1 paper Table 15,https://arxiv.org/abs/2501.12948,
+DeepSeek-R1-Distill-Llama-8B,AIME 2024,64.0,consensus_at_k,0.8,accuracy,exact_text,DeepSeek-R1 paper Table 15,https://arxiv.org/abs/2501.12948,
+DeepSeek-R1-Distill-Llama-70B,AIME 2024,1.0,pass_at_k,0.7,accuracy,exact_text,DeepSeek-R1 paper Table 15,https://arxiv.org/abs/2501.12948,
+DeepSeek-R1-Distill-Llama-70B,AIME 2024,64.0,consensus_at_k,0.867,accuracy,exact_text,DeepSeek-R1 paper Table 15,https://arxiv.org/abs/2501.12948,
+DeepSeek-Prover-V2-671B (CoT),miniF2F-test,1.0,pass_at_k,0.619,accuracy,exact_text,DeepSeek-Prover-V2 paper,https://arxiv.org/abs/2504.21801,
+DeepSeek-Prover-V2-671B (CoT),miniF2F-test,32.0,pass_at_k,0.824,accuracy,exact_text,DeepSeek-Prover-V2 paper,https://arxiv.org/abs/2504.21801,
+DeepSeek-Prover-V2-671B (CoT),miniF2F-test,1024.0,pass_at_k,0.866,accuracy,exact_text,DeepSeek-Prover-V2 paper,https://arxiv.org/abs/2504.21801,
+DeepSeek-Prover-V2-671B (CoT),miniF2F-test,8192.0,pass_at_k,0.889,accuracy,exact_text,DeepSeek-Prover-V2 paper,https://arxiv.org/abs/2504.21801,
+DeepSeek-Prover-V2-7B (CoT),miniF2F-test,1.0,pass_at_k,0.586,accuracy,exact_text,DeepSeek-Prover-V2 paper,https://arxiv.org/abs/2504.21801,
+DeepSeek-Prover-V2-7B (CoT),miniF2F-test,32.0,pass_at_k,0.756,accuracy,exact_text,DeepSeek-Prover-V2 paper,https://arxiv.org/abs/2504.21801,
+DeepSeek-Prover-V2-7B (CoT),miniF2F-test,1024.0,pass_at_k,0.799,accuracy,exact_text,DeepSeek-Prover-V2 paper,https://arxiv.org/abs/2504.21801,
+DeepSeek-Prover-V2-7B (CoT),miniF2F-test,8192.0,pass_at_k,0.82,accuracy,exact_text,DeepSeek-Prover-V2 paper,https://arxiv.org/abs/2504.21801,
+DeepSeek-Prover-V2-671B (non-CoT),miniF2F-test,1.0,pass_at_k,0.595,accuracy,exact_text,DeepSeek-Prover-V2 paper,https://arxiv.org/abs/2504.21801,
+DeepSeek-Prover-V2-671B (non-CoT),miniF2F-test,32.0,pass_at_k,0.738,accuracy,exact_text,DeepSeek-Prover-V2 paper,https://arxiv.org/abs/2504.21801,
+DeepSeek-Prover-V2-671B (non-CoT),miniF2F-test,1024.0,pass_at_k,0.767,accuracy,exact_text,DeepSeek-Prover-V2 paper,https://arxiv.org/abs/2504.21801,
+DeepSeek-Prover-V2-671B (non-CoT),miniF2F-test,8192.0,pass_at_k,0.783,accuracy,exact_text,DeepSeek-Prover-V2 paper,https://arxiv.org/abs/2504.21801,
+DeepSeek-Prover-V2-671B (CoT),ProofNet-test,32.0,pass_at_k,0.305,accuracy,exact_text,DeepSeek-Prover-V2 paper,https://arxiv.org/abs/2504.21801,
+DeepSeek-Prover-V2-671B (CoT),ProofNet-test,128.0,pass_at_k,0.336,accuracy,exact_text,DeepSeek-Prover-V2 paper,https://arxiv.org/abs/2504.21801,
+DeepSeek-Prover-V2-671B (CoT),ProofNet-test,1024.0,pass_at_k,0.371,accuracy,exact_text,DeepSeek-Prover-V2 paper,https://arxiv.org/abs/2504.21801,
+DeepSeek-Prover-V2-671B (CoT),PutnamBench,32.0,pass_at_k,0.033,solve_rate,exact_text,DeepSeek-Prover-V2 paper,https://arxiv.org/abs/2504.21801,
+DeepSeek-Prover-V2-671B (CoT),PutnamBench,128.0,pass_at_k,0.05,solve_rate,exact_text,DeepSeek-Prover-V2 paper,https://arxiv.org/abs/2504.21801,
+DeepSeek-Prover-V2-671B (CoT),PutnamBench,1024.0,pass_at_k,0.074,solve_rate,exact_text,DeepSeek-Prover-V2 paper,https://arxiv.org/abs/2504.21801,
+DeepSeek-Prover-V2-671B (CoT),ProverBench,32.0,pass_at_k,0.529,accuracy,exact_text,DeepSeek-Prover-V2 paper,https://arxiv.org/abs/2504.21801,
+DeepSeek-Prover-V2-671B (CoT),ProverBench,128.0,pass_at_k,0.565,accuracy,exact_text,DeepSeek-Prover-V2 paper,https://arxiv.org/abs/2504.21801,
+DeepSeek-Prover-V2-671B (CoT),ProverBench,512.0,pass_at_k,0.591,accuracy,exact_text,DeepSeek-Prover-V2 paper,https://arxiv.org/abs/2504.21801,
+Claude 3.7 Sonnet (extended thinking),GPQA Diamond,256.0,n_samples_64k_budget,0.848,accuracy,exact_text,Anthropic Extended Thinking blog Feb 2025,https://www.anthropic.com/news/visible-extended-thinking,
+Claude 3.7 Sonnet (extended thinking),GPQA Diamond (Physics),256.0,n_samples_64k_budget,0.965,accuracy,exact_text,Anthropic Extended Thinking blog Feb 2025,https://www.anthropic.com/news/visible-extended-thinking,
+Kimi k1.5 (long-CoT),AIME 2024,,long_cot,0.775,pass@1,exact_text,Kimi k1.5 paper Table 2,https://arxiv.org/abs/2501.12599,
+Kimi k1.5 (short-CoT),AIME 2024,,short_cot,0.608,pass@1,exact_text,Kimi k1.5 paper Table 3,https://arxiv.org/abs/2501.12599,
+Kimi k1.5 (long-CoT),MATH-500,,long_cot,0.962,em,exact_text,Kimi k1.5 paper Table 2,https://arxiv.org/abs/2501.12599,
+Kimi k1.5 (short-CoT),MATH-500,,short_cot,0.946,em,exact_text,Kimi k1.5 paper Table 3,https://arxiv.org/abs/2501.12599,
+Kimi k1.5 (long-CoT),LiveCodeBench,,long_cot,0.625,pass@1,exact_text,Kimi k1.5 paper Table 2,https://arxiv.org/abs/2501.12599,
+Kimi k1.5 (short-CoT),LiveCodeBench,,short_cot,0.473,pass@1,exact_text,Kimi k1.5 paper Table 3,https://arxiv.org/abs/2501.12599,
+Kimi k1.5 (long-CoT),Codeforces,,long_cot,0.94,percentile,exact_text,Kimi k1.5 paper Table 2,https://arxiv.org/abs/2501.12599,
+Kimi k1.5,AIME 2024,2500.0,mean_response_tokens,0.15,accuracy,figure_estimate,Kimi k1.5 paper Fig 6,https://arxiv.org/abs/2501.12599,
+Kimi k1.5,AIME 2024,7500.0,mean_response_tokens,0.3,accuracy,figure_estimate,Kimi k1.5 paper Fig 6,https://arxiv.org/abs/2501.12599,
+Kimi k1.5,AIME 2024,12500.0,mean_response_tokens,0.4,accuracy,figure_estimate,Kimi k1.5 paper Fig 6,https://arxiv.org/abs/2501.12599,
+Kimi k1.5,AIME 2024,17500.0,mean_response_tokens,0.5,accuracy,figure_estimate,Kimi k1.5 paper Fig 6,https://arxiv.org/abs/2501.12599,
+Kimi k1.5,MATH-500,2500.0,mean_response_tokens,0.8,accuracy,figure_estimate,Kimi k1.5 paper Fig 6,https://arxiv.org/abs/2501.12599,
+Kimi k1.5,MATH-500,7500.0,mean_response_tokens,0.88,accuracy,figure_estimate,Kimi k1.5 paper Fig 6,https://arxiv.org/abs/2501.12599,
+Kimi k1.5,MATH-500,12500.0,mean_response_tokens,0.92,accuracy,figure_estimate,Kimi k1.5 paper Fig 6,https://arxiv.org/abs/2501.12599,
+Kimi k1.5,MATH-500,17500.0,mean_response_tokens,0.94,accuracy,figure_estimate,Kimi k1.5 paper Fig 6,https://arxiv.org/abs/2501.12599,
+Kimi k1.5,GPQA,2500.0,mean_response_tokens,0.15,accuracy,figure_estimate,Kimi k1.5 paper Fig 6,https://arxiv.org/abs/2501.12599,
+Kimi k1.5,GPQA,7500.0,mean_response_tokens,0.3,accuracy,figure_estimate,Kimi k1.5 paper Fig 6,https://arxiv.org/abs/2501.12599,
+Kimi k1.5,GPQA,12500.0,mean_response_tokens,0.4,accuracy,figure_estimate,Kimi k1.5 paper Fig 6,https://arxiv.org/abs/2501.12599,
+Kimi k1.5,GPQA,17500.0,mean_response_tokens,0.48,accuracy,figure_estimate,Kimi k1.5 paper Fig 6,https://arxiv.org/abs/2501.12599,
+Kimi k1.5,OMNI-MATH500,2500.0,mean_response_tokens,0.32,accuracy,figure_estimate,Kimi k1.5 paper Fig 6,https://arxiv.org/abs/2501.12599,
+Kimi k1.5,OMNI-MATH500,7500.0,mean_response_tokens,0.42,accuracy,figure_estimate,Kimi k1.5 paper Fig 6,https://arxiv.org/abs/2501.12599,
+Kimi k1.5,OMNI-MATH500,12500.0,mean_response_tokens,0.5,accuracy,figure_estimate,Kimi k1.5 paper Fig 6,https://arxiv.org/abs/2501.12599,
+Kimi k1.5,OMNI-MATH500,17500.0,mean_response_tokens,0.55,accuracy,figure_estimate,Kimi k1.5 paper Fig 6,https://arxiv.org/abs/2501.12599,
+Kimi k1.5 (short w/ RL),AIME 2024,3272.0,mean_response_tokens,0.608,pass@1,exact_text,Kimi k1.5 paper Fig 7/text,https://arxiv.org/abs/2501.12599,
+Kimi k1.5 (long-CoT),MATH-500,17500.0,mean_response_tokens,0.962,em,figure_estimate,Kimi k1.5 paper Fig 7,https://arxiv.org/abs/2501.12599,
+Kimi k1.5 (short w/ RL),MATH-500,800.0,mean_response_tokens,0.946,em,figure_estimate,Kimi k1.5 paper Fig 7,https://arxiv.org/abs/2501.12599,
+Kimi k1.5 (small),OMNI-MATH500,,slope_acc_per_token,3.33e-05,slope,exact_text,Kimi k1.5 paper Fig 8,https://arxiv.org/abs/2501.12599,
+Kimi k1.5 (large),OMNI-MATH500,,slope_acc_per_token,6.42e-05,slope,exact_text,Kimi k1.5 paper Fig 8,https://arxiv.org/abs/2501.12599,
+Kimi k1.5 (small),AIME 2024,,slope_acc_per_token,5.9e-05,slope,exact_text,Kimi k1.5 paper Fig 8,https://arxiv.org/abs/2501.12599,
+Kimi k1.5 (large),AIME 2024,,slope_acc_per_token,8.1e-05,slope,exact_text,Kimi k1.5 paper Fig 8,https://arxiv.org/abs/2501.12599,
+Kimi k1.5 (small),MATH-500,,slope_acc_per_token,2.45e-05,slope,exact_text,Kimi k1.5 paper Fig 8,https://arxiv.org/abs/2501.12599,
+Kimi k1.5 (large),MATH-500,,slope_acc_per_token,2e-05,slope,exact_text,Kimi k1.5 paper Fig 8,https://arxiv.org/abs/2501.12599,
+Kimi k1.5 (small),AIMO 2024,,slope_acc_per_token,3.25e-05,slope,exact_text,Kimi k1.5 paper Fig 8,https://arxiv.org/abs/2501.12599,
+Kimi k1.5 (large),AIMO 2024,,slope_acc_per_token,6.84e-05,slope,exact_text,Kimi k1.5 paper Fig 8,https://arxiv.org/abs/2501.12599,
+AlphaProof,miniF2F-valid,,ttrl_final,1.0,solve_rate,exact_text,AlphaProof Nature 2025,https://www.nature.com/articles/s41586-025-09833-y,
+AlphaProof,formal-imo (number theory),,ttrl_final,0.757,solve_rate,exact_text,AlphaProof Nature 2025,https://www.nature.com/articles/s41586-025-09833-y,
+AlphaProof,formal-imo (algebra),,ttrl_final,0.726,solve_rate,exact_text,AlphaProof Nature 2025,https://www.nature.com/articles/s41586-025-09833-y,
+AlphaProof,formal-imo (combinatorics),,ttrl_final,0.203,solve_rate,exact_text,AlphaProof Nature 2025,https://www.nature.com/articles/s41586-025-09833-y,
+AlphaProof,IMO 2024,,multi_day_compute,0.6,problems_solved,exact_text,AlphaProof Nature 2025,https://www.nature.com/articles/s41586-025-09833-y,
+Gemini Deep Think (Jan 2026),IMO-ProofBench Advanced,,peak_compute,0.9,accuracy,figure_estimate,DeepMind Deep Think blog,https://deepmind.google/blog/accelerating-mathematical-and-scientific-discovery-with-gemini-deep-think/,
+Gemini Deep Think (Jul 2025),IMO-ProofBench Advanced,,peak_compute,0.75,accuracy,figure_estimate,DeepMind Deep Think blog,https://deepmind.google/blog/accelerating-mathematical-and-scientific-discovery-with-gemini-deep-think/,
+Gemini Deep Think (Jan 2026),FutureMath Basic,,peak_compute,0.38,accuracy,figure_estimate,DeepMind Deep Think blog,https://deepmind.google/blog/accelerating-mathematical-and-scientific-discovery-with-gemini-deep-think/,
+,,,,,,,,,
