@@ -1,0 +1,25 @@
+name: Sync to Public Repository
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:  # Allow manual trigger
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Full history for proper sync
+          persist-credentials: false  # Don't override our custom credentials
+
+      - name: Push to public repository
+        env:
+          PUBLIC_REPO_TOKEN: ${{ secrets.PUBLIC_REPO_TOKEN }}
+        run: |
+          git config --global url."https://x-access-token:${PUBLIC_REPO_TOKEN}@github.com/".insteadOf "https://github.com/"
+          git remote add public https://github.com/epoch-research/eci-public.git
+          git push public main:main --force
