@@ -1,0 +1,1712 @@
+[
+  {
+    "id": "2024-Mock-AIME-Problem-01",
+    "epoch": 1,
+    "input": "Compute the number of real numbers $x$ such that $0 < x \\le 100$ and $ x^2 = \\floor{x} \\cdot \\ceiling{x}. $",
+    "target": "199",
+    "metadata": {
+      "solution": "We consider two disjoint cases. \\begin{itemize} \\ii If $x$ is an integer, then it obviously works. Thus, we get $100$ solutions for $x \\in \\{1,2,\\dots,100\\}$. \\ii Now suppose $x$ is not an integer, so we may set $n = \\left\\lfloor x \\right\\rfloor$ and $n+1 = \\left\\lceil x \\right\\rceil$. Then, the equation reads $ x^2 = n(n+1) \\implies x = \\sqrt{n(n+1)}. $ In other words, for each integer $n$, there is \\emph{at most} one non-integer value of $x$ fulfilling the equation in the range $n < x < n+1$, namely $x = \\sqrt{n(n+1)}$. On the other hand, the inequality $n < \\sqrt{n(n+1)} < n+1$ is true for all $n \\geq 1$. So each of the intervals $(1,2)$, $(2,3)$, \\dots, $(99,100)$ does indeed have exactly one valid solution; namely, $x = \\sqrt{n(n+1)}$ for the $n$th interval. \\end{itemize} In total, we obtain $100 + 99 = \\boxed{199}$ solutions."
+    },
+    "scores": {
+      "model_extracted_exact_match": {
+        "value": "C"
+      },
+      "model_graded": {
+        "value": "C"
+      }
+    },
+    "model_usage": {
+      "anthropic/claude-sonnet-4-5-20250929": {
+        "input_tokens": 132,
+        "output_tokens": 9772,
+        "total_tokens": 9904,
+        "input_tokens_cache_write": 0,
+        "input_tokens_cache_read": 0,
+        "reasoning_tokens": 3645
+      },
+      "google/gemini-2.0-flash-001": {
+        "input_tokens": 2030,
+        "output_tokens": 5,
+        "total_tokens": 2035,
+        "reasoning_tokens": 0
+      }
+    },
+    "total_time": 122.112,
+    "working_time": 120.127,
+    "uuid": "cFxH7KpJLpbUdiHkLyWvze",
+    "retries": 0,
+    "completed": true
+  },
+  {
+    "id": "2024-Mock-AIME-Problem-02",
+    "epoch": 1,
+    "input": "Evan throws a dart at regular hexagon $BOATIS$, which lands at a uniformly random point inside the hexagon. The probability the dart lands in the interior of exactly one of the quadrilaterals $BOAT$ and $OTIS$ can be expressed as $\\frac{m}{n}$, where $m$ and $n$ are relatively prime positive integers. Compute $m + n$.",
+    "target": "005",
+    "metadata": {
+      "solution": "Define $E = \\ol{OS} \\cap \\ol{TB}$, which by symmetry is also the midpoint of $OS$. Then we want to find the value of $ \\frac{[OAT] + [BOE] + [SITE]}{[BOATIS]}. $ The numerator corresponds to the shaded region below. \\begin{center} \\begin{asy} size(5cm); pair b, o, a, t, i, s, e; b = dir(0); o = dir(60); a = dir(120); t = dir(180); i = dir(240); s = dir(300); e = (o+s)/2; draw(b--o--a--t--i--s--cycle); filldraw(o--a--t--cycle, opacity(0.2)+purple); filldraw(b--o--e--cycle, opacity(0.2)+purple); filldraw(s--i--t--e--cycle, opacity(0.2)+purple); label(\"$B$\", b, b); label(\"$O$\", o, o); label(\"$A$\", a, a); label(\"$T$\", t, t); label(\"$I$\", i, i); label(\"$S$\", s, s); label(\"$E$\", e, dir(225)); \\end{asy} \\end{center} Since $[BOE] = [BSE]$, it follows that $ [OAT] + [BOE] + [SITE] = [OAT] + [BTIS]. $ However, in the following diagrams, we can see by symmetry that $[BTIS]$ is half of the hexagon while $[OAT]$ is one-sixth of the hexagon, respectively: \\begin{center} \\begin{asy} size(7cm); pair b, o, a, t, i, s, e; b..."
+    },
+    "scores": {
+      "model_extracted_exact_match": {
+        "value": "C"
+      },
+      "model_graded": {
+        "value": "C"
+      }
+    },
+    "model_usage": {
+      "anthropic/claude-sonnet-4-5-20250929": {
+        "input_tokens": 179,
+        "output_tokens": 23745,
+        "total_tokens": 23924,
+        "input_tokens_cache_write": 0,
+        "input_tokens_cache_read": 0,
+        "reasoning_tokens": 8006
+      },
+      "google/gemini-2.0-flash-001": {
+        "input_tokens": 2678,
+        "output_tokens": 5,
+        "total_tokens": 2683,
+        "reasoning_tokens": 0
+      }
+    },
+    "total_time": 282.744,
+    "working_time": 280.815,
+    "uuid": "P5YFPMARB3ZT2MmJKa6qtJ",
+    "retries": 0,
+    "completed": true
+  },
+  {
+    "id": "2024-Mock-AIME-Problem-03",
+    "epoch": 1,
+    "input": "Perry the Panda is eating some bamboo over a five-day period from Monday to Friday (inclusive). On Monday, he eats $14$ pieces of bamboo. Each following day, Perry eats either one less than three times the previous day or one more than the previous day, with equal probability. Compute the expected number of pieces of bamboo Perry has eaten throughout the week after the end of Friday.",
+    "target": "434",
+    "metadata": {
+      "solution": "We show two ways to write the solution; one elementary, and one using more advanced notation. These solutions are actually equivalent; that is, the second solution is a more opaque but succinct way of showing the first. \\paragraph{Elementary solution.} Consider the binary tree showing the $16$ possible outcomes as shown below. (The student is NOT expected to actually compute any entries in the tree; however we wrote them out anyway just to make the figure easier to follow.) \\begin{center} \\begin{asy} size(13cm); for (int i=0; i<=3; ++i) { for (int j=0; j<2**i; ++j) { transform sh = shift(-(16-2**(3-i)), 3*(3-i)); path cherry = (0,0)--(2**(3-i),3)--(2**(4-i),0); draw( shift(j*2**(5-i),0) * sh * cherry, grey ); } } dot(\"$14$\", (0,12), dir(90)); dot(\"$15$\", (-8,9), dir(90)); dot(\"$41$\", (8,9), dir(90)); dot( \"$16$\", (-12,6), dir(90)); dot( \"$44$\", (-4,6), dir(90)); dot( \"$42$\", (4,6), dir(90)); dot(\"$122$\", (12,6), dir(90)); dot( \"$17$\", (-14,3), dir(90)); dot( \"$47$\", (-10,3), dir(90)); dot( \"$45$\", (-6,3),..."
+    },
+    "scores": {
+      "model_extracted_exact_match": {
+        "value": "C"
+      },
+      "model_graded": {
+        "value": "C"
+      }
+    },
+    "model_usage": {
+      "anthropic/claude-sonnet-4-5-20250929": {
+        "input_tokens": 175,
+        "output_tokens": 1999,
+        "total_tokens": 2174,
+        "input_tokens_cache_write": 0,
+        "input_tokens_cache_read": 0,
+        "reasoning_tokens": 785
+      },
+      "google/gemini-2.0-flash-001": {
+        "input_tokens": 1912,
+        "output_tokens": 5,
+        "total_tokens": 1917,
+        "reasoning_tokens": 0
+      }
+    },
+    "total_time": 27.846,
+    "working_time": 25.968,
+    "uuid": "XxeLQSrmGtxhJ9d9voQ5Fk",
+    "retries": 0,
+    "completed": true
+  },
+  {
+    "id": "2024-Mock-AIME-Problem-04",
+    "epoch": 1,
+    "input": "Let $N$ denote the number of $7$-tuples of positive integers $(a_1, \\dots, a_7)$ such that for each $i = 1, \\dots, 7$, we have $ 1 \\leq a_i \\leq 7 \\quad\\text{and}\\quad a_{a_i} = a_i. $ Compute the remainder when $N$ is divided by $1000$.",
+    "target": "322",
+    "metadata": {
+      "solution": "Given a $7$-tuple satisfying the given condition, let $S$ be the set of all of integers appearing at least once. Then the condition is equivalent to the tuple satisfying $a_i=i$ for all $i \\in S$, because this means that $a_{a_i} = i$, so $a_{a_i} = a_i$. Now, we apply casework on $k = |S|$. There are $\\binom{7}{k}$ ways to choose a subset of $S$ with fixed cardinality $k$, and there are $k^{7-k}$ ways to choose $a_j$ for $j \\notin S$. Thus, \\begin{align*} N &= \\sum_{k=1}^{7} \\binom{7}{k} k^{7-k} \\\\ &= 7 \\cdot 1 + 21 \\cdot 32 + 35 \\cdot 81 + 35 \\cdot 64 + 21 \\cdot 25 + 7 \\cdot 6 + 1 \\cdot 1 \\\\ &= 7 + 672 + 2835 + 2240 + 525 + 42 + 1 = 6322. \\end{align*} This gives the answer $\\boxed{322}$."
+    },
+    "scores": {
+      "model_extracted_exact_match": {
+        "value": "C"
+      },
+      "model_graded": {
+        "value": "C"
+      }
+    },
+    "model_usage": {
+      "anthropic/claude-sonnet-4-5-20250929": {
+        "input_tokens": 189,
+        "output_tokens": 8162,
+        "total_tokens": 8351,
+        "input_tokens_cache_write": 0,
+        "input_tokens_cache_read": 0,
+        "reasoning_tokens": 2561
+      },
+      "google/gemini-2.0-flash-001": {
+        "input_tokens": 2380,
+        "output_tokens": 5,
+        "total_tokens": 2385,
+        "reasoning_tokens": 0
+      }
+    },
+    "total_time": 94.533,
+    "working_time": 92.709,
+    "uuid": "KpcWXvFK9jGgcanjzjWihL",
+    "retries": 0,
+    "completed": true
+  },
+  {
+    "id": "2024-Mock-AIME-Problem-05",
+    "epoch": 1,
+    "input": "Convex pentagon $ABCDE$ is inscribed in circle $\\omega$ such that $\\frac{AC}{DE} = \\frac 23$, $AE = CD$, and $AB = BC$. Suppose the distance from $B$ to line $AC$ is $144$ and the distance from $B$ to line $DE$ is $864$. Compute the radius of $\\omega$.",
+    "target": "648",
+    "metadata": {
+      "solution": "The condition $AE = CD$ implies that $ACDE$ is an isosceles trapezoid while the condition $AB = BC$ implies that $B$ is the midpoint of arc $AC$ (not containing $D$ and $E$), as shown in the figure below. Note that this means the perpendicular bisectors of lines $AC$ and $DE$ coincide and pass through $B$. Let $M$ and $N$ denote the midpoints of $\\ol{AC}$ and $\\ol{DE}$ (so that line $BMN$ is perpendicular to the bases of the trapezoid $ACDE$). Let $AM = MC = 2x$, so $EN = ND = 3x$. Finally, let $X$ be diametrically opposite from $B$ and $NX = y$. \\begin{center} \\begin{asy} filldraw(unitcircle, opacity(0.1)+lightcyan, blue); pair B = dir(90); pair A = dir(130); pair E = dir(195); pair C = B*B/A; pair D = B*B/E; filldraw(A--B--C--D--E--cycle, opacity(0.2)+yellow, blue); draw(A--C, blue); draw(D--E, blue); pair M = midpoint(A--C); pair N = midpoint(D--E); pair X = dir(270); draw(B--X, red); label(\"$144$\", midpoint(B--M), dir(0), red); label(\"$720$\", midpoint(M--N), dir(0), red); label(\"$y$\", midpoint(N--X),..."
+    },
+    "scores": {
+      "model_extracted_exact_match": {
+        "value": "C"
+      },
+      "model_graded": {
+        "value": "C"
+      }
+    },
+    "model_usage": {
+      "anthropic/claude-sonnet-4-5-20250929": {
+        "input_tokens": 183,
+        "output_tokens": 27812,
+        "total_tokens": 27995,
+        "input_tokens_cache_write": 0,
+        "input_tokens_cache_read": 0,
+        "reasoning_tokens": 10048
+      },
+      "google/gemini-2.0-flash-001": {
+        "input_tokens": 2946,
+        "output_tokens": 5,
+        "total_tokens": 2951,
+        "reasoning_tokens": 0
+      }
+    },
+    "total_time": 350.893,
+    "working_time": 349.167,
+    "uuid": "dLYvvTdncVt7L9dSWC9qtZ",
+    "retries": 0,
+    "completed": true
+  },
+  {
+    "id": "2024-Mock-AIME-Problem-06",
+    "epoch": 1,
+    "input": "For each real number $k > 0$, let $S(k)$ denote the set of real numbers $x$ satisfying $ \\left\\lfloor x \\right\\rfloor \\cdot \\left( x - \\left\\lfloor x \\right\\rfloor \\right) = kx. $ The set of positive real numbers $k$ such that $S(k)$ has exactly $24$ elements is a half-open interval of length $\\ell$. Compute $1/\\ell$.",
+    "target": "506",
+    "metadata": {
+      "solution": "We present a (rigorous!) approach using the graph of the function, and one using only algebra. (This is a rare problem where graphical intuition is unusually useful.) \\paragraph{Graph-based solution.} Below in red, we have illustrated the graph of $ y = \\left\\lfloor x \\right\\rfloor \\cdot \\left( x - \\left\\lfloor x \\right\\rfloor \\right). $ We are trying to choose $k > 0$ such that $y = kx$, (a line through the origin with slope $k$ drawn in blue) meets the red graph in $24$ points. \\begin{center} \\begin{asy} size(12cm); real h = 6.7; draw((-h,0)--(h,0), Arrows); draw((0,-h)--(0,h), Arrows); dotfactor *= 2; real m = 1.43; real t = 4.7; draw((-t, -m*t)--(t, m*t), blue, Arrows); for (int n=-floor(h); n<floor(h); ++n) { pair P = (n,0); pair Q = (n+1,n); draw(P--Q, red+1.4); dot(P, red); dot(Q, red, UnFill); dot(Q, red, Draw); if (n < 0) { label(\"$\"+(string)n+\"$\", P, dir(90), red); label(\"$(\"+(string)(n+1)+\",\"+(string)n+\")$\", Q, dir(315), red); label(\"$J_{\"+(string)(-n)+\"}$\", midpoint(P--Q), dir(210), darkgrey);..."
+    },
+    "scores": {
+      "model_extracted_exact_match": {
+        "value": "C"
+      },
+      "model_graded": {
+        "value": "C"
+      }
+    },
+    "model_usage": {
+      "anthropic/claude-sonnet-4-5-20250929": {
+        "input_tokens": 207,
+        "output_tokens": 20110,
+        "total_tokens": 20317,
+        "input_tokens_cache_write": 0,
+        "input_tokens_cache_read": 0,
+        "reasoning_tokens": 8302
+      },
+      "google/gemini-2.0-flash-001": {
+        "input_tokens": 2746,
+        "output_tokens": 5,
+        "total_tokens": 2751,
+        "reasoning_tokens": 0
+      }
+    },
+    "total_time": 258.672,
+    "working_time": 257.004,
+    "uuid": "HN3grhsktnB2rzTRpkzn8d",
+    "retries": 0,
+    "completed": true
+  },
+  {
+    "id": "2024-Mock-AIME-Problem-07",
+    "epoch": 1,
+    "input": "Compute the number of $9$-tuples $(a_0, a_1, \\dots, a_8)$ of integers such that $a_i \\in \\{-1, 0, 1\\}$ for $i = 0, 1, \\dots, 8$ and the polynomial $ a_8x^8 + a_7x^7 + \\dots + a_1x + a_0 $ is divisible by $x^2 + x + 1$.",
+    "target": "831",
+    "metadata": {
+      "solution": "First, we give a necessary and sufficient condition for divisibility. \\begin{claim*} The divisibility occurs if and only if $ a_6+a_3+a_0 = a_7+a_4+a_1 = a_8+a_5+a_2. $ \\end{claim*} \\begin{proof} Notice that $x^3 \\equiv 1 \\pmod{x^2+x+1}$; in other words, we may take all exponents modulo $3$. Consequently, the original polynomial satisfies the congruences \\begin{align*} &\\phantom= a_8x^8 + a_7x^7 + \\dots + a_1x + a_0 \\\\ &\\equiv a_8 x^2 + a_7 x^1 + a_6 x^0 + a_5 x^2 + \\dots + a_1 x + a_0 \\pmod{x^2+x+1} \\\\ &= (a_8+a_5+a_2)x^2 + (a_7+a_4+a_1)x + (a_6+a_3+a_0). \\end{align*} This implies the result. \\end{proof} To extract the count, we will do casework by the value of the common sum $ S \\coloneqq a_6+a_3+a_0 = a_8+a_5+a_2 = a_7+a_4+a_1. $ Owing to the symmetry, the contribution for a given $S$ will be exactly the cube of the number of triplets achieving that sum $S$. This full list of such triplets is shown below. \\begin{center} \\begin{tabular}{ccc} Value of $S$ & Number & Triplet(s), up to permutation \\\\ \\hline..."
+    },
+    "scores": {
+      "model_extracted_exact_match": {
+        "value": "C"
+      },
+      "model_graded": {
+        "value": "C"
+      }
+    },
+    "model_usage": {
+      "anthropic/claude-sonnet-4-5-20250929": {
+        "input_tokens": 203,
+        "output_tokens": 15932,
+        "total_tokens": 16135,
+        "input_tokens_cache_write": 0,
+        "input_tokens_cache_read": 0,
+        "reasoning_tokens": 5900
+      },
+      "google/gemini-2.0-flash-001": {
+        "input_tokens": 2552,
+        "output_tokens": 5,
+        "total_tokens": 2557,
+        "reasoning_tokens": 0
+      }
+    },
+    "total_time": 184.731,
+    "working_time": 183.12,
+    "uuid": "BY54oy8s4xdTge9c8H5jMv",
+    "retries": 0,
+    "completed": true
+  },
+  {
+    "id": "2024-Mock-AIME-Problem-08",
+    "epoch": 1,
+    "input": "Let $n \\geq k \\geq 1$ be integers such that the binomial coefficient $\\binom nk$ is a multiple of $1000$. Compute the smallest possible value of $n + k$.",
+    "target": "132",
+    "metadata": {
+      "solution": "Write $ \\binom nk = \\frac{n!}{k!(n-k)!} = \\frac{n \\cdot (n-1) \\cdot \\dots \\cdot (n - k + 1)}{1 \\cdot 2 \\cdot \\dots \\cdot k}. $ We start with the following necessary (but not sufficient) condition: \\begin{claim*} Whenever $\\binom nk$ is divisible by $1000$, the set $ S = \\left\\{ n, n-1, \\dots, n-k+1 \\right\\} $ must contain both a multiple of $125$ and a multiple of $8$. \\end{claim*} \\begin{proof} The numerator of $\\binom nk$ must contain $3$ more factors of $5$ than the denominator. Since there are $k$ consecutive terms in both the numerator and denominator, the number of multiples of $5$ in the numerator is at most $1$ more than the denominator. The same holds with multiples of $25$. Therefore, one of the numbers in the numerator must contain a multiple of $125$. An identical argument applies with powers of $2$, meaning we must have a multiple of $8$ in $S$. \\end{proof} We now split our search into a few cases: \\begin{itemize} \\ii Suppose $125 \\in S$. Then if $S$ contains multiples of $8$, either $120 \\in..."
+    },
+    "scores": {
+      "model_extracted_exact_match": {
+        "value": "I"
+      },
+      "model_graded": {
+        "value": "I"
+      }
+    },
+    "model_usage": {
+      "anthropic/claude-sonnet-4-5-20250929": {
+        "input_tokens": 137,
+        "output_tokens": 32507,
+        "total_tokens": 32644,
+        "input_tokens_cache_write": 0,
+        "input_tokens_cache_read": 0,
+        "reasoning_tokens": 10761
+      },
+      "google/gemini-2.0-flash-001": {
+        "input_tokens": 2320,
+        "output_tokens": 7,
+        "total_tokens": 2327,
+        "reasoning_tokens": 0
+      }
+    },
+    "total_time": 367.573,
+    "working_time": 366.016,
+    "uuid": "NtUW9QCKcrq8Nj3aAbc6Du",
+    "retries": 0,
+    "completed": true
+  },
+  {
+    "id": "2024-Mock-AIME-Problem-09",
+    "epoch": 1,
+    "input": "Let $\\omega$ be a circle with center $O$ and radius $12$. Points $A$, $B$, and $C$ are chosen uniformly at random on the circumference of $\\omega$. Let $H$ denote the orthocenter of $\\triangle ABC$. Compute the expected value of $OH^2$.",
+    "target": "432",
+    "metadata": {
+      "solution": "\\paragraph{First solution using complex numbers.} We first consider the analogous problem where $\\omega$ has radius $1$ instead of $12$ (and will multiply the answer by $144$ to account for scaling at the end). Denote the points $A$, $B$, and $C$, by $a$, $b$, and $c$ in the complex plane, lying on the unit circle. It is well known that $H = a+b+c$; therefore, \\begin{align*} OH^2 &= |a+b+c|^2 = (a+b+c)(\\overline{a+b+c}) = (a+b+c)\\left(\\frac{1}{a} + \\frac{1}{b} + \\frac{1}{c}\\right) \\\\ &= 3 + \\frac ab + \\frac ba + \\frac bc + \\frac cb + \\frac ca + \\frac ac. \\end{align*} We now claim the six nonconstant terms each have expected value $0$. To see why this is true, observe that if we fix $b$, $\\frac{a}{b}$ is just $a$ shifted counterclockwise by an angle of $\\arg b$, so it still reflects a uniform point on the unit circle. Therefore, the expected value of this term is just $0$. A similar argument applies to each of the five other terms. Thus, our expected value is just $3$. Finally, we multiply by $144$ to..."
+    },
+    "scores": {
+      "model_extracted_exact_match": {
+        "value": "C"
+      },
+      "model_graded": {
+        "value": "C"
+      }
+    },
+    "model_usage": {
+      "anthropic/claude-sonnet-4-5-20250929": {
+        "input_tokens": 164,
+        "output_tokens": 11451,
+        "total_tokens": 11615,
+        "input_tokens_cache_write": 0,
+        "input_tokens_cache_read": 0,
+        "reasoning_tokens": 3263
+      },
+      "google/gemini-2.0-flash-001": {
+        "input_tokens": 2544,
+        "output_tokens": 5,
+        "total_tokens": 2549,
+        "reasoning_tokens": 0
+      }
+    },
+    "total_time": 134.91,
+    "working_time": 133.411,
+    "uuid": "cYgcMiNYY3TbKF7iZY9BKL",
+    "retries": 0,
+    "completed": true
+  },
+  {
+    "id": "2024-Mock-AIME-Problem-10",
+    "epoch": 1,
+    "input": "Compute the number of integers $b \\in \\{1,2,\\dots,1000\\}$ for which there exists positive integers $a$ and $c$ satisfying $ \\gcd(a,b) + \\lcm(b,c) = \\lcm(c,a)^3. $",
+    "target": "026",
+    "metadata": {
+      "solution": "\\paragraph{Solution by Ritwin Narra.} Note that $c$ divides both $\\lcm(b, c)$ and $\\lcm(c, a)$, so it follows that $c \\mid \\gcd(a, b)$ and thus $c$ divides both $a$ and $b$. Thus, we may eliminate $c$ from the equation completely and obtain $ \\gcd(a,b) + b = a^3. $ \\begin{claim*} We can parameterize solutions as $(a, b, c) = (a, a^3 - d, c)$ where $c \\mid d$ and $d \\mid a$ for positive integers $a$. \\end{claim*} \\begin{proof} We already see every solution must take this form from the discussion above. Conversely, all equations on the curve can be verified to work. \\end{proof} Note that $a^3 - a \\le b \\le a^3 - 1$ in any valid $(a,b,c)$. As the closed intervals $[a^3-a, a^3-1]$ are disjoint across $a \\in \\ZZ_{>0}$, the cases for different values of $a$ do not overlap. For a fixed $a$, the number of possible values of $b$ is given by $\\tau(a)$, the number of positive divisors of $a$. We need values of $a$ with $2 \\le a \\le 10$, as shown below: $ \\begin{array}{c|cccc ccccc} a & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 &..."
+    },
+    "scores": {
+      "model_extracted_exact_match": {
+        "value": "C"
+      },
+      "model_graded": {
+        "value": "C"
+      }
+    },
+    "model_usage": {
+      "anthropic/claude-sonnet-4-5-20250929": {
+        "input_tokens": 158,
+        "output_tokens": 24768,
+        "total_tokens": 24926,
+        "input_tokens_cache_write": 0,
+        "input_tokens_cache_read": 0,
+        "reasoning_tokens": 9865
+      },
+      "google/gemini-2.0-flash-001": {
+        "input_tokens": 2390,
+        "output_tokens": 5,
+        "total_tokens": 2395,
+        "reasoning_tokens": 0
+      }
+    },
+    "total_time": 312.446,
+    "working_time": 311.003,
+    "uuid": "7ZAY7ehHtuM67hVqizpMgD",
+    "retries": 0,
+    "completed": true
+  },
+  {
+    "id": "2024-Mock-AIME-Problem-11",
+    "epoch": 1,
+    "input": "Compute the number of ordered triples of positive integers $(a,b,n)$ satisfying $\\max(a,b) \\leq \\min(\\sqrt n, 60)$ and $ \\opname{Arcsin}\\left( \\frac{a}{\\sqrt n} \\right) + \\opname{Arcsin}\\left( \\frac{b}{\\sqrt n} \\right) = \\frac{2\\pi}{3}. $",
+    "target": "640",
+    "metadata": {
+      "solution": "For $x \\geq \\max(a,b)$, define $L(x) \\coloneqq \\opname{Arcsin}(a/x) + \\opname{Arcsin}(b/x)$. \\begin{claim*} The equation $L(x) = \\frac{2\\pi}{3}$ has one solution if $a \\le 2b$ and $b \\le 2a$, else zero. \\end{claim*} \\begin{proof} Now, the function $L$ is strictly decreasing, so there is at most one such value of $x$; and there is one if and only if $ \\frac{2\\pi}{3} \\leq \\max_{x \\ge \\max(a,b)} L(x) = L(\\max(a,b)) = \\frac{\\pi}{2} + \\opname{Arcsin} \\min(a/b, b/a). \\qedhere $ \\end{proof} \\begin{claim*} If $L(x) = \\frac{2\\pi}{3}$, then $x = \\frac{2}{\\sqrt3} \\cdot \\sqrt{a^2-ab+b^2}$. \\end{claim*} \\begin{proof} Construct triangle $ABC$ inscribed in a circle with diameter $x$ with $CA=b$ and $CB=a$, as shown below. By construction, we have $\\angle C = 120\\dg$. \\begin{center} \\begin{asy} size(5cm); pair C = dir(180); pair D = dir(0); pair A = dir(137); pair B = A*dir(120); draw(unitcircle); draw(A--C--B, blue); draw(C--D, grey+dashed); draw(A--B, red); dot(\"$A$\", A, dir(A)); dot(\"$B$\", B, dir(B)); dot(\"$C$\", C,..."
+    },
+    "scores": {
+      "model_extracted_exact_match": {
+        "value": "C"
+      },
+      "model_graded": {
+        "value": "C"
+      }
+    },
+    "model_usage": {
+      "anthropic/claude-sonnet-4-5-20250929": {
+        "input_tokens": 192,
+        "output_tokens": 21471,
+        "total_tokens": 21663,
+        "input_tokens_cache_write": 0,
+        "input_tokens_cache_read": 0,
+        "reasoning_tokens": 7291
+      },
+      "google/gemini-2.0-flash-001": {
+        "input_tokens": 3186,
+        "output_tokens": 5,
+        "total_tokens": 3191,
+        "reasoning_tokens": 0
+      }
+    },
+    "total_time": 213.377,
+    "working_time": 212.013,
+    "uuid": "8H2Trb53HvwzYduPB3nXXL",
+    "retries": 0,
+    "completed": true
+  },
+  {
+    "id": "2024-Mock-AIME-Problem-12",
+    "epoch": 1,
+    "input": "Let $\\mathcal G_n$ denote a triangular grid of side length $n$ consisting of $\\frac{(n+1)(n+2)}{2}$ pegs. Charles the Otter wishes to place some rubber bands along the pegs of $\\mathcal G_n$ such that every edge of the grid is covered by exactly one rubber band (and no rubber band traverses an edge twice). He considers two placements to be different if the sets of edges covered by the rubber bands are different or if any rubber band traverses its edges in a different order. The ordering of which bands are over and under does not matter. For example, Charles finds there are exactly $10$ different ways to cover $\\mathcal G_2$ using exactly two rubber bands; the full list is shown below, with one rubber band in orange and the other in blue. \\begin{center} \\begin{asy} import roundedpath; size(12cm); pair[][] points; transform sh = shift(-1, -sqrt(3)/3); path t = sh*((0,0) -- (1,0) -- (1/2, sqrt(3)/2) -- cycle); picture base; for (int i = 0; i < 3; ++i) { points.push(new pair[]); for (int j = 0; j < 3 - i; ++j) { points[i].push(sh*(j + i/2, i * sqrt(3)/2)); } for (int j = 0; j < 2 - i; ++j) { draw(base, shift((j + i/2, i * sqrt(3)/2)) * t, linewidth(10) + grey); } } void band(picture pic, int[][] p, pen c) { int n = p.length; for (int i = 0; i < n; ++i) { pair A = points[p[i][0]][p[i][1]], B = points[p[(i + 1) draw(pic, roundedpath((A + B) / 2 -- B -- (B + C) / 2, 0.15), white + linewidth(8)); draw(pic, roundedpath((A * 2 + B) / 3 -- B -- (B + C * 2) / 3, 0.15), c + linewidth(4)); } } picture case1; add(case1, base); band(case1, new int[][]{{0,0},{0,2},{2,0}}, orange); band(case1, new int[][]{{1,0},{1,1},{0,1}}, blue); add(case1); picture case2; add(case2, base); band(case2, new int[][]{{1,0},{1,1},{2,0}}, orange); band(case2, new int[][]{{0,0},{0,1},{1,1},{0,2},{0,1},{1,0}}, blue); add(shift(2.5,0)*case2); add(shift(5.0,0)*rotate(120)*case2); add(shift(7.5,0)*rotate(240)*case2); picture case3; add(case3, base); band(case3, new int[][]{{1,0},{1,1},{2,0}}, orange); band(case3, new int[][]{{0,0},{1,0},{0,1},{1,1},{0,2},{0,1}}, blue); add(shift(10.0,0)*case3); add(shift(0,-2.5)*rotate(120)*case3); add(shift(2.5,-2.5)*rotate(240)*case3); picture case4; add(case4, base); band(case4, new int[][]{{0,2},{0,1},{1,0},{2,0}}, orange); band(case4, new int[][]{{0,0},{0,1},{1,1},{1,0}}, blue); add(shift(5.0,-2.5)*case4); add(shift(7.5,-2.5)*rotate(120)*case4); add(shift(10.0,-2.5)*rotate(240)*case4); \\end{asy} \\end{center} Let $N$ denote the total number of ways to cover $\\mathcal G_4$ with \\emph{any number} of rubber bands. Compute the remainder when $N$ is divided by $1000$.",
+    "target": "125",
+    "metadata": {
+      "solution": "The key idea is that one can solve the problem by looking only at individual pegs rather than the entire picture at a whole. At each peg, define two edges using that peg to be a ``pair'' if there is a rubber band through both edges. Then we obtain a ``pairing'' of the edges at each peg. For example, the figure below shows an example placement for $\\mathcal G_4$, with one peg circled in red, and the associated pairing of its six edges. \\begin{center} \\begin{asy} import roundedpath; unitsize(1.5cm); pair[][] points; path t = ((0,0) -- (1,0) -- (1/2, sqrt(3)/2) -- cycle); for (int i = 0; i < 5; ++i) { points.push(new pair[]); for (int j = 0; j < 5 - i; ++j) { points[i].push((j + i/2, i * sqrt(3)/2)); } for (int j = 0; j < 4 - i; ++j) { draw(shift((j + i/2, i * sqrt(3)/2)) * t, linewidth(12) + grey); } } void band(int[][] p, pen c) { int n = p.length; for (int i = 0; i < n; ++i) { pair A = points[p[i][0]][p[i][1]], B = points[p[(i + 1) draw(roundedpath((A + B) / 2 -- B -- (B + C) / 2, 0.15), white +..."
+    },
+    "scores": {
+      "model_extracted_exact_match": {
+        "value": "I"
+      },
+      "model_graded": {
+        "value": "I"
+      }
+    },
+    "model_usage": {
+      "anthropic/claude-sonnet-4-5-20250929": {
+        "input_tokens": 1117,
+        "output_tokens": 21606,
+        "total_tokens": 22723,
+        "input_tokens_cache_write": 0,
+        "input_tokens_cache_read": 0,
+        "reasoning_tokens": 8231
+      },
+      "google/gemini-2.0-flash-001": {
+        "input_tokens": 2034,
+        "output_tokens": 7,
+        "total_tokens": 2041,
+        "reasoning_tokens": 0
+      }
+    },
+    "total_time": 370.588,
+    "working_time": 369.286,
+    "uuid": "6qDyqf28uBFaKryWLEz5WN",
+    "retries": 0,
+    "completed": true
+  },
+  {
+    "id": "2024-Mock-AIME-Problem-13",
+    "epoch": 1,
+    "input": "Let $S$ denote the sum of all integers $n$ such that $1 \\leq n \\leq 2024$ and exactly one of $n^{22}-1$ and $n^{40}-1$ is divisible by $2024$. Compute the remainder when $S$ is divided by $1000$.",
+    "target": "688",
+    "metadata": {
+      "solution": "Notice that $n=2024$ does not work; and when $1 \\le n < 2024$, whenever the number $n$ works so does the number $2024-n$. Therefore, we will have $ S = 1012M $ where $M$ is the \\emph{number} of values of $n$ that work. We know that $\\gcd(n^{22}-1, n^{40}-1) = n^{\\gcd(22,40)} - 1 = n^2-1$. So we are going to analyze three cases: \\begin{itemize} \\ii Let $A_{22}$ be the number of values of $n$ with $n^{22}-1 \\equiv 0 \\pmod{2024}$. \\ii Let $A_{40}$ be the number of values of $n$ with $n^{40}-1 \\equiv 0 \\pmod{2024}$. \\ii Let $A_2$ be the number of values of $n$ with $n^{2}-1 \\equiv 0 \\pmod{2024}$, which is the number of values counted in both $A_{22}$ and $A_{40}$. \\end{itemize} This gives us the following Venn diagram, with the values for $M$ shaded in yellow. \\begin{center} \\begin{asy} size(5cm); defaultpen(fontsize(12pt)); fill(arc((1,0), 1, 240, 120)--arc((0,0), 1, 60, 300)--cycle, yellow); fill(arc((0,0), 1, 420, 300)--arc((1,0), 1, 240, 480)--cycle, yellow); draw(circle((0,0), 1), red); draw(circle((1,0),..."
+    },
+    "scores": {
+      "model_extracted_exact_match": {
+        "value": "C"
+      },
+      "model_graded": {
+        "value": "C"
+      }
+    },
+    "model_usage": {
+      "anthropic/claude-sonnet-4-5-20250929": {
+        "input_tokens": 163,
+        "output_tokens": 31091,
+        "total_tokens": 31254,
+        "input_tokens_cache_write": 0,
+        "input_tokens_cache_read": 0,
+        "reasoning_tokens": 11847
+      },
+      "google/gemini-2.0-flash-001": {
+        "input_tokens": 3290,
+        "output_tokens": 5,
+        "total_tokens": 3295,
+        "reasoning_tokens": 0
+      }
+    },
+    "total_time": 384.312,
+    "working_time": 383.075,
+    "uuid": "mYyzNE3TBa5yBt7eABoLxs",
+    "retries": 0,
+    "completed": true
+  },
+  {
+    "id": "2024-Mock-AIME-Problem-14",
+    "epoch": 1,
+    "input": "Ritwin the Otter has a cardboard equilateral triangle. He cuts the triangle with three congruent line segments of length $x$ spaced at $120^{\\circ}$ angles through the center, obtaining six pieces: three congruent triangles and three congruent quadrilaterals. He then flips all three triangles over, then rearranges all six pieces to form another equilateral triangle with an equiangular hexagonal hole inside it, as shown below. \\begin{center} \\begin{asy} size(10cm); defaultpen(linewidth(1.5)); pen p1 = lightred; pen p2 = deepgreen; pair A = dir(90), B = dir(210), C = dir(-30); draw(A--B--C--cycle); real w = 0.8; pair D = (w * A + (1-w) * C); pair O = (0,0); pair DD = intersectionpoint(D -- ((O - D * 3) - D), B -- C); pair w = (2,0.041); real s = abs(O-D) + abs(D-rotate(120) * DD) + abs(O-DD); path quad = B -- DD -- O -- rotate(120) * D -- cycle; path tri = O -- DD -- rotate(240) * D -- cycle; real alpha = -aTan((D.y - DD.y)/(D.x - DD.x)); transform wtf1 = shift(s / 2, -s / (2 * sqrt(3))) * shift(w) * rotate(alpha); transform wtf2 = shift(abs(D), 0) * shift(-s/2, -s/(2*sqrt(3))) * shift(w) * shift(scale(-1) * xscale(-1) * rotate(240) * D) * xscale(-1); for (int i=0; i<=3; ++i) { filldraw(rotate(120*i) * quad, p2, black); filldraw(rotate(120*i) * tri, p1, black); filldraw(rotate(120*i,w) * wtf1 * quad, p2, black); filldraw(rotate(120*i,w) * wtf2 * tri, p1, black); } \\end{asy} \\end{center} Given that the side lengths of the hole are $3$, $2$, $3$, $2$, $3$, $2$, in that order, the value of $x$ can be written as $\\frac{m}{n}$, where $m$ and $n$ are relatively prime positive integers. Compute $m + n$.",
+    "target": "759",
+    "metadata": {
+      "solution": "Label the lengths in the picture as in the figure below, so that $x=c+d$. \\begin{center} \\begin{asy} size(13cm); defaultpen(fontsize(12pt)); pen p1 = palered; pen p2 = palegreen; pair A = dir(90), B = dir(210), C = dir(-30); draw(A--B--C--cycle); real w = 0.8; pair D = (w * A + (1-w) * C); pair O = (0,0); pair DD = intersectionpoint(D -- ((O - D * 3) - D), B -- C); pair w = (2,0.041); real s = abs(O-D) + abs(D-rotate(120) * DD) + abs(O-DD); path quad = B -- DD -- O -- rotate(120) * D -- cycle; path tri = O -- DD -- rotate(240) * D -- cycle; real alpha = -aTan((D.y - DD.y)/(D.x - DD.x)); transform wtf1 = shift(s / 2, -s / (2 * sqrt(3))) * shift(w) * rotate(alpha); transform wtf2 = shift(abs(D), 0) * shift(-s/2, -s/(2*sqrt(3))) * shift(w) * shift(scale(-1) * xscale(-1) * rotate(240) * D) * xscale(-1); for (int i=0; i<=3; ++i) { filldraw(rotate(120*i) * quad, p2, black); filldraw(rotate(120*i) * tri, p1, black); filldraw(rotate(120*i,w) * wtf1 * quad, p2, black); filldraw(rotate(120*i,w) * wtf2 * tri, p1,..."
+    },
+    "scores": {
+      "model_extracted_exact_match": {
+        "value": "I"
+      },
+      "model_graded": {
+        "value": "I"
+      }
+    },
+    "model_usage": {
+      "anthropic/claude-sonnet-4-5-20250929": {
+        "input_tokens": 712,
+        "output_tokens": 36096,
+        "total_tokens": 36808,
+        "input_tokens_cache_write": 0,
+        "input_tokens_cache_read": 0,
+        "reasoning_tokens": 13054
+      },
+      "google/gemini-2.0-flash-001": {
+        "input_tokens": 364,
+        "output_tokens": 7,
+        "total_tokens": 371,
+        "reasoning_tokens": 0
+      }
+    },
+    "total_time": 482.354,
+    "working_time": 481.171,
+    "uuid": "FyJfK9yHSUwvknVQnnu5Q4",
+    "retries": 0,
+    "completed": true
+  },
+  {
+    "id": "2024-Mock-AIME-Problem-15",
+    "epoch": 1,
+    "input": "A parabola in the Cartesian plane is tangent to the $x$-axis at $(1,0)$ and to the $y$-axis at $(0,3)$. The sum of the coordinates of the vertex of the parabola can be written as $\\frac mn$, where $m$ and $n$ are relatively prime positive integers. Compute $m+n$.",
+    "target": "046",
+    "metadata": {
+      "solution": "\\paragraph{Solution by proposer.} This solution splits cleanly into two halves. The first is computing the equation of the parabola, and the second is extracting the vertex from the equation. We start by identifying the equation of the parabola. \\begin{claim*} The parabola is the zero locus of $ P(x, y) = 9x^2 - 18x + 9 - 6y + y^2 - 6xy. $ \\end{claim*} \\begin{proof} Since $P$ is a conic, its equation should take the form $ P(x,y) = Ax^2 + Bxy + Cy^2 + Dx + Ey + F = 0. $ Our goal is determine all the constants $A$, $B$, \\dots, $F$; these constants will be unique up to scaling. Since $F \\neq 0$ (as the parabola may not pass through the origin; it is already tangent to both axes at different points), we will assume by scaling $F = 9$. Since the parabola is tangent to the $x$-axis at $x=1$, we have that $P(x, 0)$ is of the form $k(x-1)^2$ for some $k$. Similarly, $P(0,y)$ is of the form $\\ell(y-3)^2$ for some $\\ell$. Then these two facts forces $ P(x,y) = 9x^2 - 18x + 9 - 6y + y^2 + Bxy. $ This equation can..."
+    },
+    "scores": {
+      "model_extracted_exact_match": {
+        "value": "I"
+      },
+      "model_graded": {
+        "value": "I"
+      }
+    },
+    "model_usage": {
+      "anthropic/claude-sonnet-4-5-20250929": {
+        "input_tokens": 176,
+        "output_tokens": 19330,
+        "total_tokens": 19506,
+        "input_tokens_cache_write": 0,
+        "input_tokens_cache_read": 0,
+        "reasoning_tokens": 7567
+      },
+      "google/gemini-2.0-flash-001": {
+        "input_tokens": 2424,
+        "output_tokens": 7,
+        "total_tokens": 2431,
+        "reasoning_tokens": 0
+      }
+    },
+    "total_time": 258.873,
+    "working_time": 257.742,
+    "uuid": "AYXPkGFEuT9DtcScnmTpwj",
+    "retries": 0,
+    "completed": true
+  },
+  {
+    "id": "2025-I-Mock-AIME-Problem-01",
+    "epoch": 1,
+    "input": "In a $3 \\times 3$ grid, each cell is empty or contains a penguin. Two penguins are \\emph{angry} at each other if they occupy diagonally adjacent cells. Compute the number of ways to fill the grid so that none of the penguins are angry.",
+    "target": "119",
+    "metadata": {
+      "solution": "The key idea is to color the grid in a checkerboard pattern, and notice that two penguins can only be angry at each other if they occupy squares of the same color. Therefore, we can consider the black squares and white squares independently! Let the corner squares be black. \\begin{center} \\begin{asy} unitsize(3cm); filldraw(shift(0,0)*unitsquare, grey, black); filldraw(shift(0,2)*unitsquare, grey, black); filldraw(shift(2,0)*unitsquare, grey, black); filldraw(shift(2,2)*unitsquare, grey, black); filldraw(shift(1,1)*unitsquare, grey, black); draw(box((0,0), (3,3)), blue+1.5); picture body; pen border = black+1.8; path outline = (0,0)..(0.5,-0.1)..(0.9,0)..(0.9,0)..(1,0.7) ..(0.85,1.3)..(0.4,1.32)..(0.13,1.1)..(0.12,1.08)--(0.12,1.08)..(0.03,0.4) ..(0,0.1)--(-0.1,0.02)--(0,0)..cycle; filldraw(body, (0.8,0.7)--(1.15,0.35)--(0.85,0.4)--cycle, rgb(\"#90a0b0\"), border); filldraw(body, outline, rgb(\"#90a0b0\"), border); filldraw(body, subpath(outline, 0.2, 6.6) --(0.25,0.9)..(0.25,0.7)--(0.44,0.52)--(0.27,0.45)..."
+    },
+    "scores": {
+      "model_extracted_exact_match": {
+        "value": "C"
+      },
+      "model_graded": {
+        "value": "C"
+      }
+    },
+    "model_usage": {
+      "anthropic/claude-sonnet-4-5-20250929": {
+        "input_tokens": 154,
+        "output_tokens": 15385,
+        "total_tokens": 15539,
+        "input_tokens_cache_write": 0,
+        "input_tokens_cache_read": 0,
+        "reasoning_tokens": 5219
+      },
+      "google/gemini-2.0-flash-001": {
+        "input_tokens": 2200,
+        "output_tokens": 5,
+        "total_tokens": 2205,
+        "reasoning_tokens": 0
+      }
+    },
+    "total_time": 197.859,
+    "working_time": 196.805,
+    "uuid": "oTXYYwhLjGoGL7nBekwWAy",
+    "retries": 0,
+    "completed": true
+  },
+  {
+    "id": "2025-I-Mock-AIME-Problem-02",
+    "epoch": 1,
+    "input": "Convex quadrilateral $ABCD$ has $AD = 72$, $\\angle ABC = \\angle ACD = 90\\dg$ and $\\angle BAC = \\angle CAD = 30\\dg$. Let $M$ be the midpoint of $AD$ and let $N$ be the midpoint of $BM$. Compute $CN^2$.",
+    "target": "567",
+    "metadata": {
+      "solution": "The angle conditions imply that triangles $\\triangle ABC$ and $\\triangle ACD$ are $30\\dg$-$60\\dg$-$90\\dg$, as shown in the figure below. As such, it follows then that $AC = \\frac{\\sqrt{3}}{2} \\cdot AD = 36\\sqrt{3}$ so $CB = \\frac{1}{2} \\cdot AC = 18\\sqrt{3}$. Note that since $M$ is the midpoint of the hypotenuse of $\\triangle ADC$, it follows that $MC = MD = MA = \\frac{AD}{2} = 36$. Similarly, $CN = NM = NB$, as $ \\angle MCA = 30\\dg \\text{ and } \\angle ACB = 60\\dg \\implies \\angle MCB = 90\\dg $ implies $N$ is the midpoint of the hypotenuse of right triangle $\\triangle BCM$. \\begin{center} \\begin{asy} size(7cm); pair A = (0,0); pair B = (sqrt(3), 0); pair C = (sqrt(3), 1); pair D = C*C/B; filldraw(A--B--C--D--cycle, opacity(0.1)+lightcyan, blue); draw(A--C, blue); pair M = midpoint(A--D); pair N = midpoint(B--M); draw(B--M--C, red); draw(C--N, red); dot(\"$A$\", A, dir(-90)); dot(\"$B$\", B, dir(-90)); dot(\"$C$\", C, dir(C-A)); dot(\"$D$\", D, dir(D-A)); dot(\"$M$\", M, dir(M-B)); dot(\"$N$\", N, dir(N-C));..."
+    },
+    "scores": {
+      "model_extracted_exact_match": {
+        "value": "C"
+      },
+      "model_graded": {
+        "value": "C"
+      }
+    },
+    "model_usage": {
+      "anthropic/claude-sonnet-4-5-20250929": {
+        "input_tokens": 176,
+        "output_tokens": 17482,
+        "total_tokens": 17658,
+        "input_tokens_cache_write": 0,
+        "input_tokens_cache_read": 0,
+        "reasoning_tokens": 5616
+      },
+      "google/gemini-2.0-flash-001": {
+        "input_tokens": 2728,
+        "output_tokens": 5,
+        "total_tokens": 2733,
+        "reasoning_tokens": 0
+      }
+    },
+    "total_time": 201.675,
+    "working_time": 200.678,
+    "uuid": "bLPGQaC9WLaVnYmL9HJeWh",
+    "retries": 0,
+    "completed": true
+  },
+  {
+    "id": "2025-I-Mock-AIME-Problem-03",
+    "epoch": 1,
+    "input": "Compute the smallest integer $k > 1$ such that there are exactly $10$ even integers $n \\ge 2$ for which $k - n/2$ is divisible by $n$.",
+    "target": "405",
+    "metadata": {
+      "solution": "Replace $n$ with $2m$ in what follows. Then $k - m$ is divisible by $2m$ when it equals $a \\cdot 2m$ for some integer $a$; i.e.\\ we require $k = (2a + 1) \\cdot m$ for some integer $a$. In other words, $k$ needs to be an odd multiple of $m$. Thus, if $k = 2^e \\cdot b$ for some integer $e \\ge 0$ and odd integer $b$, then the number of $m$ for which $k$ is an odd multiple is given by the number of divisors of $b$. We thus can assume $e = 0$ and try to minimize $b$; we need to choose the minimal odd integer $b$ with $10$ positive divisors. Recall that the number of factors of a number is the product of one more than the exponents. Since $10 = 2 \\cdot 5$, this means that either $k = p^9$ or $k = p^4 \\cdot q$ for some primes $p$ and $q$. In the first case $k \\ge 3^9$ and in the second case $k \\ge 3^4 \\cdot 5$; the smaller of these is $3^4 \\cdot 5 = \\boxed{405}$."
+    },
+    "scores": {
+      "model_extracted_exact_match": {
+        "value": "C"
+      },
+      "model_graded": {
+        "value": "C"
+      }
+    },
+    "model_usage": {
+      "anthropic/claude-sonnet-4-5-20250929": {
+        "input_tokens": 132,
+        "output_tokens": 11521,
+        "total_tokens": 11653,
+        "input_tokens_cache_write": 0,
+        "input_tokens_cache_read": 0,
+        "reasoning_tokens": 4394
+      },
+      "google/gemini-2.0-flash-001": {
+        "input_tokens": 2334,
+        "output_tokens": 5,
+        "total_tokens": 2339,
+        "reasoning_tokens": 0
+      }
+    },
+    "total_time": 154.929,
+    "working_time": 153.984,
+    "uuid": "5fH59Y5EpSgn7RZS3AMLdw",
+    "retries": 0,
+    "completed": true
+  },
+  {
+    "id": "2025-I-Mock-AIME-Problem-04",
+    "epoch": 1,
+    "input": "In the Cartesian plane, let $A = (0, 10+12\\sqrt{3})$, $B = (8, 10+12\\sqrt{3})$, $G = (8, 0)$ and $H = (0, 0)$. Compute the number of ways to draw an equiangular dodecagon $\\mathcal P$ in the Cartesian plane such that all side lengths of $\\mathcal P$ are positive integers and line segments $AB$ and $GH$ are both sides of $\\mathcal P$.",
+    "target": "081",
+    "metadata": {
+      "solution": "Name the dodecagon $ABCDEF GHIJKL$ in the obvious way. Notice that the problem is symmetric, so we only need to find the number of ways for half of the dodecagon to be constructed since the two halves are independent. That is, we'll compute the number of ways to place the points $C$, $D$, $E$, $F$ and then square it. \\begin{center} \\begin{asy} size(10cm); pair A = (0, 10+12*sqrt(3)); pair B = (8, 10+12*sqrt(3)); pair G = (8, 0); pair H = (0, 0); pair O = (A+B+G+H)/4; filldraw(A--B--G--H--cycle, palered, brown+1); pair C = B + 5 * dir(-30); pair D = C + 12 * dir(-60); pair E = D + 4 * dir(-90); pair F = E + 12 * dir(-120); draw(B--C--D--E--F--G, grey); dot(\"$A$\", A, dir(A-O)); dot(\"$B$\", B, dir(B-O)); dot(\"$C$\", C, dir(C-O)); dot(\"$D$\", D, dir(D-O)); dot(\"$E$\", E, dir(E-O)); dot(\"$F$\", F, dir(F-O)); dot(\"$G$\", G, dir(G-O)); dot(\"$H$\", H, dir(H-O)); label(\"$a$\", midpoint(B--C), dir(B+C-O), blue); label(\"$b$\", midpoint(C--D), dir(C+D-O), blue); label(\"$c$\", midpoint(D--E), dir(D+E-O), blue); label(\"$d$\",..."
+    },
+    "scores": {
+      "model_extracted_exact_match": {
+        "value": "I"
+      },
+      "model_graded": {
+        "value": "I"
+      }
+    },
+    "model_usage": {
+      "anthropic/claude-sonnet-4-5-20250929": {
+        "input_tokens": 219,
+        "output_tokens": 28357,
+        "total_tokens": 28576,
+        "input_tokens_cache_write": 0,
+        "input_tokens_cache_read": 0,
+        "reasoning_tokens": 9159
+      },
+      "google/gemini-2.0-flash-001": {
+        "input_tokens": 2716,
+        "output_tokens": 7,
+        "total_tokens": 2723,
+        "reasoning_tokens": 0
+      }
+    },
+    "total_time": 367.121,
+    "working_time": 366.231,
+    "uuid": "bSYBpwXLPTW6G5Jf3anKqB",
+    "retries": 0,
+    "completed": true
+  },
+  {
+    "id": "2025-I-Mock-AIME-Problem-05",
+    "epoch": 1,
+    "input": "Let $x$, $y$, and $z$ be complex numbers satisfying $ |x+z| = |y+z| = |x-y| = 4. $ Compute $|x+2y+3z|^2$.",
+    "target": "112",
+    "metadata": {
+      "solution": "Make the substitution $a = x+z$ and $b = y+z$, such that the given condition becomes $ |a| = |b| = |a-b| = 4. $ This means $0$, $a$, and $b$ form an equilateral triangle of side length $4$ in the complex plane. We wish to find $ |x+2y+3z|^2 = |a+2b|^2. $ \\begin{center} \\begin{asy} defaultpen(fontsize(11pt)); pair C = dir(90); pair A = dir(210); pair B = dir(330); filldraw(A--B--C--cycle, opacity(0.1)+lightcyan, blue); dot(\"$a$\", A, dir(A)); dot(\"$b$\", B, dir(B)); dot(\"$0$\", C, dir(C)); pair D = (A-C)+2*(B-C)+C; dot(\"$a+2b$\", D, dir(0)); draw(A--D, deepgreen); draw(C--D, dashed); label(midpoint(A--B), \"$4$\", dir(A+B), blue); label(midpoint(B--C), \"$4$\", dir(B+C), blue); label(midpoint(C--A), \"$4$\", dir(C+A), blue); label(midpoint(A--D), \"$8$\", dir(A), deepgreen); \\end{asy} \\end{center} Considering the complex numbers $0$, $a$, and $a+2b$ as vertices of a triangle. Then the vector joining $a$ to $a+2b$ is $2b$, which has length $8$, as in the figure above. So by the Law of Cosines we have $ |a+2b|^2 = 4^2 +..."
+    },
+    "scores": {
+      "model_extracted_exact_match": {
+        "value": "C"
+      },
+      "model_graded": {
+        "value": "C"
+      }
+    },
+    "model_usage": {
+      "anthropic/claude-sonnet-4-5-20250929": {
+        "input_tokens": 144,
+        "output_tokens": 8273,
+        "total_tokens": 8417,
+        "input_tokens_cache_write": 0,
+        "input_tokens_cache_read": 0,
+        "reasoning_tokens": 2853
+      },
+      "google/gemini-2.0-flash-001": {
+        "input_tokens": 2564,
+        "output_tokens": 5,
+        "total_tokens": 2569,
+        "reasoning_tokens": 0
+      }
+    },
+    "total_time": 95.333,
+    "working_time": 94.505,
+    "uuid": "oYziQ7wuq4NHTDdPpHuzTK",
+    "retries": 0,
+    "completed": true
+  },
+  {
+    "id": "2025-I-Mock-AIME-Problem-06",
+    "epoch": 1,
+    "input": "There are $2025$ green pencils on a table. Every minute, Elphaba removes two randomly chosen pencils on the table. Right after that, Glinda adds back one pink pencil. After $2023$ minutes, the probability that at least one of the two pencils remaining on the table is green is $\\frac{m}{n}$ where $m$ and $n$ are relatively prime positive integers. Compute the remainder when $m+n$ is divided by $1000$.",
+    "target": "013",
+    "metadata": {
+      "solution": "First, let's consider a particular green pencil $G_1$. The probability that $G_1$ survives all the way to the end is given by \\begin{align*} \\frac{2023}{2025} \\cdot \\frac{2022}{2024} \\cdot \\frac{2021}{2023} \\cdot \\cdots \\cdot \\frac{2}{4} \\cdot \\frac{1}{3} &= \\frac{1}{2025} \\cdot \\frac{1}{2024} \\cdot 2 \\\\ &= \\frac{1}{1012 \\cdot 2025}. \\end{align*} However, note that at the end of the process, the number of green pencils remaining must be either $0$ or $1$. In other words, if $G_2$, \\dots, $G_{2025}$ denote the remaining pencils, the event of $G_i$ surviving to the end is disjoint from any other such event. Hence, the probability is just $ \\underbrace{ \\frac{1}{1012 \\cdot 2025} + \\dots + \\frac{1}{1012 \\cdot 2025} }_{2025 \\text{times}} = \\frac{1}{1012}. $ The remainder when $1+1012$ is divided by $1000$ is $\\boxed{013}$."
+    },
+    "scores": {
+      "model_extracted_exact_match": {
+        "value": "C"
+      },
+      "model_graded": {
+        "value": "C"
+      }
+    },
+    "model_usage": {
+      "anthropic/claude-sonnet-4-5-20250929": {
+        "input_tokens": 198,
+        "output_tokens": 20050,
+        "total_tokens": 20248,
+        "input_tokens_cache_write": 0,
+        "input_tokens_cache_read": 0,
+        "reasoning_tokens": 7474
+      },
+      "google/gemini-2.0-flash-001": {
+        "input_tokens": 2766,
+        "output_tokens": 5,
+        "total_tokens": 2771,
+        "reasoning_tokens": 0
+      }
+    },
+    "total_time": 239.432,
+    "working_time": 238.692,
+    "uuid": "28cXkLsSgKKJLXtxDQHGse",
+    "retries": 0,
+    "completed": true
+  },
+  {
+    "id": "2025-I-Mock-AIME-Problem-07",
+    "epoch": 1,
+    "input": "Let $ABC$ be a triangle with $AB = 5$, $BC = 13$, and $CA = 12$. Points $D$, $E$, and $F$ are on segments $BC$, $CA$, and $AB$ such that $DEF$ is an isosceles right triangle with hypotenuse $EF$. Suppose that $BF = 3$. Then the length of $CE$ can be written as $\\frac mn$ for relatively prime positive integers $m$ and $n$. Compute $m+n$.",
+    "target": "135",
+    "metadata": {
+      "solution": "As $5^2+12^2=13^2$, we know $\\angle BAC = 90\\dg$. And quadrilateral $AEDF$ is cyclic because $\\angle EAF = \\angle EDF = 90\\dg$. Hence, it follows that $ \\angle DAE = \\angle DFE = 45^{\\circ} $ which implies that $D$ lies on the angle bisector of $\\angle BAC$. \\begin{center} \\begin{asy} size(10cm); real a = 5; real b = 12; real c = (a*a+b*b)**0.5; real k = 1.7; pair A = (0, 0); pair B = (0, a); pair C = (b, 0); pair D = (a*b/(a+b), a*b/(a+b)); pair E = (b-(c*c/(a+b)-(a-k)), 0); pair F = (0, k); pair O = (A+B+C)/3; filldraw(A--B--C--cycle, palegreen, darkgreen+1); filldraw(D--E--F--cycle, paleblue, darkblue+1); draw(circumcircle(D,E,F), lightred); draw(A--D, darkgreen); pair M = midpoint(E--F); pair X = -D+2*foot(M, B, C); dot(\"$A$\", A, dir(A-O)); dot(\"$B$\", B, dir(B-O)); dot(\"$C$\", C, dir(C-O)); dot(\"$D$\", D, dir(90)); dot(\"$E$\", E, dir(E-M)); dot(\"$F$\", F, dir(F-M)); dot(\"$X$\", X, dir(45)); \\end{asy} \\end{center} From here we show two solutions. \\paragraph{First solution using power of a point (Jason Lee).}..."
+    },
+    "scores": {
+      "model_extracted_exact_match": {
+        "value": "C"
+      },
+      "model_graded": {
+        "value": "C"
+      }
+    },
+    "model_usage": {
+      "anthropic/claude-sonnet-4-5-20250929": {
+        "input_tokens": 217,
+        "output_tokens": 15590,
+        "total_tokens": 15807,
+        "input_tokens_cache_write": 0,
+        "input_tokens_cache_read": 0,
+        "reasoning_tokens": 5155
+      },
+      "google/gemini-2.0-flash-001": {
+        "input_tokens": 2548,
+        "output_tokens": 5,
+        "total_tokens": 2553,
+        "reasoning_tokens": 0
+      }
+    },
+    "total_time": 178.02,
+    "working_time": 177.33,
+    "uuid": "ZFwznp8yAsbXhs95WfCUdE",
+    "retries": 0,
+    "completed": true
+  },
+  {
+    "id": "2025-I-Mock-AIME-Problem-08",
+    "epoch": 1,
+    "input": "Compute the maximum possible value of $ab+bc+cd+de$ over all choices of positive integers $a$, $b$, $c$, $d$, $e$ satisfying $a+b+c+d+e=60$.",
+    "target": "870",
+    "metadata": {
+      "solution": "We show three solutions. \\paragraph{First solution by inequalities.} Let $S$ denote the desired sum. The idea is to write $ S \\coloneqq ab+bc+cd+de = (a+c+e)(b+d) - (ad+be). $ Note that \\begin{itemize} \\ii We have $ (a+c+e)(b+d) = (a+c+e)(60-(a+c+e)) = 900 - ((a+c+e)-30)^2. $ \\ii We have $ad + be \\ge (a+d-1) + (b+e-1) = 58 - c$. \\end{itemize} Hence, we get an estimate of $ S \\le 842 + \\left( c - ((a+c+e)-30)^2 \\right) . $ Now we consider cases on $c$. \\begin{itemize} \\ii If $c \\le 28$, we get $S \\le 842 + c \\le 870$. Equality can indeed occur, for example if $a=e=1$, $c=28$, and $b+d=30$. \\ii Now assume $c > 28$. Then $a+c+e > 30$, and from $a,e \\ge 1$ we can make the estimate $ (a+c+e-30)^2 \\ge (c-28)^2. $ Thus, we have $ S \\le 842 + \\left( c - (c-28)^2 \\right). $ For every value of $c > 28$, it is easy to check $ c - (c- 28)^2 \\le 28 $ so we have $c \\le 870$ in this case too. And equality can indeed occur, for example if $a=e=1$, $c=29$, and $b+d=29$. \\end{itemize} Hence we get a maximum of $\\boxed{870}$..."
+    },
+    "scores": {
+      "model_extracted_exact_match": {
+        "value": "C"
+      },
+      "model_graded": {
+        "value": "C"
+      }
+    },
+    "model_usage": {
+      "anthropic/claude-sonnet-4-5-20250929": {
+        "input_tokens": 144,
+        "output_tokens": 13742,
+        "total_tokens": 13886,
+        "input_tokens_cache_write": 0,
+        "input_tokens_cache_read": 0,
+        "reasoning_tokens": 5511
+      },
+      "google/gemini-2.0-flash-001": {
+        "input_tokens": 2398,
+        "output_tokens": 5,
+        "total_tokens": 2403,
+        "reasoning_tokens": 0
+      }
+    },
+    "total_time": 179.636,
+    "working_time": 179.015,
+    "uuid": "JcLp6oFarDoCbM76KtZMek",
+    "retries": 0,
+    "completed": true
+  },
+  {
+    "id": "2025-I-Mock-AIME-Problem-09",
+    "epoch": 1,
+    "input": "Winston forgot the definition of a prime number. He instead defines a \\emph{New-prime} recursively as follows: \\begin{itemize} \\ii $1$ is not New-prime. \\ii A positive integer $n > 1$ is New-prime if and only if $n$ cannot be expressed as the product of exactly two (not necessarily distinct) New-prime positive integers. \\end{itemize} Compute the number of positive integers dividing $5005^4$ which are New-primes.",
+    "target": "312",
+    "metadata": {
+      "solution": "The main claim is: \\begin{claim*} A positive integer is New-prime if and only if the sum of the exponents of its prime factors is odd. \\end{claim*} \\begin{proof} By induction on $n \\ge 1$, with the base case given. Consider any $n$. If the sum of the exponents of $n$ is odd, then clearly it is not the product of two numbers whose sum of exponents is odd. Otherwise, if the sum of exponents of $n$ is even, consider any prime $p\\mid n$. Then, $p$ and $\\frac{n}{p}$ are both New-prime, since $\\frac{n}{p}$ has an odd sum of exponents and is less than $n$. The induction applies, so this condition for New-primes works. \\end{proof} Hence we need the number of divisors of $5005^4 = 5^4 \\cdot 7^4 \\cdot 11^4 \\cdot 13^4$ with an odd exponent sum. This can be computed by using a roots of unity filter on $ P(X) \\coloneqq (1 + X + X^2 + X^3 + X^4)^4 $ and looking for the sum of the coefficients of the terms with odd degree; that is $ \\frac{P(1)-P(-1)}{2} = \\frac{625-1}{2} = \\boxed{312}. $"
+    },
+    "scores": {
+      "model_extracted_exact_match": {
+        "value": "C"
+      },
+      "model_graded": {
+        "value": "C"
+      }
+    },
+    "model_usage": {
+      "anthropic/claude-sonnet-4-5-20250929": {
+        "input_tokens": 201,
+        "output_tokens": 26225,
+        "total_tokens": 26426,
+        "input_tokens_cache_write": 0,
+        "input_tokens_cache_read": 0,
+        "reasoning_tokens": 9029
+      },
+      "google/gemini-2.0-flash-001": {
+        "input_tokens": 2692,
+        "output_tokens": 5,
+        "total_tokens": 2697,
+        "reasoning_tokens": 0
+      }
+    },
+    "total_time": 304.021,
+    "working_time": 303.47,
+    "uuid": "2eieNyZ55eEyxD8nn58JgJ",
+    "retries": 0,
+    "completed": true
+  },
+  {
+    "id": "2025-I-Mock-AIME-Problem-10",
+    "epoch": 1,
+    "input": "An $8 \\times 8$ grid of unit squares is drawn; it thus has $144$ unit edges. Let $N$ be the number of ways to color each of the $144$ unit edges one of six colors (red, orange, yellow, green, blue, or purple) such that every unit square is surrounded by exactly $3$ different colors. Then $N$ can be written as a prime factorization $p_1^{e_1} \\dots p_k^{e_k}$ where $p_1 < \\dots < p_k$ are primes and $e_i$ are positive integers. Compute $e_1 + \\dots + e_k$.",
+    "target": "224",
+    "metadata": {
+      "solution": "We consider the case of a general $n \\times n$ grid of unit squares which has $2n \\cdot (n+1) = 2n^2 + 2n$ edges and show that the answer is $ N = 6^{2n} \\cdot 20^{n^2}. $ We describe a process for coloring in the board. First, color the $2n$ boundary edges in an arbitrary way. Now consider the following diagram and suppose we want to color the two dashed lines. \\begin{center} \\begin{asy} size(5cm); pen pens[] = {red+linewidth(1), orange+linewidth(1), yellow+linewidth(1), green+linewidth(1), blue+linewidth(1), purple+linewidth(1)}; for (int i = 0; i < 4; ++i) { for (int j = 0; j < 4; ++j) { dot((i,j)); } } draw((0,0)--(0,1), pens[0]); draw((0,1)--(0,2), pens[3]); draw((0,2)--(0,3), pens[2]); draw((0,3)--(1,3), pens[1]); draw((1,3)--(2,3), pens[4]); draw((2,3)--(3,3), pens[5]); for (int i = 0; i < 2; ++i) { draw((0,i)--(3,i), linewidth(1)); draw((i+2,0)--(i+2,3), linewidth(1)); } for (int i = 0; i < 3; ++i) { for (int j = 0; j < 3; ++j) { label((string) (3*(2-j)+i+1), (i+0.5, j+0.5)); } }..."
+    },
+    "scores": {
+      "model_extracted_exact_match": {
+        "value": "I"
+      },
+      "model_graded": {
+        "value": "I"
+      }
+    },
+    "model_usage": {
+      "anthropic/claude-sonnet-4-5-20250929": {
+        "input_tokens": 242,
+        "output_tokens": 29408,
+        "total_tokens": 29650,
+        "input_tokens_cache_write": 0,
+        "input_tokens_cache_read": 0,
+        "reasoning_tokens": 10319
+      },
+      "google/gemini-2.0-flash-001": {
+        "input_tokens": 2060,
+        "output_tokens": 7,
+        "total_tokens": 2067,
+        "reasoning_tokens": 0
+      }
+    },
+    "total_time": 426.664,
+    "working_time": 426.167,
+    "uuid": "8e4i72XY9fu7SGYG6bV6Ma",
+    "retries": 0,
+    "completed": true
+  },
+  {
+    "id": "2025-I-Mock-AIME-Problem-11",
+    "epoch": 1,
+    "input": "Let $ABC$ be an acute non-equilateral triangle with $\\angle BAC = 60\\dg$. The Euler line of triangle $ABC$ intersects side $BC$ at point $X$ such that $B$ lies between $X$ and $C$. Given that $XA = 49$ and $XB = 23$, compute $XC$. (The \\textit{Euler line} of a non-equilateral triangle refers to the line through its circumcenter, centroid, and orthocenter.)",
+    "target": "071",
+    "metadata": {
+      "solution": "Let $H$ and $O$ denote the orthocenter and circumcenter. We show the existence of the two red circles below from $\\angle A = 60\\dg$ in two claims (both of which are standard). \\begin{center} \\begin{asy} size(10cm); pair X = (0, 0); pair B = (23, 0); pair C = (71, 0); pair A = (31.73864, 37.33173); pair O = (47, 8sqrt(3)); pair H = (31.73864, 9.19033); pair G = (37, 20); filldraw(A--B--C--cycle, palegreen, darkgreen+1); draw(X--B, blue+1); draw(X--O, blue+1); draw(X--N, dotted+blue+1); draw(circle(O, 16sqrt(3)), grey); draw(circle(A, 16sqrt(3)), red); draw(circle((47, -8sqrt(3)), 16sqrt(3)), red); dot(\"$A$\", A, dir(A-G)); dot(\"$B$\", B, dir(B-G)); dot(\"$C$\", C, dir(C-G)); dot(\"$H$\", H, dir(-90)); dot(\"$O$\", O, dir(-90)); dot(\"$X$\", X, dir(X-G)); \\end{asy} \\end{center} \\begin{claim*} In any triangle with $\\angle A = 60\\dg$, we have $AH = AO = R$, where $R$ is the circumradius. Hence one can draw a circle centered at $A$ through both $H$ and $O$. \\end{claim*} \\begin{proof} We present a proof with trigonometry,..."
+    },
+    "scores": {
+      "model_extracted_exact_match": {
+        "value": "C"
+      },
+      "model_graded": {
+        "value": "C"
+      }
+    },
+    "model_usage": {
+      "anthropic/claude-sonnet-4-5-20250929": {
+        "input_tokens": 210,
+        "output_tokens": 21109,
+        "total_tokens": 21319,
+        "input_tokens_cache_write": 0,
+        "input_tokens_cache_read": 0,
+        "reasoning_tokens": 7547
+      },
+      "google/gemini-2.0-flash-001": {
+        "input_tokens": 2518,
+        "output_tokens": 5,
+        "total_tokens": 2523,
+        "reasoning_tokens": 0
+      }
+    },
+    "total_time": 256.502,
+    "working_time": 256.061,
+    "uuid": "Taa5xNxY2FyMCCqxtrEDVj",
+    "retries": 0,
+    "completed": true
+  },
+  {
+    "id": "2025-I-Mock-AIME-Problem-12",
+    "epoch": 1,
+    "input": "There exists a unique tuple of positive real numbers $(a, b, c, d)$ satisfying \\begin{align*} \\left( 49 + ab \\right) \\left( a + b \\right) &= 81a + 25b \\\\ \\left( 81 + bc \\right) \\left( b + c \\right) &= 121b + 49c \\\\ \\left( 121 + cd \\right) \\left( c + d \\right) &= 169c + 81d \\\\ a + b + c + d &= 12. \\end{align*} Given that $d = m - \\sqrt{n}$ for positive integers $m$ and $n$, compute $m+n$.",
+    "target": "108",
+    "metadata": {
+      "solution": "We show two solutions. \\paragraph{Geometry solution (from author).} The first three given equations can be interpreted as Stewart's Theorem, as shown in the diagram below with triangle $\\triangle{ABC}$ and cevians $AD$, $AE$, and $AF$. Note that we have lengths $BD = a$, $DE = b$, $EF = c$, and $FC = d$, and the distances from $A$ to $B$, $D$, $E$, $F$, and $C$ are $5$, $7$, $9$, $11$, and $13$, respectively. \\begin{center} \\begin{asy} size(12cm); pair A, B, C, D, E, F; real x = 2sqrt(6); real y = 2sqrt(14); real z = 4sqrt(6); A = (0, 5); B = (0, 0); D = (x, 0); E = (y, 0); F = (z, 0); C = (12, 0); draw(A--B--C--A); draw(A--D); draw(A--E); draw(A--F); label(\"$5$\", (A+B)/2, dir(180), red); label(\"$7$\", (A+D)/2, -dir(A+D-B), red); label(\"$9$\", (A+E)/2, -dir(A+E-B), red); label(\"$11$\", (A+F)/2, dir(A+F-B), red); label(\"$13$\", (A+C)/2, dir(A+C-B), red); label(\"$a$\", midpoint(B--D), dir(-90), blue); label(\"$b$\", midpoint(D--E), dir(-90), blue); label(\"$c$\", midpoint(E--F), dir(-90), blue); label(\"$d$\",..."
+    },
+    "scores": {
+      "model_extracted_exact_match": {
+        "value": "C"
+      },
+      "model_graded": {
+        "value": "C"
+      }
+    },
+    "model_usage": {
+      "anthropic/claude-sonnet-4-5-20250929": {
+        "input_tokens": 256,
+        "output_tokens": 29880,
+        "total_tokens": 30136,
+        "input_tokens_cache_write": 0,
+        "input_tokens_cache_read": 0,
+        "reasoning_tokens": 10728
+      },
+      "google/gemini-2.0-flash-001": {
+        "input_tokens": 2196,
+        "output_tokens": 5,
+        "total_tokens": 2201,
+        "reasoning_tokens": 0
+      }
+    },
+    "total_time": 357.904,
+    "working_time": 357.518,
+    "uuid": "LFrqToyjNomTqJqcugTrvM",
+    "retries": 0,
+    "completed": true
+  },
+  {
+    "id": "2025-I-Mock-AIME-Problem-13",
+    "epoch": 1,
+    "input": "Let $ABC$ be an acute triangle. Suppose the distances from its circumcenter, incenter, and orthocenter to side $BC$ are $8$, $6$, and $4$, respectively. Compute $BC^2$.",
+    "target": "369",
+    "metadata": {
+      "solution": "Let $O$, $I$, $H$ denote the usual triangle centers, and let $M$, $I_1$, $H_1$ be their projections onto line $BC$ (so $BM=MC$ while $r \\coloneqq II_1$ is the inradius). Let the $\\angle A$ bisector meet $BC$ and $(ABC)$ at $D$ and $N$, respectively. \\begin{center} \\begin{asy} size(7cm); point A, B, C, O, H, I, I1, H1, N, M, D, A1; B = (0,0); C = (2*sqrt(369), 0); O = (sqrt(369), 16); circle c = circle(O,25); A = intersectionpoints(c, line((0,40),(1,40)))[0]; triangle t = triangle(A,B,C); H = orthocenter(A,B,C); I = incenter(A,B,C); M = (B+C)/2; N = intersectionpoint(line(A,I),line(O,M)); D = intersectionpoint(line(A,I),line(B,C)); draw(c, blue); draw(M--N, red); draw(A--N, blue); draw(arc(N, sqrt(450), 10, 170), blue+dashed); draw(A--H, red); pen p = green; I1 = foot(I, B,C); H1 = foot(H, B,C); draw(H--H1, p); draw(I--I1, p); draw(O--M, p); filldraw(t, opacity(0.2)+lightblue, blue); dot(\"$A$\", A, dir((pair) (A-O))); dot(\"$B$\", B, dir(190)); dot(\"$C$\", C, dir(-10)); dot(\"$O$\", O, dir(40)); dot(\"$H$\", H,..."
+    },
+    "scores": {
+      "model_extracted_exact_match": {
+        "value": "C"
+      },
+      "model_graded": {
+        "value": "C"
+      }
+    },
+    "model_usage": {
+      "anthropic/claude-sonnet-4-5-20250929": {
+        "input_tokens": 142,
+        "output_tokens": 12610,
+        "total_tokens": 12752,
+        "input_tokens_cache_write": 0,
+        "input_tokens_cache_read": 0,
+        "reasoning_tokens": 4645
+      },
+      "google/gemini-2.0-flash-001": {
+        "input_tokens": 2928,
+        "output_tokens": 5,
+        "total_tokens": 2933,
+        "reasoning_tokens": 0
+      }
+    },
+    "total_time": 158.697,
+    "working_time": 158.365,
+    "uuid": "FNUBb8bPnSvmcoguG3f7JH",
+    "retries": 0,
+    "completed": true
+  },
+  {
+    "id": "2025-I-Mock-AIME-Problem-14",
+    "epoch": 1,
+    "input": "There is a unique triplet of integers $(a, b, c)$ such that $0 < a < b < c < 1000$ and $ \\frac1a+\\frac1b+\\frac1c=\\frac{1}{315}. $ Compute $a$.",
+    "target": "903",
+    "metadata": {
+      "solution": "The key observation is that $ \\half \\cdot \\frac{1}{315} = \\frac{3}{42 \\cdot 45} = \\frac{1}{42} - \\frac{1}{45}. $ Then one can write the right-hand side as the sum of three Egyptian fractions as follows: \\begin{align*} \\half \\cdot \\frac{1}{315} = \\frac{1}{42} - \\frac{1}{45} &= \\left( \\frac{1}{42} - \\frac{1}{43} \\right) + \\left( \\frac{1}{43} - \\frac{1}{44} \\right) + \\left( \\frac{1}{44} - \\frac{1}{45} \\right) \\\\ &= \\frac{1}{42 \\cdot 43} + \\frac{1}{43 \\cdot 44} + \\frac{1}{44 \\cdot 45}. \\end{align*} Doubling everything gives $ \\frac{1}{315} = \\frac{2}{42 \\cdot 43} + \\frac{2}{43 \\cdot 44} + \\frac{2}{44 \\cdot 45}. $ Hence one can take $a = \\frac{42 \\cdot 43}{2}$, $b = \\frac{43 \\cdot 44}{2}$, $c = \\frac{44 \\cdot 45}{2}$. So $a = \\boxed{903}$."
+    },
+    "scores": {
+      "model_extracted_exact_match": {
+        "value": "I"
+      },
+      "model_graded": {
+        "value": "I"
+      }
+    },
+    "model_usage": {
+      "anthropic/claude-sonnet-4-5-20250929": {
+        "input_tokens": 155,
+        "output_tokens": 36096,
+        "total_tokens": 36251,
+        "input_tokens_cache_write": 0,
+        "input_tokens_cache_read": 0,
+        "reasoning_tokens": 14564
+      },
+      "google/gemini-2.0-flash-001": {
+        "input_tokens": 364,
+        "output_tokens": 7,
+        "total_tokens": 371,
+        "reasoning_tokens": 0
+      }
+    },
+    "total_time": 418.149,
+    "working_time": 417.87,
+    "uuid": "8E7UB3Vmr8zzV6aQeoYw2q",
+    "retries": 0,
+    "completed": true
+  },
+  {
+    "id": "2025-I-Mock-AIME-Problem-15",
+    "epoch": 1,
+    "input": "Alice has a deck of $2000$ cards, numbered $1$ through $2000$. Alice chooses an integer $1 \\le n < 1000$ and deals Cheshire a random subset of $2n-1$ of the cards without repetition. Cheshire wins if the cards dealt contain any $n$ consecutively numbered cards. Compute the value of $n$ Alice should choose to minimize Cheshire's chances of winning.",
+    "target": "401",
+    "metadata": {
+      "solution": "Fix a positive integer $n < 1000$. A subset of $2n - 1$ cards is called \\emph{good} if it contains a collection of $n$ consecutively numbered cards. To enumerate the good subsets, we categorize them into buckets $B_1, B_2, \\dots, B_{2000}$. Let $B_k$ be the set of all subsets $S$ of $2n - 1$ cards such that: $ k-1 \\notin S \\quad \\text{and} \\quad k, k+1, \\dots, k+n-1 \\in S. $ Note that every element of $B_k$ is a good subset, and every good subset is an element of some bucket $B_k$. Furthermore, every subset is part of at most $1$ bucket because a subset of $2n - 1$ cards cannot contain $2$ disjoint collections of $n$ consecutively numbered cards. Therefore the probability of Cheshire winning is given by: $ P_n = \\frac {\\lvert B_1 \\rvert + \\lvert B_2 \\rvert + \\dots + \\lvert B_{2000} \\rvert} {\\binom{2000}{2n - 1}} $ By the definitions of $B_k$ we also have that: $ B_k = \\begin{cases} \\binom{2000 - n}{n - 1} & \\text{if $k = 1$} \\\\ \\binom{2000 - n - 1}{n - 1} & \\text{if $2 \\leq k \\leq 2000-n$} \\\\ 0 & \\text{if..."
+    },
+    "scores": {
+      "model_extracted_exact_match": {
+        "value": "I"
+      },
+      "model_graded": {
+        "value": "I"
+      }
+    },
+    "model_usage": {
+      "anthropic/claude-sonnet-4-5-20250929": {
+        "input_tokens": 186,
+        "output_tokens": 23919,
+        "total_tokens": 24105,
+        "input_tokens_cache_write": 0,
+        "input_tokens_cache_read": 0,
+        "reasoning_tokens": 8622
+      },
+      "google/gemini-2.0-flash-001": {
+        "input_tokens": 2638,
+        "output_tokens": 7,
+        "total_tokens": 2645,
+        "reasoning_tokens": 0
+      }
+    },
+    "total_time": 333.346,
+    "working_time": 333.126,
+    "uuid": "5Xok582kpLojVgTCfeNmGH",
+    "retries": 0,
+    "completed": true
+  },
+  {
+    "id": "2025-II-Mock-AIME-Problem-01",
+    "epoch": 1,
+    "input": "Let $ABC$ be a triangle with $\\angle B = 60\\dg$ and $AB = 8$. Let $D$ be the foot of the altitude from $A$ to $BC$, and let $M$ be the midpoint of $CD$. If $AM = BM$, compute $AC^2$.",
+    "target": "112",
+    "metadata": {
+      "solution": "Since $\\angle ABD = 60\\dg$ and $\\angle ADB = 90\\dg$, it follows that $\\triangle ABD$ is a $30\\dg$-$60\\dg$-$90\\dg$ triangle. \\begin{center} \\begin{asy} size(10cm); pair B = (0, 0); pair A = (4, 4sqrt(3)); pair C = (12, 0); pair D = (4, 0); pair M = (8, 0); pair G = (A + B + C)/3; filldraw(A--B--C--cycle, opacity(0.4)+palered, darkred+1); draw(A--M, darkred+1); draw(A--D, black); label(\"$8$\", midpoint(A--B), dir(150)); dot(\"$A$\", A, dir(A-G)); dot(\"$B$\", B, dir(B-G)); dot(\"$C$\", C, dir(C-G)); dot(\"$D$\", D, dir(-90)); dot(\"$M$\", M, dir(-90)); \\end{asy} \\end{center} This implies that $BD = 4$ and $AD = 4\\sqrt{3}$. In addition, since $AM = BM$ and $\\angle ABM = 60^\\circ$, it follows that $\\triangle ABM$ is equilateral. Thus $BM = AB = 8$, so it follows that $ DM = BM - BD = 4. $ Since $M$ is the midpoint of $CD$, we get that $CM = DM = 4$, so $CD = 8$. Now, we can use the Pythagorean Theorem on right triangle $\\triangle ADC$ to get $ AC^2 = (4\\sqrt{3})^2 + 8^2 = 64 + 48 = \\boxed{112}. $"
+    },
+    "scores": {
+      "model_extracted_exact_match": {
+        "value": "C"
+      },
+      "model_graded": {
+        "value": "C"
+      }
+    },
+    "model_usage": {
+      "anthropic/claude-sonnet-4-5-20250929": {
+        "input_tokens": 162,
+        "output_tokens": 9164,
+        "total_tokens": 9326,
+        "input_tokens_cache_write": 0,
+        "input_tokens_cache_read": 0,
+        "reasoning_tokens": 2766
+      },
+      "google/gemini-2.0-flash-001": {
+        "input_tokens": 2466,
+        "output_tokens": 5,
+        "total_tokens": 2471,
+        "reasoning_tokens": 0
+      }
+    },
+    "total_time": 105.329,
+    "working_time": 105.163,
+    "uuid": "7ao3ozjaJaebcoE3EFUx9b",
+    "retries": 0,
+    "completed": true
+  },
+  {
+    "id": "2025-II-Mock-AIME-Problem-02",
+    "epoch": 1,
+    "input": "Let $P$ denote the product of all positive integers $n$ such that the least common multiple of $2n$ and $n^2$ is $62n-336$. Compute the remainder when $P$ is divided by $1000$.",
+    "target": "352",
+    "metadata": {
+      "solution": "Note that when $n$ is even, $\\opname{lcm} (2n,n^2) = n^2$, but when $n$ is odd, $\\opname{lcm} (2n,n^2) = 2n^2$. We consider these two cases separately. \\begin{itemize} \\item If $n$ is even, then $\\opname{lcm}(2n,n^2) = n^2 = 62n -336$. We can rearrange this to get $ n^2 - 62n + 336 = 0 $ which factors as $ (n-6)(n-56) = 0 $ so $n = 6$ and $n = 56$; and these both work because they are even. \\item If $n$ is odd, then $\\opname{lcm}(2n,n^2) = 2n^2 = 62n - 336$. This implies that $ 2n^2 - 62n + 336 = 0 \\implies n^2 - 31n + 168 = 0. $ Factor to get $ (n-7)(n-24) = 0. $ However, $n=24$ is even, so the only solution in this case is $n = 7$, which works. \\end{itemize} Multiplying all of the solutions gives $6\\cdot 7 \\cdot 56$, which is $2352$. Thus, $\\boxed{352}$ is our answer."
+    },
+    "scores": {
+      "model_extracted_exact_match": {
+        "value": "C"
+      },
+      "model_graded": {
+        "value": "C"
+      }
+    },
+    "model_usage": {
+      "anthropic/claude-sonnet-4-5-20250929": {
+        "input_tokens": 143,
+        "output_tokens": 10186,
+        "total_tokens": 10329,
+        "input_tokens_cache_write": 0,
+        "input_tokens_cache_read": 0,
+        "reasoning_tokens": 3647
+      },
+      "google/gemini-2.0-flash-001": {
+        "input_tokens": 2696,
+        "output_tokens": 5,
+        "total_tokens": 2701,
+        "reasoning_tokens": 0
+      }
+    },
+    "total_time": 118.705,
+    "working_time": 118.588,
+    "uuid": "L5W6tn2whwgjT2L4ecSjCc",
+    "retries": 0,
+    "completed": true
+  },
+  {
+    "id": "2025-II-Mock-AIME-Problem-03",
+    "epoch": 1,
+    "input": "Let $x$ be the unique positive real number satisfying $ 2^x+32^x=8^x+16^x. $ Compute $8^{x+2}-2^{x+6}$.",
+    "target": "064",
+    "metadata": {
+      "solution": "Let $y = 2^x$. Note that our desired extraction $8^{x+2}-2^{x+6}$ can be written as $64y^3 - 64y = 64(y^3 - y)$. We can then write our given equation as $ y + y^5 = y^3 + y^4. $ Note that $y = 0, 1$ satisfy this equation so this factors as $ y(y-1)(y^3 - y - 1) = 0. $ Since $x > 0$, it follows that $y > 1$ and thus $y^3 - y = 1$. As such, the answer is $64(y^3 - y) = 64 \\cdot 1 = \\boxed{64}$ as desired."
+    },
+    "scores": {
+      "model_extracted_exact_match": {
+        "value": "C"
+      },
+      "model_graded": {
+        "value": "C"
+      }
+    },
+    "model_usage": {
+      "anthropic/claude-sonnet-4-5-20250929": {
+        "input_tokens": 137,
+        "output_tokens": 7349,
+        "total_tokens": 7486,
+        "input_tokens_cache_write": 0,
+        "input_tokens_cache_read": 0,
+        "reasoning_tokens": 2651
+      },
+      "google/gemini-2.0-flash-001": {
+        "input_tokens": 2422,
+        "output_tokens": 5,
+        "total_tokens": 2427,
+        "reasoning_tokens": 0
+      }
+    },
+    "total_time": 84.891,
+    "working_time": 84.834,
+    "uuid": "SEBJQGa8nCyEGejAH2zBNg",
+    "retries": 0,
+    "completed": true
+  },
+  {
+    "id": "2025-II-Mock-AIME-Problem-04",
+    "epoch": 1,
+    "input": "Compute the number of integers less than $1000$ which can be written in the form $ x^{\\left\\lfloor x \\right\\rfloor} + \\left\\lfloor x \\right\\rfloor^x $ for some positive real number $x$.",
+    "target": "590",
+    "metadata": {
+      "solution": "Let $S = x^{\\left\\lfloor x \\right\\rfloor} + \\left\\lfloor x \\right\\rfloor^x$. We will use casework on $n \\coloneqq \\lfloor x\\rfloor \\ge 0$. In the edge case $n = 0$ (and $x \\neq 0$), the sum has fixed value $S = 0^x + x^0 = 1$, which gives $1$ value. Now for a fixed choice of $n \\ge 1$, the value of $S$ is strictly monotonically increasing in the interval $n \\le x < n+1$. Hence the value of $S$ will range across $ 2n^n \\le S < (n+1)^n + n^{n+1} $ for $n > 0$. In particular, if $n \\ge 5$ then $S > 1000$. For $1 \\le n \\le 4$, we see the values of $S$ that appear are \\begin{align*} n = 1 &\\implies 2 \\le S < 3 \\\\ n = 2 &\\implies 8 \\le S < 17 \\\\ n = 3 &\\implies 54 \\le S < 145 \\\\ n = 4 &\\implies 512 \\le S < 1649. \\end{align*} Hence the total count is $1 + 1 + 9 + 91 + 488 = \\boxed{590}$."
+    },
+    "scores": {
+      "model_extracted_exact_match": {
+        "value": "C"
+      },
+      "model_graded": {
+        "value": "C"
+      }
+    },
+    "model_usage": {
+      "anthropic/claude-sonnet-4-5-20250929": {
+        "input_tokens": 149,
+        "output_tokens": 15200,
+        "total_tokens": 15349,
+        "input_tokens_cache_write": 0,
+        "input_tokens_cache_read": 0,
+        "reasoning_tokens": 6058
+      },
+      "google/gemini-2.0-flash-001": {
+        "input_tokens": 2482,
+        "output_tokens": 5,
+        "total_tokens": 2487,
+        "reasoning_tokens": 0
+      }
+    },
+    "total_time": 179.981,
+    "working_time": 179.925,
+    "uuid": "Sj5xbFzwe3jcXZLLcd5BSs",
+    "retries": 0,
+    "completed": true
+  },
+  {
+    "id": "2025-II-Mock-AIME-Problem-05",
+    "epoch": 1,
+    "input": "Rosa the otter is stacking $53$ blocks in a tower. For $n \\ge 1$, after successfully placing the previous $n-1$ blocks, the probability that placing the $n$\\ts{th} block causes the whole tower to topple is $\\frac{1}{54 - n}$. Compute the expected number of blocks placed successfully before the block that causes the tower to topple.",
+    "target": "026",
+    "metadata": {
+      "solution": "Note that the tower must collapse after successfully placing $n$ blocks for some $1 \\le n \\le 53$ (as the last block guarantees a collapse). So the probability of the tower collapsing on placing the $n$\\ts{th} block is $ \\left(1 - \\frac{1}{53}\\right)\\left(1 - \\frac{1}{52}\\right) \\cdot \\dotsm \\cdot \\left(1 - \\frac{1}{55 - n} \\right) \\cdot \\frac{1}{54 - n} = \\frac{52}{53} \\cdot \\frac{51}{52} \\dotsm \\frac{54-n}{55-n} \\cdot \\frac{1}{54-n} = \\frac{1}{53}. $ As such, each $1 \\le n \\le 53$ is equally likely. Thus, the expected number of blocks is thus $ \\frac{0}{53} + \\frac{1}{53} + \\dots + \\frac{52}{53} = \\frac{52 \\cdot 53}{2 \\cdot 53} = \\boxed{26}. $"
+    },
+    "scores": {
+      "model_extracted_exact_match": {
+        "value": "C"
+      },
+      "model_graded": {
+        "value": "C"
+      }
+    },
+    "model_usage": {
+      "anthropic/claude-sonnet-4-5-20250929": {
+        "input_tokens": 180,
+        "output_tokens": 12662,
+        "total_tokens": 12842,
+        "input_tokens_cache_write": 0,
+        "input_tokens_cache_read": 0,
+        "reasoning_tokens": 4056
+      },
+      "google/gemini-2.0-flash-001": {
+        "input_tokens": 2182,
+        "output_tokens": 5,
+        "total_tokens": 2187,
+        "reasoning_tokens": 0
+      }
+    },
+    "total_time": 145.426,
+    "working_time": 145.368,
+    "uuid": "GMW66UcQ4qVnQDB4wYkPQm",
+    "retries": 0,
+    "completed": true
+  },
+  {
+    "id": "2025-II-Mock-AIME-Problem-06",
+    "epoch": 1,
+    "input": "Compute the number of functions $f \\colon \\{ 1, 2, \\dots, 15 \\} \\to \\{-1, 0, 1\\}$ such that $f(ab) = f(a)f(b)$ holds whenever $a$ and $b$ are positive integers with $ab \\le 15$.",
+    "target": "730",
+    "metadata": {
+      "solution": "Since $f(1)^2 = f(1)$, we have either $f(1) = 0$ or $f(1) = 1$. \\begin{itemize} \\ii If $f(1) = 0$ then we deduce $f \\equiv 0$, which certainly works. \\ii If $f(1) = 1$, then the function is uniquely determined by its values on $f(2)$, $f(3)$, $f(5)$, $f(7)$, $f(11)$, $f(13)$. There are thus $3^6 = 729$ functions in this case. \\end{itemize} Hence the answer $1 + 729 = \\boxed{730}$."
+    },
+    "scores": {
+      "model_extracted_exact_match": {
+        "value": "C"
+      },
+      "model_graded": {
+        "value": "C"
+      }
+    },
+    "model_usage": {
+      "anthropic/claude-sonnet-4-5-20250929": {
+        "input_tokens": 167,
+        "output_tokens": 14900,
+        "total_tokens": 15067,
+        "input_tokens_cache_write": 0,
+        "input_tokens_cache_read": 0,
+        "reasoning_tokens": 5255
+      },
+      "google/gemini-2.0-flash-001": {
+        "input_tokens": 2470,
+        "output_tokens": 5,
+        "total_tokens": 2475,
+        "reasoning_tokens": 0
+      }
+    },
+    "total_time": 181.03,
+    "working_time": 180.971,
+    "uuid": "RnGpegwYQpDyee7DkkJTqj",
+    "retries": 0,
+    "completed": true
+  },
+  {
+    "id": "2025-II-Mock-AIME-Problem-07",
+    "epoch": 1,
+    "input": "Vikram has a sheet of paper with all the numbers from $1$ to $1000$ written on it in a row. He then removes every multiple of $6$ or $7$. In doing so, the remaining numbers are split up into contiguous runs of consecutive numbers, such as $\\{1,2,3,4,5\\}$, $\\{25, 26, 27\\}$, or $\\{13\\}$. The average length of a run can be written as $\\frac{p}{q}$ for relatively prime positive integers $p$ and $q$. Compute $p+q$.",
+    "target": "954",
+    "metadata": {
+      "solution": "The multiples of $42$ are all removed, and the removal pattern is periodic after that. To that end, let's consider a group of $42$ such consecutive numbers ending with a multiple of $42$. \\begin{claim*} Among any group of numbers of the form $\\{ 42k+1, 42k+2, \\dots, 42k+42 \\}$, there are $30$ integers remaining and they form $10$ contiguous runs. \\end{claim*} \\begin{proof} We assume $k = 0$ without loss of generality. By the principle of Inclusion-Exclusion, the number of removed numbers is equal to $R = \\frac{42}{6} + \\frac{42}{7} - \\frac{42}{42} = 12$. There are exactly two consecutive pairs of removed numbers, namely $(6,7)$ and $(35,36)$, and no run occurs between them. So in total there are $R - 2 = 10$ contiguous runs, Alternatively, one can draw the figure by hand for all $42$ numbers. \\begin{center} \\begin{asy} pen p = red+linewidth(2); size(8cm); void cross(real i, real j) { real s = 0.1; draw((-s+i,-s+j)--(s+i,s+j), red); draw((-s+i,s+j)--(s+i,-s+j), red); } for (int i=0; i<5; ++i) {..."
+    },
+    "scores": {
+      "model_extracted_exact_match": {
+        "value": "C"
+      },
+      "model_graded": {
+        "value": "C"
+      }
+    },
+    "model_usage": {
+      "anthropic/claude-sonnet-4-5-20250929": {
+        "input_tokens": 229,
+        "output_tokens": 14915,
+        "total_tokens": 15144,
+        "input_tokens_cache_write": 0,
+        "input_tokens_cache_read": 0,
+        "reasoning_tokens": 5118
+      },
+      "google/gemini-2.0-flash-001": {
+        "input_tokens": 2804,
+        "output_tokens": 5,
+        "total_tokens": 2809,
+        "reasoning_tokens": 0
+      }
+    },
+    "total_time": 183.838,
+    "working_time": 183.783,
+    "uuid": "AKzERnMtfXaadM7hb9tj3A",
+    "retries": 0,
+    "completed": true
+  },
+  {
+    "id": "2025-II-Mock-AIME-Problem-08",
+    "epoch": 1,
+    "input": "Let $ABC$ be an equilateral triangle with side length $600$, and let $P$ be a point on the circumcircle of $ABC$ such that $AP=630$ and $PB>PC$. Let $M$ be the midpoint of $BC$. Point $D$ is chosen on line $BP$ such that $MD \\perp AP$. Compute $PD$.",
+    "target": "315",
+    "metadata": {
+      "solution": "We will prove that $PD = \\half AP$, so the answer is $315$. Let $O$ denote the center of $ABC$ and let the feet of the altitude from $O$ and $M$ to $AP$ be $X$ and $Y$ respectively. Then $X$ is the midpoint of $AP$, and also (from $AO:OM=2:1$) we get $AX:XY = 2:1$. Putting this all together we get $ AX : XY : YP = 2 : 1 : 1 \\implies \\frac{PY}{PA} = \\frac 14. $ \\begin{center} \\begin{asy} pair A = dir(90); pair B = dir(210); pair C = dir(330); pair P = dir(290); pair M = midpoint(B--C); pair D = extension(B, P, M, foot(M, A, P)); filldraw(unitcircle, opacity(0.1)+lightcyan, blue); draw(A--B--C--cycle, blue); pair O = origin; pair X = foot(O, A, P); pair Y = foot(M, A, P); draw(A--P, red); draw(O--X, red); draw(D--Y, red); draw(A--M, blue); draw(B--P, blue); markangle(radius=16.0,\"$60^\\circ$\", A, P, D, deepgreen); dot(\"$A$\", A, dir(A)); dot(\"$B$\", B, dir(B)); dot(\"$C$\", C, dir(C)); dot(\"$P$\", P, dir(P)); dot(\"$M$\", M, dir(M)); dot(\"$D$\", D, dir(D)); dot(\"$O$\", O, dir(135)); dot(\"$X$\", X, dir(X)); dot(\"$Y$\",..."
+    },
+    "scores": {
+      "model_extracted_exact_match": {
+        "value": "C"
+      },
+      "model_graded": {
+        "value": "C"
+      }
+    },
+    "model_usage": {
+      "anthropic/claude-sonnet-4-5-20250929": {
+        "input_tokens": 178,
+        "output_tokens": 17569,
+        "total_tokens": 17747,
+        "input_tokens_cache_write": 0,
+        "input_tokens_cache_read": 0,
+        "reasoning_tokens": 6142
+      },
+      "google/gemini-2.0-flash-001": {
+        "input_tokens": 3164,
+        "output_tokens": 5,
+        "total_tokens": 3169,
+        "reasoning_tokens": 0
+      }
+    },
+    "total_time": 215.224,
+    "working_time": 215.169,
+    "uuid": "QZDDqp39G9pF26agXt5uT7",
+    "retries": 0,
+    "completed": true
+  },
+  {
+    "id": "2025-II-Mock-AIME-Problem-09",
+    "epoch": 1,
+    "input": "Let $N$ denote the number of polynomials $P(x)$ of degree $3$ and with leading coefficient $1$ such that \\begin{itemize} \\item Every coefficient of $P(x)$ is an integer with absolute value at most $10$; \\item There exist two distinct integers $m$ and $n$ such that $P(mi) = P(ni)$. (Here $i = \\sqrt{-1}$.) \\end{itemize} Compute the remainder when $N$ is divided by $1000$.",
+    "target": "365",
+    "metadata": {
+      "solution": "Let $P(x) = x^3 + ax^2 + bx + c$. Then $ P(mi) = -m^3i - am^2 + bmi + c = -am^2 + c + i(-m^3 + bm), $ so equating the real and imaginary parts of $P(mi) = P(ni)$ gives the following necessary and sufficient: \\begin{align*} -am^2 &= -an^2 \\\\ -m^3+bm &= -n^3+bn. \\end{align*} Notice that these equations are independent of $c$, so we should count the number of pairs $(a,b)$ that work and then multiply by $21$ across the choices $c \\in \\{-10, -9, \\dots, 10\\}$. To further simplify we factor the two equations and use $m \\neq n$ to rewrite them as \\begin{align*} a(m^2-n^2) &= 0 \\implies a = 0 \\text{ or } m = - n \\\\ (m-n)\\left[ b-(m^2+mn+n^2) \\right] &= 0 \\implies b = m^2 + m n + n^2. \\end{align*} We consider two cases: \\begin{itemize} \\ii If $a \\neq 0$, then since $m \\ne n$, we get that $m = -n$, and that both are nonzero, so $b = n^2$. As such, $b$ is a perfect square, which gives three choices of $b \\in \\{1,4,9\\}$. There are $20$ nonzero choices of $a$, giving $3 \\cdot 20 = 60$ cases here. \\ii If $a = 0$, then..."
+    },
+    "scores": {
+      "model_extracted_exact_match": {
+        "value": "C"
+      },
+      "model_graded": {
+        "value": "C"
+      }
+    },
+    "model_usage": {
+      "anthropic/claude-sonnet-4-5-20250929": {
+        "input_tokens": 211,
+        "output_tokens": 19547,
+        "total_tokens": 19758,
+        "input_tokens_cache_write": 0,
+        "input_tokens_cache_read": 0,
+        "reasoning_tokens": 7307
+      },
+      "google/gemini-2.0-flash-001": {
+        "input_tokens": 2700,
+        "output_tokens": 5,
+        "total_tokens": 2705,
+        "reasoning_tokens": 0
+      }
+    },
+    "total_time": 258.394,
+    "working_time": 258.337,
+    "uuid": "Me7MAvXwAyXXqVZzB3Cvfx",
+    "retries": 0,
+    "completed": true
+  },
+  {
+    "id": "2025-II-Mock-AIME-Problem-10",
+    "epoch": 1,
+    "input": "Let $S$ be the set of positive integers that are divisible by either $14$ or $34$ (or both), but not by any prime that doesn't divide $14$ or $34$. (For example, $14 \\cdot 34 \\in S$, but $14 \\cdot 3 \\cdot 4 \\notin S$.) Let $d(s)$ denote the number of positive integers dividing $s$. Suppose that $ \\sum_{s \\in S} \\frac{d(s)}{s} = \\frac{pqr}{m} $ for some primes $p$, $q$, $r$ and a positive integer $m$. Compute $p+q+r$.",
+    "target": "071",
+    "metadata": {
+      "solution": "Throughout the solution we will use the fact that $d(ab) = d(a) \\cdot d(b)$ holds for all relatively prime $a$ and $b$. In particular, for primes $p$, define $ f(p) \\coloneqq \\sum_{n \\ge 0} \\frac{d(p^n)}{p^n}. $ \\begin{claim*} We have $ \\sum_{s \\in S} \\frac{d(s)}{s} = \\left(f(2) - 1 \\right) \\left( f(7) f(17) - 1 \\right). $ \\end{claim*} \\begin{proof} Notice that \\begin{align*} f(2) &= \\sum_{a \\ge 0} \\frac{d(2^a)}{2^a} \\\\ f(7)f(17) &= \\sum_{b,c \\ge 0} \\frac{d(7^b17^c)}{7^b17^c}. \\end{align*} Hence if we subtract one we get \\begin{align*} f(2) - 1 &= \\sum_{a \\ge 1} \\frac{d(2^a)}{2^a} \\\\ f(7)f(17) - 1 &= \\sum_{\\substack{b,c \\ge 0 \\\\ (b,c) \\neq (0,0)}} \\frac{d(7^b17^c)}{7^b17^c}. \\end{align*} Thus, the product of these is equals to $ \\sum_{\\substack{a \\ge 1 \\\\ b,c \\ge 0 \\\\ (b,c) \\neq (0,0)}} \\frac{d(2^a7^b17^c)}{2^a7^b17^c}. $ This matches the description of $S$, since $S$ consists of those elements of the form $2^a \\cdot 7^b \\cdot 17^c$ where $a \\ge 1$, $b \\ge 0$, $c \\ge 0$, and $(b,c) \\neq (0,0)$. \\end{proof}..."
+    },
+    "scores": {
+      "model_extracted_exact_match": {
+        "value": "C"
+      },
+      "model_graded": {
+        "value": "C"
+      }
+    },
+    "model_usage": {
+      "anthropic/claude-sonnet-4-5-20250929": {
+        "input_tokens": 259,
+        "output_tokens": 13882,
+        "total_tokens": 14141,
+        "input_tokens_cache_write": 0,
+        "input_tokens_cache_read": 0,
+        "reasoning_tokens": 4766
+      },
+      "google/gemini-2.0-flash-001": {
+        "input_tokens": 2916,
+        "output_tokens": 5,
+        "total_tokens": 2921,
+        "reasoning_tokens": 0
+      }
+    },
+    "total_time": 152.118,
+    "working_time": 152.063,
+    "uuid": "n8zgVrjSm4dsqf7GawKWJP",
+    "retries": 0,
+    "completed": true
+  },
+  {
+    "id": "2025-II-Mock-AIME-Problem-11",
+    "epoch": 1,
+    "input": "At an informatics competition each student earns a score in $\\{0, 1, \\dots, 100\\}$ on each of six problems, and their total score is the sum of the six scores (out of $600$). Given two students $A$ and $B$, we write $A \\succ B$ if there are at least five problems on which $A$ scored strictly higher than $B$. Compute the smallest integer $c$ such that the following statement is true: for every integer $n \\ge 2$, given students $A_1$, \\dots, $A_n$ satisfying $A_1 \\succ A_2 \\succ \\dots \\succ A_n$, the total score of $A_n$ is always at most $c$ points more than the total score of $A_1$.",
+    "target": "570",
+    "metadata": {
+      "solution": "The answer is $600 - 2(1+2+3+4+5) = \\boxed{570}$. We prove this by providing a construction and then showing it's best possible. \\paragraph{Construction} The example with seven students \\begin{align*} (5, 4, 3, 2, 1, 0) &\\succ (4, 3, 2, 1, 0, 100) \\succ (3, 2, 1, 0, 100, 99) \\\\ &\\succ (2, 1, 0, 100, 99, 98) \\succ (1, 0, 100, 99, 98, 97) \\\\ &\\succ (0, 100, 99, 98, 97, 96) \\succ (100, 99, 98, 97, 96, 95) \\end{align*} is a construction for $c = 570$, since the first student has total score $5+4+3+2+1=15$ and the last student has total score $100+99+98+97+96+95=585$. \\paragraph{Bound} We now show that no higher value can be achieved. The two main claims are that if the score of $A_1$ is too low, or the score of $A_n$ is too high, then $n \\le 5$. We state and prove these claims in turn: \\begin{claim*} If the total score of $A_1$ is less than $15$, then there cannot exist students $A_2$, $A_3$, $A_4$, $A_5$, $A_6$ such that $ A_1 \\succ A_2 \\succ A_3 \\succ A_4 \\succ \\dots \\succ A_6. $ In other words, we have $n..."
+    },
+    "scores": {
+      "model_extracted_exact_match": {
+        "value": "C"
+      },
+      "model_graded": {
+        "value": "C"
+      }
+    },
+    "model_usage": {
+      "anthropic/claude-sonnet-4-5-20250929": {
+        "input_tokens": 278,
+        "output_tokens": 35843,
+        "total_tokens": 36121,
+        "input_tokens_cache_write": 0,
+        "input_tokens_cache_read": 0,
+        "reasoning_tokens": 13411
+      },
+      "google/gemini-2.0-flash-001": {
+        "input_tokens": 2546,
+        "output_tokens": 5,
+        "total_tokens": 2551,
+        "reasoning_tokens": 0
+      }
+    },
+    "total_time": 470.304,
+    "working_time": 470.246,
+    "uuid": "b3NWYU6FnLRB9iSumugbsm",
+    "retries": 0,
+    "completed": true
+  },
+  {
+    "id": "2025-II-Mock-AIME-Problem-12",
+    "epoch": 1,
+    "input": "Let $\\gamma_1$, $\\gamma_2$, and $\\gamma_3$ be circles drawn on the surface of a hemisphere with radius $10$. Each circle is tangent to the base of the hemisphere and pairwise tangent to one another. Additionally, $\\gamma_1$ and $\\gamma_2$ are congruent and tangent to each other at the north pole of the hemisphere, the point of the hemisphere farthest from the base. Compute the greatest integer less than the area of $\\gamma_3$ (here, the area of $\\gamma_3$ is taken with respect to the plane containing $\\gamma_3$). \\begin{center} \\tdplotsetmaincoords{60}{115} \\pgfmathsetmacro{\\radius}{1} \\pgfmathsetmacro{\\thetavec}{0} \\pgfmathsetmacro{\\phivec}{0} \\begin{tikzpicture}[scale=3,tdplot_main_coords] \\tdplotsetthetaplanecoords{\\phivec} \\draw[dashed] (\\radius,0,0) arc (0:360:\\radius); \\draw[thick, purple] (0, 1/2, 1/2) [y={(0,{-1/sqrt(2)},{1/sqrt(2)})},x={(-1,0,0)}] circle ({1/sqrt(2)}); \\draw[thick, purple] (0, -1/2, 1/2) [y={(0,{1/sqrt(2)},{1/sqrt(2)})},x={(-1,0,0)}] circle ({1/sqrt(2)}); \\draw[thick, blue] ({0.8}, 0, {0.4}) [x={({-1/sqrt(5)},0,{2/sqrt(5)})},y={(0,-1,0)}] circle ({1/sqrt(5)}); \\shade[ball color=pink,opacity=0.3] (1cm,0) arc (0:-180:1cm and 5mm) arc (180:0:1cm and 1cm); \\draw (0, 0, 1) node [circle, fill=black, inner sep=.05cm] {}; \\draw (0, 0, 0.9) node [circle, inner sep=.05cm, anchor=west] {North pole}; \\draw[purple] (0,1,0) node [circle, inner sep=.02cm, anchor=north west] {$\\gamma_1$}; \\draw[blue] (1,0,0) node [circle, inner sep=.02cm, anchor=north east] {$\\gamma_3$}; \\draw[purple] (0,-1,0) node [circle, inner sep=.02cm, left=0.2cm] {$\\gamma_2$}; \\end{tikzpicture} \\end{center}",
+    "target": "062",
+    "metadata": {
+      "solution": "We show two approaches to this. Let $\\Gamma$ be the base of the hemisphere, and let $T$, $P_1$, $Q_1$ be the common tangency points of the pairs $(\\gamma_1, \\gamma_3), (\\gamma_1, \\Gamma), (\\gamma_3, \\Gamma)$ respectively. Let $O$, $O_1$, $O_2$, $O_3$ be the centers of $\\Gamma$, $\\gamma_1$, $\\gamma_2$, $\\gamma_3$ respectively. \\begin{center} \\tdplotsetmaincoords{60}{115} \\pgfmathsetmacro{\\radius}{1} \\pgfmathsetmacro{\\thetavec}{0} \\pgfmathsetmacro{\\phivec}{0} \\begin{tikzpicture}[scale=5,tdplot_main_coords] \\tdplotsetthetaplanecoords{\\phivec} \\draw[dashed] (\\radius,0,0) arc (0:360:\\radius); \\draw[thick,color=pink] (1,0,0.5) -- (0,0,0) -- (0,1,1)--(1,0,0.5); \\draw[thick, purple] (0, 1/2, 1/2) [y={(0,{-1/sqrt(2)},{1/sqrt(2)})},x={(-1,0,0)}] circle ({1/sqrt(2)}); \\draw[thick, purple] (0, -1/2, 1/2) [y={(0,{1/sqrt(2)},{1/sqrt(2)})},x={(-1,0,0)}] circle ({1/sqrt(2)}); \\draw[thick, blue] ({0.8}, 0, {0.4}) [x={({-1/sqrt(5)},0,{2/sqrt(5)})},y={(0,-1,0)}] circle ({1/sqrt(5)}); \\shade[ball color=pink,opacity=0.3]..."
+    },
+    "scores": {
+      "model_extracted_exact_match": {
+        "value": "C"
+      },
+      "model_graded": {
+        "value": "C"
+      }
+    },
+    "model_usage": {
+      "anthropic/claude-sonnet-4-5-20250929": {
+        "input_tokens": 773,
+        "output_tokens": 23015,
+        "total_tokens": 23788,
+        "input_tokens_cache_write": 0,
+        "input_tokens_cache_read": 0,
+        "reasoning_tokens": 8279
+      },
+      "google/gemini-2.0-flash-001": {
+        "input_tokens": 3208,
+        "output_tokens": 5,
+        "total_tokens": 3213,
+        "reasoning_tokens": 0
+      }
+    },
+    "total_time": 299.465,
+    "working_time": 299.406,
+    "uuid": "eYAic4ZxBufxtjfKfbzGh7",
+    "retries": 0,
+    "completed": true
+  },
+  {
+    "id": "2025-II-Mock-AIME-Problem-13",
+    "epoch": 1,
+    "input": "Compute the largest positive integer $m$ such that $2^m$ divides $ \\sum_{k=0}^{717}(-1)^k\\binom{717}{k}(6+239k)^{717}. $",
+    "target": "711",
+    "metadata": {
+      "solution": "We recall the following general lemma. \\begin{lemma*} Let $P(x)$ be a degree-$d$ polynomial with leading coefficient $c$. Then $ \\sum_{k=0}^{d} (-1)^{n-k} \\binom{d}{k} P(k) = c \\cdot d!. $ \\end{lemma*} The lemma is proved by considering the finite differences of $P(x)$. Let $S$ denote the sum in the problem. Applying this to our problem by setting $P(k) = (239k + 6)^{717}$, we have $ S \\coloneqq \\sum_{k=0}^{717}(-1)^k\\binom{717}{k}P(k) = 717! \\cdot 239^{717} $ since $P$ has degree $717$ and leading coefficient $239^{717}$. We seek to compute $ m = \\nu_2(S) = \\nu_2(717! \\cdot 239^{717}) = \\nu_2(717!). $ To finish we invoke Legendre's formula in the form \\begin{align*} \\nu_2(m) = \\nu_2(717!) &= \\sum_{i=1}^\\infty \\left\\lfloor \\frac{n}{2^i} \\right\\rfloor \\\\ &= \\left\\lfloor \\frac{717}{2} \\right\\rfloor + \\left\\lfloor \\frac{717}{4} \\right\\rfloor + \\dotsb \\\\ &= 358+179+89+44+22+11+5+2+1 = \\boxed{711}. \\end{align*} (An equivalent form of Legendre's formula in this case is to write $717$ in binary as $717 =..."
+    },
+    "scores": {
+      "model_extracted_exact_match": {
+        "value": "C"
+      },
+      "model_graded": {
+        "value": "C"
+      }
+    },
+    "model_usage": {
+      "anthropic/claude-sonnet-4-5-20250929": {
+        "input_tokens": 143,
+        "output_tokens": 9705,
+        "total_tokens": 9848,
+        "input_tokens_cache_write": 0,
+        "input_tokens_cache_read": 0,
+        "reasoning_tokens": 3600
+      },
+      "google/gemini-2.0-flash-001": {
+        "input_tokens": 2614,
+        "output_tokens": 5,
+        "total_tokens": 2619,
+        "reasoning_tokens": 0
+      }
+    },
+    "total_time": 112.012,
+    "working_time": 111.957,
+    "uuid": "Ar6nHVkthV2TWuxHdQ8xyy",
+    "retries": 0,
+    "completed": true
+  },
+  {
+    "id": "2025-II-Mock-AIME-Problem-14",
+    "epoch": 1,
+    "input": "The incircle of $ABC$ is tangent to $BC$ at $D$. Let the internal bisectors of $\\angle BAD$ and $\\angle BDA$ meet at $I_B$ and their external bisectors at $E_B$, and define $I_C$ and $E_C$ similarly. Suppose that $I_BI_C=1$, $E_BE_C=6$, and the area of quadrilateral $I_BI_CE_BE_C$ is $7$. The area of triangle $ABC$ can be written as $\\tfrac{m}{n}$, where $m$ and $n$ are relatively prime positive integers. Compute $m+n$.",
+    "target": "191",
+    "metadata": {
+      "solution": "Let $a \\coloneq BC$, $b \\coloneq CA$, $c \\coloneq AB$ and $s \\coloneq \\half (a+b+c)$. Let $d = AD$. Hence $BD = s-b$ and $CD = s-c$. We start with the following claim. \\begin{claim*} The incircles of $\\triangle ABD$ and $\\triangle ACD$ (centered at $I_B$ and $I_C$) are tangent at a point $T_I$ on line $AD$. Similarly, the excircles (opposite $D$, centered at $E_B$ and $E_C$) are tangent at a point $T_E$ on line $AD$. Moreover, $T_I$ and $T_E$ are reflections across the midpoint of $AD$. \\end{claim*} \\begin{proof} The length of the tangents from $A$ along line $AD$ are given by $ \\frac{c+d+(s-b)}{2}-(s-b) = \\frac{b+d+(s-c)}{2}-(s-c) $ and hence the tangency points coincide at the point $\\frac{d+(s-a)}{2}$ from $A$. The extouch coincidence follows in the same way by the classical symmetry; they touch at the point $\\frac{d+(s-a)}{2}$ from $D$. \\end{proof} \\begin{center} \\begin{asy} size(14cm); defaultpen(fontsize(10pt)); // Triangle vertices pair B = (0, 0); pair A = (2, 10); pair C = (14, 0); pair EB =..."
+    },
+    "scores": {
+      "model_extracted_exact_match": {
+        "value": "I"
+      },
+      "model_graded": {
+        "value": "I"
+      }
+    },
+    "model_usage": {
+      "anthropic/claude-sonnet-4-5-20250929": {
+        "input_tokens": 252,
+        "output_tokens": 28875,
+        "total_tokens": 29127,
+        "input_tokens_cache_write": 0,
+        "input_tokens_cache_read": 0,
+        "reasoning_tokens": 9180
+      },
+      "google/gemini-2.0-flash-001": {
+        "input_tokens": 2822,
+        "output_tokens": 7,
+        "total_tokens": 2829,
+        "reasoning_tokens": 0
+      }
+    },
+    "total_time": 355.304,
+    "working_time": 355.245,
+    "uuid": "axY9v6gVz2TjBQRDgBHeGK",
+    "retries": 0,
+    "completed": true
+  },
+  {
+    "id": "2025-II-Mock-AIME-Problem-15",
+    "epoch": 1,
+    "input": "The Queen of Hearts has a special deck of $16$ playing cards and a $4 \\times 4$ square grid. Each card has one of four different ranks and one of four different suits, with each combination occurring exactly once. She wishes to place the cards in the grid, with one card in each cell, such that any cards in adjacent cells share either a rank or a suit. Compute the remainder when the number of ways to fill the grid is divided by $1000$.",
+    "target": "064",
+    "metadata": {
+      "solution": "We'll use $a$, $b$, $c$, $d$ for the four suits and $1$, $2$, $3$, $4$ for the four ranks. Hence we need to fill the grid with these $16$ cards which come in four ranks and four suits, each pair once from $a_1$ to $d_4$, such that adjacent cards either share a rank or share a suit. In fact, even for a $2 \\times 2$ sub-square, there are not that many possible shapes that can appear. We claim that, up to relabeling the suits and ranks, only four ``kinds'' of shapes could appear, which we abbreviate with the following names: \\begin{description} \\item[Flush] $\\left[ \\begin{smallmatrix} a_1 & a_2 \\\\ a_3 & a_4 \\end{smallmatrix} \\right]$ (i.e.\\ all suits the same) \\item[Four-of-a-kind] $\\left[ \\begin{smallmatrix} a_1 & b_1 \\\\ c_1 & d_1 \\end{smallmatrix} \\right]$ (i.e.\\ all ranks the same) \\item[Horizontal-pairs] $\\left[ \\begin{smallmatrix} a_1 & b_1 \\\\ a_2 & b_2 \\end{smallmatrix} \\right]$ (i.e.\\ two ranks and two suits, same ranks horizontally) \\item[Vertical-pairs] $\\left[ \\begin{smallmatrix} a_1 & a_2 \\\\ b_1 &..."
+    },
+    "scores": {
+      "model_extracted_exact_match": {
+        "value": "I"
+      },
+      "model_graded": {
+        "value": "I"
+      }
+    },
+    "model_usage": {
+      "anthropic/claude-sonnet-4-5-20250929": {
+        "input_tokens": 189,
+        "output_tokens": 26012,
+        "total_tokens": 26201,
+        "input_tokens_cache_write": 0,
+        "input_tokens_cache_read": 0,
+        "reasoning_tokens": 8999
+      },
+      "google/gemini-2.0-flash-001": {
+        "input_tokens": 1896,
+        "output_tokens": 7,
+        "total_tokens": 1903,
+        "reasoning_tokens": 0
+      }
+    },
+    "total_time": 377.63,
+    "working_time": 377.322,
+    "uuid": "3DJ5MAcnGLCqQe6JQ6xykT",
+    "retries": 0,
+    "completed": true
+  }
+]

@@ -1,0 +1,120 @@
+{
+  "version": 2,
+  "status": "success",
+  "eval": {
+    "eval_id": "hHrPWgNLMXHoAe8beuaUyX",
+    "run_id": "dnaCP4is3bimt8yUUwffH3",
+    "created": "2025-07-01T17:05:50+00:00",
+    "task": "frontiermath_tier_4_2025_07_01_public",
+    "task_id": "D2io2s62vZESNgXvtfyHyd",
+    "task_version": 0,
+    "task_file": "bench/task/frontiermath/__init__.py",
+    "task_registry_name": "frontiermath_tier_4_2025_07_01_public",
+    "task_attribs": {},
+    "task_args": {},
+    "task_args_passed": {},
+    "dataset": {
+      "name": "FrontierMath-Tier-4-2025-07-01-Public",
+      "samples": 2,
+      "sample_ids": [
+        "ONO3",
+        "PTA1"
+      ],
+      "shuffled": false
+    },
+    "sandbox": {
+      "type": "docker",
+      "config": "compose.yaml"
+    },
+    "model": "anthropic/claude-3-5-sonnet-20240620",
+    "model_generate_config": {},
+    "model_args": {},
+    "config": {
+      "epochs": 1,
+      "epochs_reducer": [
+        "mean"
+      ],
+      "fail_on_error": 0.01,
+      "sandbox_cleanup": true,
+      "log_samples": true,
+      "log_realtime": true,
+      "log_images": true,
+      "score_display": true
+    },
+    "packages": {
+      "inspect_ai": "0.3.105"
+    },
+    "metadata": {
+      "inspect-log-encrypted": false,
+      "inspect-log-public": true
+    },
+    "scorers": [
+      {
+        "name": "verification_code",
+        "options": {},
+        "metrics": [
+          {
+            "name": "inspect_ai/accuracy",
+            "options": {}
+          },
+          {
+            "name": "inspect_ai/stderr",
+            "options": {}
+          }
+        ],
+        "metadata": {}
+      }
+    ]
+  },
+  "plan": {
+    "name": "plan",
+    "steps": [
+      {
+        "solver": "frontiermath_agent",
+        "params": {
+          "token_limit": 1000000,
+          "forced_submit_tokens": 660000
+        }
+      }
+    ],
+    "config": {
+      "max_retries": 10
+    }
+  },
+  "results": {
+    "total_samples": 2,
+    "completed_samples": 2,
+    "scores": [
+      {
+        "name": "verification_code",
+        "scorer": "verification_code",
+        "params": {},
+        "metrics": {
+          "accuracy": {
+            "name": "accuracy",
+            "value": 0.0,
+            "params": {}
+          },
+          "stderr": {
+            "name": "stderr",
+            "value": 0.0,
+            "params": {}
+          }
+        }
+      }
+    ]
+  },
+  "stats": {
+    "started_at": "2025-07-01T17:05:50+00:00",
+    "completed_at": "2025-07-01T17:11:05+00:00",
+    "model_usage": {
+      "anthropic/claude-3-5-sonnet-20240620": {
+        "input_tokens": 57,
+        "output_tokens": 13606,
+        "total_tokens": 174135,
+        "input_tokens_cache_write": 20881,
+        "input_tokens_cache_read": 139591
+      }
+    }
+  }
+}

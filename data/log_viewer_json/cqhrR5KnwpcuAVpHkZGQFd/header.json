@@ -1,0 +1,180 @@
+{
+  "version": 2,
+  "status": "success",
+  "eval": {
+    "run_id": "cqhrR5KnwpcuAVpHkZGQFd",
+    "created": "2025-02-25T14:05:11+00:00",
+    "task": "OTIS Mock AIME 2024-2025",
+    "task_id": "XCxeJjYArCvKut7pi3gXnr",
+    "task_version": 0,
+    "task_file": "bench/task/otis_mock_aime/__init__.py",
+    "task_attribs": {},
+    "task_args": {},
+    "dataset": {
+      "name": "EpochAI/otis-mock-aime-24-25",
+      "location": "EpochAI/otis-mock-aime-24-25",
+      "samples": 45,
+      "sample_ids": [
+        "2024-Mock-AIME-Problem-01",
+        "2024-Mock-AIME-Problem-02",
+        "2024-Mock-AIME-Problem-03",
+        "2024-Mock-AIME-Problem-04",
+        "2024-Mock-AIME-Problem-05",
+        "2024-Mock-AIME-Problem-06",
+        "2024-Mock-AIME-Problem-07",
+        "2024-Mock-AIME-Problem-08",
+        "2024-Mock-AIME-Problem-09",
+        "2024-Mock-AIME-Problem-10",
+        "2024-Mock-AIME-Problem-11",
+        "2024-Mock-AIME-Problem-12",
+        "2024-Mock-AIME-Problem-13",
+        "2024-Mock-AIME-Problem-14",
+        "2024-Mock-AIME-Problem-15",
+        "2025-I-Mock-AIME-Problem-01",
+        "2025-I-Mock-AIME-Problem-02",
+        "2025-I-Mock-AIME-Problem-03",
+        "2025-I-Mock-AIME-Problem-04",
+        "2025-I-Mock-AIME-Problem-05",
+        "2025-I-Mock-AIME-Problem-06",
+        "2025-I-Mock-AIME-Problem-07",
+        "2025-I-Mock-AIME-Problem-08",
+        "2025-I-Mock-AIME-Problem-09",
+        "2025-I-Mock-AIME-Problem-10",
+        "2025-I-Mock-AIME-Problem-11",
+        "2025-I-Mock-AIME-Problem-12",
+        "2025-I-Mock-AIME-Problem-13",
+        "2025-I-Mock-AIME-Problem-14",
+        "2025-I-Mock-AIME-Problem-15",
+        "2025-II-Mock-AIME-Problem-01",
+        "2025-II-Mock-AIME-Problem-02",
+        "2025-II-Mock-AIME-Problem-03",
+        "2025-II-Mock-AIME-Problem-04",
+        "2025-II-Mock-AIME-Problem-05",
+        "2025-II-Mock-AIME-Problem-06",
+        "2025-II-Mock-AIME-Problem-07",
+        "2025-II-Mock-AIME-Problem-08",
+        "2025-II-Mock-AIME-Problem-09",
+        "2025-II-Mock-AIME-Problem-10",
+        "2025-II-Mock-AIME-Problem-11",
+        "2025-II-Mock-AIME-Problem-12",
+        "2025-II-Mock-AIME-Problem-13",
+        "2025-II-Mock-AIME-Problem-14",
+        "2025-II-Mock-AIME-Problem-15"
+      ],
+      "shuffled": false
+    },
+    "model": "anthropic/claude-3-5-haiku-20241022",
+    "model_args": {},
+    "config": {
+      "epochs": 16,
+      "epochs_reducer": [
+        "mean",
+        "pass_at_16"
+      ],
+      "fail_on_error": true,
+      "sandbox_cleanup": true,
+      "log_samples": true,
+      "log_images": true,
+      "score_display": true
+    },
+    "packages": {
+      "inspect_ai": "0.3.69.dev17+gdd1e12f9"
+    },
+    "metadata": {
+      "inspect-log-public": true
+    },
+    "scorers": [
+      {
+        "name": "model_graded",
+        "options": {},
+        "metrics": [
+          {
+            "name": "inspect_ai/accuracy",
+            "options": {}
+          },
+          {
+            "name": "inspect_ai/stderr",
+            "options": {}
+          }
+        ],
+        "metadata": {}
+      }
+    ]
+  },
+  "plan": {
+    "name": "plan",
+    "steps": [
+      {
+        "solver": "prompt_template",
+        "params": {
+          "template": "Please solve this AIME problem step by step. The answer is an integer ranging from\n000 to 999, inclusive.\n\n{prompt}\n\nRemember to show your work clearly and end with 'ANSWER: X' where X is your final numerical answer."
+        }
+      },
+      {
+        "solver": "generate",
+        "params": {}
+      }
+    ],
+    "config": {}
+  },
+  "results": {
+    "total_samples": 720,
+    "completed_samples": 720,
+    "scores": [
+      {
+        "name": "model_graded",
+        "scorer": "model_graded",
+        "reducer": "mean",
+        "params": {},
+        "metrics": {
+          "accuracy": {
+            "name": "accuracy",
+            "value": 0.043055555555555555,
+            "params": {}
+          },
+          "stderr": {
+            "name": "stderr",
+            "value": 0.016237638827815495,
+            "params": {}
+          }
+        }
+      },
+      {
+        "name": "model_graded",
+        "scorer": "model_graded",
+        "reducer": "pass_at_16",
+        "params": {},
+        "metrics": {
+          "accuracy": {
+            "name": "accuracy",
+            "value": 0.26666666666666666,
+            "params": {}
+          },
+          "stderr": {
+            "name": "stderr",
+            "value": 0.06666666666666668,
+            "params": {}
+          }
+        }
+      }
+    ]
+  },
+  "stats": {
+    "started_at": "2025-02-25T14:05:11+00:00",
+    "completed_at": "2025-02-25T14:12:10+00:00",
+    "model_usage": {
+      "anthropic/claude-3-5-haiku-20241022": {
+        "input_tokens": 144848,
+        "output_tokens": 388342,
+        "total_tokens": 533190,
+        "input_tokens_cache_write": 0,
+        "input_tokens_cache_read": 0
+      },
+      "google/gemini-1.5-flash-002": {
+        "input_tokens": 441350,
+        "output_tokens": 2818,
+        "total_tokens": 444168
+      }
+    }
+  }
+}

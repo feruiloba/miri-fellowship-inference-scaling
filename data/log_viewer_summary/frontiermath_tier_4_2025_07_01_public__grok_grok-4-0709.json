@@ -1,0 +1,40 @@
+{
+  "task": "frontiermath_tier_4_2025_07_01_public",
+  "task_display_name": null,
+  "model": "grok/grok-4-0709",
+  "eval_id": "itf2gfdrpLyLqr5zisYmg6",
+  "run_id": "dR2xMMN4mNQQeK9iutdRup",
+  "dataset_name": "FrontierMath-Tier-4-2025-07-01-Public",
+  "epochs_configured": 1,
+  "totals": {
+    "total_output_tokens": 1190.0,
+    "total_avg_output_tokens": 1190.0,
+    "total_reasoning_tokens": 160988.0,
+    "total_avg_reasoning_tokens": 160988.0
+  },
+  "totals_source": "samples",
+  "samples": {
+    "ONO3": {
+      "n_epochs": 1,
+      "output_tokens": [
+        1156
+      ],
+      "avg_output_tokens": 1156.0,
+      "reasoning_tokens": [
+        124341
+      ],
+      "avg_reasoning_tokens": 124341.0
+    },
+    "PTA1": {
+      "n_epochs": 1,
+      "output_tokens": [
+        34
+      ],
+      "avg_output_tokens": 34.0,
+      "reasoning_tokens": [
+        36647
+      ],
+      "avg_reasoning_tokens": 36647.0
+    }
+  }
+}

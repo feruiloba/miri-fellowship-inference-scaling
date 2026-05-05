@@ -1,0 +1,40 @@
+{
+  "task": "frontiermath_tier_4_2025_07_01_public",
+  "task_display_name": null,
+  "model": "google/gemini-2.5-pro-preview-06-05",
+  "eval_id": "Y9gYhasn7C4qMcxEyRxo9E",
+  "run_id": "3DgJz7t3iDQFuXMPrC3Jdc",
+  "dataset_name": "FrontierMath-Tier-4-2025-07-01-Public",
+  "epochs_configured": 1,
+  "totals": {
+    "total_output_tokens": 6824.0,
+    "total_avg_output_tokens": 6824.0,
+    "total_reasoning_tokens": 38744.0,
+    "total_avg_reasoning_tokens": 38744.0
+  },
+  "totals_source": "samples",
+  "samples": {
+    "ONO3": {
+      "n_epochs": 1,
+      "output_tokens": [
+        3974
+      ],
+      "avg_output_tokens": 3974.0,
+      "reasoning_tokens": [
+        18622
+      ],
+      "avg_reasoning_tokens": 18622.0
+    },
+    "PTA1": {
+      "n_epochs": 1,
+      "output_tokens": [
+        2850
+      ],
+      "avg_output_tokens": 2850.0,
+      "reasoning_tokens": [
+        20122
+      ],
+      "avg_reasoning_tokens": 20122.0
+    }
+  }
+}

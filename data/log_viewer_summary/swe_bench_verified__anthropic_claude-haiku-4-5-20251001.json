@@ -1,0 +1,4518 @@
+{
+  "task": "swe_bench_verified",
+  "task_display_name": null,
+  "model": "anthropic/claude-haiku-4-5-20251001",
+  "eval_id": "K8zneyzuJfE33TppSk3jqX",
+  "run_id": "NNRfKgR23F8kXjFh8jin8g",
+  "dataset_name": "princeton-nlp/SWE-bench_Verified",
+  "epochs_configured": 1,
+  "totals": {
+    "total_output_tokens": 5042232.0,
+    "total_avg_output_tokens": 5042232.0,
+    "total_reasoning_tokens": 0.0,
+    "total_avg_reasoning_tokens": 0.0
+  },
+  "totals_source": "samples",
+  "samples": {
+    "astropy__astropy-12907": {
+      "n_epochs": 1,
+      "output_tokens": [
+        10675
+      ],
+      "avg_output_tokens": 10675.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "astropy__astropy-13033": {
+      "n_epochs": 1,
+      "output_tokens": [
+        13761
+      ],
+      "avg_output_tokens": 13761.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "astropy__astropy-13236": {
+      "n_epochs": 1,
+      "output_tokens": [
+        9703
+      ],
+      "avg_output_tokens": 9703.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "astropy__astropy-13398": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8263
+      ],
+      "avg_output_tokens": 8263.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "astropy__astropy-13453": {
+      "n_epochs": 1,
+      "output_tokens": [
+        6380
+      ],
+      "avg_output_tokens": 6380.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "astropy__astropy-13579": {
+      "n_epochs": 1,
+      "output_tokens": [
+        22888
+      ],
+      "avg_output_tokens": 22888.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "astropy__astropy-13977": {
+      "n_epochs": 1,
+      "output_tokens": [
+        11801
+      ],
+      "avg_output_tokens": 11801.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "astropy__astropy-14096": {
+      "n_epochs": 1,
+      "output_tokens": [
+        12278
+      ],
+      "avg_output_tokens": 12278.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "astropy__astropy-14182": {
+      "n_epochs": 1,
+      "output_tokens": [
+        10430
+      ],
+      "avg_output_tokens": 10430.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "astropy__astropy-14309": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8358
+      ],
+      "avg_output_tokens": 8358.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "astropy__astropy-14365": {
+      "n_epochs": 1,
+      "output_tokens": [
+        7833
+      ],
+      "avg_output_tokens": 7833.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "astropy__astropy-14369": {
+      "n_epochs": 1,
+      "output_tokens": [
+        13382
+      ],
+      "avg_output_tokens": 13382.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "astropy__astropy-14508": {
+      "n_epochs": 1,
+      "output_tokens": [
+        13534
+      ],
+      "avg_output_tokens": 13534.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "astropy__astropy-14539": {
+      "n_epochs": 1,
+      "output_tokens": [
+        10208
+      ],
+      "avg_output_tokens": 10208.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "astropy__astropy-14598": {
+      "n_epochs": 1,
+      "output_tokens": [
+        15477
+      ],
+      "avg_output_tokens": 15477.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "astropy__astropy-14995": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8693
+      ],
+      "avg_output_tokens": 8693.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "astropy__astropy-7166": {
+      "n_epochs": 1,
+      "output_tokens": [
+        14784
+      ],
+      "avg_output_tokens": 14784.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "astropy__astropy-7336": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8902
+      ],
+      "avg_output_tokens": 8902.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "astropy__astropy-7606": {
+      "n_epochs": 1,
+      "output_tokens": [
+        9363
+      ],
+      "avg_output_tokens": 9363.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "astropy__astropy-7671": {
+      "n_epochs": 1,
+      "output_tokens": [
+        10831
+      ],
+      "avg_output_tokens": 10831.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "astropy__astropy-8707": {
+      "n_epochs": 1,
+      "output_tokens": [
+        7564
+      ],
+      "avg_output_tokens": 7564.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "astropy__astropy-8872": {
+      "n_epochs": 1,
+      "output_tokens": [
+        9448
+      ],
+      "avg_output_tokens": 9448.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-10097": {
+      "n_epochs": 1,
+      "output_tokens": [
+        7095
+      ],
+      "avg_output_tokens": 7095.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-10554": {
+      "n_epochs": 1,
+      "output_tokens": [
+        9262
+      ],
+      "avg_output_tokens": 9262.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-10880": {
+      "n_epochs": 1,
+      "output_tokens": [
+        10022
+      ],
+      "avg_output_tokens": 10022.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-10914": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8352
+      ],
+      "avg_output_tokens": 8352.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-10973": {
+      "n_epochs": 1,
+      "output_tokens": [
+        7923
+      ],
+      "avg_output_tokens": 7923.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-10999": {
+      "n_epochs": 1,
+      "output_tokens": [
+        9566
+      ],
+      "avg_output_tokens": 9566.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-11066": {
+      "n_epochs": 1,
+      "output_tokens": [
+        10820
+      ],
+      "avg_output_tokens": 10820.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-11087": {
+      "n_epochs": 1,
+      "output_tokens": [
+        6463
+      ],
+      "avg_output_tokens": 6463.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-11095": {
+      "n_epochs": 1,
+      "output_tokens": [
+        7663
+      ],
+      "avg_output_tokens": 7663.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-11099": {
+      "n_epochs": 1,
+      "output_tokens": [
+        11624
+      ],
+      "avg_output_tokens": 11624.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-11119": {
+      "n_epochs": 1,
+      "output_tokens": [
+        7484
+      ],
+      "avg_output_tokens": 7484.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-11133": {
+      "n_epochs": 1,
+      "output_tokens": [
+        11219
+      ],
+      "avg_output_tokens": 11219.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-11138": {
+      "n_epochs": 1,
+      "output_tokens": [
+        6386
+      ],
+      "avg_output_tokens": 6386.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-11141": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8022
+      ],
+      "avg_output_tokens": 8022.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-11149": {
+      "n_epochs": 1,
+      "output_tokens": [
+        5657
+      ],
+      "avg_output_tokens": 5657.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-11163": {
+      "n_epochs": 1,
+      "output_tokens": [
+        10551
+      ],
+      "avg_output_tokens": 10551.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-11179": {
+      "n_epochs": 1,
+      "output_tokens": [
+        11886
+      ],
+      "avg_output_tokens": 11886.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-11206": {
+      "n_epochs": 1,
+      "output_tokens": [
+        19431
+      ],
+      "avg_output_tokens": 19431.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-11211": {
+      "n_epochs": 1,
+      "output_tokens": [
+        7995
+      ],
+      "avg_output_tokens": 7995.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-11239": {
+      "n_epochs": 1,
+      "output_tokens": [
+        10578
+      ],
+      "avg_output_tokens": 10578.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-11265": {
+      "n_epochs": 1,
+      "output_tokens": [
+        9593
+      ],
+      "avg_output_tokens": 9593.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-11276": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8278
+      ],
+      "avg_output_tokens": 8278.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-11292": {
+      "n_epochs": 1,
+      "output_tokens": [
+        11173
+      ],
+      "avg_output_tokens": 11173.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-11299": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8800
+      ],
+      "avg_output_tokens": 8800.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-11333": {
+      "n_epochs": 1,
+      "output_tokens": [
+        11293
+      ],
+      "avg_output_tokens": 11293.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-11400": {
+      "n_epochs": 1,
+      "output_tokens": [
+        6475
+      ],
+      "avg_output_tokens": 6475.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-11433": {
+      "n_epochs": 1,
+      "output_tokens": [
+        7634
+      ],
+      "avg_output_tokens": 7634.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-11451": {
+      "n_epochs": 1,
+      "output_tokens": [
+        9007
+      ],
+      "avg_output_tokens": 9007.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-11477": {
+      "n_epochs": 1,
+      "output_tokens": [
+        7397
+      ],
+      "avg_output_tokens": 7397.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-11490": {
+      "n_epochs": 1,
+      "output_tokens": [
+        12092
+      ],
+      "avg_output_tokens": 12092.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-11532": {
+      "n_epochs": 1,
+      "output_tokens": [
+        11231
+      ],
+      "avg_output_tokens": 11231.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-11551": {
+      "n_epochs": 1,
+      "output_tokens": [
+        11398
+      ],
+      "avg_output_tokens": 11398.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-11555": {
+      "n_epochs": 1,
+      "output_tokens": [
+        10616
+      ],
+      "avg_output_tokens": 10616.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-11603": {
+      "n_epochs": 1,
+      "output_tokens": [
+        5988
+      ],
+      "avg_output_tokens": 5988.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-11728": {
+      "n_epochs": 1,
+      "output_tokens": [
+        15469
+      ],
+      "avg_output_tokens": 15469.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-11734": {
+      "n_epochs": 1,
+      "output_tokens": [
+        7580
+      ],
+      "avg_output_tokens": 7580.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-11740": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8416
+      ],
+      "avg_output_tokens": 8416.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-11749": {
+      "n_epochs": 1,
+      "output_tokens": [
+        11053
+      ],
+      "avg_output_tokens": 11053.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-11790": {
+      "n_epochs": 1,
+      "output_tokens": [
+        9152
+      ],
+      "avg_output_tokens": 9152.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-11815": {
+      "n_epochs": 1,
+      "output_tokens": [
+        11740
+      ],
+      "avg_output_tokens": 11740.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-11820": {
+      "n_epochs": 1,
+      "output_tokens": [
+        11890
+      ],
+      "avg_output_tokens": 11890.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-11848": {
+      "n_epochs": 1,
+      "output_tokens": [
+        13171
+      ],
+      "avg_output_tokens": 13171.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-11880": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8771
+      ],
+      "avg_output_tokens": 8771.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-11885": {
+      "n_epochs": 1,
+      "output_tokens": [
+        9801
+      ],
+      "avg_output_tokens": 9801.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-11951": {
+      "n_epochs": 1,
+      "output_tokens": [
+        6105
+      ],
+      "avg_output_tokens": 6105.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-11964": {
+      "n_epochs": 1,
+      "output_tokens": [
+        6537
+      ],
+      "avg_output_tokens": 6537.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-11999": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8214
+      ],
+      "avg_output_tokens": 8214.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-12039": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8644
+      ],
+      "avg_output_tokens": 8644.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-12050": {
+      "n_epochs": 1,
+      "output_tokens": [
+        10052
+      ],
+      "avg_output_tokens": 10052.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-12125": {
+      "n_epochs": 1,
+      "output_tokens": [
+        11868
+      ],
+      "avg_output_tokens": 11868.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-12143": {
+      "n_epochs": 1,
+      "output_tokens": [
+        11939
+      ],
+      "avg_output_tokens": 11939.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-12155": {
+      "n_epochs": 1,
+      "output_tokens": [
+        10149
+      ],
+      "avg_output_tokens": 10149.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-12193": {
+      "n_epochs": 1,
+      "output_tokens": [
+        17285
+      ],
+      "avg_output_tokens": 17285.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-12209": {
+      "n_epochs": 1,
+      "output_tokens": [
+        11437
+      ],
+      "avg_output_tokens": 11437.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-12262": {
+      "n_epochs": 1,
+      "output_tokens": [
+        11058
+      ],
+      "avg_output_tokens": 11058.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-12273": {
+      "n_epochs": 1,
+      "output_tokens": [
+        19305
+      ],
+      "avg_output_tokens": 19305.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-12276": {
+      "n_epochs": 1,
+      "output_tokens": [
+        7343
+      ],
+      "avg_output_tokens": 7343.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-12304": {
+      "n_epochs": 1,
+      "output_tokens": [
+        11248
+      ],
+      "avg_output_tokens": 11248.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-12308": {
+      "n_epochs": 1,
+      "output_tokens": [
+        7597
+      ],
+      "avg_output_tokens": 7597.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-12325": {
+      "n_epochs": 1,
+      "output_tokens": [
+        13615
+      ],
+      "avg_output_tokens": 13615.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-12406": {
+      "n_epochs": 1,
+      "output_tokens": [
+        6649
+      ],
+      "avg_output_tokens": 6649.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-12419": {
+      "n_epochs": 1,
+      "output_tokens": [
+        7330
+      ],
+      "avg_output_tokens": 7330.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-12663": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8844
+      ],
+      "avg_output_tokens": 8844.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-12708": {
+      "n_epochs": 1,
+      "output_tokens": [
+        12299
+      ],
+      "avg_output_tokens": 12299.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-12713": {
+      "n_epochs": 1,
+      "output_tokens": [
+        9524
+      ],
+      "avg_output_tokens": 9524.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-12741": {
+      "n_epochs": 1,
+      "output_tokens": [
+        5953
+      ],
+      "avg_output_tokens": 5953.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-12754": {
+      "n_epochs": 1,
+      "output_tokens": [
+        10060
+      ],
+      "avg_output_tokens": 10060.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-12774": {
+      "n_epochs": 1,
+      "output_tokens": [
+        6542
+      ],
+      "avg_output_tokens": 6542.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-12858": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8552
+      ],
+      "avg_output_tokens": 8552.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-12965": {
+      "n_epochs": 1,
+      "output_tokens": [
+        6205
+      ],
+      "avg_output_tokens": 6205.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-13012": {
+      "n_epochs": 1,
+      "output_tokens": [
+        17253
+      ],
+      "avg_output_tokens": 17253.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-13023": {
+      "n_epochs": 1,
+      "output_tokens": [
+        7361
+      ],
+      "avg_output_tokens": 7361.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-13028": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8373
+      ],
+      "avg_output_tokens": 8373.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-13033": {
+      "n_epochs": 1,
+      "output_tokens": [
+        16897
+      ],
+      "avg_output_tokens": 16897.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-13089": {
+      "n_epochs": 1,
+      "output_tokens": [
+        13527
+      ],
+      "avg_output_tokens": 13527.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-13109": {
+      "n_epochs": 1,
+      "output_tokens": [
+        7897
+      ],
+      "avg_output_tokens": 7897.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-13112": {
+      "n_epochs": 1,
+      "output_tokens": [
+        5374
+      ],
+      "avg_output_tokens": 5374.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-13121": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8304
+      ],
+      "avg_output_tokens": 8304.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-13128": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8192
+      ],
+      "avg_output_tokens": 8192.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-13158": {
+      "n_epochs": 1,
+      "output_tokens": [
+        9166
+      ],
+      "avg_output_tokens": 9166.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-13195": {
+      "n_epochs": 1,
+      "output_tokens": [
+        12552
+      ],
+      "avg_output_tokens": 12552.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-13212": {
+      "n_epochs": 1,
+      "output_tokens": [
+        9314
+      ],
+      "avg_output_tokens": 9314.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-13279": {
+      "n_epochs": 1,
+      "output_tokens": [
+        9735
+      ],
+      "avg_output_tokens": 9735.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-13297": {
+      "n_epochs": 1,
+      "output_tokens": [
+        6802
+      ],
+      "avg_output_tokens": 6802.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-13315": {
+      "n_epochs": 1,
+      "output_tokens": [
+        6623
+      ],
+      "avg_output_tokens": 6623.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-13343": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8435
+      ],
+      "avg_output_tokens": 8435.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-13344": {
+      "n_epochs": 1,
+      "output_tokens": [
+        12071
+      ],
+      "avg_output_tokens": 12071.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-13346": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8292
+      ],
+      "avg_output_tokens": 8292.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-13363": {
+      "n_epochs": 1,
+      "output_tokens": [
+        10218
+      ],
+      "avg_output_tokens": 10218.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-13401": {
+      "n_epochs": 1,
+      "output_tokens": [
+        12075
+      ],
+      "avg_output_tokens": 12075.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-13406": {
+      "n_epochs": 1,
+      "output_tokens": [
+        10376
+      ],
+      "avg_output_tokens": 10376.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-13410": {
+      "n_epochs": 1,
+      "output_tokens": [
+        7415
+      ],
+      "avg_output_tokens": 7415.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-13417": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8462
+      ],
+      "avg_output_tokens": 8462.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-13449": {
+      "n_epochs": 1,
+      "output_tokens": [
+        10086
+      ],
+      "avg_output_tokens": 10086.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-13512": {
+      "n_epochs": 1,
+      "output_tokens": [
+        6809
+      ],
+      "avg_output_tokens": 6809.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-13513": {
+      "n_epochs": 1,
+      "output_tokens": [
+        11505
+      ],
+      "avg_output_tokens": 11505.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-13516": {
+      "n_epochs": 1,
+      "output_tokens": [
+        10506
+      ],
+      "avg_output_tokens": 10506.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-13551": {
+      "n_epochs": 1,
+      "output_tokens": [
+        7247
+      ],
+      "avg_output_tokens": 7247.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-13568": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8345
+      ],
+      "avg_output_tokens": 8345.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-13569": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8177
+      ],
+      "avg_output_tokens": 8177.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-13590": {
+      "n_epochs": 1,
+      "output_tokens": [
+        9157
+      ],
+      "avg_output_tokens": 9157.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-13658": {
+      "n_epochs": 1,
+      "output_tokens": [
+        10047
+      ],
+      "avg_output_tokens": 10047.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-13670": {
+      "n_epochs": 1,
+      "output_tokens": [
+        7080
+      ],
+      "avg_output_tokens": 7080.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-13741": {
+      "n_epochs": 1,
+      "output_tokens": [
+        7954
+      ],
+      "avg_output_tokens": 7954.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-13786": {
+      "n_epochs": 1,
+      "output_tokens": [
+        14043
+      ],
+      "avg_output_tokens": 14043.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-13794": {
+      "n_epochs": 1,
+      "output_tokens": [
+        14783
+      ],
+      "avg_output_tokens": 14783.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-13807": {
+      "n_epochs": 1,
+      "output_tokens": [
+        9938
+      ],
+      "avg_output_tokens": 9938.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-13809": {
+      "n_epochs": 1,
+      "output_tokens": [
+        6703
+      ],
+      "avg_output_tokens": 6703.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-13810": {
+      "n_epochs": 1,
+      "output_tokens": [
+        15327
+      ],
+      "avg_output_tokens": 15327.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-13820": {
+      "n_epochs": 1,
+      "output_tokens": [
+        11172
+      ],
+      "avg_output_tokens": 11172.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-13821": {
+      "n_epochs": 1,
+      "output_tokens": [
+        6401
+      ],
+      "avg_output_tokens": 6401.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-13837": {
+      "n_epochs": 1,
+      "output_tokens": [
+        6409
+      ],
+      "avg_output_tokens": 6409.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-13925": {
+      "n_epochs": 1,
+      "output_tokens": [
+        11807
+      ],
+      "avg_output_tokens": 11807.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-13933": {
+      "n_epochs": 1,
+      "output_tokens": [
+        6274
+      ],
+      "avg_output_tokens": 6274.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-13964": {
+      "n_epochs": 1,
+      "output_tokens": [
+        13969
+      ],
+      "avg_output_tokens": 13969.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-14007": {
+      "n_epochs": 1,
+      "output_tokens": [
+        6760
+      ],
+      "avg_output_tokens": 6760.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-14011": {
+      "n_epochs": 1,
+      "output_tokens": [
+        5911
+      ],
+      "avg_output_tokens": 5911.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-14017": {
+      "n_epochs": 1,
+      "output_tokens": [
+        12018
+      ],
+      "avg_output_tokens": 12018.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-14034": {
+      "n_epochs": 1,
+      "output_tokens": [
+        19594
+      ],
+      "avg_output_tokens": 19594.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-14053": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8770
+      ],
+      "avg_output_tokens": 8770.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-14089": {
+      "n_epochs": 1,
+      "output_tokens": [
+        5547
+      ],
+      "avg_output_tokens": 5547.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-14122": {
+      "n_epochs": 1,
+      "output_tokens": [
+        5420
+      ],
+      "avg_output_tokens": 5420.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-14140": {
+      "n_epochs": 1,
+      "output_tokens": [
+        9779
+      ],
+      "avg_output_tokens": 9779.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-14155": {
+      "n_epochs": 1,
+      "output_tokens": [
+        9825
+      ],
+      "avg_output_tokens": 9825.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-14170": {
+      "n_epochs": 1,
+      "output_tokens": [
+        5947
+      ],
+      "avg_output_tokens": 5947.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-14238": {
+      "n_epochs": 1,
+      "output_tokens": [
+        10741
+      ],
+      "avg_output_tokens": 10741.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-14311": {
+      "n_epochs": 1,
+      "output_tokens": [
+        11656
+      ],
+      "avg_output_tokens": 11656.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-14315": {
+      "n_epochs": 1,
+      "output_tokens": [
+        12596
+      ],
+      "avg_output_tokens": 12596.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-14349": {
+      "n_epochs": 1,
+      "output_tokens": [
+        9358
+      ],
+      "avg_output_tokens": 9358.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-14351": {
+      "n_epochs": 1,
+      "output_tokens": [
+        5515
+      ],
+      "avg_output_tokens": 5515.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-14373": {
+      "n_epochs": 1,
+      "output_tokens": [
+        9570
+      ],
+      "avg_output_tokens": 9570.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-14376": {
+      "n_epochs": 1,
+      "output_tokens": [
+        10460
+      ],
+      "avg_output_tokens": 10460.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-14404": {
+      "n_epochs": 1,
+      "output_tokens": [
+        6923
+      ],
+      "avg_output_tokens": 6923.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-14434": {
+      "n_epochs": 1,
+      "output_tokens": [
+        7057
+      ],
+      "avg_output_tokens": 7057.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-14493": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8284
+      ],
+      "avg_output_tokens": 8284.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-14500": {
+      "n_epochs": 1,
+      "output_tokens": [
+        9837
+      ],
+      "avg_output_tokens": 9837.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-14534": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8180
+      ],
+      "avg_output_tokens": 8180.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-14539": {
+      "n_epochs": 1,
+      "output_tokens": [
+        15111
+      ],
+      "avg_output_tokens": 15111.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-14559": {
+      "n_epochs": 1,
+      "output_tokens": [
+        9938
+      ],
+      "avg_output_tokens": 9938.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-14580": {
+      "n_epochs": 1,
+      "output_tokens": [
+        7681
+      ],
+      "avg_output_tokens": 7681.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-14608": {
+      "n_epochs": 1,
+      "output_tokens": [
+        7639
+      ],
+      "avg_output_tokens": 7639.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-14631": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8762
+      ],
+      "avg_output_tokens": 8762.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-14672": {
+      "n_epochs": 1,
+      "output_tokens": [
+        12511
+      ],
+      "avg_output_tokens": 12511.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-14725": {
+      "n_epochs": 1,
+      "output_tokens": [
+        6366
+      ],
+      "avg_output_tokens": 6366.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-14752": {
+      "n_epochs": 1,
+      "output_tokens": [
+        7274
+      ],
+      "avg_output_tokens": 7274.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-14765": {
+      "n_epochs": 1,
+      "output_tokens": [
+        7024
+      ],
+      "avg_output_tokens": 7024.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-14771": {
+      "n_epochs": 1,
+      "output_tokens": [
+        9636
+      ],
+      "avg_output_tokens": 9636.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-14787": {
+      "n_epochs": 1,
+      "output_tokens": [
+        11103
+      ],
+      "avg_output_tokens": 11103.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-14792": {
+      "n_epochs": 1,
+      "output_tokens": [
+        7534
+      ],
+      "avg_output_tokens": 7534.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-14855": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8438
+      ],
+      "avg_output_tokens": 8438.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-14915": {
+      "n_epochs": 1,
+      "output_tokens": [
+        10148
+      ],
+      "avg_output_tokens": 10148.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-14999": {
+      "n_epochs": 1,
+      "output_tokens": [
+        6398
+      ],
+      "avg_output_tokens": 6398.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-15022": {
+      "n_epochs": 1,
+      "output_tokens": [
+        7739
+      ],
+      "avg_output_tokens": 7739.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-15037": {
+      "n_epochs": 1,
+      "output_tokens": [
+        5923
+      ],
+      "avg_output_tokens": 5923.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-15098": {
+      "n_epochs": 1,
+      "output_tokens": [
+        9157
+      ],
+      "avg_output_tokens": 9157.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-15103": {
+      "n_epochs": 1,
+      "output_tokens": [
+        7923
+      ],
+      "avg_output_tokens": 7923.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-15104": {
+      "n_epochs": 1,
+      "output_tokens": [
+        10278
+      ],
+      "avg_output_tokens": 10278.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-15127": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8392
+      ],
+      "avg_output_tokens": 8392.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-15128": {
+      "n_epochs": 1,
+      "output_tokens": [
+        10518
+      ],
+      "avg_output_tokens": 10518.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-15161": {
+      "n_epochs": 1,
+      "output_tokens": [
+        6489
+      ],
+      "avg_output_tokens": 6489.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-15252": {
+      "n_epochs": 1,
+      "output_tokens": [
+        6237
+      ],
+      "avg_output_tokens": 6237.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-15268": {
+      "n_epochs": 1,
+      "output_tokens": [
+        12322
+      ],
+      "avg_output_tokens": 12322.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-15277": {
+      "n_epochs": 1,
+      "output_tokens": [
+        9793
+      ],
+      "avg_output_tokens": 9793.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-15278": {
+      "n_epochs": 1,
+      "output_tokens": [
+        5957
+      ],
+      "avg_output_tokens": 5957.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-15280": {
+      "n_epochs": 1,
+      "output_tokens": [
+        7542
+      ],
+      "avg_output_tokens": 7542.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-15315": {
+      "n_epochs": 1,
+      "output_tokens": [
+        10078
+      ],
+      "avg_output_tokens": 10078.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-15368": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8277
+      ],
+      "avg_output_tokens": 8277.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-15375": {
+      "n_epochs": 1,
+      "output_tokens": [
+        6504
+      ],
+      "avg_output_tokens": 6504.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-15380": {
+      "n_epochs": 1,
+      "output_tokens": [
+        11074
+      ],
+      "avg_output_tokens": 11074.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-15382": {
+      "n_epochs": 1,
+      "output_tokens": [
+        10943
+      ],
+      "avg_output_tokens": 10943.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-15467": {
+      "n_epochs": 1,
+      "output_tokens": [
+        10016
+      ],
+      "avg_output_tokens": 10016.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-15499": {
+      "n_epochs": 1,
+      "output_tokens": [
+        6384
+      ],
+      "avg_output_tokens": 6384.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-15503": {
+      "n_epochs": 1,
+      "output_tokens": [
+        14483
+      ],
+      "avg_output_tokens": 14483.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-15525": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8861
+      ],
+      "avg_output_tokens": 8861.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-15554": {
+      "n_epochs": 1,
+      "output_tokens": [
+        5710
+      ],
+      "avg_output_tokens": 5710.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-15561": {
+      "n_epochs": 1,
+      "output_tokens": [
+        6727
+      ],
+      "avg_output_tokens": 6727.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-15563": {
+      "n_epochs": 1,
+      "output_tokens": [
+        10873
+      ],
+      "avg_output_tokens": 10873.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-15569": {
+      "n_epochs": 1,
+      "output_tokens": [
+        9863
+      ],
+      "avg_output_tokens": 9863.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-15572": {
+      "n_epochs": 1,
+      "output_tokens": [
+        9164
+      ],
+      "avg_output_tokens": 9164.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-15629": {
+      "n_epochs": 1,
+      "output_tokens": [
+        5663
+      ],
+      "avg_output_tokens": 5663.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-15695": {
+      "n_epochs": 1,
+      "output_tokens": [
+        10711
+      ],
+      "avg_output_tokens": 10711.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-15731": {
+      "n_epochs": 1,
+      "output_tokens": [
+        10294
+      ],
+      "avg_output_tokens": 10294.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-15732": {
+      "n_epochs": 1,
+      "output_tokens": [
+        9178
+      ],
+      "avg_output_tokens": 9178.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-15741": {
+      "n_epochs": 1,
+      "output_tokens": [
+        9058
+      ],
+      "avg_output_tokens": 9058.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-15814": {
+      "n_epochs": 1,
+      "output_tokens": [
+        10136
+      ],
+      "avg_output_tokens": 10136.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-15851": {
+      "n_epochs": 1,
+      "output_tokens": [
+        7432
+      ],
+      "avg_output_tokens": 7432.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-15863": {
+      "n_epochs": 1,
+      "output_tokens": [
+        7205
+      ],
+      "avg_output_tokens": 7205.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-15916": {
+      "n_epochs": 1,
+      "output_tokens": [
+        16754
+      ],
+      "avg_output_tokens": 16754.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-15930": {
+      "n_epochs": 1,
+      "output_tokens": [
+        11945
+      ],
+      "avg_output_tokens": 11945.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-15957": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8564
+      ],
+      "avg_output_tokens": 8564.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-15973": {
+      "n_epochs": 1,
+      "output_tokens": [
+        7838
+      ],
+      "avg_output_tokens": 7838.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-15987": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8787
+      ],
+      "avg_output_tokens": 8787.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-16032": {
+      "n_epochs": 1,
+      "output_tokens": [
+        9623
+      ],
+      "avg_output_tokens": 9623.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-16082": {
+      "n_epochs": 1,
+      "output_tokens": [
+        7254
+      ],
+      "avg_output_tokens": 7254.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-16100": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8003
+      ],
+      "avg_output_tokens": 8003.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-16116": {
+      "n_epochs": 1,
+      "output_tokens": [
+        7161
+      ],
+      "avg_output_tokens": 7161.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-16136": {
+      "n_epochs": 1,
+      "output_tokens": [
+        11531
+      ],
+      "avg_output_tokens": 11531.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-16139": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8514
+      ],
+      "avg_output_tokens": 8514.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-16145": {
+      "n_epochs": 1,
+      "output_tokens": [
+        10682
+      ],
+      "avg_output_tokens": 10682.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-16255": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8454
+      ],
+      "avg_output_tokens": 8454.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-16256": {
+      "n_epochs": 1,
+      "output_tokens": [
+        9296
+      ],
+      "avg_output_tokens": 9296.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-16263": {
+      "n_epochs": 1,
+      "output_tokens": [
+        7378
+      ],
+      "avg_output_tokens": 7378.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-16315": {
+      "n_epochs": 1,
+      "output_tokens": [
+        6837
+      ],
+      "avg_output_tokens": 6837.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-16333": {
+      "n_epochs": 1,
+      "output_tokens": [
+        9631
+      ],
+      "avg_output_tokens": 9631.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-16429": {
+      "n_epochs": 1,
+      "output_tokens": [
+        5981
+      ],
+      "avg_output_tokens": 5981.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-16454": {
+      "n_epochs": 1,
+      "output_tokens": [
+        9736
+      ],
+      "avg_output_tokens": 9736.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-16485": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8024
+      ],
+      "avg_output_tokens": 8024.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-16493": {
+      "n_epochs": 1,
+      "output_tokens": [
+        7514
+      ],
+      "avg_output_tokens": 7514.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-16502": {
+      "n_epochs": 1,
+      "output_tokens": [
+        7195
+      ],
+      "avg_output_tokens": 7195.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-16527": {
+      "n_epochs": 1,
+      "output_tokens": [
+        6209
+      ],
+      "avg_output_tokens": 6209.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-16560": {
+      "n_epochs": 1,
+      "output_tokens": [
+        6777
+      ],
+      "avg_output_tokens": 6777.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-16569": {
+      "n_epochs": 1,
+      "output_tokens": [
+        10593
+      ],
+      "avg_output_tokens": 10593.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-16595": {
+      "n_epochs": 1,
+      "output_tokens": [
+        11881
+      ],
+      "avg_output_tokens": 11881.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-16612": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8524
+      ],
+      "avg_output_tokens": 8524.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-16631": {
+      "n_epochs": 1,
+      "output_tokens": [
+        9092
+      ],
+      "avg_output_tokens": 9092.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-16642": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8335
+      ],
+      "avg_output_tokens": 8335.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-16661": {
+      "n_epochs": 1,
+      "output_tokens": [
+        13079
+      ],
+      "avg_output_tokens": 13079.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-16662": {
+      "n_epochs": 1,
+      "output_tokens": [
+        11435
+      ],
+      "avg_output_tokens": 11435.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-16667": {
+      "n_epochs": 1,
+      "output_tokens": [
+        9504
+      ],
+      "avg_output_tokens": 9504.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-16801": {
+      "n_epochs": 1,
+      "output_tokens": [
+        14582
+      ],
+      "avg_output_tokens": 14582.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-16819": {
+      "n_epochs": 1,
+      "output_tokens": [
+        7620
+      ],
+      "avg_output_tokens": 7620.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-16877": {
+      "n_epochs": 1,
+      "output_tokens": [
+        7470
+      ],
+      "avg_output_tokens": 7470.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-16899": {
+      "n_epochs": 1,
+      "output_tokens": [
+        7587
+      ],
+      "avg_output_tokens": 7587.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-16901": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8352
+      ],
+      "avg_output_tokens": 8352.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-16938": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8669
+      ],
+      "avg_output_tokens": 8669.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-16950": {
+      "n_epochs": 1,
+      "output_tokens": [
+        7065
+      ],
+      "avg_output_tokens": 7065.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-17029": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8927
+      ],
+      "avg_output_tokens": 8927.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-17084": {
+      "n_epochs": 1,
+      "output_tokens": [
+        5310
+      ],
+      "avg_output_tokens": 5310.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-17087": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8861
+      ],
+      "avg_output_tokens": 8861.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-7530": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8551
+      ],
+      "avg_output_tokens": 8551.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "django__django-9296": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8085
+      ],
+      "avg_output_tokens": 8085.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "matplotlib__matplotlib-13989": {
+      "n_epochs": 1,
+      "output_tokens": [
+        10909
+      ],
+      "avg_output_tokens": 10909.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "matplotlib__matplotlib-14623": {
+      "n_epochs": 1,
+      "output_tokens": [
+        9108
+      ],
+      "avg_output_tokens": 9108.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "matplotlib__matplotlib-20488": {
+      "n_epochs": 1,
+      "output_tokens": [
+        13038
+      ],
+      "avg_output_tokens": 13038.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "matplotlib__matplotlib-20676": {
+      "n_epochs": 1,
+      "output_tokens": [
+        11064
+      ],
+      "avg_output_tokens": 11064.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "matplotlib__matplotlib-20826": {
+      "n_epochs": 1,
+      "output_tokens": [
+        6500
+      ],
+      "avg_output_tokens": 6500.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "matplotlib__matplotlib-20859": {
+      "n_epochs": 1,
+      "output_tokens": [
+        10385
+      ],
+      "avg_output_tokens": 10385.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "matplotlib__matplotlib-21568": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8021
+      ],
+      "avg_output_tokens": 8021.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "matplotlib__matplotlib-22719": {
+      "n_epochs": 1,
+      "output_tokens": [
+        11000
+      ],
+      "avg_output_tokens": 11000.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "matplotlib__matplotlib-22865": {
+      "n_epochs": 1,
+      "output_tokens": [
+        13636
+      ],
+      "avg_output_tokens": 13636.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "matplotlib__matplotlib-22871": {
+      "n_epochs": 1,
+      "output_tokens": [
+        11630
+      ],
+      "avg_output_tokens": 11630.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "matplotlib__matplotlib-23299": {
+      "n_epochs": 1,
+      "output_tokens": [
+        10389
+      ],
+      "avg_output_tokens": 10389.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "matplotlib__matplotlib-23314": {
+      "n_epochs": 1,
+      "output_tokens": [
+        14069
+      ],
+      "avg_output_tokens": 14069.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "matplotlib__matplotlib-23412": {
+      "n_epochs": 1,
+      "output_tokens": [
+        9612
+      ],
+      "avg_output_tokens": 9612.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "matplotlib__matplotlib-23476": {
+      "n_epochs": 1,
+      "output_tokens": [
+        13023
+      ],
+      "avg_output_tokens": 13023.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "matplotlib__matplotlib-24026": {
+      "n_epochs": 1,
+      "output_tokens": [
+        14695
+      ],
+      "avg_output_tokens": 14695.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "matplotlib__matplotlib-24149": {
+      "n_epochs": 1,
+      "output_tokens": [
+        10580
+      ],
+      "avg_output_tokens": 10580.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "matplotlib__matplotlib-24177": {
+      "n_epochs": 1,
+      "output_tokens": [
+        16200
+      ],
+      "avg_output_tokens": 16200.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "matplotlib__matplotlib-24570": {
+      "n_epochs": 1,
+      "output_tokens": [
+        24282
+      ],
+      "avg_output_tokens": 24282.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "matplotlib__matplotlib-24627": {
+      "n_epochs": 1,
+      "output_tokens": [
+        10060
+      ],
+      "avg_output_tokens": 10060.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "matplotlib__matplotlib-24637": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8582
+      ],
+      "avg_output_tokens": 8582.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "matplotlib__matplotlib-24870": {
+      "n_epochs": 1,
+      "output_tokens": [
+        10288
+      ],
+      "avg_output_tokens": 10288.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "matplotlib__matplotlib-24970": {
+      "n_epochs": 1,
+      "output_tokens": [
+        14291
+      ],
+      "avg_output_tokens": 14291.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "matplotlib__matplotlib-25122": {
+      "n_epochs": 1,
+      "output_tokens": [
+        10898
+      ],
+      "avg_output_tokens": 10898.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "matplotlib__matplotlib-25287": {
+      "n_epochs": 1,
+      "output_tokens": [
+        14224
+      ],
+      "avg_output_tokens": 14224.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "matplotlib__matplotlib-25311": {
+      "n_epochs": 1,
+      "output_tokens": [
+        9467
+      ],
+      "avg_output_tokens": 9467.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "matplotlib__matplotlib-25332": {
+      "n_epochs": 1,
+      "output_tokens": [
+        15624
+      ],
+      "avg_output_tokens": 15624.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "matplotlib__matplotlib-25479": {
+      "n_epochs": 1,
+      "output_tokens": [
+        11041
+      ],
+      "avg_output_tokens": 11041.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "matplotlib__matplotlib-25775": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8528
+      ],
+      "avg_output_tokens": 8528.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "matplotlib__matplotlib-25960": {
+      "n_epochs": 1,
+      "output_tokens": [
+        19996
+      ],
+      "avg_output_tokens": 19996.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "matplotlib__matplotlib-26113": {
+      "n_epochs": 1,
+      "output_tokens": [
+        14003
+      ],
+      "avg_output_tokens": 14003.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "matplotlib__matplotlib-26208": {
+      "n_epochs": 1,
+      "output_tokens": [
+        11099
+      ],
+      "avg_output_tokens": 11099.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "matplotlib__matplotlib-26291": {
+      "n_epochs": 1,
+      "output_tokens": [
+        10464
+      ],
+      "avg_output_tokens": 10464.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "matplotlib__matplotlib-26342": {
+      "n_epochs": 1,
+      "output_tokens": [
+        11101
+      ],
+      "avg_output_tokens": 11101.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "matplotlib__matplotlib-26466": {
+      "n_epochs": 1,
+      "output_tokens": [
+        10418
+      ],
+      "avg_output_tokens": 10418.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "mwaskom__seaborn-3069": {
+      "n_epochs": 1,
+      "output_tokens": [
+        5650
+      ],
+      "avg_output_tokens": 5650.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "mwaskom__seaborn-3187": {
+      "n_epochs": 1,
+      "output_tokens": [
+        20030
+      ],
+      "avg_output_tokens": 20030.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "pallets__flask-5014": {
+      "n_epochs": 1,
+      "output_tokens": [
+        7872
+      ],
+      "avg_output_tokens": 7872.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "psf__requests-1142": {
+      "n_epochs": 1,
+      "output_tokens": [
+        9436
+      ],
+      "avg_output_tokens": 9436.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "psf__requests-1724": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8007
+      ],
+      "avg_output_tokens": 8007.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "psf__requests-1766": {
+      "n_epochs": 1,
+      "output_tokens": [
+        10827
+      ],
+      "avg_output_tokens": 10827.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "psf__requests-1921": {
+      "n_epochs": 1,
+      "output_tokens": [
+        12228
+      ],
+      "avg_output_tokens": 12228.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "psf__requests-2317": {
+      "n_epochs": 1,
+      "output_tokens": [
+        12060
+      ],
+      "avg_output_tokens": 12060.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "psf__requests-2931": {
+      "n_epochs": 1,
+      "output_tokens": [
+        10846
+      ],
+      "avg_output_tokens": 10846.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "psf__requests-5414": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8313
+      ],
+      "avg_output_tokens": 8313.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "psf__requests-6028": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8306
+      ],
+      "avg_output_tokens": 8306.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "pydata__xarray-2905": {
+      "n_epochs": 1,
+      "output_tokens": [
+        9672
+      ],
+      "avg_output_tokens": 9672.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "pydata__xarray-3095": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8661
+      ],
+      "avg_output_tokens": 8661.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "pydata__xarray-3151": {
+      "n_epochs": 1,
+      "output_tokens": [
+        11529
+      ],
+      "avg_output_tokens": 11529.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "pydata__xarray-3305": {
+      "n_epochs": 1,
+      "output_tokens": [
+        11085
+      ],
+      "avg_output_tokens": 11085.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "pydata__xarray-3677": {
+      "n_epochs": 1,
+      "output_tokens": [
+        10697
+      ],
+      "avg_output_tokens": 10697.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "pydata__xarray-3993": {
+      "n_epochs": 1,
+      "output_tokens": [
+        10208
+      ],
+      "avg_output_tokens": 10208.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "pydata__xarray-4075": {
+      "n_epochs": 1,
+      "output_tokens": [
+        12379
+      ],
+      "avg_output_tokens": 12379.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "pydata__xarray-4094": {
+      "n_epochs": 1,
+      "output_tokens": [
+        12287
+      ],
+      "avg_output_tokens": 12287.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "pydata__xarray-4356": {
+      "n_epochs": 1,
+      "output_tokens": [
+        11650
+      ],
+      "avg_output_tokens": 11650.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "pydata__xarray-4629": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8731
+      ],
+      "avg_output_tokens": 8731.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "pydata__xarray-4687": {
+      "n_epochs": 1,
+      "output_tokens": [
+        6666
+      ],
+      "avg_output_tokens": 6666.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "pydata__xarray-4695": {
+      "n_epochs": 1,
+      "output_tokens": [
+        7303
+      ],
+      "avg_output_tokens": 7303.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "pydata__xarray-4966": {
+      "n_epochs": 1,
+      "output_tokens": [
+        9866
+      ],
+      "avg_output_tokens": 9866.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "pydata__xarray-6461": {
+      "n_epochs": 1,
+      "output_tokens": [
+        12279
+      ],
+      "avg_output_tokens": 12279.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "pydata__xarray-6599": {
+      "n_epochs": 1,
+      "output_tokens": [
+        19415
+      ],
+      "avg_output_tokens": 19415.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "pydata__xarray-6721": {
+      "n_epochs": 1,
+      "output_tokens": [
+        9065
+      ],
+      "avg_output_tokens": 9065.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "pydata__xarray-6744": {
+      "n_epochs": 1,
+      "output_tokens": [
+        12848
+      ],
+      "avg_output_tokens": 12848.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "pydata__xarray-6938": {
+      "n_epochs": 1,
+      "output_tokens": [
+        11059
+      ],
+      "avg_output_tokens": 11059.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "pydata__xarray-6992": {
+      "n_epochs": 1,
+      "output_tokens": [
+        15764
+      ],
+      "avg_output_tokens": 15764.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "pydata__xarray-7229": {
+      "n_epochs": 1,
+      "output_tokens": [
+        10578
+      ],
+      "avg_output_tokens": 10578.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "pydata__xarray-7233": {
+      "n_epochs": 1,
+      "output_tokens": [
+        10170
+      ],
+      "avg_output_tokens": 10170.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "pydata__xarray-7393": {
+      "n_epochs": 1,
+      "output_tokens": [
+        7689
+      ],
+      "avg_output_tokens": 7689.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "pylint-dev__pylint-4551": {
+      "n_epochs": 1,
+      "output_tokens": [
+        10895
+      ],
+      "avg_output_tokens": 10895.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "pylint-dev__pylint-4604": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8359
+      ],
+      "avg_output_tokens": 8359.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "pylint-dev__pylint-4661": {
+      "n_epochs": 1,
+      "output_tokens": [
+        7235
+      ],
+      "avg_output_tokens": 7235.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "pylint-dev__pylint-4970": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8863
+      ],
+      "avg_output_tokens": 8863.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "pylint-dev__pylint-6386": {
+      "n_epochs": 1,
+      "output_tokens": [
+        11168
+      ],
+      "avg_output_tokens": 11168.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "pylint-dev__pylint-6528": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8633
+      ],
+      "avg_output_tokens": 8633.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "pylint-dev__pylint-6903": {
+      "n_epochs": 1,
+      "output_tokens": [
+        17376
+      ],
+      "avg_output_tokens": 17376.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "pylint-dev__pylint-7080": {
+      "n_epochs": 1,
+      "output_tokens": [
+        5651
+      ],
+      "avg_output_tokens": 5651.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "pylint-dev__pylint-7277": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8808
+      ],
+      "avg_output_tokens": 8808.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "pylint-dev__pylint-8898": {
+      "n_epochs": 1,
+      "output_tokens": [
+        10403
+      ],
+      "avg_output_tokens": 10403.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "pytest-dev__pytest-10051": {
+      "n_epochs": 1,
+      "output_tokens": [
+        11008
+      ],
+      "avg_output_tokens": 11008.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "pytest-dev__pytest-10081": {
+      "n_epochs": 1,
+      "output_tokens": [
+        7791
+      ],
+      "avg_output_tokens": 7791.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "pytest-dev__pytest-10356": {
+      "n_epochs": 1,
+      "output_tokens": [
+        7613
+      ],
+      "avg_output_tokens": 7613.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "pytest-dev__pytest-5262": {
+      "n_epochs": 1,
+      "output_tokens": [
+        12718
+      ],
+      "avg_output_tokens": 12718.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "pytest-dev__pytest-5631": {
+      "n_epochs": 1,
+      "output_tokens": [
+        9199
+      ],
+      "avg_output_tokens": 9199.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "pytest-dev__pytest-5787": {
+      "n_epochs": 1,
+      "output_tokens": [
+        9539
+      ],
+      "avg_output_tokens": 9539.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "pytest-dev__pytest-5809": {
+      "n_epochs": 1,
+      "output_tokens": [
+        4635
+      ],
+      "avg_output_tokens": 4635.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "pytest-dev__pytest-5840": {
+      "n_epochs": 1,
+      "output_tokens": [
+        6888
+      ],
+      "avg_output_tokens": 6888.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "pytest-dev__pytest-6197": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8684
+      ],
+      "avg_output_tokens": 8684.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "pytest-dev__pytest-6202": {
+      "n_epochs": 1,
+      "output_tokens": [
+        7304
+      ],
+      "avg_output_tokens": 7304.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "pytest-dev__pytest-7205": {
+      "n_epochs": 1,
+      "output_tokens": [
+        5884
+      ],
+      "avg_output_tokens": 5884.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "pytest-dev__pytest-7236": {
+      "n_epochs": 1,
+      "output_tokens": [
+        7061
+      ],
+      "avg_output_tokens": 7061.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "pytest-dev__pytest-7324": {
+      "n_epochs": 1,
+      "output_tokens": [
+        11333
+      ],
+      "avg_output_tokens": 11333.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "pytest-dev__pytest-7432": {
+      "n_epochs": 1,
+      "output_tokens": [
+        9062
+      ],
+      "avg_output_tokens": 9062.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "pytest-dev__pytest-7490": {
+      "n_epochs": 1,
+      "output_tokens": [
+        9082
+      ],
+      "avg_output_tokens": 9082.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "pytest-dev__pytest-7521": {
+      "n_epochs": 1,
+      "output_tokens": [
+        6285
+      ],
+      "avg_output_tokens": 6285.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "pytest-dev__pytest-7571": {
+      "n_epochs": 1,
+      "output_tokens": [
+        6518
+      ],
+      "avg_output_tokens": 6518.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "pytest-dev__pytest-7982": {
+      "n_epochs": 1,
+      "output_tokens": [
+        6574
+      ],
+      "avg_output_tokens": 6574.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "pytest-dev__pytest-8399": {
+      "n_epochs": 1,
+      "output_tokens": [
+        6208
+      ],
+      "avg_output_tokens": 6208.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "scikit-learn__scikit-learn-10297": {
+      "n_epochs": 1,
+      "output_tokens": [
+        12631
+      ],
+      "avg_output_tokens": 12631.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "scikit-learn__scikit-learn-10844": {
+      "n_epochs": 1,
+      "output_tokens": [
+        17028
+      ],
+      "avg_output_tokens": 17028.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "scikit-learn__scikit-learn-10908": {
+      "n_epochs": 1,
+      "output_tokens": [
+        10061
+      ],
+      "avg_output_tokens": 10061.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "scikit-learn__scikit-learn-11310": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8731
+      ],
+      "avg_output_tokens": 8731.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "scikit-learn__scikit-learn-11578": {
+      "n_epochs": 1,
+      "output_tokens": [
+        12756
+      ],
+      "avg_output_tokens": 12756.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "scikit-learn__scikit-learn-12585": {
+      "n_epochs": 1,
+      "output_tokens": [
+        10022
+      ],
+      "avg_output_tokens": 10022.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "scikit-learn__scikit-learn-12682": {
+      "n_epochs": 1,
+      "output_tokens": [
+        7956
+      ],
+      "avg_output_tokens": 7956.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "scikit-learn__scikit-learn-12973": {
+      "n_epochs": 1,
+      "output_tokens": [
+        13246
+      ],
+      "avg_output_tokens": 13246.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "scikit-learn__scikit-learn-13124": {
+      "n_epochs": 1,
+      "output_tokens": [
+        13620
+      ],
+      "avg_output_tokens": 13620.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "scikit-learn__scikit-learn-13135": {
+      "n_epochs": 1,
+      "output_tokens": [
+        12098
+      ],
+      "avg_output_tokens": 12098.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "scikit-learn__scikit-learn-13142": {
+      "n_epochs": 1,
+      "output_tokens": [
+        7353
+      ],
+      "avg_output_tokens": 7353.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "scikit-learn__scikit-learn-13328": {
+      "n_epochs": 1,
+      "output_tokens": [
+        5738
+      ],
+      "avg_output_tokens": 5738.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "scikit-learn__scikit-learn-13439": {
+      "n_epochs": 1,
+      "output_tokens": [
+        9595
+      ],
+      "avg_output_tokens": 9595.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "scikit-learn__scikit-learn-13496": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8826
+      ],
+      "avg_output_tokens": 8826.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "scikit-learn__scikit-learn-13779": {
+      "n_epochs": 1,
+      "output_tokens": [
+        10914
+      ],
+      "avg_output_tokens": 10914.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "scikit-learn__scikit-learn-14053": {
+      "n_epochs": 1,
+      "output_tokens": [
+        10562
+      ],
+      "avg_output_tokens": 10562.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "scikit-learn__scikit-learn-14087": {
+      "n_epochs": 1,
+      "output_tokens": [
+        17005
+      ],
+      "avg_output_tokens": 17005.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "scikit-learn__scikit-learn-14141": {
+      "n_epochs": 1,
+      "output_tokens": [
+        5707
+      ],
+      "avg_output_tokens": 5707.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "scikit-learn__scikit-learn-14496": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8612
+      ],
+      "avg_output_tokens": 8612.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "scikit-learn__scikit-learn-14629": {
+      "n_epochs": 1,
+      "output_tokens": [
+        10623
+      ],
+      "avg_output_tokens": 10623.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "scikit-learn__scikit-learn-14710": {
+      "n_epochs": 1,
+      "output_tokens": [
+        11409
+      ],
+      "avg_output_tokens": 11409.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "scikit-learn__scikit-learn-14894": {
+      "n_epochs": 1,
+      "output_tokens": [
+        22924
+      ],
+      "avg_output_tokens": 22924.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "scikit-learn__scikit-learn-14983": {
+      "n_epochs": 1,
+      "output_tokens": [
+        10543
+      ],
+      "avg_output_tokens": 10543.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "scikit-learn__scikit-learn-15100": {
+      "n_epochs": 1,
+      "output_tokens": [
+        14696
+      ],
+      "avg_output_tokens": 14696.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "scikit-learn__scikit-learn-25102": {
+      "n_epochs": 1,
+      "output_tokens": [
+        10049
+      ],
+      "avg_output_tokens": 10049.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "scikit-learn__scikit-learn-25232": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8281
+      ],
+      "avg_output_tokens": 8281.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "scikit-learn__scikit-learn-25747": {
+      "n_epochs": 1,
+      "output_tokens": [
+        13870
+      ],
+      "avg_output_tokens": 13870.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "scikit-learn__scikit-learn-25931": {
+      "n_epochs": 1,
+      "output_tokens": [
+        14180
+      ],
+      "avg_output_tokens": 14180.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "scikit-learn__scikit-learn-25973": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8093
+      ],
+      "avg_output_tokens": 8093.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "scikit-learn__scikit-learn-26194": {
+      "n_epochs": 1,
+      "output_tokens": [
+        18554
+      ],
+      "avg_output_tokens": 18554.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "scikit-learn__scikit-learn-26323": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8360
+      ],
+      "avg_output_tokens": 8360.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "scikit-learn__scikit-learn-9288": {
+      "n_epochs": 1,
+      "output_tokens": [
+        17362
+      ],
+      "avg_output_tokens": 17362.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sphinx-doc__sphinx-10323": {
+      "n_epochs": 1,
+      "output_tokens": [
+        11852
+      ],
+      "avg_output_tokens": 11852.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sphinx-doc__sphinx-10435": {
+      "n_epochs": 1,
+      "output_tokens": [
+        7412
+      ],
+      "avg_output_tokens": 7412.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sphinx-doc__sphinx-10449": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8495
+      ],
+      "avg_output_tokens": 8495.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sphinx-doc__sphinx-10466": {
+      "n_epochs": 1,
+      "output_tokens": [
+        11652
+      ],
+      "avg_output_tokens": 11652.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sphinx-doc__sphinx-10614": {
+      "n_epochs": 1,
+      "output_tokens": [
+        9446
+      ],
+      "avg_output_tokens": 9446.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sphinx-doc__sphinx-10673": {
+      "n_epochs": 1,
+      "output_tokens": [
+        4949
+      ],
+      "avg_output_tokens": 4949.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sphinx-doc__sphinx-11445": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8701
+      ],
+      "avg_output_tokens": 8701.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sphinx-doc__sphinx-11510": {
+      "n_epochs": 1,
+      "output_tokens": [
+        9603
+      ],
+      "avg_output_tokens": 9603.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sphinx-doc__sphinx-7440": {
+      "n_epochs": 1,
+      "output_tokens": [
+        7127
+      ],
+      "avg_output_tokens": 7127.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sphinx-doc__sphinx-7454": {
+      "n_epochs": 1,
+      "output_tokens": [
+        6198
+      ],
+      "avg_output_tokens": 6198.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sphinx-doc__sphinx-7462": {
+      "n_epochs": 1,
+      "output_tokens": [
+        9941
+      ],
+      "avg_output_tokens": 9941.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sphinx-doc__sphinx-7590": {
+      "n_epochs": 1,
+      "output_tokens": [
+        10894
+      ],
+      "avg_output_tokens": 10894.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sphinx-doc__sphinx-7748": {
+      "n_epochs": 1,
+      "output_tokens": [
+        7739
+      ],
+      "avg_output_tokens": 7739.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sphinx-doc__sphinx-7757": {
+      "n_epochs": 1,
+      "output_tokens": [
+        9055
+      ],
+      "avg_output_tokens": 9055.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sphinx-doc__sphinx-7889": {
+      "n_epochs": 1,
+      "output_tokens": [
+        9254
+      ],
+      "avg_output_tokens": 9254.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sphinx-doc__sphinx-7910": {
+      "n_epochs": 1,
+      "output_tokens": [
+        11760
+      ],
+      "avg_output_tokens": 11760.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sphinx-doc__sphinx-7985": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8167
+      ],
+      "avg_output_tokens": 8167.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sphinx-doc__sphinx-8035": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8125
+      ],
+      "avg_output_tokens": 8125.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sphinx-doc__sphinx-8056": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8615
+      ],
+      "avg_output_tokens": 8615.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sphinx-doc__sphinx-8120": {
+      "n_epochs": 1,
+      "output_tokens": [
+        5976
+      ],
+      "avg_output_tokens": 5976.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sphinx-doc__sphinx-8265": {
+      "n_epochs": 1,
+      "output_tokens": [
+        7810
+      ],
+      "avg_output_tokens": 7810.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sphinx-doc__sphinx-8269": {
+      "n_epochs": 1,
+      "output_tokens": [
+        9412
+      ],
+      "avg_output_tokens": 9412.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sphinx-doc__sphinx-8459": {
+      "n_epochs": 1,
+      "output_tokens": [
+        6828
+      ],
+      "avg_output_tokens": 6828.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sphinx-doc__sphinx-8475": {
+      "n_epochs": 1,
+      "output_tokens": [
+        7270
+      ],
+      "avg_output_tokens": 7270.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sphinx-doc__sphinx-8548": {
+      "n_epochs": 1,
+      "output_tokens": [
+        7979
+      ],
+      "avg_output_tokens": 7979.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sphinx-doc__sphinx-8551": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8927
+      ],
+      "avg_output_tokens": 8927.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sphinx-doc__sphinx-8593": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8973
+      ],
+      "avg_output_tokens": 8973.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sphinx-doc__sphinx-8595": {
+      "n_epochs": 1,
+      "output_tokens": [
+        21524
+      ],
+      "avg_output_tokens": 21524.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sphinx-doc__sphinx-8621": {
+      "n_epochs": 1,
+      "output_tokens": [
+        17753
+      ],
+      "avg_output_tokens": 17753.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sphinx-doc__sphinx-8638": {
+      "n_epochs": 1,
+      "output_tokens": [
+        14096
+      ],
+      "avg_output_tokens": 14096.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sphinx-doc__sphinx-8721": {
+      "n_epochs": 1,
+      "output_tokens": [
+        5768
+      ],
+      "avg_output_tokens": 5768.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sphinx-doc__sphinx-9229": {
+      "n_epochs": 1,
+      "output_tokens": [
+        10531
+      ],
+      "avg_output_tokens": 10531.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sphinx-doc__sphinx-9230": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8586
+      ],
+      "avg_output_tokens": 8586.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sphinx-doc__sphinx-9258": {
+      "n_epochs": 1,
+      "output_tokens": [
+        5831
+      ],
+      "avg_output_tokens": 5831.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sphinx-doc__sphinx-9281": {
+      "n_epochs": 1,
+      "output_tokens": [
+        9513
+      ],
+      "avg_output_tokens": 9513.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sphinx-doc__sphinx-9320": {
+      "n_epochs": 1,
+      "output_tokens": [
+        7198
+      ],
+      "avg_output_tokens": 7198.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sphinx-doc__sphinx-9367": {
+      "n_epochs": 1,
+      "output_tokens": [
+        6568
+      ],
+      "avg_output_tokens": 6568.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sphinx-doc__sphinx-9461": {
+      "n_epochs": 1,
+      "output_tokens": [
+        10094
+      ],
+      "avg_output_tokens": 10094.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sphinx-doc__sphinx-9591": {
+      "n_epochs": 1,
+      "output_tokens": [
+        7621
+      ],
+      "avg_output_tokens": 7621.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sphinx-doc__sphinx-9602": {
+      "n_epochs": 1,
+      "output_tokens": [
+        14772
+      ],
+      "avg_output_tokens": 14772.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sphinx-doc__sphinx-9658": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8748
+      ],
+      "avg_output_tokens": 8748.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sphinx-doc__sphinx-9673": {
+      "n_epochs": 1,
+      "output_tokens": [
+        7209
+      ],
+      "avg_output_tokens": 7209.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sphinx-doc__sphinx-9698": {
+      "n_epochs": 1,
+      "output_tokens": [
+        6946
+      ],
+      "avg_output_tokens": 6946.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sphinx-doc__sphinx-9711": {
+      "n_epochs": 1,
+      "output_tokens": [
+        10346
+      ],
+      "avg_output_tokens": 10346.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sympy__sympy-11618": {
+      "n_epochs": 1,
+      "output_tokens": [
+        10893
+      ],
+      "avg_output_tokens": 10893.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sympy__sympy-12096": {
+      "n_epochs": 1,
+      "output_tokens": [
+        13396
+      ],
+      "avg_output_tokens": 13396.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sympy__sympy-12419": {
+      "n_epochs": 1,
+      "output_tokens": [
+        11688
+      ],
+      "avg_output_tokens": 11688.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sympy__sympy-12481": {
+      "n_epochs": 1,
+      "output_tokens": [
+        11587
+      ],
+      "avg_output_tokens": 11587.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sympy__sympy-12489": {
+      "n_epochs": 1,
+      "output_tokens": [
+        9047
+      ],
+      "avg_output_tokens": 9047.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sympy__sympy-13031": {
+      "n_epochs": 1,
+      "output_tokens": [
+        14369
+      ],
+      "avg_output_tokens": 14369.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sympy__sympy-13091": {
+      "n_epochs": 1,
+      "output_tokens": [
+        9849
+      ],
+      "avg_output_tokens": 9849.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sympy__sympy-13372": {
+      "n_epochs": 1,
+      "output_tokens": [
+        11158
+      ],
+      "avg_output_tokens": 11158.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sympy__sympy-13480": {
+      "n_epochs": 1,
+      "output_tokens": [
+        10692
+      ],
+      "avg_output_tokens": 10692.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sympy__sympy-13551": {
+      "n_epochs": 1,
+      "output_tokens": [
+        13039
+      ],
+      "avg_output_tokens": 13039.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sympy__sympy-13615": {
+      "n_epochs": 1,
+      "output_tokens": [
+        11489
+      ],
+      "avg_output_tokens": 11489.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sympy__sympy-13647": {
+      "n_epochs": 1,
+      "output_tokens": [
+        12058
+      ],
+      "avg_output_tokens": 12058.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sympy__sympy-13757": {
+      "n_epochs": 1,
+      "output_tokens": [
+        9819
+      ],
+      "avg_output_tokens": 9819.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sympy__sympy-13798": {
+      "n_epochs": 1,
+      "output_tokens": [
+        10602
+      ],
+      "avg_output_tokens": 10602.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sympy__sympy-13852": {
+      "n_epochs": 1,
+      "output_tokens": [
+        7081
+      ],
+      "avg_output_tokens": 7081.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sympy__sympy-13877": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8378
+      ],
+      "avg_output_tokens": 8378.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sympy__sympy-13878": {
+      "n_epochs": 1,
+      "output_tokens": [
+        10749
+      ],
+      "avg_output_tokens": 10749.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sympy__sympy-13974": {
+      "n_epochs": 1,
+      "output_tokens": [
+        15172
+      ],
+      "avg_output_tokens": 15172.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sympy__sympy-14248": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8977
+      ],
+      "avg_output_tokens": 8977.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sympy__sympy-14531": {
+      "n_epochs": 1,
+      "output_tokens": [
+        6320
+      ],
+      "avg_output_tokens": 6320.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sympy__sympy-14711": {
+      "n_epochs": 1,
+      "output_tokens": [
+        9840
+      ],
+      "avg_output_tokens": 9840.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sympy__sympy-14976": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8155
+      ],
+      "avg_output_tokens": 8155.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sympy__sympy-15017": {
+      "n_epochs": 1,
+      "output_tokens": [
+        10281
+      ],
+      "avg_output_tokens": 10281.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sympy__sympy-15345": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8016
+      ],
+      "avg_output_tokens": 8016.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sympy__sympy-15349": {
+      "n_epochs": 1,
+      "output_tokens": [
+        16412
+      ],
+      "avg_output_tokens": 16412.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sympy__sympy-15599": {
+      "n_epochs": 1,
+      "output_tokens": [
+        13176
+      ],
+      "avg_output_tokens": 13176.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sympy__sympy-15809": {
+      "n_epochs": 1,
+      "output_tokens": [
+        7908
+      ],
+      "avg_output_tokens": 7908.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sympy__sympy-15875": {
+      "n_epochs": 1,
+      "output_tokens": [
+        12698
+      ],
+      "avg_output_tokens": 12698.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sympy__sympy-15976": {
+      "n_epochs": 1,
+      "output_tokens": [
+        9491
+      ],
+      "avg_output_tokens": 9491.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sympy__sympy-16450": {
+      "n_epochs": 1,
+      "output_tokens": [
+        13515
+      ],
+      "avg_output_tokens": 13515.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sympy__sympy-16597": {
+      "n_epochs": 1,
+      "output_tokens": [
+        9837
+      ],
+      "avg_output_tokens": 9837.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sympy__sympy-16766": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8824
+      ],
+      "avg_output_tokens": 8824.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sympy__sympy-16792": {
+      "n_epochs": 1,
+      "output_tokens": [
+        7539
+      ],
+      "avg_output_tokens": 7539.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sympy__sympy-16886": {
+      "n_epochs": 1,
+      "output_tokens": [
+        5562
+      ],
+      "avg_output_tokens": 5562.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sympy__sympy-17139": {
+      "n_epochs": 1,
+      "output_tokens": [
+        10108
+      ],
+      "avg_output_tokens": 10108.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sympy__sympy-17318": {
+      "n_epochs": 1,
+      "output_tokens": [
+        10039
+      ],
+      "avg_output_tokens": 10039.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sympy__sympy-17630": {
+      "n_epochs": 1,
+      "output_tokens": [
+        13040
+      ],
+      "avg_output_tokens": 13040.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sympy__sympy-17655": {
+      "n_epochs": 1,
+      "output_tokens": [
+        11735
+      ],
+      "avg_output_tokens": 11735.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sympy__sympy-18189": {
+      "n_epochs": 1,
+      "output_tokens": [
+        14586
+      ],
+      "avg_output_tokens": 14586.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sympy__sympy-18199": {
+      "n_epochs": 1,
+      "output_tokens": [
+        14158
+      ],
+      "avg_output_tokens": 14158.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sympy__sympy-18211": {
+      "n_epochs": 1,
+      "output_tokens": [
+        11497
+      ],
+      "avg_output_tokens": 11497.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sympy__sympy-18698": {
+      "n_epochs": 1,
+      "output_tokens": [
+        13058
+      ],
+      "avg_output_tokens": 13058.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sympy__sympy-18763": {
+      "n_epochs": 1,
+      "output_tokens": [
+        13641
+      ],
+      "avg_output_tokens": 13641.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sympy__sympy-19040": {
+      "n_epochs": 1,
+      "output_tokens": [
+        11492
+      ],
+      "avg_output_tokens": 11492.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sympy__sympy-19346": {
+      "n_epochs": 1,
+      "output_tokens": [
+        6296
+      ],
+      "avg_output_tokens": 6296.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sympy__sympy-19495": {
+      "n_epochs": 1,
+      "output_tokens": [
+        10755
+      ],
+      "avg_output_tokens": 10755.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sympy__sympy-19637": {
+      "n_epochs": 1,
+      "output_tokens": [
+        9691
+      ],
+      "avg_output_tokens": 9691.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sympy__sympy-19783": {
+      "n_epochs": 1,
+      "output_tokens": [
+        12040
+      ],
+      "avg_output_tokens": 12040.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sympy__sympy-19954": {
+      "n_epochs": 1,
+      "output_tokens": [
+        11665
+      ],
+      "avg_output_tokens": 11665.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sympy__sympy-20154": {
+      "n_epochs": 1,
+      "output_tokens": [
+        11331
+      ],
+      "avg_output_tokens": 11331.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sympy__sympy-20428": {
+      "n_epochs": 1,
+      "output_tokens": [
+        12323
+      ],
+      "avg_output_tokens": 12323.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sympy__sympy-20438": {
+      "n_epochs": 1,
+      "output_tokens": [
+        6910
+      ],
+      "avg_output_tokens": 6910.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sympy__sympy-20590": {
+      "n_epochs": 1,
+      "output_tokens": [
+        10062
+      ],
+      "avg_output_tokens": 10062.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sympy__sympy-20801": {
+      "n_epochs": 1,
+      "output_tokens": [
+        9459
+      ],
+      "avg_output_tokens": 9459.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sympy__sympy-20916": {
+      "n_epochs": 1,
+      "output_tokens": [
+        10916
+      ],
+      "avg_output_tokens": 10916.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sympy__sympy-21379": {
+      "n_epochs": 1,
+      "output_tokens": [
+        12316
+      ],
+      "avg_output_tokens": 12316.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sympy__sympy-21596": {
+      "n_epochs": 1,
+      "output_tokens": [
+        7621
+      ],
+      "avg_output_tokens": 7621.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sympy__sympy-21612": {
+      "n_epochs": 1,
+      "output_tokens": [
+        18258
+      ],
+      "avg_output_tokens": 18258.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sympy__sympy-21847": {
+      "n_epochs": 1,
+      "output_tokens": [
+        17158
+      ],
+      "avg_output_tokens": 17158.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sympy__sympy-21930": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8632
+      ],
+      "avg_output_tokens": 8632.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sympy__sympy-22080": {
+      "n_epochs": 1,
+      "output_tokens": [
+        12777
+      ],
+      "avg_output_tokens": 12777.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sympy__sympy-22456": {
+      "n_epochs": 1,
+      "output_tokens": [
+        7851
+      ],
+      "avg_output_tokens": 7851.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sympy__sympy-22714": {
+      "n_epochs": 1,
+      "output_tokens": [
+        12068
+      ],
+      "avg_output_tokens": 12068.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sympy__sympy-22914": {
+      "n_epochs": 1,
+      "output_tokens": [
+        8025
+      ],
+      "avg_output_tokens": 8025.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sympy__sympy-23262": {
+      "n_epochs": 1,
+      "output_tokens": [
+        10204
+      ],
+      "avg_output_tokens": 10204.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sympy__sympy-23413": {
+      "n_epochs": 1,
+      "output_tokens": [
+        33747
+      ],
+      "avg_output_tokens": 33747.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sympy__sympy-23534": {
+      "n_epochs": 1,
+      "output_tokens": [
+        12187
+      ],
+      "avg_output_tokens": 12187.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sympy__sympy-23824": {
+      "n_epochs": 1,
+      "output_tokens": [
+        10190
+      ],
+      "avg_output_tokens": 10190.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sympy__sympy-23950": {
+      "n_epochs": 1,
+      "output_tokens": [
+        11172
+      ],
+      "avg_output_tokens": 11172.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sympy__sympy-24066": {
+      "n_epochs": 1,
+      "output_tokens": [
+        13972
+      ],
+      "avg_output_tokens": 13972.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sympy__sympy-24213": {
+      "n_epochs": 1,
+      "output_tokens": [
+        11850
+      ],
+      "avg_output_tokens": 11850.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sympy__sympy-24443": {
+      "n_epochs": 1,
+      "output_tokens": [
+        14211
+      ],
+      "avg_output_tokens": 14211.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sympy__sympy-24539": {
+      "n_epochs": 1,
+      "output_tokens": [
+        13227
+      ],
+      "avg_output_tokens": 13227.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sympy__sympy-24562": {
+      "n_epochs": 1,
+      "output_tokens": [
+        15184
+      ],
+      "avg_output_tokens": 15184.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    },
+    "sympy__sympy-24661": {
+      "n_epochs": 1,
+      "output_tokens": [
+        11511
+      ],
+      "avg_output_tokens": 11511.0,
+      "reasoning_tokens": [],
+      "avg_reasoning_tokens": null
+    }
+  }
+}

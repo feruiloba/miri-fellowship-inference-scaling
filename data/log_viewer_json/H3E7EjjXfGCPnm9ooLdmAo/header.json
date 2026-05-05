@@ -1,0 +1,175 @@
+{
+  "version": 2,
+  "status": "success",
+  "eval": {
+    "eval_id": "RnuFLkQBNUnqvsSMjrxgkd",
+    "run_id": "H3E7EjjXfGCPnm9ooLdmAo",
+    "created": "2025-12-17T22:40:37+00:00",
+    "task": "OTIS Mock AIME 2024-2025",
+    "task_id": "W3dZdjg2QzwKkuiRAVos44",
+    "task_version": 0,
+    "task_file": "bench/task/otis_mock_aime/__init__.py",
+    "task_display_name": "OTIS Mock AIME 2024-2025",
+    "task_registry_name": "OTIS Mock AIME 2024-2025",
+    "task_attribs": {},
+    "task_args": {
+      "epochs": 8
+    },
+    "task_args_passed": {},
+    "dataset": {
+      "name": "EpochAI/otis-mock-aime-24-25",
+      "location": "EpochAI/otis-mock-aime-24-25",
+      "samples": 45,
+      "sample_ids": [
+        "2024-Mock-AIME-Problem-01",
+        "2024-Mock-AIME-Problem-02",
+        "2024-Mock-AIME-Problem-03",
+        "2024-Mock-AIME-Problem-04",
+        "2024-Mock-AIME-Problem-05",
+        "2024-Mock-AIME-Problem-06",
+        "2024-Mock-AIME-Problem-07",
+        "2024-Mock-AIME-Problem-08",
+        "2024-Mock-AIME-Problem-09",
+        "2024-Mock-AIME-Problem-10",
+        "2024-Mock-AIME-Problem-11",
+        "2024-Mock-AIME-Problem-12",
+        "2024-Mock-AIME-Problem-13",
+        "2024-Mock-AIME-Problem-14",
+        "2024-Mock-AIME-Problem-15",
+        "2025-I-Mock-AIME-Problem-01",
+        "2025-I-Mock-AIME-Problem-02",
+        "2025-I-Mock-AIME-Problem-03",
+        "2025-I-Mock-AIME-Problem-04",
+        "2025-I-Mock-AIME-Problem-05",
+        "2025-I-Mock-AIME-Problem-06",
+        "2025-I-Mock-AIME-Problem-07",
+        "2025-I-Mock-AIME-Problem-08",
+        "2025-I-Mock-AIME-Problem-09",
+        "2025-I-Mock-AIME-Problem-10",
+        "2025-I-Mock-AIME-Problem-11",
+        "2025-I-Mock-AIME-Problem-12",
+        "2025-I-Mock-AIME-Problem-13",
+        "2025-I-Mock-AIME-Problem-14",
+        "2025-I-Mock-AIME-Problem-15",
+        "2025-II-Mock-AIME-Problem-01",
+        "2025-II-Mock-AIME-Problem-02",
+        "2025-II-Mock-AIME-Problem-03",
+        "2025-II-Mock-AIME-Problem-04",
+        "2025-II-Mock-AIME-Problem-05",
+        "2025-II-Mock-AIME-Problem-06",
+        "2025-II-Mock-AIME-Problem-07",
+        "2025-II-Mock-AIME-Problem-08",
+        "2025-II-Mock-AIME-Problem-09",
+        "2025-II-Mock-AIME-Problem-10",
+        "2025-II-Mock-AIME-Problem-11",
+        "2025-II-Mock-AIME-Problem-12",
+        "2025-II-Mock-AIME-Problem-13",
+        "2025-II-Mock-AIME-Problem-14",
+        "2025-II-Mock-AIME-Problem-15"
+      ],
+      "shuffled": false
+    },
+    "model": "google/gemini-3-flash-preview",
+    "model_generate_config": {},
+    "model_args": {},
+    "config": {
+      "epochs": 8,
+      "epochs_reducer": [
+        "mean"
+      ],
+      "fail_on_error": 0.02,
+      "continue_on_fail": false,
+      "sandbox_cleanup": true,
+      "log_samples": true,
+      "log_realtime": true,
+      "log_images": true,
+      "score_display": true
+    },
+    "packages": {
+      "inspect_ai": "0.3.152"
+    },
+    "metadata": {
+      "epochai-benchmark-version": "1.0.3",
+      "inspect-log-public": true
+    },
+    "scorers": [
+      {
+        "name": "model_extracted_exact_match",
+        "options": {},
+        "metrics": [
+          {
+            "name": "inspect_ai/accuracy",
+            "options": {}
+          },
+          {
+            "name": "inspect_ai/stderr",
+            "options": {}
+          }
+        ],
+        "metadata": {}
+      }
+    ]
+  },
+  "plan": {
+    "name": "plan",
+    "steps": [
+      {
+        "solver": "prompt_template",
+        "params": {
+          "template": "Please solve this AIME problem step by step. The answer is an integer ranging from\n000 to 999, inclusive.\n\n{prompt}\n\nRemember to show your work clearly and end with 'ANSWER: X' where X is your final numerical answer."
+        }
+      },
+      {
+        "solver": "generate",
+        "params": {}
+      }
+    ],
+    "config": {
+      "max_retries": 8
+    }
+  },
+  "results": {
+    "total_samples": 360,
+    "completed_samples": 360,
+    "scores": [
+      {
+        "name": "model_extracted_exact_match",
+        "scorer": "model_extracted_exact_match",
+        "reducer": "mean",
+        "scored_samples": 45,
+        "unscored_samples": 0,
+        "params": {},
+        "metrics": {
+          "accuracy": {
+            "name": "accuracy",
+            "value": 0.9277777777777778,
+            "params": {}
+          },
+          "stderr": {
+            "name": "stderr",
+            "value": 0.035196259111492545,
+            "params": {}
+          }
+        }
+      }
+    ]
+  },
+  "stats": {
+    "started_at": "2025-12-17T22:40:37+00:00",
+    "completed_at": "2025-12-17T22:52:26+00:00",
+    "model_usage": {
+      "google/gemini-3-flash-preview": {
+        "input_tokens": 66264,
+        "output_tokens": 324165,
+        "total_tokens": 8319463,
+        "reasoning_tokens": 7929034
+      },
+      "google/gemini-2.0-flash-001": {
+        "input_tokens": 421391,
+        "output_tokens": 1080,
+        "total_tokens": 422471,
+        "reasoning_tokens": 0
+      }
+    }
+  }
+}

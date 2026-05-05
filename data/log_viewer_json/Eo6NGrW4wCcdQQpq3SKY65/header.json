@@ -1,0 +1,124 @@
+{
+  "version": 2,
+  "status": "success",
+  "eval": {
+    "eval_id": "TiyHmLdCVWBFsJLfxU8g7G",
+    "run_id": "Eo6NGrW4wCcdQQpq3SKY65",
+    "created": "2025-12-08T18:58:48+00:00",
+    "task": "frontiermath_tier_4_2025_07_01_public",
+    "task_id": "VDqzCG3s9R7YfWYDRsrcuq",
+    "task_version": 0,
+    "task_file": "bench/task/frontiermath/__init__.py",
+    "task_display_name": "frontiermath_tier_4_2025_07_01_public",
+    "task_registry_name": "frontiermath_tier_4_2025_07_01_public",
+    "task_attribs": {},
+    "task_args": {},
+    "task_args_passed": {},
+    "dataset": {
+      "name": "FrontierMath-Tier-4-2025-07-01-Public",
+      "samples": 2,
+      "sample_ids": [
+        "ONO3",
+        "PTA1"
+      ],
+      "shuffled": false
+    },
+    "sandbox": {
+      "type": "docker",
+      "config": "compose.yaml"
+    },
+    "model": "together/zai-org/GLM-4.6",
+    "model_generate_config": {},
+    "model_base_url": "https://api.together.xyz/v1",
+    "model_args": {},
+    "config": {
+      "epochs": 1,
+      "epochs_reducer": [
+        "mean"
+      ],
+      "fail_on_error": false,
+      "continue_on_fail": false,
+      "sandbox_cleanup": true,
+      "log_samples": true,
+      "log_realtime": true,
+      "log_images": true,
+      "score_display": true
+    },
+    "packages": {
+      "inspect_ai": "0.3.146"
+    },
+    "metadata": {
+      "epochai-benchmark-version": "1.1.1",
+      "inspect-log-encrypted": false,
+      "inspect-log-public": true
+    },
+    "scorers": [
+      {
+        "name": "verification_code",
+        "options": {},
+        "metrics": [
+          {
+            "name": "inspect_ai/accuracy",
+            "options": {}
+          },
+          {
+            "name": "inspect_ai/stderr",
+            "options": {}
+          }
+        ],
+        "metadata": {}
+      }
+    ]
+  },
+  "plan": {
+    "name": "plan",
+    "steps": [
+      {
+        "solver": "frontiermath_agent",
+        "params": {
+          "token_limit": 1000000,
+          "forced_submit_tokens": 660000
+        }
+      }
+    ],
+    "config": {
+      "max_retries": 8
+    }
+  },
+  "results": {
+    "total_samples": 2,
+    "completed_samples": 2,
+    "scores": [
+      {
+        "name": "verification_code",
+        "scorer": "verification_code",
+        "scored_samples": 2,
+        "unscored_samples": 0,
+        "params": {},
+        "metrics": {
+          "accuracy": {
+            "name": "accuracy",
+            "value": 0.0,
+            "params": {}
+          },
+          "stderr": {
+            "name": "stderr",
+            "value": 0.0,
+            "params": {}
+          }
+        }
+      }
+    ]
+  },
+  "stats": {
+    "started_at": "2025-12-08T18:58:48+00:00",
+    "completed_at": "2025-12-08T19:01:49+00:00",
+    "model_usage": {
+      "together/zai-org/GLM-4.6": {
+        "input_tokens": 208379,
+        "output_tokens": 13363,
+        "total_tokens": 221742
+      }
+    }
+  }
+}

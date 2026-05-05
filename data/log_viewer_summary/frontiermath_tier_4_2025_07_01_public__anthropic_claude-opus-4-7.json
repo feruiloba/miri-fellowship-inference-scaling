@@ -1,0 +1,40 @@
+{
+  "task": "frontiermath_tier_4_2025_07_01_public",
+  "task_display_name": "frontiermath_tier_4_2025_07_01_public",
+  "model": "anthropic/claude-opus-4-7",
+  "eval_id": "3hxVy6QsQng7DK97poZAJC",
+  "run_id": "evvf3AsgATfvMoPraLTpg3",
+  "dataset_name": "FrontierMath-Tier-4-2025-07-01-Public",
+  "epochs_configured": 1,
+  "totals": {
+    "total_output_tokens": 308985.0,
+    "total_avg_output_tokens": 308985.0,
+    "total_reasoning_tokens": 75855.0,
+    "total_avg_reasoning_tokens": 75855.0
+  },
+  "totals_source": "samples",
+  "samples": {
+    "ONO3": {
+      "n_epochs": 1,
+      "output_tokens": [
+        85177
+      ],
+      "avg_output_tokens": 85177.0,
+      "reasoning_tokens": [
+        20392
+      ],
+      "avg_reasoning_tokens": 20392.0
+    },
+    "PTA1": {
+      "n_epochs": 1,
+      "output_tokens": [
+        223808
+      ],
+      "avg_output_tokens": 223808.0,
+      "reasoning_tokens": [
+        55463
+      ],
+      "avg_reasoning_tokens": 55463.0
+    }
+  }
+}

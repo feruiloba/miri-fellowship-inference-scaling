@@ -1,0 +1,116 @@
+{
+  "version": 2,
+  "status": "success",
+  "eval": {
+    "run_id": "PDACS493wNy85eyMC9NULs",
+    "created": "2025-03-07T18:57:11+00:00",
+    "task": "frontiermath_2025_02_28_public",
+    "task_id": "857aQFxJ9xd38TFShhCjGR",
+    "task_version": 0,
+    "task_file": "bench/task/frontiermath/__init__.py",
+    "task_attribs": {},
+    "task_args": {},
+    "dataset": {
+      "name": "FrontierMath-2025-02-28-Public",
+      "samples": 10,
+      "sample_ids": [
+        "ALL3",
+        "CWA2",
+        "CWD31",
+        "RAP1",
+        "TIK2",
+        "PLD1",
+        "FMT1",
+        "LTI1",
+        "OVE2",
+        "RSG1"
+      ],
+      "shuffled": false
+    },
+    "sandbox": [
+      "docker",
+      "compose.yaml"
+    ],
+    "model": "google/gemini-2.0-flash-001",
+    "model_args": {},
+    "config": {
+      "epochs": 16,
+      "epochs_reducer": [
+        "mean"
+      ],
+      "fail_on_error": true,
+      "sandbox_cleanup": true,
+      "log_samples": true,
+      "log_images": true,
+      "score_display": true
+    },
+    "packages": {
+      "inspect_ai": "0.1.dev2220+g68d19b6"
+    },
+    "metadata": {
+      "inspect-log-encrypted": false,
+      "inspect-log-public": true
+    },
+    "scorers": [
+      {
+        "name": "verification_code",
+        "options": {},
+        "metrics": [
+          {
+            "name": "inspect_ai/accuracy",
+            "options": {}
+          },
+          {
+            "name": "inspect_ai/stderr",
+            "options": {}
+          }
+        ],
+        "metadata": {}
+      }
+    ]
+  },
+  "plan": {
+    "name": "plan",
+    "steps": [
+      {
+        "solver": "frontiermath_agent",
+        "params": {}
+      }
+    ],
+    "config": {}
+  },
+  "results": {
+    "total_samples": 160,
+    "completed_samples": 160,
+    "scores": [
+      {
+        "name": "verification_code",
+        "scorer": "verification_code",
+        "params": {},
+        "metrics": {
+          "accuracy": {
+            "name": "accuracy",
+            "value": 0.0,
+            "params": {}
+          },
+          "stderr": {
+            "name": "stderr",
+            "value": 0.0,
+            "params": {}
+          }
+        }
+      }
+    ]
+  },
+  "stats": {
+    "started_at": "2025-03-07T18:57:11+00:00",
+    "completed_at": "2025-03-07T19:12:27+00:00",
+    "model_usage": {
+      "google/gemini-2.0-flash-001": {
+        "input_tokens": 10631925,
+        "output_tokens": 732428,
+        "total_tokens": 11364353
+      }
+    }
+  }
+}

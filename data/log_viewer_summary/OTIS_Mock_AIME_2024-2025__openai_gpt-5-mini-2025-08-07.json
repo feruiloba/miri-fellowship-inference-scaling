@@ -1,0 +1,1143 @@
+{
+  "task": "OTIS Mock AIME 2024-2025",
+  "task_display_name": null,
+  "model": "openai/gpt-5-mini-2025-08-07",
+  "eval_id": "m5jWNwPSqL4NqT2mGnxLSK",
+  "run_id": "65DJZN2XzPw4RGpa4TCfA5",
+  "dataset_name": "EpochAI/otis-mock-aime-24-25",
+  "epochs_configured": 8,
+  "totals": {
+    "total_output_tokens": 2506041.0,
+    "total_avg_output_tokens": 313255.125,
+    "total_reasoning_tokens": 2249280.0,
+    "total_avg_reasoning_tokens": 281160.0
+  },
+  "totals_source": "samples",
+  "samples": {
+    "2024-Mock-AIME-Problem-01": {
+      "n_epochs": 8,
+      "output_tokens": [
+        913,
+        1103,
+        1388,
+        1185,
+        1105,
+        1217,
+        1135,
+        1066
+      ],
+      "avg_output_tokens": 1139.0,
+      "reasoning_tokens": [
+        640,
+        768,
+        960,
+        832,
+        768,
+        896,
+        832,
+        768
+      ],
+      "avg_reasoning_tokens": 808.0
+    },
+    "2024-Mock-AIME-Problem-02": {
+      "n_epochs": 8,
+      "output_tokens": [
+        4,
+        6238,
+        5085,
+        8088,
+        7101,
+        8714,
+        6432,
+        7309
+      ],
+      "avg_output_tokens": 6121.375,
+      "reasoning_tokens": [
+        0,
+        5568,
+        4544,
+        7424,
+        6336,
+        8000,
+        5952,
+        6720
+      ],
+      "avg_reasoning_tokens": 5568.0
+    },
+    "2024-Mock-AIME-Problem-03": {
+      "n_epochs": 8,
+      "output_tokens": [
+        923,
+        723,
+        823,
+        690,
+        726,
+        630,
+        753,
+        777
+      ],
+      "avg_output_tokens": 755.625,
+      "reasoning_tokens": [
+        640,
+        384,
+        576,
+        384,
+        448,
+        384,
+        448,
+        512
+      ],
+      "avg_reasoning_tokens": 472.0
+    },
+    "2024-Mock-AIME-Problem-04": {
+      "n_epochs": 8,
+      "output_tokens": [
+        1111,
+        1105,
+        1132,
+        1095,
+        1242,
+        1126,
+        956,
+        1271
+      ],
+      "avg_output_tokens": 1129.75,
+      "reasoning_tokens": [
+        640,
+        704,
+        704,
+        704,
+        768,
+        640,
+        576,
+        832
+      ],
+      "avg_reasoning_tokens": 696.0
+    },
+    "2024-Mock-AIME-Problem-05": {
+      "n_epochs": 8,
+      "output_tokens": [
+        12280,
+        8329,
+        14068,
+        6772,
+        4091,
+        5759,
+        6400,
+        5505
+      ],
+      "avg_output_tokens": 7900.5,
+      "reasoning_tokens": [
+        10816,
+        7360,
+        12480,
+        5696,
+        3008,
+        4480,
+        5504,
+        4032
+      ],
+      "avg_reasoning_tokens": 6672.0
+    },
+    "2024-Mock-AIME-Problem-06": {
+      "n_epochs": 8,
+      "output_tokens": [
+        5649,
+        8014,
+        8803,
+        5105,
+        5241,
+        5266,
+        7867,
+        5735
+      ],
+      "avg_output_tokens": 6460.0,
+      "reasoning_tokens": [
+        4864,
+        7296,
+        8064,
+        4288,
+        4416,
+        4544,
+        6912,
+        4736
+      ],
+      "avg_reasoning_tokens": 5640.0
+    },
+    "2024-Mock-AIME-Problem-07": {
+      "n_epochs": 8,
+      "output_tokens": [
+        2221,
+        3089,
+        2530,
+        2265,
+        2110,
+        2324,
+        1740,
+        2348
+      ],
+      "avg_output_tokens": 2328.375,
+      "reasoning_tokens": [
+        1664,
+        2304,
+        2176,
+        1536,
+        1600,
+        1664,
+        1088,
+        1664
+      ],
+      "avg_reasoning_tokens": 1712.0
+    },
+    "2024-Mock-AIME-Problem-08": {
+      "n_epochs": 8,
+      "output_tokens": [
+        10507,
+        19937,
+        14162,
+        20235,
+        19991,
+        14688,
+        13209,
+        29467
+      ],
+      "avg_output_tokens": 17774.5,
+      "reasoning_tokens": [
+        9280,
+        18496,
+        12544,
+        18944,
+        18816,
+        13632,
+        12160,
+        28288
+      ],
+      "avg_reasoning_tokens": 16520.0
+    },
+    "2024-Mock-AIME-Problem-09": {
+      "n_epochs": 8,
+      "output_tokens": [
+        1172,
+        1060,
+        1894,
+        1784,
+        1417,
+        1564,
+        1718,
+        1394
+      ],
+      "avg_output_tokens": 1500.375,
+      "reasoning_tokens": [
+        832,
+        768,
+        1536,
+        1408,
+        1024,
+        1152,
+        1344,
+        1024
+      ],
+      "avg_reasoning_tokens": 1136.0
+    },
+    "2024-Mock-AIME-Problem-10": {
+      "n_epochs": 8,
+      "output_tokens": [
+        6253,
+        17617,
+        7565,
+        5929,
+        13698,
+        16318,
+        16134,
+        10371
+      ],
+      "avg_output_tokens": 11735.625,
+      "reasoning_tokens": [
+        5184,
+        16640,
+        6592,
+        4992,
+        12992,
+        15040,
+        15296,
+        9472
+      ],
+      "avg_reasoning_tokens": 10776.0
+    },
+    "2024-Mock-AIME-Problem-11": {
+      "n_epochs": 8,
+      "output_tokens": [
+        9780,
+        8830,
+        10099,
+        9998,
+        9437,
+        14629,
+        10631,
+        12771
+      ],
+      "avg_output_tokens": 10771.875,
+      "reasoning_tokens": [
+        8320,
+        7488,
+        8640,
+        8896,
+        8384,
+        12928,
+        9280,
+        11712
+      ],
+      "avg_reasoning_tokens": 9456.0
+    },
+    "2024-Mock-AIME-Problem-12": {
+      "n_epochs": 8,
+      "output_tokens": [
+        6477,
+        5746,
+        11214,
+        7349,
+        7708,
+        5375,
+        10900,
+        8676
+      ],
+      "avg_output_tokens": 7930.625,
+      "reasoning_tokens": [
+        6016,
+        5376,
+        10368,
+        6848,
+        7168,
+        5120,
+        9920,
+        8000
+      ],
+      "avg_reasoning_tokens": 7352.0
+    },
+    "2024-Mock-AIME-Problem-13": {
+      "n_epochs": 8,
+      "output_tokens": [
+        4830,
+        27826,
+        12778,
+        13567,
+        7745,
+        3420,
+        3635,
+        13129
+      ],
+      "avg_output_tokens": 10866.25,
+      "reasoning_tokens": [
+        3776,
+        24896,
+        11328,
+        11200,
+        6592,
+        2560,
+        2752,
+        10688
+      ],
+      "avg_reasoning_tokens": 9224.0
+    },
+    "2024-Mock-AIME-Problem-14": {
+      "n_epochs": 8,
+      "output_tokens": [
+        10134,
+        13497,
+        14534,
+        12678,
+        9867,
+        13480,
+        8551,
+        15391
+      ],
+      "avg_output_tokens": 12266.5,
+      "reasoning_tokens": [
+        9920,
+        13312,
+        14080,
+        12608,
+        9728,
+        13312,
+        8384,
+        14592
+      ],
+      "avg_reasoning_tokens": 11992.0
+    },
+    "2024-Mock-AIME-Problem-15": {
+      "n_epochs": 8,
+      "output_tokens": [
+        5838,
+        6133,
+        5222,
+        10449,
+        7791,
+        13657,
+        6795,
+        6921
+      ],
+      "avg_output_tokens": 7850.75,
+      "reasoning_tokens": [
+        4992,
+        4992,
+        4672,
+        9664,
+        6848,
+        12736,
+        5824,
+        5824
+      ],
+      "avg_reasoning_tokens": 6944.0
+    },
+    "2025-I-Mock-AIME-Problem-01": {
+      "n_epochs": 8,
+      "output_tokens": [
+        2217,
+        1790,
+        1943,
+        3653,
+        3947,
+        1531,
+        2118,
+        2547
+      ],
+      "avg_output_tokens": 2468.25,
+      "reasoning_tokens": [
+        1728,
+        1408,
+        1472,
+        3072,
+        3520,
+        1088,
+        1664,
+        2112
+      ],
+      "avg_reasoning_tokens": 2008.0
+    },
+    "2025-I-Mock-AIME-Problem-02": {
+      "n_epochs": 8,
+      "output_tokens": [
+        2325,
+        2236,
+        2375,
+        2557,
+        2341,
+        2119,
+        2620,
+        1973
+      ],
+      "avg_output_tokens": 2318.25,
+      "reasoning_tokens": [
+        1728,
+        1664,
+        1600,
+        1856,
+        1600,
+        1472,
+        2112,
+        1408
+      ],
+      "avg_reasoning_tokens": 1680.0
+    },
+    "2025-I-Mock-AIME-Problem-03": {
+      "n_epochs": 8,
+      "output_tokens": [
+        1617,
+        1543,
+        2207,
+        2501,
+        1569,
+        2124,
+        2281,
+        2193
+      ],
+      "avg_output_tokens": 2004.375,
+      "reasoning_tokens": [
+        1280,
+        1088,
+        1792,
+        1920,
+        1152,
+        1728,
+        1728,
+        1792
+      ],
+      "avg_reasoning_tokens": 1560.0
+    },
+    "2025-I-Mock-AIME-Problem-04": {
+      "n_epochs": 8,
+      "output_tokens": [
+        7366,
+        6358,
+        11020,
+        12698,
+        6054,
+        8337,
+        4056,
+        14066
+      ],
+      "avg_output_tokens": 8744.375,
+      "reasoning_tokens": [
+        6016,
+        5312,
+        9408,
+        10816,
+        4992,
+        7104,
+        3392,
+        12736
+      ],
+      "avg_reasoning_tokens": 7472.0
+    },
+    "2025-I-Mock-AIME-Problem-05": {
+      "n_epochs": 8,
+      "output_tokens": [
+        1760,
+        2141,
+        3096,
+        1888,
+        1615,
+        1770,
+        2739,
+        1737
+      ],
+      "avg_output_tokens": 2093.25,
+      "reasoning_tokens": [
+        1152,
+        1728,
+        2624,
+        1472,
+        1152,
+        1344,
+        2240,
+        1280
+      ],
+      "avg_reasoning_tokens": 1624.0
+    },
+    "2025-I-Mock-AIME-Problem-06": {
+      "n_epochs": 8,
+      "output_tokens": [
+        8177,
+        10948,
+        4994,
+        8299,
+        5834,
+        11056,
+        6179,
+        7922
+      ],
+      "avg_output_tokens": 7926.125,
+      "reasoning_tokens": [
+        7680,
+        10240,
+        4544,
+        7872,
+        5376,
+        10560,
+        5568,
+        7488
+      ],
+      "avg_reasoning_tokens": 7416.0
+    },
+    "2025-I-Mock-AIME-Problem-07": {
+      "n_epochs": 8,
+      "output_tokens": [
+        4928,
+        22190,
+        9988,
+        20080,
+        5970,
+        14483,
+        15058,
+        4790
+      ],
+      "avg_output_tokens": 12185.875,
+      "reasoning_tokens": [
+        4288,
+        21504,
+        9280,
+        19264,
+        5312,
+        13440,
+        14400,
+        4096
+      ],
+      "avg_reasoning_tokens": 11448.0
+    },
+    "2025-I-Mock-AIME-Problem-08": {
+      "n_epochs": 8,
+      "output_tokens": [
+        5953,
+        5845,
+        4148,
+        2823,
+        6374,
+        2547,
+        5151,
+        5857
+      ],
+      "avg_output_tokens": 4837.25,
+      "reasoning_tokens": [
+        5184,
+        5184,
+        3264,
+        2240,
+        5888,
+        2112,
+        4416,
+        5120
+      ],
+      "avg_reasoning_tokens": 4176.0
+    },
+    "2025-I-Mock-AIME-Problem-09": {
+      "n_epochs": 8,
+      "output_tokens": [
+        3827,
+        3981,
+        3258,
+        4160,
+        3012,
+        4652,
+        6050,
+        3014
+      ],
+      "avg_output_tokens": 3994.25,
+      "reasoning_tokens": [
+        3328,
+        3392,
+        2688,
+        3520,
+        2560,
+        4032,
+        5504,
+        2432
+      ],
+      "avg_reasoning_tokens": 3432.0
+    },
+    "2025-I-Mock-AIME-Problem-10": {
+      "n_epochs": 8,
+      "output_tokens": [
+        3793,
+        6109,
+        5765,
+        10725,
+        7302,
+        8916,
+        3509,
+        12941
+      ],
+      "avg_output_tokens": 7382.5,
+      "reasoning_tokens": [
+        3584,
+        5952,
+        5632,
+        10176,
+        7232,
+        7936,
+        3200,
+        11456
+      ],
+      "avg_reasoning_tokens": 6896.0
+    },
+    "2025-I-Mock-AIME-Problem-11": {
+      "n_epochs": 8,
+      "output_tokens": [
+        11041,
+        12386,
+        30779,
+        18671,
+        17007,
+        31569,
+        12389,
+        9048
+      ],
+      "avg_output_tokens": 17861.25,
+      "reasoning_tokens": [
+        9664,
+        11456,
+        29760,
+        17856,
+        15488,
+        31424,
+        11392,
+        8000
+      ],
+      "avg_reasoning_tokens": 16880.0
+    },
+    "2025-I-Mock-AIME-Problem-12": {
+      "n_epochs": 8,
+      "output_tokens": [
+        22809,
+        11524,
+        24874,
+        20959,
+        22214,
+        24332,
+        16163,
+        10903
+      ],
+      "avg_output_tokens": 19222.25,
+      "reasoning_tokens": [
+        21952,
+        10368,
+        23744,
+        19264,
+        21440,
+        24256,
+        16128,
+        9920
+      ],
+      "avg_reasoning_tokens": 18384.0
+    },
+    "2025-I-Mock-AIME-Problem-13": {
+      "n_epochs": 8,
+      "output_tokens": [
+        6421,
+        19985,
+        6855,
+        6124,
+        5301,
+        8264,
+        7891,
+        8129
+      ],
+      "avg_output_tokens": 8621.25,
+      "reasoning_tokens": [
+        5248,
+        18816,
+        5952,
+        4864,
+        4416,
+        7232,
+        6400,
+        6848
+      ],
+      "avg_reasoning_tokens": 7472.0
+    },
+    "2025-I-Mock-AIME-Problem-14": {
+      "n_epochs": 8,
+      "output_tokens": [
+        21047,
+        22896,
+        13225,
+        19587,
+        16505,
+        20290,
+        15047,
+        31141
+      ],
+      "avg_output_tokens": 19967.25,
+      "reasoning_tokens": [
+        20352,
+        21056,
+        12288,
+        19008,
+        16128,
+        20224,
+        14272,
+        30272
+      ],
+      "avg_reasoning_tokens": 19200.0
+    },
+    "2025-I-Mock-AIME-Problem-15": {
+      "n_epochs": 8,
+      "output_tokens": [
+        8153,
+        7904,
+        8390,
+        11240,
+        8946,
+        8625,
+        10133,
+        7874
+      ],
+      "avg_output_tokens": 8908.125,
+      "reasoning_tokens": [
+        7616,
+        7296,
+        7488,
+        10176,
+        8384,
+        7360,
+        9280,
+        7232
+      ],
+      "avg_reasoning_tokens": 8104.0
+    },
+    "2025-II-Mock-AIME-Problem-01": {
+      "n_epochs": 8,
+      "output_tokens": [
+        1386,
+        1105,
+        1177,
+        1069,
+        1129,
+        1128,
+        1064,
+        1206
+      ],
+      "avg_output_tokens": 1158.0,
+      "reasoning_tokens": [
+        896,
+        768,
+        768,
+        640,
+        704,
+        704,
+        704,
+        832
+      ],
+      "avg_reasoning_tokens": 752.0
+    },
+    "2025-II-Mock-AIME-Problem-02": {
+      "n_epochs": 8,
+      "output_tokens": [
+        1470,
+        1635,
+        1660,
+        1430,
+        1187,
+        1057,
+        1350,
+        1343
+      ],
+      "avg_output_tokens": 1391.5,
+      "reasoning_tokens": [
+        1024,
+        1088,
+        1216,
+        896,
+        768,
+        640,
+        896,
+        832
+      ],
+      "avg_reasoning_tokens": 920.0
+    },
+    "2025-II-Mock-AIME-Problem-03": {
+      "n_epochs": 8,
+      "output_tokens": [
+        1022,
+        1390,
+        1236,
+        1092,
+        2061,
+        1819,
+        1050,
+        1650
+      ],
+      "avg_output_tokens": 1415.0,
+      "reasoning_tokens": [
+        704,
+        1088,
+        960,
+        768,
+        1664,
+        1472,
+        704,
+        1344
+      ],
+      "avg_reasoning_tokens": 1088.0
+    },
+    "2025-II-Mock-AIME-Problem-04": {
+      "n_epochs": 8,
+      "output_tokens": [
+        2929,
+        3001,
+        3750,
+        4675,
+        3179,
+        5276,
+        2263,
+        3242
+      ],
+      "avg_output_tokens": 3539.375,
+      "reasoning_tokens": [
+        2304,
+        2304,
+        2944,
+        4096,
+        2624,
+        4608,
+        1792,
+        2624
+      ],
+      "avg_reasoning_tokens": 2912.0
+    },
+    "2025-II-Mock-AIME-Problem-05": {
+      "n_epochs": 8,
+      "output_tokens": [
+        1178,
+        1996,
+        1879,
+        2033,
+        1337,
+        1724,
+        1451,
+        1544
+      ],
+      "avg_output_tokens": 1642.75,
+      "reasoning_tokens": [
+        832,
+        1664,
+        1600,
+        1728,
+        1088,
+        1408,
+        1152,
+        1152
+      ],
+      "avg_reasoning_tokens": 1328.0
+    },
+    "2025-II-Mock-AIME-Problem-06": {
+      "n_epochs": 8,
+      "output_tokens": [
+        2521,
+        2653,
+        1739,
+        3051,
+        2825,
+        2807,
+        2452,
+        2399
+      ],
+      "avg_output_tokens": 2555.875,
+      "reasoning_tokens": [
+        2176,
+        2240,
+        1408,
+        2688,
+        2432,
+        2368,
+        2048,
+        2048
+      ],
+      "avg_reasoning_tokens": 2176.0
+    },
+    "2025-II-Mock-AIME-Problem-07": {
+      "n_epochs": 8,
+      "output_tokens": [
+        5567,
+        2587,
+        3562,
+        3821,
+        2585,
+        3806,
+        3539,
+        3066
+      ],
+      "avg_output_tokens": 3566.625,
+      "reasoning_tokens": [
+        4992,
+        2112,
+        2880,
+        3200,
+        1984,
+        3136,
+        2880,
+        2304
+      ],
+      "avg_reasoning_tokens": 2936.0
+    },
+    "2025-II-Mock-AIME-Problem-08": {
+      "n_epochs": 8,
+      "output_tokens": [
+        7803,
+        10302,
+        10480,
+        17527,
+        9107,
+        6100,
+        16791,
+        6218
+      ],
+      "avg_output_tokens": 10541.0,
+      "reasoning_tokens": [
+        6784,
+        8960,
+        9280,
+        16704,
+        8000,
+        4992,
+        15424,
+        4800
+      ],
+      "avg_reasoning_tokens": 9368.0
+    },
+    "2025-II-Mock-AIME-Problem-09": {
+      "n_epochs": 8,
+      "output_tokens": [
+        4352,
+        4671,
+        4208,
+        3715,
+        4948,
+        4463,
+        3642,
+        3464
+      ],
+      "avg_output_tokens": 4182.875,
+      "reasoning_tokens": [
+        3648,
+        3904,
+        3584,
+        2752,
+        4096,
+        3648,
+        2944,
+        2752
+      ],
+      "avg_reasoning_tokens": 3416.0
+    },
+    "2025-II-Mock-AIME-Problem-10": {
+      "n_epochs": 8,
+      "output_tokens": [
+        2317,
+        3220,
+        2302,
+        2176,
+        2911,
+        2052,
+        2258,
+        2265
+      ],
+      "avg_output_tokens": 2437.625,
+      "reasoning_tokens": [
+        1792,
+        2496,
+        1664,
+        1600,
+        2112,
+        1536,
+        1664,
+        1600
+      ],
+      "avg_reasoning_tokens": 1808.0
+    },
+    "2025-II-Mock-AIME-Problem-11": {
+      "n_epochs": 8,
+      "output_tokens": [
+        6886,
+        8288,
+        13045,
+        25548,
+        17210,
+        11670,
+        6806,
+        22471
+      ],
+      "avg_output_tokens": 13990.5,
+      "reasoning_tokens": [
+        6080,
+        7360,
+        12096,
+        24448,
+        15680,
+        10816,
+        6144,
+        21120
+      ],
+      "avg_reasoning_tokens": 12968.0
+    },
+    "2025-II-Mock-AIME-Problem-12": {
+      "n_epochs": 8,
+      "output_tokens": [
+        13923,
+        9531,
+        10894,
+        8786,
+        14211,
+        18004,
+        13131,
+        10747
+      ],
+      "avg_output_tokens": 12403.375,
+      "reasoning_tokens": [
+        12736,
+        8320,
+        9984,
+        7552,
+        13952,
+        16576,
+        12032,
+        9792
+      ],
+      "avg_reasoning_tokens": 11368.0
+    },
+    "2025-II-Mock-AIME-Problem-13": {
+      "n_epochs": 8,
+      "output_tokens": [
+        1390,
+        1337,
+        1415,
+        1411,
+        1152,
+        1921,
+        1496,
+        1273
+      ],
+      "avg_output_tokens": 1424.375,
+      "reasoning_tokens": [
+        960,
+        1024,
+        1088,
+        896,
+        832,
+        1536,
+        1024,
+        896
+      ],
+      "avg_reasoning_tokens": 1032.0
+    },
+    "2025-II-Mock-AIME-Problem-14": {
+      "n_epochs": 8,
+      "output_tokens": [
+        18675,
+        9241,
+        11223,
+        15514,
+        4,
+        22585,
+        5884,
+        13266
+      ],
+      "avg_output_tokens": 12049.0,
+      "reasoning_tokens": [
+        18624,
+        7808,
+        9664,
+        15360,
+        0,
+        20992,
+        5760,
+        13184
+      ],
+      "avg_reasoning_tokens": 11424.0
+    },
+    "2025-II-Mock-AIME-Problem-15": {
+      "n_epochs": 8,
+      "output_tokens": [
+        5873,
+        7896,
+        6146,
+        3860,
+        6969,
+        4719,
+        4347,
+        7322
+      ],
+      "avg_output_tokens": 5891.5,
+      "reasoning_tokens": [
+        4864,
+        6976,
+        4800,
+        2944,
+        6208,
+        3840,
+        3456,
+        6464
+      ],
+      "avg_reasoning_tokens": 4944.0
+    }
+  }
+}

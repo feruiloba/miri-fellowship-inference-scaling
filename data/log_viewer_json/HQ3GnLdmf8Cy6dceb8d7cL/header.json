@@ -1,0 +1,121 @@
+{
+  "version": 2,
+  "status": "success",
+  "eval": {
+    "run_id": "HQ3GnLdmf8Cy6dceb8d7cL",
+    "created": "2025-04-10T18:03:04+00:00",
+    "task": "frontiermath_2025_02_28_public",
+    "task_id": "iyNrQaF974bxWkb9WTyj2v",
+    "task_version": 0,
+    "task_file": "bench/task/frontiermath/__init__.py",
+    "task_attribs": {},
+    "task_args": {},
+    "dataset": {
+      "name": "FrontierMath-2025-02-28-Public",
+      "samples": 10,
+      "sample_ids": [
+        "ALL3",
+        "CWA2",
+        "CWD31",
+        "RAP1",
+        "TIK2",
+        "PLD1",
+        "FMT1",
+        "LTI1",
+        "OVE2",
+        "RSG1"
+      ],
+      "shuffled": false
+    },
+    "sandbox": [
+      "docker",
+      "compose.yaml"
+    ],
+    "model": "grok/grok-3-mini-beta",
+    "model_base_url": "https://api.x.ai/v1",
+    "model_args": {},
+    "config": {
+      "epochs": 1,
+      "epochs_reducer": [
+        "mean"
+      ],
+      "fail_on_error": true,
+      "sandbox_cleanup": true,
+      "log_samples": true,
+      "log_images": true,
+      "score_display": true
+    },
+    "packages": {
+      "inspect_ai": "0.3.71"
+    },
+    "metadata": {
+      "inspect-log-encrypted": false,
+      "inspect-log-public": true
+    },
+    "scorers": [
+      {
+        "name": "verification_code",
+        "options": {},
+        "metrics": [
+          {
+            "name": "inspect_ai/accuracy",
+            "options": {}
+          },
+          {
+            "name": "inspect_ai/stderr",
+            "options": {}
+          }
+        ],
+        "metadata": {}
+      }
+    ]
+  },
+  "plan": {
+    "name": "plan",
+    "steps": [
+      {
+        "solver": "frontiermath_agent",
+        "params": {}
+      }
+    ],
+    "config": {
+      "reasoning_effort": "high"
+    }
+  },
+  "results": {
+    "total_samples": 10,
+    "completed_samples": 10,
+    "scores": [
+      {
+        "name": "verification_code",
+        "scorer": "verification_code",
+        "params": {},
+        "metrics": {
+          "accuracy": {
+            "name": "accuracy",
+            "value": 0.0,
+            "params": {}
+          },
+          "stderr": {
+            "name": "stderr",
+            "value": 0.0,
+            "params": {}
+          }
+        }
+      }
+    ]
+  },
+  "stats": {
+    "started_at": "2025-04-10T18:03:04+00:00",
+    "completed_at": "2025-04-10T18:32:36+00:00",
+    "model_usage": {
+      "grok/grok-3-mini-beta": {
+        "input_tokens": 358007,
+        "output_tokens": 5142,
+        "total_tokens": 678150,
+        "input_tokens_cache_read": 0,
+        "reasoning_tokens": 315001
+      }
+    }
+  }
+}

@@ -1,0 +1,432 @@
+[
+  {
+    "id": "ALL3",
+    "epoch": 1,
+    "input": "\\textit{Definitions.} For a positive integer $n$, let $v_p(n)$ denote the largest integer $v$ such that $p^v \\mid n$.\n\nFor $p$ a prime and $a \\not\\equiv 0 \\pmod{p}$, we let $\\ord_p(a)$ denote the smallest positive integer $o$ such that $a^o \\equiv 1 \\pmod{p}$. For $x > 0$, we let\n$$\\ord_{p, x}(a) = \\prod_{q \\le x} q^{v_q(\\ord_p(a))} \\prod_{q > x} q^{v_q(p-1)}.$$\n\n\\textit{Problem.} Let $S_x$ denote the set of primes $p$ for which\n$$\\ord_{p, x}(2) > \\ord_{p, x}(3),$$\nand let $d_x$ denote the density\n$$d_x := \\frac{|S_x|}{|\\{p \\le x : p \\text{ is prime}|\\}}$$\nof $S_x$ in the primes. Let\n$$d_{\\infty} = \\lim_{x \\to \\infty} d_x.$$\n\nCompute $\\lfloor 10^6 d_{\\infty} \\rfloor.$",
+    "target": "```python\ndef solution():\n    return 367707\n\ndef verify(answer):\n    return answer - solution() == 0\n```",
+    "metadata": {
+      "tier": "Research",
+      "creativity_rating": "4",
+      "precision_rating": "5",
+      "background_rating": 4,
+      "subjects": "Algebraic number theory, Galois theory, Artin’s primitive root conjecture",
+      "question_id": "ALL3",
+      "what_is_the_question_about": "Testing Artin's primitive root conjecture",
+      "answer_type": "Python integer",
+      "verification_code": "def solution(): return 367707 def verify(answer): return answer - solution() == 0"
+    },
+    "scores": {
+      "verification_code": {
+        "value": "I",
+        "answer": "```python def answer(): import math return int(1e6 / math.e) ```",
+        "explanation": "The `verify()` function returned False",
+        "history": []
+      }
+    },
+    "model_usage": {
+      "anthropic/claude-sonnet-4-6": {
+        "input_tokens": 209,
+        "output_tokens": 66513,
+        "total_tokens": 607306,
+        "input_tokens_cache_write": 69767,
+        "input_tokens_cache_read": 470817,
+        "reasoning_tokens": 25731
+      }
+    },
+    "started_at": "2026-02-22T03:05:57.408846+00:00",
+    "completed_at": "2026-02-22T03:29:17.867023+00:00",
+    "total_time": 1400.458,
+    "working_time": 1399.643,
+    "uuid": "NiZtTCLqJrN78YYnVRrneu",
+    "retries": 0,
+    "completed": true,
+    "message_count": 63
+  },
+  {
+    "id": "CWA2",
+    "epoch": 1,
+    "input": "How many nonzero points are there on\n\\[x^3y+y^3z+z^3x=0\\]\n\nover $\\mathbb{F}_{5^{18}}$ up to scaling?",
+    "target": "```python\ndef solution():\n    return 3814708984376\n\ndef verify(attempt):\n    return solution()==attempt\n```",
+    "metadata": {
+      "tier": "HS/Undergrad",
+      "creativity_rating": "2",
+      "precision_rating": "2",
+      "background_rating": 4,
+      "subjects": "Algebraic Geometry, Number Theory",
+      "question_id": "CWA2",
+      "what_is_the_question_about": "Nonzero points",
+      "answer_type": "Python integer",
+      "verification_code": "def solution(): return 3814708984376 def verify(attempt): return solution()==attempt"
+    },
+    "scores": {
+      "verification_code": {
+        "value": "C",
+        "answer": "```python def answer(): s = {i: 0 for i in range(1, 6)} s[6] = -6 * 125 for k in range(7, 19): s[k] = -125 * s[k - 6] return 5**18 + 1 - s[18] ```",
+        "explanation": "The `verify()` function returned True",
+        "history": []
+      }
+    },
+    "model_usage": {
+      "anthropic/claude-sonnet-4-6": {
+        "input_tokens": 1919,
+        "output_tokens": 12069,
+        "total_tokens": 56293,
+        "input_tokens_cache_write": 13061,
+        "input_tokens_cache_read": 29244,
+        "reasoning_tokens": 3890
+      }
+    },
+    "started_at": "2026-02-22T03:05:57.826010+00:00",
+    "completed_at": "2026-02-22T03:10:12.523512+00:00",
+    "total_time": 254.697,
+    "working_time": 254.525,
+    "uuid": "28XJYQHYDA9DkYt4rbPRE9",
+    "retries": 0,
+    "completed": true,
+    "message_count": 21
+  },
+  {
+    "id": "CWD31",
+    "epoch": 1,
+    "input": "Let $a_n$ for $n\\in\\mathbb Z$ be the sequence of integers satisfying the recurrence formula \n   \\[a_n=198130309625 a_{n-1}+354973292077 a_{n-2}-427761277677 a_{n-3}+370639957a_{n-4}\\]\n    with initial conditions $a_i=i$ for $0\\leq i\\leq 3$. Find the smallest prime $p\\equiv4\\bmod7$ for which the function $\\mathbb Z\\to\\mathbb Z$ given by $n\\mapsto a_n$ can be extended to a continuous function on $\\mathbb Z_p$.",
+    "target": "```python\ndef solution():\n    return 9811\n\ndef verify(answer):\n    return answer - solution() == 0\n```",
+    "metadata": {
+      "tier": "Graduate",
+      "creativity_rating": "3",
+      "precision_rating": "3",
+      "background_rating": 3,
+      "subjects": "Algebraic number theory, Algebra",
+      "question_id": "CWD31",
+      "what_is_the_question_about": "Prime field continuous extensions",
+      "answer_type": "Python integer",
+      "verification_code": "def solution(): return 9811 def verify(answer): return answer - solution() == 0"
+    },
+    "scores": {
+      "verification_code": {
+        "value": "C",
+        "answer": "```python def answer(): return 9811 ```",
+        "explanation": "The `verify()` function returned True",
+        "history": []
+      }
+    },
+    "model_usage": {
+      "anthropic/claude-sonnet-4-6": {
+        "input_tokens": 2003,
+        "output_tokens": 7951,
+        "total_tokens": 32665,
+        "input_tokens_cache_write": 10132,
+        "input_tokens_cache_read": 12579,
+        "reasoning_tokens": 3121
+      }
+    },
+    "started_at": "2026-02-22T03:05:57.809001+00:00",
+    "completed_at": "2026-02-22T03:07:46.615690+00:00",
+    "total_time": 108.807,
+    "working_time": 108.766,
+    "uuid": "oH3MVz9WWWBGiWJpREDbRw",
+    "retries": 0,
+    "completed": true,
+    "message_count": 12
+  },
+  {
+    "id": "FMT1",
+    "epoch": 1,
+    "input": "There are unique constants $C, \\alpha, \\beta$ such that the number of solutions to the equation\n\n$$ab+1=cde$$\n\nwith $a, b, c, d, e \\in \\mathbb{N}$ with $ab \\le x$ is asymptotic to $Cx^{\\alpha}\\log^{\\beta}x$ as $x\\rightarrow\\infty.$\n\nCompute $\\lfloor 1000C\\rfloor.$",
+    "target": "```python\ndef solution():\n    return 214\n\ndef verify(answer):\n    return answer - solution() == 0\n```",
+    "metadata": {
+      "tier": "Graduate",
+      "creativity_rating": "3",
+      "precision_rating": "3",
+      "background_rating": 4,
+      "subjects": "Analytic number theory",
+      "question_id": "FMT1",
+      "what_is_the_question_about": "Asymptotics for a slowly-converging series",
+      "answer_type": "Python integer",
+      "verification_code": "def solution(): return 214 def verify(answer): return answer - solution() == 0"
+    },
+    "scores": {
+      "verification_code": {
+        "value": "C",
+        "answer": "```python def answer(): from sympy import primerange S1 = 1.0 for p in primerange(2, 2000000): Lp = (p-1) * (p*p + p - 1) / p**3 S1 *= Lp C = S1 / 2 return int(C * 1000) ```",
+        "explanation": "The `verify()` function returned True",
+        "history": []
+      }
+    },
+    "model_usage": {
+      "anthropic/claude-sonnet-4-6": {
+        "input_tokens": 2075,
+        "output_tokens": 55253,
+        "total_tokens": 502743,
+        "input_tokens_cache_write": 59363,
+        "input_tokens_cache_read": 386052,
+        "reasoning_tokens": 20018
+      }
+    },
+    "started_at": "2026-02-22T03:05:57.967629+00:00",
+    "completed_at": "2026-02-22T03:20:35.703081+00:00",
+    "total_time": 877.735,
+    "working_time": 877.19,
+    "uuid": "Ssttfj69LkKpqZdEEADhNY",
+    "retries": 0,
+    "completed": true,
+    "message_count": 51
+  },
+  {
+    "id": "LTI1",
+    "epoch": 1,
+    "input": "Let $U\\subset\\mathbb{P}H^0(\\mathbb{P}^2_{\\mathbb{Z}}, \\mathcal{O}(2))$ be the space of smooth conics in $\\mathbb{P}^2_{\\mathbb{Z}}$, and let\n$Z\\subset U^6$ be the closed subscheme parametrizing $6$-tuples $(C_1, \\cdots, C_6)$ with $C_1$ tangent to $C_2, \\cdots, C_6$. Let $\\pi: Z\\to C^5$\nbe the map induced by the projection onto the last $5$ coordinates, and let $V\\subset U^5$ be the dense open subscheme over which $\\pi$ is finite \\'etale.\nLet $$L=\\lim_{p\\to \\infty} \\frac{1}{\\#V(\\mathbb{F}_p)}\\sum_{x\\in V(\\mathbb{F}_p)} \\#\\pi^{-1}(x),$$\nthat is, the limit of the average number of components of the space of conics tangent to 5 smooth conics over $\\mathbb{F}_p$, as $p$ tends to infinity (when this space is finite \\'etale).\n\nFind $\\lfloor 100L \\rfloor.$",
+    "target": "```python\ndef solution():\n    return 866\n\ndef verify(answer):\n    return answer - solution() == 0\n```",
+    "metadata": {
+      "tier": "Research",
+      "creativity_rating": "3",
+      "precision_rating": "4",
+      "background_rating": 4,
+      "subjects": "Arithmetic geometry",
+      "question_id": "LTI1",
+      "what_is_the_question_about": "Variety counting",
+      "answer_type": "Python integer",
+      "verification_code": "def solution(): return 866 def verify(answer): return answer - solution() == 0"
+    },
+    "scores": {
+      "verification_code": {
+        "value": "C",
+        "answer": "```python def answer(): from fractions import Fraction H = sum(Fraction(1, k) for k in range(1, 3265)) import math return math.floor(100 * float(H)) ```",
+        "explanation": "The `verify()` function returned True",
+        "history": []
+      }
+    },
+    "model_usage": {
+      "anthropic/claude-sonnet-4-6": {
+        "input_tokens": 129,
+        "output_tokens": 81204,
+        "total_tokens": 648595,
+        "input_tokens_cache_write": 84655,
+        "input_tokens_cache_read": 482607,
+        "reasoning_tokens": 34063
+      }
+    },
+    "started_at": "2026-02-22T03:05:57.824013+00:00",
+    "completed_at": "2026-02-22T03:26:55.639890+00:00",
+    "total_time": 1257.816,
+    "working_time": 1257.474,
+    "uuid": "M2zcHqeJNsSnP4JLCT4LR8",
+    "retries": 0,
+    "completed": true,
+    "message_count": 39
+  },
+  {
+    "id": "OVE2",
+    "epoch": 1,
+    "input": "\\textit{Background.} \nThe \\emph{Tsirelson space} is a Banach space introduced in 1974 as a counterexample to a longstanding conjecture in Banach space theory. It is a subspace of $\\ell^\\infty$ described as follows. \n\nLet $P_k$ denote the operator on $\\ell^\\infty$ that modifies each $\\langle x_n:\\, n \\in \\mathbb N \\rangle \\in \\ell^\\infty$ by setting the first $k$ coordinates equal to $0$ (without changing any other coordinates). Given $\\vec x = \\langle x_n:\\, n \\in \\mathbb N \\rangle \\in \\ell^\\infty$, the \\emph{support} of $\\vec x$ is $\\mathrm{supp}(\\vec x) = \\{ n \\in \\mathbb N :\\, x_n \\neq 0 \\}$. \nThe Tsirelson space is the span of the smallest pointwise-closed subset $K$ of the unit ball in $\\ell^\\infty$ satisfying the following two properties:\n\n1. For every $j \\in \\mathbb N$, the unit vector $\\vec e_j$ and all its multiples $\\lambda \\vec e_j$ with $|\\lambda| \\leq 1$ belong to $K$.\n\n2. Suppose $\\vec x_1,\\dots,\\vec x_k$ is a finite sequence of members of $K$, each with finite support, such that $\\max (\\mathrm{supp}(\\vec x_i)) < \\min (\\mathrm{supp}(\\vec x_j))$ for all $i < j \\leq k$. Then $\\frac{1}{2}P_k(\\vec x_1 + \\dots + \\vec x_k) \\in K$.\n\n\\textit{Problem.}\n\nLet $N$ denote the largest natural number such that \nthere is a member $\\langle x_n:\\, n \\in \\mathbb N \\rangle$ of the set $K$ described above with \n$x_3 = 1/2$, $x_N > 1/20$, and \n$x_i > x_j$ whenever $3 \\leq i < j \\leq N$. \nIt turns out that $N$ is too large to write down in a reasonable amount of space, so let us ask instead: what is the largest power of $2$ dividing $N$? In other words, find the integer $p \\geq 0$ such that $N = m2^p$ for some odd number $m$.",
+    "target": "```python\ndef solution():\n    return 402653211\n\ndef verify(answer):\n    return answer - solution() == 0\n```",
+    "metadata": {
+      "tier": "Research",
+      "creativity_rating": "3",
+      "precision_rating": "5",
+      "background_rating": 4,
+      "subjects": "Banach spaces, general topology",
+      "question_id": "OVE2",
+      "what_is_the_question_about": "Tsirelson space",
+      "answer_type": "Python integer",
+      "verification_code": "def solution(): return 402653211 def verify(answer): return answer - solution() == 0"
+    },
+    "scores": {
+      "verification_code": {
+        "value": "C",
+        "answer": "```python def answer(): return 27 + 24 * (2**24) ```",
+        "explanation": "The `verify()` function returned True",
+        "history": []
+      }
+    },
+    "model_usage": {
+      "anthropic/claude-sonnet-4-6": {
+        "input_tokens": 69,
+        "output_tokens": 59813,
+        "total_tokens": 280231,
+        "input_tokens_cache_write": 61734,
+        "input_tokens_cache_read": 158615,
+        "reasoning_tokens": 24369
+      }
+    },
+    "started_at": "2026-02-22T03:05:57.806655+00:00",
+    "completed_at": "2026-02-22T03:20:47.580108+00:00",
+    "total_time": 889.773,
+    "working_time": 889.664,
+    "uuid": "3A5Lox3F7YSkV7RPghuYWv",
+    "retries": 0,
+    "completed": true,
+    "message_count": 21
+  },
+  {
+    "id": "PLD1",
+    "epoch": 1,
+    "input": "Let $W$ be the set of finite words with all distinct letters over the alphabet of positive integers. Define a function $F:W\\rightarrow W$ recursively as follows. First, let $F(\\epsilon)=\\epsilon$, where $\\epsilon$ is the empty word. Given a nonempty word $w\\in W$, let $F(w)=F(L)F(R)m$, where $m$ is the largest number in $w$ and $w=LmR$. Let $n=10^{12}$, and note that $W$ restricts to a function from $S_n$ to itself, where $S_n$ is the symmetric group of order $n$. Let $\\sigma$ be a permutation chosen uniformly at random from $S_n$, and let $X$ be the expected number of integers $1\\le i<n$ such that $(F(\\sigma))^{-1}(i+1)<(F(\\sigma))^{-1}(i)$. Compute $\\lfloor X\\rfloor$.",
+    "target": "```python\ndef solution():\n    return 499999999972\n\ndef verify(answer):\n    return answer == solution()\n```",
+    "metadata": {
+      "tier": "HS/Undergrad",
+      "creativity_rating": "3",
+      "precision_rating": "4",
+      "background_rating": 3,
+      "subjects": "Combinatorics, Probability",
+      "question_id": "PLD1",
+      "what_is_the_question_about": "(Discrete 1) Alphabet of positive integers",
+      "answer_type": "Python integer",
+      "verification_code": "def solution(): return 499999999972 def verify(answer): return answer == solution()"
+    },
+    "scores": {
+      "verification_code": {
+        "value": "C",
+        "answer": "```python def answer(): from mpmath import mp, mpf, euler, log, floor mp.dps = 50 n = mpf(10**12) gamma = euler H_n = log(n) + gamma + 1/(2*n) - 1/(12*n**2) + 1/(120*n**4) - 1/(252*n**6) X = (n + 1) / 2 - H_n return int(floor(X)) ```",
+        "explanation": "The `verify()` function returned True",
+        "history": []
+      }
+    },
+    "model_usage": {
+      "anthropic/claude-sonnet-4-6": {
+        "input_tokens": 2105,
+        "output_tokens": 7327,
+        "total_tokens": 49049,
+        "input_tokens_cache_write": 10336,
+        "input_tokens_cache_read": 29281,
+        "reasoning_tokens": 2707
+      }
+    },
+    "started_at": "2026-02-22T03:05:57.959082+00:00",
+    "completed_at": "2026-02-22T03:07:37.193308+00:00",
+    "total_time": 99.234,
+    "working_time": 99.151,
+    "uuid": "csQpWU3hrnnZHUPm9X5cBF",
+    "retries": 0,
+    "completed": true,
+    "message_count": 18
+  },
+  {
+    "id": "RAP1",
+    "epoch": 1,
+    "input": "Let $M_{1000}^4$ be the set of $4$-tuples of invertible $1000\\times1000$ matrices with coefficients in $\\mathbb{C}$. Let $S\\subset M_{1000}^4$ be the subset of all tuples $(A_1,A_2,A_3,A_4)$ satisfying the conditions:\n\\begin{alignat*}{2}\nA_i^2 &= I, &&\\quad \\text{for all } 1\\le i\\le 4\\\\\nA_iA_j &= A_jA_i, &&\\quad \\text{if } \\{3j- i, 3i-j\\} \\cap 5\\mathbb{Z}_{>0} =\\emptyset \\\\\nA_iA_jA_i^{-1}A_j^{-1} &= A_jA_i, &&\\quad \\text{if } \\{3j- i, 3i-j\\} \\cap 5\\mathbb{Z}_{>0} \\neq\\emptyset,\n\\end{alignat*}\nwhere $5\\mathbb{Z}_{>0}$ refers to the set of positive multiples of $5$, i.e., $5\\mathbb{Z}_{>0} = \\{5,10,15,\\dots\\}$.\n\n\\noindent The group $G = GL(1000)$ of invertible complex $1000\\times 1000$ matrices acts on $S$ by the formula:\n\\[B\\cdot (A_1,A_2,A_3,A_4) = (BA_1B^{-1}, BA_2B^{-1}, BA_3B^{-1}, BA_4B^{-1}).\\]\nFind the number of orbits of this action, i.e., find $|S/G|$.",
+    "target": "```python\ndef solution():\n    return 625243878951\n\ndef verify(answer):\n    return answer - solution() == 0\n```",
+    "metadata": {
+      "tier": "Graduate",
+      "creativity_rating": "2",
+      "precision_rating": "3",
+      "background_rating": 3,
+      "subjects": "Algebra, representation theory",
+      "question_id": "RAP1",
+      "what_is_the_question_about": "Large invertible matrices",
+      "answer_type": "Python integer",
+      "verification_code": "def solution(): return 625243878951 def verify(answer): return answer - solution() == 0"
+    },
+    "scores": {
+      "verification_code": {
+        "value": "C",
+        "answer": "```python def answer(): N = 1000 dims = [1, 4, 5, 6, 5, 4, 1] dp = [0] * (N + 1) dp[0] = 1 for d in dims: for i in range(d, N + 1): dp[i] += dp[i - d] return dp[N] ```",
+        "explanation": "The `verify()` function returned True",
+        "history": []
+      }
+    },
+    "model_usage": {
+      "anthropic/claude-sonnet-4-6": {
+        "input_tokens": 39,
+        "output_tokens": 7006,
+        "total_tokens": 33225,
+        "input_tokens_cache_write": 9033,
+        "input_tokens_cache_read": 17147,
+        "reasoning_tokens": 2257
+      }
+    },
+    "started_at": "2026-02-22T03:05:57.399863+00:00",
+    "completed_at": "2026-02-22T03:07:28.395578+00:00",
+    "total_time": 90.996,
+    "working_time": 90.954,
+    "uuid": "iHa3JDMmWXtk6YKPQNXx32",
+    "retries": 0,
+    "completed": true,
+    "message_count": 12
+  },
+  {
+    "id": "RSG1",
+    "epoch": 1,
+    "input": "Let $\\mathcal P$ be a regular $101$-gon of circumradius $1$. Draw each diagonal of $\\mathcal P$ with probability 0.001. This splits $\\mathcal P$ into several closed regions. Let $E$ be the expected value of the perimeter of the region containing the center of $\\mathcal P$.\n\nCompute $\\lfloor 10^9 E \\rfloor.$",
+    "target": "```python\ndef computation():\n    import math\n    n = 101\n    p = 0.001\n    ans = 0.0\n    for d in range(1,(n+1)//2):\n        chordLen = 2*math.sin(math.pi*d/n)\n        numBlockers = ((n+1)/2-d)*((n+3)/2-d)/2-1;\n        if d==1:\n            ans += n*math.pow(1-p,numBlockers)*chordLen\n            continue\n        else:\n            crossPoints = []\n            for a in range(1,d):\n                for b in range(1,n-d):\n                    dist = 2*math.sin(math.pi*float(a)/float(n))\\\n                    *math.sin(math.pi*float(b)/float(n))\\\n                    /math.sin(math.pi*float(a-b+n-d)/float(n))\n                    if a+b<=int((n-1)/2):\n                        crossPoints.append([dist,\"L\"])\n                    else:\n                        crossPoints.append([dist,\"R\"])\n            crossPoints.sort()\n            numRsLeft = 0\n            numLsRight = len(crossPoints)/2-1\n            ans += n*p*math.pow(1-p,numBlockers+len(crossPoints)/2)\\\n            *crossPoints[0][0] # edge case AP_1\n            ans += n*p*math.pow(1-p,numBlockers+len(crossPoints)/2)\\\n            *(chordLen-crossPoints[len(crossPoints)-1][0]) # edge case P_kB\n            for i in range(len(crossPoints)-1):\n                ans += n*p*math.pow(1-p,numBlockers+numRsLeft+numLsRight)\\\n                *(crossPoints[i+1][0]-crossPoints[i][0])\n                if crossPoints[i+1][1]==\"R\":\n                    numRsLeft+=1\n                if crossPoints[i+1][1]==\"L\":\n                    numLsRight-=1\n    return ans\n\ndef solution():\n    return 4771880153\n\ndef verify(answer):\n    return answer == solution()\n```",
+    "metadata": {
+      "tier": "HS/Undergrad",
+      "creativity_rating": "2",
+      "precision_rating": "2",
+      "background_rating": 1,
+      "subjects": "Probability Theory, Combinatorics, Geometry",
+      "question_id": "RSG1",
+      "what_is_the_question_about": "Regular 101-gon",
+      "answer_type": "Python integer",
+      "verification_code": "def computation(): import math n = 101 p = 0.001 ans = 0.0 for d in range(1,(n+1)//2): chordLen = 2*math.sin(math.pi*d/n) numBlockers = ((n+1)/2-d)*((n+3)/2-d)/2-1; if d==1: ans += n*math.pow(1-p,numBlockers)*chordLen continue else: crossPoints = [] for a in range(1,d): for b in range(1,n-d): dist = 2*math.sin(math.pi*float(a)/float(n))\\ *math.sin(math.pi*float(b)/float(n))\\ /math.sin(math.pi*float(a-b+n-d)/float(n)) if a+b<=int((n-1)/2): crossPoints.append([dist,\"L\"]) else: crossPoints.append([dist,\"R\"]) crossPoints.sort() numRsLeft = 0 numLsRight = len(crossPoints)/2-1 ans += n*p*math.pow(1-p,numBlockers+len(crossPoints)/2)\\ *crossPoints[0][0] # edge case AP_1 ans += n*p*math.pow(1-p,numBlockers+len(crossPoints)/2)\\ *(chordLen-crossPoints[len(crossPoints)-1][0]) # edge case P_kB for i in range(len(crossPoints)-1): ans += n*p*math.pow(1-p,numBlockers+numRsLeft+numLsRight)\\ *(crossPoints[i+1][0]-crossPoints[i][0]) if crossPoints[i+1][1]==\"R\": numRsLeft+=1 if crossPoints[i+1][1]==\"L\": numLsRight-=1 return..."
+    },
+    "scores": {
+      "verification_code": {
+        "value": "I",
+        "answer": "```python def answer(): import numpy as np n = 101 p = 0.001 q = 1 - p vertices = np.array([[np.cos(2*np.pi*k/n), np.sin(2*np.pi*k/n)] for k in range(n)]) O = np.array([0.0, 0.0]) all_diags = np.array([(i, j) for i in range(n) for j in range(i+1, n) if j - i > 1 and not (i == 0 and j == n-1)]) Va_all = vertices[all_diags[:, 0]] Vb_all = vertices[all_diags[:, 1]] def count_crossings_points(P_points, exclude_idx=None): M = len(P_points) counts = np.zeros(M, dtype=np.int32) Va = Va_all.copy() Vb = Vb_all.copy() if exclude_idx is not None: mask = np.ones(len(Va_all), dtype=bool) mask[exclude_idx] = False Va = Va_all[mask] Vb = Vb_all[mask] for m in range(M): P = P_points[m] c1 = P[0]*Va[:,1] - P[1]*Va[:,0] c2 = P[0]*Vb[:,1] - P[1]*Vb[:,0] side1 = c1*c2 < 0 dV = Vb - Va c3 = dV[:,0]*(-Va[:,1]) - dV[:,1]*(-Va[:,0]) c4 = dV[:,0]*(P[1]-Va[:,1]) - dV[:,1]*(P[0]-Va[:,0]) side2 = c3*c4 < 0 counts[m] = np.count_nonzero(side1 & side2) return counts def get_exclude_idx(i, j): matches = np.where((all_diags[:,0]==i) &...",
+        "explanation": "The `verify()` function returned False",
+        "history": []
+      }
+    },
+    "model_usage": {
+      "anthropic/claude-sonnet-4-6": {
+        "input_tokens": 2011,
+        "output_tokens": 25048,
+        "total_tokens": 217225,
+        "input_tokens_cache_write": 27143,
+        "input_tokens_cache_read": 163023,
+        "reasoning_tokens": 5737
+      }
+    },
+    "started_at": "2026-02-22T03:05:57.215837+00:00",
+    "completed_at": "2026-02-22T03:13:25.481745+00:00",
+    "total_time": 448.266,
+    "working_time": 448.022,
+    "uuid": "24eynVJXpqXWyD4NxhUT3R",
+    "retries": 0,
+    "completed": true,
+    "message_count": 33
+  },
+  {
+    "id": "TIK2",
+    "epoch": 1,
+    "input": "Construct a degree 19 polynomial $p(x) \\in \\mathbb{C}[x]$ such that $X:=\\{p(x) = p(y)\\} \\subset \\mathbb{P}^1 \\times \\mathbb{P}^1$ has at least 3 (but not all linear) irreducible components over $\\mathbb{C}$. Choose $p(x)$ to be odd, monic, have real coefficients and linear coefficient -19 and calculate $p(19)$.",
+    "target": "```python\ndef solution():\n    return 1876572071974094803391179\n\ndef verify(answer):\n    return answer - solution() == 0\n```",
+    "metadata": {
+      "tier": "Research",
+      "creativity_rating": "3",
+      "precision_rating": "4",
+      "background_rating": 4,
+      "subjects": "Algebraic geometry, representation theory",
+      "question_id": "TIK2",
+      "what_is_the_question_about": "Find degree 19 polynomial",
+      "answer_type": "Python integer",
+      "verification_code": "def solution(): return 1876572071974094803391179 def verify(answer): return answer - solution() == 0"
+    },
+    "scores": {
+      "verification_code": {
+        "value": "C",
+        "answer": "```python def answer(): coeffs = [1, 0, -19, 0, 152, 0, -665, 0, 1729, 0, -2717, 0, 2508, 0, -1254, 0, 285, 0, -19, 0] val = sum(c * 19**(19 - i) for i, c in enumerate(coeffs)) return val ```",
+        "explanation": "The `verify()` function returned True",
+        "history": []
+      }
+    },
+    "model_usage": {
+      "anthropic/claude-sonnet-4-6": {
+        "input_tokens": 2032,
+        "output_tokens": 37683,
+        "total_tokens": 326737,
+        "input_tokens_cache_write": 40988,
+        "input_tokens_cache_read": 246034,
+        "reasoning_tokens": 15790
+      }
+    },
+    "started_at": "2026-02-22T03:05:57.518855+00:00",
+    "completed_at": "2026-02-22T03:14:55.076868+00:00",
+    "total_time": 537.558,
+    "working_time": 537.307,
+    "uuid": "kiDNgfDx9g8dihjKCYgubQ",
+    "retries": 0,
+    "completed": true,
+    "message_count": 33
+  }
+]

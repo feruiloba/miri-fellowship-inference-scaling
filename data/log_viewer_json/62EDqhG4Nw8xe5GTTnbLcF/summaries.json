@@ -1,0 +1,66 @@
+[
+  {
+    "id": "ONO3",
+    "epoch": 1,
+    "input": "Define  functions $F(z)$ and $G(z)$ on the upper-half of the complex plane by\n\\begin{displaymath}\n\tF(z):=1+\\sum_{n=1}^{\\infty} \\frac{e^{2\\pi i  n^2z}}{\\prod_{j=1}^n (1+e^{2 \\pi i  jz})^2} \\ \\ \\ {\\text {\\rm and}}\\ \\ \\ \n\tG(z):=\\prod_{n=1}^{\\infty} \\frac{(1-e^{2\\pi i nz})(1-e^{2\\pi i (2n-1)z})}{(1+e^{2\\pi i n z})}.\n\\end{displaymath}\n\n\n\\smallskip\nLet $\\ell_1$ be the smallest prime for which the following hold:\n\\begin{enumerate}\n\t\\item We have that $D_{\\ell_1}:=-\\ell_1$ is the discriminant of the ring of integers of $\\Q(\\sqrt{-\\ell_1}).$\n\t\\item  The class number  $h(D_{\\ell_1})$  of this quadratic field is a prime number $\\ell_2\\geq 5.$\n\t\\item The class $\\ell_2\\pmod{\\ell_1}$ is a primitive root of the multiplicative group $(\\Z/\\ell_1 \\Z)^{\\times}.$\n\t\\item The Mordell-Weil group over $\\Q$ of the elliptic curve\n\t$$\n\tE(\\Q) \\ : \\ \\ Y^2=X^3-\\ell_1^2 X\n\t$$\n\tis $\\Z/2\\Z \\times \\Z/2\\Z.$\n\\end{enumerate}\n\nWith this  pair of primes $(\\ell_1, \\ell_2),$ we\ndefine the algebraic number $\\alpha$ by the limit\n$$\n\\alpha:=\\lim_{ y\\rightarrow 0^{+}}\\left( F\\left(\\frac{\\ell_1}{4\\ell_2}+iy \\right )-G\\left(\\frac{\\ell_1}{4\\ell_2}+iy\\right)+ \\frac{ F\\left(\\frac{\\ell_1}{4\\ell_2}+iy \\right )}{G\\left(\\frac{\\ell_1}{4\\ell_2}+iy\\right)}- \\frac{ G\\left(\\frac{\\ell_1}{4\\ell_2}+iy \\right )}{F\\left(\\frac{\\ell_1}{4\\ell_2}+iy\\right)}\\right).\n$$\nIf $P_{\\alpha}(X)\\in \\Q[X]$ is its {\\it minimal polynomial} (i.e  the monic irreducible polynomial with $P_{\\alpha}(\\alpha)=0$) and $K_{\\alpha}$ is its {\\it splitting field} (a.k.a. the {\\it normal closure} of $P_{\\alpha}(X)$),\nthen compute \n$$\n\\Omega:=\\frac{1}{[K_{\\alpha}: \\Q]}\\cdot \\left( P_{\\alpha}(\\ell_1)+P_{\\alpha}(\\ell_2)\\right)^{\\ell_2-1}.\n$$",
+    "target": "```python\ndef solution():\n    return 73948492097301691765464030714938921180352979774791349212169829996615700482\n\ndef verify(answer):\n    return solution() == answer\n```",
+    "metadata": {
+      "subjects": "Analytic and algebraic number theory, quantum modular forms",
+      "question_id": "ONO3",
+      "what_is_the_question_about": "Class numbers, elliptic curves, harmonic Maass forms, cyclotomic fields",
+      "answer_type": "Python integer",
+      "verification_code": "def solution(): return 73948492097301691765464030714938921180352979774791349212169829996615700482 def verify(answer): return solution() == answer"
+    },
+    "scores": {
+      "verification_code": {
+        "value": "I"
+      }
+    },
+    "model_usage": {
+      "openai/gpt-5-nano-2025-08-07": {
+        "input_tokens": 572687,
+        "output_tokens": 130003,
+        "total_tokens": 702690,
+        "input_tokens_cache_read": 385024,
+        "reasoning_tokens": 98944
+      }
+    },
+    "total_time": 529.567,
+    "working_time": 528.302,
+    "uuid": "d5ebJR5DFEKvEssDWMTbkd",
+    "retries": 0,
+    "completed": true
+  },
+  {
+    "id": "PTA1",
+    "epoch": 1,
+    "input": "Let \n\n\\begin{align*}\nc = \\sup_{f} \\int_{0}^{1} (f(t)^{3}+|f(t)|)dt\n\\end{align*}\nwhere supremum is taken over all integrable functions $f : [0,1] \\to \\mathbb{R}$ such that $\\int_{0}^{1}f(t)dt=-10$, $\\int_{0}^{1} f^{2}(t)dt=100+\\frac{1}{12}$, and \n\\begin{align*}\n\\sup_{J \\subset [0,1]} \\frac{1}{|J|}\\int_{J}\\left|f(t) - \\frac{1}{|J|}\\int_{J}f(s)ds \\right|^{2}dt \\leq \\frac{1}{12},\n\\end{align*}\nwhere supremum is taken over all subintervals $J \\subset [0,1]$. Here $|J|$ denotes the length of the interval. \n\n\nFind $c+\\frac{1985}{2}$.",
+    "target": "```python\nfrom sympy import exp, Rational, simplify, sqrt\n\ndef solution():\n    return sqrt(3)/36 + sqrt(3)/6 * exp(-20*sqrt(3)-Rational(1,6))\n\ndef verify(answer):\n    return simplify(answer - solution()) == 0\n```",
+    "metadata": {
+      "subjects": "Analysis, sharp constant",
+      "question_id": "PTA1",
+      "what_is_the_question_about": "Developable surfaces, Monge—Ampere equation, Bellman functions, torsion",
+      "answer_type": "SymPy symbolic real",
+      "verification_code": "from sympy import exp, Rational, simplify, sqrt def solution(): return sqrt(3)/36 + sqrt(3)/6 * exp(-20*sqrt(3)-Rational(1,6)) def verify(answer): return simplify(answer - solution()) == 0"
+    },
+    "scores": {
+      "verification_code": {
+        "value": "I"
+      }
+    },
+    "model_usage": {
+      "openai/gpt-5-nano-2025-08-07": {
+        "input_tokens": 3564,
+        "output_tokens": 41955,
+        "total_tokens": 45519,
+        "input_tokens_cache_read": 0,
+        "reasoning_tokens": 41024
+      }
+    },
+    "total_time": 136.091,
+    "working_time": 136.044,
+    "uuid": "2McTHiuqVpcjHAQBCkFNUh",
+    "retries": 0,
+    "completed": true
+  }
+]

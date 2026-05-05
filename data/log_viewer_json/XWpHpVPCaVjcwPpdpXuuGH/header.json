@@ -1,0 +1,176 @@
+{
+  "version": 2,
+  "status": "success",
+  "eval": {
+    "eval_id": "bTd7uvzstMfa6TQmmee2JU",
+    "run_id": "XWpHpVPCaVjcwPpdpXuuGH",
+    "created": "2025-12-10T18:03:34+00:00",
+    "task": "OTIS Mock AIME 2024-2025",
+    "task_id": "CKZmVtBXBREUKcUD8fKai6",
+    "task_version": 0,
+    "task_file": "bench/task/otis_mock_aime/__init__.py",
+    "task_display_name": "OTIS Mock AIME 2024-2025",
+    "task_registry_name": "OTIS Mock AIME 2024-2025",
+    "task_attribs": {},
+    "task_args": {
+      "epochs": 8
+    },
+    "task_args_passed": {},
+    "dataset": {
+      "name": "EpochAI/otis-mock-aime-24-25",
+      "location": "EpochAI/otis-mock-aime-24-25",
+      "samples": 45,
+      "sample_ids": [
+        "2024-Mock-AIME-Problem-01",
+        "2024-Mock-AIME-Problem-02",
+        "2024-Mock-AIME-Problem-03",
+        "2024-Mock-AIME-Problem-04",
+        "2024-Mock-AIME-Problem-05",
+        "2024-Mock-AIME-Problem-06",
+        "2024-Mock-AIME-Problem-07",
+        "2024-Mock-AIME-Problem-08",
+        "2024-Mock-AIME-Problem-09",
+        "2024-Mock-AIME-Problem-10",
+        "2024-Mock-AIME-Problem-11",
+        "2024-Mock-AIME-Problem-12",
+        "2024-Mock-AIME-Problem-13",
+        "2024-Mock-AIME-Problem-14",
+        "2024-Mock-AIME-Problem-15",
+        "2025-I-Mock-AIME-Problem-01",
+        "2025-I-Mock-AIME-Problem-02",
+        "2025-I-Mock-AIME-Problem-03",
+        "2025-I-Mock-AIME-Problem-04",
+        "2025-I-Mock-AIME-Problem-05",
+        "2025-I-Mock-AIME-Problem-06",
+        "2025-I-Mock-AIME-Problem-07",
+        "2025-I-Mock-AIME-Problem-08",
+        "2025-I-Mock-AIME-Problem-09",
+        "2025-I-Mock-AIME-Problem-10",
+        "2025-I-Mock-AIME-Problem-11",
+        "2025-I-Mock-AIME-Problem-12",
+        "2025-I-Mock-AIME-Problem-13",
+        "2025-I-Mock-AIME-Problem-14",
+        "2025-I-Mock-AIME-Problem-15",
+        "2025-II-Mock-AIME-Problem-01",
+        "2025-II-Mock-AIME-Problem-02",
+        "2025-II-Mock-AIME-Problem-03",
+        "2025-II-Mock-AIME-Problem-04",
+        "2025-II-Mock-AIME-Problem-05",
+        "2025-II-Mock-AIME-Problem-06",
+        "2025-II-Mock-AIME-Problem-07",
+        "2025-II-Mock-AIME-Problem-08",
+        "2025-II-Mock-AIME-Problem-09",
+        "2025-II-Mock-AIME-Problem-10",
+        "2025-II-Mock-AIME-Problem-11",
+        "2025-II-Mock-AIME-Problem-12",
+        "2025-II-Mock-AIME-Problem-13",
+        "2025-II-Mock-AIME-Problem-14",
+        "2025-II-Mock-AIME-Problem-15"
+      ],
+      "shuffled": false
+    },
+    "model": "alibaba/qwen3-235b-a22b-thinking-2507",
+    "model_generate_config": {},
+    "model_base_url": "https://dashscope-intl.aliyuncs.com/compatible-mode/v1",
+    "model_args": {},
+    "config": {
+      "epochs": 1,
+      "epochs_reducer": [
+        "mean"
+      ],
+      "fail_on_error": false,
+      "continue_on_fail": false,
+      "sandbox_cleanup": true,
+      "log_samples": true,
+      "log_realtime": true,
+      "log_images": true,
+      "score_display": true
+    },
+    "packages": {
+      "inspect_ai": "0.3.152"
+    },
+    "metadata": {
+      "epochai-benchmark-version": "1.0.3",
+      "inspect-log-public": true
+    },
+    "scorers": [
+      {
+        "name": "model_extracted_exact_match",
+        "options": {},
+        "metrics": [
+          {
+            "name": "inspect_ai/accuracy",
+            "options": {}
+          },
+          {
+            "name": "inspect_ai/stderr",
+            "options": {}
+          }
+        ],
+        "metadata": {}
+      }
+    ]
+  },
+  "plan": {
+    "name": "plan",
+    "steps": [
+      {
+        "solver": "prompt_template",
+        "params": {
+          "template": "Please solve this AIME problem step by step. The answer is an integer ranging from\n000 to 999, inclusive.\n\n{prompt}\n\nRemember to show your work clearly and end with 'ANSWER: X' where X is your final numerical answer."
+        }
+      },
+      {
+        "solver": "generate",
+        "params": {}
+      }
+    ],
+    "config": {
+      "max_retries": 8
+    }
+  },
+  "results": {
+    "total_samples": 45,
+    "completed_samples": 45,
+    "scores": [
+      {
+        "name": "model_extracted_exact_match",
+        "scorer": "model_extracted_exact_match",
+        "reducer": "mean",
+        "scored_samples": 45,
+        "unscored_samples": 0,
+        "params": {},
+        "metrics": {
+          "accuracy": {
+            "name": "accuracy",
+            "value": 0.8666666666666667,
+            "params": {}
+          },
+          "stderr": {
+            "name": "stderr",
+            "value": 0.051247074319053836,
+            "params": {}
+          }
+        }
+      }
+    ]
+  },
+  "stats": {
+    "started_at": "2025-12-10T18:03:34+00:00",
+    "completed_at": "2025-12-10T18:31:28+00:00",
+    "model_usage": {
+      "alibaba/qwen3-235b-a22b-thinking-2507": {
+        "input_tokens": 8608,
+        "output_tokens": 1206779,
+        "total_tokens": 1215387,
+        "reasoning_tokens": 1157289
+      },
+      "google/gemini-2.0-flash-001": {
+        "input_tokens": 62321,
+        "output_tokens": 135,
+        "total_tokens": 62456,
+        "reasoning_tokens": 0
+      }
+    }
+  }
+}

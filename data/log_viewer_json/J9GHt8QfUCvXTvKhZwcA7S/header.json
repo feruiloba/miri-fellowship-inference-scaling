@@ -1,0 +1,134 @@
+{
+  "version": 2,
+  "status": "success",
+  "eval": {
+    "eval_id": "kL7K2S4GzAsm5kYLTfwuXY",
+    "run_id": "J9GHt8QfUCvXTvKhZwcA7S",
+    "created": "2025-12-11T20:23:37+00:00",
+    "task": "frontiermath_2025_02_28_public",
+    "task_id": "nvu4opiXGLArShKTQahgvw",
+    "task_version": 0,
+    "task_file": "bench/task/frontiermath/__init__.py",
+    "task_display_name": "frontiermath_2025_02_28_public",
+    "task_registry_name": "frontiermath_2025_02_28_public",
+    "task_attribs": {},
+    "task_args": {},
+    "task_args_passed": {},
+    "dataset": {
+      "name": "FrontierMath-2025-02-28-Public",
+      "samples": 10,
+      "sample_ids": [
+        "ALL3",
+        "CWA2",
+        "CWD31",
+        "RAP1",
+        "TIK2",
+        "PLD1",
+        "FMT1",
+        "LTI1",
+        "OVE2",
+        "RSG1"
+      ],
+      "shuffled": false
+    },
+    "sandbox": {
+      "type": "docker",
+      "config": "compose.yaml"
+    },
+    "model": "openai/gpt-5.2-2025-12-11",
+    "model_generate_config": {},
+    "model_args": {},
+    "config": {
+      "epochs": 1,
+      "epochs_reducer": [
+        "mean"
+      ],
+      "fail_on_error": 0.02,
+      "continue_on_fail": false,
+      "sandbox_cleanup": true,
+      "log_samples": true,
+      "log_realtime": true,
+      "log_images": true,
+      "score_display": true
+    },
+    "packages": {
+      "inspect_ai": "0.3.152"
+    },
+    "metadata": {
+      "epochai-benchmark-version": "1.1.2",
+      "inspect-log-encrypted": false,
+      "inspect-log-public": true
+    },
+    "scorers": [
+      {
+        "name": "verification_code",
+        "options": {},
+        "metrics": [
+          {
+            "name": "inspect_ai/accuracy",
+            "options": {}
+          },
+          {
+            "name": "inspect_ai/stderr",
+            "options": {}
+          }
+        ],
+        "metadata": {}
+      }
+    ]
+  },
+  "plan": {
+    "name": "plan",
+    "steps": [
+      {
+        "solver": "frontiermath_agent",
+        "params": {
+          "token_limit": 1000000,
+          "forced_submit_tokens": 660000
+        }
+      }
+    ],
+    "config": {
+      "max_retries": 8,
+      "reasoning_effort": "low"
+    }
+  },
+  "results": {
+    "total_samples": 10,
+    "completed_samples": 10,
+    "scores": [
+      {
+        "name": "verification_code",
+        "scorer": "verification_code",
+        "scored_samples": 10,
+        "unscored_samples": 0,
+        "params": {},
+        "metrics": {
+          "accuracy": {
+            "name": "accuracy",
+            "value": 0.4,
+            "params": {}
+          },
+          "stderr": {
+            "name": "stderr",
+            "value": 0.16329931618554522,
+            "params": {}
+          }
+        }
+      }
+    ]
+  },
+  "stats": {
+    "started_at": "2025-12-11T20:23:37+00:00",
+    "completed_at": "2025-12-11T20:39:24+00:00",
+    "model_usage": {
+      "openai/gpt-5.2-2025-12-11": {
+        "input_tokens": 338091,
+        "output_tokens": 110306,
+        "total_tokens": 448397,
+        "input_tokens_cache_read": 208384,
+        "reasoning_tokens": 88547
+      }
+    }
+  }
+}

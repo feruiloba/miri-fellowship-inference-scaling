@@ -1,0 +1,132 @@
+[
+  {
+    "id": "ALL3",
+    "epoch": 1,
+    "input": "\\textit{Definitions.} For a positive integer $n$, let $v_p(n)$ denote the largest integer $v$ such that $p^v \\mid n$.\n\nFor $p$ a prime and $a \\not\\equiv 0 \\pmod{p}$, we let $\\ord_p(a)$ denote the smallest positive integer $o$ such that $a^o \\equiv 1 \\pmod{p}$. For $x > 0$, we let\n$$\\ord_{p, x}(a) = \\prod_{q \\le x} q^{v_q(\\ord_p(a))} \\prod_{q > x} q^{v_q(p-1)}.$$\n\n\\textit{Problem.} Let $S_x$ denote the set of primes $p$ for which\n$$\\ord_{p, x}(2) > \\ord_{p, x}(3),$$\nand let $d_x$ denote the density\n$$d_x := \\frac{|S_x|}{|\\{p \\le x : p \\text{ is prime}|\\}}$$\nof $S_x$ in the primes. Let\n$$d_{\\infty} = \\lim_{x \\to \\infty} d_x.$$\n\nCompute $\\lfloor 10^6 d_{\\infty} \\rfloor.$",
+    "target": "```python\ndef solution():\n    return 367707\n\ndef verify(answer):\n    return answer - solution() == 0\n```",
+    "scores": {
+      "verification_code": {
+        "value": "I",
+        "answer": "```python\ndef answer():\n    return 300000\n```",
+        "explanation": "The `verify()` function returned False"
+      }
+    }
+  },
+  {
+    "id": "CWA2",
+    "epoch": 1,
+    "input": "How many nonzero points are there on\n\\[x^3y+y^3z+z^3x=0\\]\n\nover $\\mathbb{F}_{5^{18}}$ up to scaling?",
+    "target": "```python\ndef solution():\n    return 3814708984376\n\ndef verify(attempt):\n    return solution()==attempt\n```",
+    "scores": {
+      "verification_code": {
+        "value": "I",
+        "explanation": "No solution submitted"
+      }
+    },
+    "limit": "token"
+  },
+  {
+    "id": "CWD31",
+    "epoch": 1,
+    "input": "Let $a_n$ for $n\\in\\mathbb Z$ be the sequence of integers satisfying the recurrence formula \n   \\[a_n=198130309625 a_{n-1}+354973292077 a_{n-2}-427761277677 a_{n-3}+370639957a_{n-4}\\]\n    with initial conditions $a_i=i$ for $0\\leq i\\leq 3$. Find the smallest prime $p\\equiv4\\bmod7$ for which the function $\\mathbb Z\\to\\mathbb Z$ given by $n\\mapsto a_n$ can be extended to a continuous function on $\\mathbb Z_p$.",
+    "target": "```python\ndef solution():\n    return 9811\n\ndef verify(answer):\n    return answer - solution() == 0\n```",
+    "scores": {
+      "verification_code": {
+        "value": "I",
+        "answer": "```python\ndef answer():\n    return 53\n```",
+        "explanation": "The `verify()` function returned False"
+      }
+    }
+  },
+  {
+    "id": "FMT1",
+    "epoch": 1,
+    "input": "There are unique constants $C, \\alpha, \\beta$ such that the number of solutions to the equation\n\n$$ab+1=cde$$\n\nwith $a, b, c, d, e \\in \\mathbb{N}$ with $ab \\le x$ is asymptotic to $Cx^{\\alpha}\\log^{\\beta}x$ as $x\\rightarrow\\infty.$\n\nCompute $\\lfloor 1000C\\rfloor.$",
+    "target": "```python\ndef solution():\n    return 214\n\ndef verify(answer):\n    return answer - solution() == 0\n```",
+    "scores": {
+      "verification_code": {
+        "value": "I",
+        "answer": "```python\ndef answer():\n    return 2500\n```",
+        "explanation": "The `verify()` function returned False"
+      }
+    }
+  },
+  {
+    "id": "LTI1",
+    "epoch": 1,
+    "input": "Let $U\\subset\\mathbb{P}H^0(\\mathbb{P}^2_{\\mathbb{Z}}, \\mathcal{O}(2))$ be the space of smooth conics in $\\mathbb{P}^2_{\\mathbb{Z}}$, and let\n$Z\\subset U^6$ be the closed subscheme parametrizing $6$-tuples $(C_1, \\cdots, C_6)$ with $C_1$ tangent to $C_2, \\cdots, C_6$. Let $\\pi: Z\\to C^5$\nbe the map induced by the projection onto the last $5$ coordinates, and let $V\\subset U^5$ be the dense open subscheme over which $\\pi$ is finite \\'etale.\nLet $$L=\\lim_{p\\to \\infty} \\frac{1}{\\#V(\\mathbb{F}_p)}\\sum_{x\\in V(\\mathbb{F}_p)} \\#\\pi^{-1}(x),$$\nthat is, the limit of the average number of components of the space of conics tangent to 5 smooth conics over $\\mathbb{F}_p$, as $p$ tends to infinity (when this space is finite \\'etale).\n\nFind $\\lfloor 100L \\rfloor.$",
+    "target": "```python\ndef solution():\n    return 866\n\ndef verify(answer):\n    return answer - solution() == 0\n```",
+    "scores": {
+      "verification_code": {
+        "value": "I",
+        "answer": "```python\ndef answer():\n    return 10200\n```",
+        "explanation": "The `verify()` function returned False"
+      }
+    }
+  },
+  {
+    "id": "OVE2",
+    "epoch": 1,
+    "input": "\\textit{Background.} \nThe \\emph{Tsirelson space} is a Banach space introduced in 1974 as a counterexample to a longstanding conjecture in Banach space theory. It is a subspace of $\\ell^\\infty$ described as follows. \n\nLet $P_k$ denote the operator on $\\ell^\\infty$ that modifies each $\\langle x_n:\\, n \\in \\mathbb N \\rangle \\in \\ell^\\infty$ by setting the first $k$ coordinates equal to $0$ (without changing any other coordinates). Given $\\vec x = \\langle x_n:\\, n \\in \\mathbb N \\rangle \\in \\ell^\\infty$, the \\emph{support} of $\\vec x$ is $\\mathrm{supp}(\\vec x) = \\{ n \\in \\mathbb N :\\, x_n \\neq 0 \\}$. \nThe Tsirelson space is the span of the smallest pointwise-closed subset $K$ of the unit ball in $\\ell^\\infty$ satisfying the following two properties:\n\n1. For every $j \\in \\mathbb N$, the unit vector $\\vec e_j$ and all its multiples $\\lambda \\vec e_j$ with $|\\lambda| \\leq 1$ belong to $K$.\n\n2. Suppose $\\vec x_1,\\dots,\\vec x_k$ is a finite sequence of members of $K$, each with finite support, such that $\\max (\\mathrm{supp}(\\vec x_i)) < \\min (\\mathrm{supp}(\\vec x_j))$ for all $i < j \\leq k$. Then $\\frac{1}{2}P_k(\\vec x_1 + \\dots + \\vec x_k) \\in K$.\n\n\\textit{Problem.}\n\nLet $N$ denote the largest natural number such that \nthere is a member $\\langle x_n:\\, n \\in \\mathbb N \\rangle$ of the set $K$ described above with \n$x_3 = 1/2$, $x_N > 1/20$, and \n$x_i > x_j$ whenever $3 \\leq i < j \\leq N$. \nIt turns out that $N$ is too large to write down in a reasonable amount of space, so let us ask instead: what is the largest power of $2$ dividing $N$? In other words, find the integer $p \\geq 0$ such that $N = m2^p$ for some odd number $m$.",
+    "target": "```python\ndef solution():\n    return 402653211\n\ndef verify(answer):\n    return answer - solution() == 0\n```",
+    "scores": {
+      "verification_code": {
+        "value": "I",
+        "explanation": "No solution submitted"
+      }
+    },
+    "limit": "token"
+  },
+  {
+    "id": "PLD1",
+    "epoch": 1,
+    "input": "Let $W$ be the set of finite words with all distinct letters over the alphabet of positive integers. Define a function $F:W\\rightarrow W$ recursively as follows. First, let $F(\\epsilon)=\\epsilon$, where $\\epsilon$ is the empty word. Given a nonempty word $w\\in W$, let $F(w)=F(L)F(R)m$, where $m$ is the largest number in $w$ and $w=LmR$. Let $n=10^{12}$, and note that $W$ restricts to a function from $S_n$ to itself, where $S_n$ is the symmetric group of order $n$. Let $\\sigma$ be a permutation chosen uniformly at random from $S_n$, and let $X$ be the expected number of integers $1\\le i<n$ such that $F(\\sigma)(i+1)<F(\\sigma)(i)$. Compute $\\lfloor X\\rfloor$.",
+    "target": "```python\ndef solution():\n    return 499999999972\n\ndef verify(answer):\n    return answer == solution()\n```",
+    "scores": {
+      "verification_code": {
+        "value": "I",
+        "answer": "```python\ndef answer():\n    return 285714285714\n```",
+        "explanation": "The `verify()` function returned False"
+      }
+    }
+  },
+  {
+    "id": "RAP1",
+    "epoch": 1,
+    "input": "Let $M_{1000}^4$ be the set of $4$-tuples of invertible $1000\\times1000$ matrices with coefficients in $\\mathbb{C}$. Let $S\\subset M_{1000}^4$ be the subset of all tuples $(A_1,A_2,A_3,A_4)$ satisfying the conditions:\n\\begin{alignat*}{2}\nA_i^2 &= I, &&\\quad \\text{for all } 1\\le i\\le 4\\\\\nA_iA_j &= A_jA_i, &&\\quad \\text{if } \\{3j- i, 3i-j\\} \\cap 5\\mathbb{Z}_{>0} =\\emptyset \\\\\nA_iA_jA_i^{-1}A_j^{-1} &= A_jA_i, &&\\quad \\text{if } \\{3j- i, 3i-j\\} \\cap 5\\mathbb{Z}_{>0} \\neq\\emptyset,\n\\end{alignat*}\nwhere $5\\mathbb{Z}_{>0}$ refers to the set of positive multiples of $5$, i.e., $5\\mathbb{Z}_{>0} = \\{5,10,15,\\dots\\}$.\n\n\\noindent The group $G = GL(1000)$ of invertible complex $1000\\times 1000$ matrices acts on $S$ by the formula:\n\\[B\\cdot (A_1,A_2,A_3,A_4) = (BA_1B^{-1}, BA_2B^{-1}, BA_3B^{-1}, BA_4B^{-1}).\\]\nFind the number of orbits of this action, i.e., find $|S/G|$.",
+    "target": "```python\ndef solution():\n    return 625243878951\n\ndef verify(answer):\n    return answer - solution() == 0\n```",
+    "scores": {
+      "verification_code": {
+        "value": "I",
+        "answer": "```python\ndef answer():\n    return 2**1000\n```",
+        "explanation": "The `verify()` function returned False"
+      }
+    }
+  },
+  {
+    "id": "RSG1",
+    "epoch": 1,
+    "input": "Let $\\mathcal P$ be a regular $101$-gon of circumradius $1$. Draw each diagonal of $\\mathcal P$ with probability 0.001. This splits $\\mathcal P$ into several closed regions. Let $E$ be the expected value of the perimeter of the region containing the center of $\\mathcal P$.\n\nCompute $\\lfloor 10^9 E \\rfloor.$",
+    "target": "```python\ndef computation():\n    import math\n    n = 101\n    p = 0.001\n    ans = 0.0\n    for d in range(1,(n+1)//2):\n        chordLen = 2*math.sin(math.pi*d/n)\n        numBlockers = ((n+1)/2-d)*((n+3)/2-d)/2-1;\n        if d==1:\n            ans += n*math.pow(1-p,numBlockers)*chordLen\n            continue\n        else:\n            crossPoints = []\n            for a in range(1,d):\n                for b in range(1,n-d):\n                    dist = 2*math.sin(math.pi*float(a)/float(n))\\\n                    *math.sin(math.pi*float(b)/float(n))\\\n                    /math.sin(math.pi*float(a-b+n-d)/float(n))\n                    if a+b<=int((n-1)/2):\n                        crossPoints.append([dist,\"L\"])\n                    else:\n                        crossPoints.append([dist,\"R\"])\n            crossPoints.sort()\n            numRsLeft = 0\n            numLsRight = len(crossPoints)/2-1\n            ans += n*p*math.pow(1-p,numBlockers+len(crossPoints)/2)\\\n            *crossPoints[0][0] # edge case AP_1\n            ans += n*p*math.pow(1-p,numBlockers+len(crossPoints)/2)\\\n            *(chordLen-crossPoints[len(crossPoints)-1][0]) # edge case P_kB\n            for i in range(len(crossPoints)-1):\n                ans += n*p*math.pow(1-p,numBlockers+numRsLeft+numLsRight)\\\n                *(crossPoints[i+1][0]-crossPoints[i][0])\n                if crossPoints[i+1][1]==\"R\":\n                    numRsLeft+=1\n                if crossPoints[i+1][1]==\"L\":\n                    numLsRight-=1\n    return ans\n\ndef solution():\n    return 4771880153\n\ndef verify(answer):\n    return answer == solution()\n```",
+    "scores": {
+      "verification_code": {
+        "value": "I",
+        "answer": "```python\ndef answer():\n    return 4819000000\n```",
+        "explanation": "The `verify()` function returned False"
+      }
+    }
+  },
+  {
+    "id": "TIK2",
+    "epoch": 1,
+    "input": "Construct a degree 19 polynomial $p(x) \\in \\mathbb{C}[x]$ such that $X:=\\{p(x) = p(y)\\} \\subset \\mathbb{P}^1 \\times \\mathbb{P}^1$ has at least 3 (but not all linear) irreducible components over $\\mathbb{C}$. Choose $p(x)$ to be odd, monic, have real coefficients and linear coefficient -19 and calculate $p(19)$.",
+    "target": "```python\ndef solution():\n    return 1876572071974094803391179\n\ndef verify(answer):\n    return answer - solution() == 0\n```",
+    "scores": {
+      "verification_code": {
+        "value": "I",
+        "answer": "```python\ndef answer():\n    return 1978419655660313589116759\n```",
+        "explanation": "The `verify()` function returned False"
+      }
+    }
+  }
+]
