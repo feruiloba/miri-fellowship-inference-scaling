@@ -6,1113 +6,1125 @@
   "run_id": "GejuU279SYgGRs2zP58CFs",
   "dataset_name": "puzzles",
   "epochs_configured": 1,
+  "accuracy": 0.3,
+  "stderr": 0.04605661864718382,
+  "scores": [
+    {
+      "scorer": "model_extracted_exact_match",
+      "reducer": "mean",
+      "metrics": {
+        "accuracy": 0.3,
+        "stderr": 0.04605661864718382
+      }
+    }
+  ],
   "totals": {
-    "total_output_tokens": 3026617.0,
-    "total_avg_output_tokens": 3026617.0,
-    "total_reasoning_tokens": 3015805.0,
-    "total_avg_reasoning_tokens": 3015805.0
+    "total_output_tokens": 3004413.0,
+    "total_avg_output_tokens": 3004413.0,
+    "total_reasoning_tokens": 2999293.0,
+    "total_avg_reasoning_tokens": 2999293.0
   },
   "totals_source": "samples",
   "samples": {
     "99": {
       "n_epochs": 1,
       "output_tokens": [
-        6371
+        6034
       ],
-      "avg_output_tokens": 6371.0,
+      "avg_output_tokens": 6034.0,
       "reasoning_tokens": [
-        6161
+        5905
       ],
-      "avg_reasoning_tokens": 6161.0
+      "avg_reasoning_tokens": 5905.0
     },
     "86": {
       "n_epochs": 1,
       "output_tokens": [
-        7027
+        6809
       ],
-      "avg_output_tokens": 7027.0,
+      "avg_output_tokens": 6809.0,
       "reasoning_tokens": [
-        6892
+        6700
       ],
-      "avg_reasoning_tokens": 6892.0
+      "avg_reasoning_tokens": 6700.0
     },
     "10": {
       "n_epochs": 1,
       "output_tokens": [
-        7001
+        6749
       ],
-      "avg_output_tokens": 7001.0,
+      "avg_output_tokens": 6749.0,
       "reasoning_tokens": [
-        6892
+        6700
       ],
-      "avg_reasoning_tokens": 6892.0
+      "avg_reasoning_tokens": 6700.0
     },
     "54": {
       "n_epochs": 1,
       "output_tokens": [
-        7622
+        7439
       ],
-      "avg_output_tokens": 7622.0,
+      "avg_output_tokens": 7439.0,
       "reasoning_tokens": [
-        7539
+        7411
       ],
-      "avg_reasoning_tokens": 7539.0
+      "avg_reasoning_tokens": 7411.0
     },
     "95": {
       "n_epochs": 1,
       "output_tokens": [
-        8109
+        7836
       ],
-      "avg_output_tokens": 8109.0,
+      "avg_output_tokens": 7836.0,
       "reasoning_tokens": [
-        7999
+        7807
       ],
-      "avg_reasoning_tokens": 7999.0
+      "avg_reasoning_tokens": 7807.0
     },
     "24": {
       "n_epochs": 1,
       "output_tokens": [
-        8856
+        8708
       ],
-      "avg_output_tokens": 8856.0,
+      "avg_output_tokens": 8708.0,
       "reasoning_tokens": [
-        8760
+        8696
       ],
-      "avg_reasoning_tokens": 8760.0
+      "avg_reasoning_tokens": 8696.0
     },
     "56": {
       "n_epochs": 1,
       "output_tokens": [
-        9694
+        9470
       ],
-      "avg_output_tokens": 9694.0,
+      "avg_output_tokens": 9470.0,
       "reasoning_tokens": [
-        9608
+        9416
       ],
-      "avg_reasoning_tokens": 9608.0
+      "avg_reasoning_tokens": 9416.0
     },
     "11": {
       "n_epochs": 1,
       "output_tokens": [
-        10621
+        10417
       ],
-      "avg_output_tokens": 10621.0,
+      "avg_output_tokens": 10417.0,
       "reasoning_tokens": [
-        10478
+        10350
       ],
-      "avg_reasoning_tokens": 10478.0
+      "avg_reasoning_tokens": 10350.0
     },
     "80": {
       "n_epochs": 1,
       "output_tokens": [
-        10801
+        10657
       ],
-      "avg_output_tokens": 10801.0,
+      "avg_output_tokens": 10657.0,
       "reasoning_tokens": [
-        10654
+        10590
       ],
-      "avg_reasoning_tokens": 10654.0
+      "avg_reasoning_tokens": 10590.0
     },
     "91": {
       "n_epochs": 1,
       "output_tokens": [
-        9531
+        9347
       ],
-      "avg_output_tokens": 9531.0,
+      "avg_output_tokens": 9347.0,
       "reasoning_tokens": [
-        9389
+        9261
       ],
-      "avg_reasoning_tokens": 9389.0
+      "avg_reasoning_tokens": 9261.0
     },
     "73": {
       "n_epochs": 1,
       "output_tokens": [
-        11538
+        11394
       ],
-      "avg_output_tokens": 11538.0,
+      "avg_output_tokens": 11394.0,
       "reasoning_tokens": [
-        11372
+        11308
       ],
-      "avg_reasoning_tokens": 11372.0
+      "avg_reasoning_tokens": 11308.0
     },
     "7": {
       "n_epochs": 1,
       "output_tokens": [
-        11806
+        11666
       ],
-      "avg_output_tokens": 11806.0,
+      "avg_output_tokens": 11666.0,
       "reasoning_tokens": [
-        11638
+        11574
       ],
-      "avg_reasoning_tokens": 11638.0
+      "avg_reasoning_tokens": 11574.0
     },
     "25": {
       "n_epochs": 1,
       "output_tokens": [
-        11096
+        10844
       ],
-      "avg_output_tokens": 11096.0,
+      "avg_output_tokens": 10844.0,
       "reasoning_tokens": [
-        10912
+        10720
       ],
-      "avg_reasoning_tokens": 10912.0
+      "avg_reasoning_tokens": 10720.0
     },
     "44": {
       "n_epochs": 1,
       "output_tokens": [
-        12387
+        12134
       ],
-      "avg_output_tokens": 12387.0,
+      "avg_output_tokens": 12134.0,
       "reasoning_tokens": [
-        12248
+        12056
       ],
-      "avg_reasoning_tokens": 12248.0
+      "avg_reasoning_tokens": 12056.0
     },
     "48": {
       "n_epochs": 1,
       "output_tokens": [
-        14225
+        13957
       ],
-      "avg_output_tokens": 14225.0,
+      "avg_output_tokens": 13957.0,
       "reasoning_tokens": [
-        14115
+        13923
       ],
-      "avg_reasoning_tokens": 14115.0
+      "avg_reasoning_tokens": 13923.0
     },
     "21": {
       "n_epochs": 1,
       "output_tokens": [
-        14757
+        14586
       ],
-      "avg_output_tokens": 14757.0,
+      "avg_output_tokens": 14586.0,
       "reasoning_tokens": [
-        14661
+        14533
       ],
-      "avg_reasoning_tokens": 14661.0
+      "avg_reasoning_tokens": 14533.0
     },
     "8": {
       "n_epochs": 1,
       "output_tokens": [
-        15996
+        15779
       ],
-      "avg_output_tokens": 15996.0,
+      "avg_output_tokens": 15779.0,
       "reasoning_tokens": [
-        15923
+        15731
       ],
-      "avg_reasoning_tokens": 15923.0
+      "avg_reasoning_tokens": 15731.0
     },
     "31": {
       "n_epochs": 1,
       "output_tokens": [
-        15032
+        14741
       ],
-      "avg_output_tokens": 15032.0,
+      "avg_output_tokens": 14741.0,
       "reasoning_tokens": [
-        14985
+        14729
       ],
-      "avg_reasoning_tokens": 14985.0
+      "avg_reasoning_tokens": 14729.0
     },
     "16": {
       "n_epochs": 1,
       "output_tokens": [
-        16026
+        15696
       ],
-      "avg_output_tokens": 16026.0,
+      "avg_output_tokens": 15696.0,
       "reasoning_tokens": [
-        15923
+        15667
       ],
-      "avg_reasoning_tokens": 15923.0
+      "avg_reasoning_tokens": 15667.0
     },
     "13": {
       "n_epochs": 1,
       "output_tokens": [
-        16179
+        15977
       ],
-      "avg_output_tokens": 16179.0,
+      "avg_output_tokens": 15977.0,
       "reasoning_tokens": [
-        16046
+        15918
       ],
-      "avg_reasoning_tokens": 16046.0
+      "avg_reasoning_tokens": 15918.0
     },
     "96": {
       "n_epochs": 1,
       "output_tokens": [
-        12793
+        12593
       ],
-      "avg_output_tokens": 12793.0,
+      "avg_output_tokens": 12593.0,
       "reasoning_tokens": [
-        12628
+        12500
       ],
-      "avg_reasoning_tokens": 12628.0
+      "avg_reasoning_tokens": 12500.0
     },
     "84": {
       "n_epochs": 1,
       "output_tokens": [
-        16051
+        15818
       ],
-      "avg_output_tokens": 16051.0,
+      "avg_output_tokens": 15818.0,
       "reasoning_tokens": [
-        15932
+        15740
       ],
-      "avg_reasoning_tokens": 15932.0
+      "avg_reasoning_tokens": 15740.0
     },
     "22": {
       "n_epochs": 1,
       "output_tokens": [
-        18310
+        18052
       ],
-      "avg_output_tokens": 18310.0,
+      "avg_output_tokens": 18052.0,
       "reasoning_tokens": [
-        18232
+        18040
       ],
-      "avg_reasoning_tokens": 18232.0
+      "avg_reasoning_tokens": 18040.0
     },
     "78": {
       "n_epochs": 1,
       "output_tokens": [
-        17785
+        17462
       ],
-      "avg_output_tokens": 17785.0,
+      "avg_output_tokens": 17462.0,
       "reasoning_tokens": [
-        17672
+        17416
       ],
-      "avg_reasoning_tokens": 17672.0
+      "avg_reasoning_tokens": 17416.0
     },
     "59": {
       "n_epochs": 1,
       "output_tokens": [
-        18469
+        18225
       ],
-      "avg_output_tokens": 18469.0,
+      "avg_output_tokens": 18225.0,
       "reasoning_tokens": [
-        18317
+        18125
       ],
-      "avg_reasoning_tokens": 18317.0
+      "avg_reasoning_tokens": 18125.0
     },
     "74": {
       "n_epochs": 1,
       "output_tokens": [
-        18178
+        18011
       ],
-      "avg_output_tokens": 18178.0,
+      "avg_output_tokens": 18011.0,
       "reasoning_tokens": [
-        18112
+        17984
       ],
-      "avg_reasoning_tokens": 18112.0
+      "avg_reasoning_tokens": 17984.0
     },
     "9": {
       "n_epochs": 1,
       "output_tokens": [
-        20625
+        20453
       ],
-      "avg_output_tokens": 20625.0,
+      "avg_output_tokens": 20453.0,
       "reasoning_tokens": [
-        20514
+        20386
       ],
-      "avg_reasoning_tokens": 20514.0
+      "avg_reasoning_tokens": 20386.0
     },
     "68": {
       "n_epochs": 1,
       "output_tokens": [
-        20968
+        20751
       ],
-      "avg_output_tokens": 20968.0,
+      "avg_output_tokens": 20751.0,
       "reasoning_tokens": [
-        20844
+        20652
       ],
-      "avg_reasoning_tokens": 20844.0
+      "avg_reasoning_tokens": 20652.0
     },
     "60": {
       "n_epochs": 1,
       "output_tokens": [
-        21031
+        20830
       ],
-      "avg_output_tokens": 21031.0,
+      "avg_output_tokens": 20830.0,
       "reasoning_tokens": [
-        20867
+        20739
       ],
-      "avg_reasoning_tokens": 20867.0
+      "avg_reasoning_tokens": 20739.0
     },
     "53": {
       "n_epochs": 1,
       "output_tokens": [
-        21565
+        21250
       ],
-      "avg_output_tokens": 21565.0,
+      "avg_output_tokens": 21250.0,
       "reasoning_tokens": [
-        21432
+        21176
       ],
-      "avg_reasoning_tokens": 21432.0
+      "avg_reasoning_tokens": 21176.0
     },
     "1": {
       "n_epochs": 1,
       "output_tokens": [
-        23918
+        23729
       ],
-      "avg_output_tokens": 23918.0,
+      "avg_output_tokens": 23729.0,
       "reasoning_tokens": [
-        23845
+        23717
       ],
-      "avg_reasoning_tokens": 23845.0
+      "avg_reasoning_tokens": 23717.0
     },
     "36": {
       "n_epochs": 1,
       "output_tokens": [
-        26409
+        26169
       ],
-      "avg_output_tokens": 26409.0,
+      "avg_output_tokens": 26169.0,
       "reasoning_tokens": [
-        26282
+        26090
       ],
-      "avg_reasoning_tokens": 26282.0
+      "avg_reasoning_tokens": 26090.0
     },
     "17": {
       "n_epochs": 1,
       "output_tokens": [
-        25998
+        25827
       ],
-      "avg_output_tokens": 25998.0,
+      "avg_output_tokens": 25827.0,
       "reasoning_tokens": [
-        25911
+        25783
       ],
-      "avg_reasoning_tokens": 25911.0
+      "avg_reasoning_tokens": 25783.0
     },
     "52": {
       "n_epochs": 1,
       "output_tokens": [
-        25421
+        25017
       ],
-      "avg_output_tokens": 25421.0,
+      "avg_output_tokens": 25017.0,
       "reasoning_tokens": [
-        25325
+        25005
       ],
-      "avg_reasoning_tokens": 25325.0
+      "avg_reasoning_tokens": 25005.0
     },
     "38": {
       "n_epochs": 1,
       "output_tokens": [
-        23457
+        23259
       ],
-      "avg_output_tokens": 23457.0,
+      "avg_output_tokens": 23259.0,
       "reasoning_tokens": [
-        23322
+        23194
       ],
-      "avg_reasoning_tokens": 23322.0
+      "avg_reasoning_tokens": 23194.0
     },
     "77": {
       "n_epochs": 1,
       "output_tokens": [
-        24476
+        24209
       ],
-      "avg_output_tokens": 24476.0,
+      "avg_output_tokens": 24209.0,
       "reasoning_tokens": [
-        24334
+        24142
       ],
-      "avg_reasoning_tokens": 24334.0
+      "avg_reasoning_tokens": 24142.0
     },
     "23": {
       "n_epochs": 1,
       "output_tokens": [
-        26519
+        26287
       ],
-      "avg_output_tokens": 26519.0,
+      "avg_output_tokens": 26287.0,
       "reasoning_tokens": [
-        26413
+        26221
       ],
-      "avg_reasoning_tokens": 26413.0
+      "avg_reasoning_tokens": 26221.0
     },
     "40": {
       "n_epochs": 1,
       "output_tokens": [
-        25954
+        25745
       ],
-      "avg_output_tokens": 25954.0,
+      "avg_output_tokens": 25745.0,
       "reasoning_tokens": [
-        25820
+        25692
       ],
-      "avg_reasoning_tokens": 25820.0
+      "avg_reasoning_tokens": 25692.0
     },
     "37": {
       "n_epochs": 1,
       "output_tokens": [
-        25172
+        24909
       ],
-      "avg_output_tokens": 25172.0,
+      "avg_output_tokens": 24909.0,
       "reasoning_tokens": [
-        25089
+        24897
       ],
-      "avg_reasoning_tokens": 25089.0
+      "avg_reasoning_tokens": 24897.0
     },
     "49": {
       "n_epochs": 1,
       "output_tokens": [
-        27566
+        27355
       ],
-      "avg_output_tokens": 27566.0,
+      "avg_output_tokens": 27355.0,
       "reasoning_tokens": [
-        27374
+        27246
       ],
-      "avg_reasoning_tokens": 27374.0
+      "avg_reasoning_tokens": 27246.0
     },
     "64": {
       "n_epochs": 1,
       "output_tokens": [
-        25882
+        25718
       ],
-      "avg_output_tokens": 25882.0,
+      "avg_output_tokens": 25718.0,
       "reasoning_tokens": [
-        25834
+        25706
       ],
-      "avg_reasoning_tokens": 25834.0
+      "avg_reasoning_tokens": 25706.0
     },
     "90": {
       "n_epochs": 1,
       "output_tokens": [
-        25386
+        25124
       ],
-      "avg_output_tokens": 25386.0,
+      "avg_output_tokens": 25124.0,
       "reasoning_tokens": [
-        25253
+        25061
       ],
-      "avg_reasoning_tokens": 25253.0
+      "avg_reasoning_tokens": 25061.0
     },
     "85": {
       "n_epochs": 1,
       "output_tokens": [
-        26660
+        26447
       ],
-      "avg_output_tokens": 26660.0,
+      "avg_output_tokens": 26447.0,
       "reasoning_tokens": [
-        26504
+        26376
       ],
-      "avg_reasoning_tokens": 26504.0
+      "avg_reasoning_tokens": 26376.0
     },
     "19": {
       "n_epochs": 1,
       "output_tokens": [
-        29999
+        29808
       ],
-      "avg_output_tokens": 29999.0,
+      "avg_output_tokens": 29808.0,
       "reasoning_tokens": [
-        29909
+        29781
       ],
-      "avg_reasoning_tokens": 29909.0
+      "avg_reasoning_tokens": 29781.0
     },
     "65": {
       "n_epochs": 1,
       "output_tokens": [
-        28562
+        28305
       ],
-      "avg_output_tokens": 28562.0,
+      "avg_output_tokens": 28305.0,
       "reasoning_tokens": [
-        28426
+        28234
       ],
-      "avg_reasoning_tokens": 28426.0
+      "avg_reasoning_tokens": 28234.0
     },
     "39": {
       "n_epochs": 1,
       "output_tokens": [
-        28502
+        28316
       ],
-      "avg_output_tokens": 28502.0,
+      "avg_output_tokens": 28316.0,
       "reasoning_tokens": [
-        28411
+        28283
       ],
-      "avg_reasoning_tokens": 28411.0
+      "avg_reasoning_tokens": 28283.0
     },
     "15": {
       "n_epochs": 1,
       "output_tokens": [
-        28584
+        28318
       ],
-      "avg_output_tokens": 28584.0,
+      "avg_output_tokens": 28318.0,
       "reasoning_tokens": [
-        28468
+        28276
       ],
-      "avg_reasoning_tokens": 28468.0
+      "avg_reasoning_tokens": 28276.0
     },
     "75": {
       "n_epochs": 1,
       "output_tokens": [
-        29278
+        29047
       ],
-      "avg_output_tokens": 29278.0,
+      "avg_output_tokens": 29047.0,
       "reasoning_tokens": [
-        29170
+        28978
       ],
-      "avg_reasoning_tokens": 29170.0
+      "avg_reasoning_tokens": 28978.0
     },
     "20": {
       "n_epochs": 1,
       "output_tokens": [
-        27381
+        27148
       ],
-      "avg_output_tokens": 27381.0,
+      "avg_output_tokens": 27148.0,
       "reasoning_tokens": [
-        27301
+        27109
       ],
-      "avg_reasoning_tokens": 27301.0
+      "avg_reasoning_tokens": 27109.0
     },
     "94": {
       "n_epochs": 1,
       "output_tokens": [
-        29974
+        29791
       ],
-      "avg_output_tokens": 29974.0,
+      "avg_output_tokens": 29791.0,
       "reasoning_tokens": [
-        29830
+        29702
       ],
-      "avg_reasoning_tokens": 29830.0
+      "avg_reasoning_tokens": 29702.0
     },
     "81": {
       "n_epochs": 1,
       "output_tokens": [
-        32535
+        32285
       ],
-      "avg_output_tokens": 32535.0,
+      "avg_output_tokens": 32285.0,
       "reasoning_tokens": [
-        32450
+        32258
       ],
-      "avg_reasoning_tokens": 32450.0
+      "avg_reasoning_tokens": 32258.0
     },
     "100": {
       "n_epochs": 1,
       "output_tokens": [
-        29401
+        29112
       ],
-      "avg_output_tokens": 29401.0,
+      "avg_output_tokens": 29112.0,
       "reasoning_tokens": [
-        29281
+        29025
       ],
-      "avg_reasoning_tokens": 29281.0
+      "avg_reasoning_tokens": 29025.0
     },
     "28": {
       "n_epochs": 1,
       "output_tokens": [
-        29846
+        29672
       ],
-      "avg_output_tokens": 29846.0,
+      "avg_output_tokens": 29672.0,
       "reasoning_tokens": [
-        29788
+        29660
       ],
-      "avg_reasoning_tokens": 29788.0
+      "avg_reasoning_tokens": 29660.0
     },
     "47": {
       "n_epochs": 1,
       "output_tokens": [
-        33264
+        33013
       ],
-      "avg_output_tokens": 33264.0,
+      "avg_output_tokens": 33013.0,
       "reasoning_tokens": [
-        33193
+        33001
       ],
-      "avg_reasoning_tokens": 33193.0
+      "avg_reasoning_tokens": 33001.0
     },
     "72": {
       "n_epochs": 1,
       "output_tokens": [
-        35152
+        34869
       ],
-      "avg_output_tokens": 35152.0,
+      "avg_output_tokens": 34869.0,
+      "reasoning_tokens": [
+        34773
+      ],
+      "avg_reasoning_tokens": 34773.0
+    },
+    "88": {
+      "n_epochs": 1,
+      "output_tokens": [
+        34808
+      ],
+      "avg_output_tokens": 34808.0,
+      "reasoning_tokens": [
+        34796
+      ],
+      "avg_reasoning_tokens": 34796.0
+    },
+    "66": {
+      "n_epochs": 1,
+      "output_tokens": [
+        35099
+      ],
+      "avg_output_tokens": 35099.0,
+      "reasoning_tokens": [
+        35006
+      ],
+      "avg_reasoning_tokens": 35006.0
+    },
+    "18": {
+      "n_epochs": 1,
+      "output_tokens": [
+        33945
+      ],
+      "avg_output_tokens": 33945.0,
+      "reasoning_tokens": [
+        33869
+      ],
+      "avg_reasoning_tokens": 33869.0
+    },
+    "79": {
+      "n_epochs": 1,
+      "output_tokens": [
+        35346
+      ],
+      "avg_output_tokens": 35346.0,
+      "reasoning_tokens": [
+        35301
+      ],
+      "avg_reasoning_tokens": 35301.0
+    },
+    "29": {
+      "n_epochs": 1,
+      "output_tokens": [
+        34663
+      ],
+      "avg_output_tokens": 34663.0,
+      "reasoning_tokens": [
+        34565
+      ],
+      "avg_reasoning_tokens": 34565.0
+    },
+    "55": {
+      "n_epochs": 1,
+      "output_tokens": [
+        33988
+      ],
+      "avg_output_tokens": 33988.0,
+      "reasoning_tokens": [
+        33885
+      ],
+      "avg_reasoning_tokens": 33885.0
+    },
+    "83": {
+      "n_epochs": 1,
+      "output_tokens": [
+        35946
+      ],
+      "avg_output_tokens": 35946.0,
+      "reasoning_tokens": [
+        35934
+      ],
+      "avg_reasoning_tokens": 35934.0
+    },
+    "71": {
+      "n_epochs": 1,
+      "output_tokens": [
+        34711
+      ],
+      "avg_output_tokens": 34711.0,
+      "reasoning_tokens": [
+        34662
+      ],
+      "avg_reasoning_tokens": 34662.0
+    },
+    "82": {
+      "n_epochs": 1,
+      "output_tokens": [
+        35488
+      ],
+      "avg_output_tokens": 35488.0,
+      "reasoning_tokens": [
+        35448
+      ],
+      "avg_reasoning_tokens": 35448.0
+    },
+    "4": {
+      "n_epochs": 1,
+      "output_tokens": [
+        35624
+      ],
+      "avg_output_tokens": 35624.0,
+      "reasoning_tokens": [
+        35551
+      ],
+      "avg_reasoning_tokens": 35551.0
+    },
+    "45": {
+      "n_epochs": 1,
+      "output_tokens": [
+        36554
+      ],
+      "avg_output_tokens": 36554.0,
+      "reasoning_tokens": [
+        36542
+      ],
+      "avg_reasoning_tokens": 36542.0
+    },
+    "46": {
+      "n_epochs": 1,
+      "output_tokens": [
+        37907
+      ],
+      "avg_output_tokens": 37907.0,
+      "reasoning_tokens": [
+        37895
+      ],
+      "avg_reasoning_tokens": 37895.0
+    },
+    "51": {
+      "n_epochs": 1,
+      "output_tokens": [
+        35108
+      ],
+      "avg_output_tokens": 35108.0,
       "reasoning_tokens": [
         35029
       ],
       "avg_reasoning_tokens": 35029.0
     },
-    "88": {
-      "n_epochs": 1,
-      "output_tokens": [
-        35050
-      ],
-      "avg_output_tokens": 35050.0,
-      "reasoning_tokens": [
-        34988
-      ],
-      "avg_reasoning_tokens": 34988.0
-    },
-    "66": {
-      "n_epochs": 1,
-      "output_tokens": [
-        35289
-      ],
-      "avg_output_tokens": 35289.0,
-      "reasoning_tokens": [
-        35134
-      ],
-      "avg_reasoning_tokens": 35134.0
-    },
-    "18": {
-      "n_epochs": 1,
-      "output_tokens": [
-        34125
-      ],
-      "avg_output_tokens": 34125.0,
-      "reasoning_tokens": [
-        33997
-      ],
-      "avg_reasoning_tokens": 33997.0
-    },
-    "79": {
-      "n_epochs": 1,
-      "output_tokens": [
-        35559
-      ],
-      "avg_output_tokens": 35559.0,
-      "reasoning_tokens": [
-        35429
-      ],
-      "avg_reasoning_tokens": 35429.0
-    },
-    "29": {
-      "n_epochs": 1,
-      "output_tokens": [
-        34817
-      ],
-      "avg_output_tokens": 34817.0,
-      "reasoning_tokens": [
-        34693
-      ],
-      "avg_reasoning_tokens": 34693.0
-    },
-    "55": {
-      "n_epochs": 1,
-      "output_tokens": [
-        34197
-      ],
-      "avg_output_tokens": 34197.0,
-      "reasoning_tokens": [
-        34013
-      ],
-      "avg_reasoning_tokens": 34013.0
-    },
-    "83": {
-      "n_epochs": 1,
-      "output_tokens": [
-        36216
-      ],
-      "avg_output_tokens": 36216.0,
-      "reasoning_tokens": [
-        36126
-      ],
-      "avg_reasoning_tokens": 36126.0
-    },
-    "71": {
-      "n_epochs": 1,
-      "output_tokens": [
-        34911
-      ],
-      "avg_output_tokens": 34911.0,
-      "reasoning_tokens": [
-        34790
-      ],
-      "avg_reasoning_tokens": 34790.0
-    },
-    "82": {
-      "n_epochs": 1,
-      "output_tokens": [
-        35635
-      ],
-      "avg_output_tokens": 35635.0,
-      "reasoning_tokens": [
-        35512
-      ],
-      "avg_reasoning_tokens": 35512.0
-    },
-    "4": {
-      "n_epochs": 1,
-      "output_tokens": [
-        35805
-      ],
-      "avg_output_tokens": 35805.0,
-      "reasoning_tokens": [
-        35679
-      ],
-      "avg_reasoning_tokens": 35679.0
-    },
-    "45": {
-      "n_epochs": 1,
-      "output_tokens": [
-        36783
-      ],
-      "avg_output_tokens": 36783.0,
-      "reasoning_tokens": [
-        36734
-      ],
-      "avg_reasoning_tokens": 36734.0
-    },
-    "46": {
-      "n_epochs": 1,
-      "output_tokens": [
-        38096
-      ],
-      "avg_output_tokens": 38096.0,
-      "reasoning_tokens": [
-        38023
-      ],
-      "avg_reasoning_tokens": 38023.0
-    },
-    "51": {
-      "n_epochs": 1,
-      "output_tokens": [
-        35330
-      ],
-      "avg_output_tokens": 35330.0,
-      "reasoning_tokens": [
-        35221
-      ],
-      "avg_reasoning_tokens": 35221.0
-    },
     "12": {
       "n_epochs": 1,
       "output_tokens": [
-        36866
+        36676
       ],
-      "avg_output_tokens": 36866.0,
+      "avg_output_tokens": 36676.0,
       "reasoning_tokens": [
-        36792
+        36664
       ],
-      "avg_reasoning_tokens": 36792.0
+      "avg_reasoning_tokens": 36664.0
     },
     "35": {
       "n_epochs": 1,
       "output_tokens": [
-        38426
+        38200
       ],
-      "avg_output_tokens": 38426.0,
+      "avg_output_tokens": 38200.0,
       "reasoning_tokens": [
-        38380
+        38188
       ],
-      "avg_reasoning_tokens": 38380.0
+      "avg_reasoning_tokens": 38188.0
     },
     "67": {
       "n_epochs": 1,
       "output_tokens": [
-        39054
+        38847
       ],
-      "avg_output_tokens": 39054.0,
+      "avg_output_tokens": 38847.0,
       "reasoning_tokens": [
-        38881
+        38753
       ],
-      "avg_reasoning_tokens": 38881.0
+      "avg_reasoning_tokens": 38753.0
     },
     "32": {
       "n_epochs": 1,
       "output_tokens": [
-        40150
+        39836
       ],
-      "avg_output_tokens": 40150.0,
+      "avg_output_tokens": 39836.0,
       "reasoning_tokens": [
-        40080
+        39824
       ],
-      "avg_reasoning_tokens": 40080.0
+      "avg_reasoning_tokens": 39824.0
     },
     "42": {
       "n_epochs": 1,
       "output_tokens": [
-        39670
+        39408
       ],
-      "avg_output_tokens": 39670.0,
+      "avg_output_tokens": 39408.0,
       "reasoning_tokens": [
-        39588
+        39396
       ],
-      "avg_reasoning_tokens": 39588.0
+      "avg_reasoning_tokens": 39396.0
     },
     "26": {
       "n_epochs": 1,
       "output_tokens": [
-        40105
+        39796
       ],
-      "avg_output_tokens": 40105.0,
+      "avg_output_tokens": 39796.0,
       "reasoning_tokens": [
-        40029
+        39773
       ],
-      "avg_reasoning_tokens": 40029.0
+      "avg_reasoning_tokens": 39773.0
     },
     "30": {
       "n_epochs": 1,
       "output_tokens": [
-        41631
+        41494
       ],
-      "avg_output_tokens": 41631.0,
+      "avg_output_tokens": 41494.0,
       "reasoning_tokens": [
-        41546
+        41482
       ],
-      "avg_reasoning_tokens": 41546.0
+      "avg_reasoning_tokens": 41482.0
     },
     "61": {
       "n_epochs": 1,
       "output_tokens": [
-        38667
+        38504
       ],
-      "avg_output_tokens": 38667.0,
+      "avg_output_tokens": 38504.0,
       "reasoning_tokens": [
-        38598
+        38470
       ],
-      "avg_reasoning_tokens": 38598.0
+      "avg_reasoning_tokens": 38470.0
     },
     "58": {
       "n_epochs": 1,
       "output_tokens": [
-        42277
+        41970
       ],
-      "avg_output_tokens": 42277.0,
+      "avg_output_tokens": 41970.0,
       "reasoning_tokens": [
-        42214
+        41958
       ],
-      "avg_reasoning_tokens": 42214.0
+      "avg_reasoning_tokens": 41958.0
     },
     "6": {
       "n_epochs": 1,
       "output_tokens": [
-        38282
+        38111
       ],
-      "avg_output_tokens": 38282.0,
+      "avg_output_tokens": 38111.0,
       "reasoning_tokens": [
-        38227
+        38099
       ],
-      "avg_reasoning_tokens": 38227.0
+      "avg_reasoning_tokens": 38099.0
     },
     "34": {
       "n_epochs": 1,
       "output_tokens": [
-        20113
+        19880
       ],
-      "avg_output_tokens": 20113.0,
+      "avg_output_tokens": 19880.0,
       "reasoning_tokens": [
-        20025
+        19833
       ],
-      "avg_reasoning_tokens": 20025.0
+      "avg_reasoning_tokens": 19833.0
     },
     "5": {
       "n_epochs": 1,
       "output_tokens": [
-        45765
+        45572
       ],
-      "avg_output_tokens": 45765.0,
+      "avg_output_tokens": 45572.0,
       "reasoning_tokens": [
-        45669
+        45541
       ],
-      "avg_reasoning_tokens": 45669.0
+      "avg_reasoning_tokens": 45541.0
     },
     "33": {
       "n_epochs": 1,
       "output_tokens": [
-        42545
+        42327
       ],
-      "avg_output_tokens": 42545.0,
+      "avg_output_tokens": 42327.0,
       "reasoning_tokens": [
-        42438
+        42246
       ],
-      "avg_reasoning_tokens": 42438.0
+      "avg_reasoning_tokens": 42246.0
     },
     "69": {
       "n_epochs": 1,
       "output_tokens": [
-        48734
+        48593
       ],
-      "avg_output_tokens": 48734.0,
+      "avg_output_tokens": 48593.0,
       "reasoning_tokens": [
-        48645
+        48581
       ],
-      "avg_reasoning_tokens": 48645.0
+      "avg_reasoning_tokens": 48581.0
     },
     "63": {
       "n_epochs": 1,
       "output_tokens": [
-        47341
+        47171
       ],
-      "avg_output_tokens": 47341.0,
+      "avg_output_tokens": 47171.0,
       "reasoning_tokens": [
-        47232
+        47104
       ],
-      "avg_reasoning_tokens": 47232.0
+      "avg_reasoning_tokens": 47104.0
     },
     "43": {
       "n_epochs": 1,
       "output_tokens": [
-        48984
+        48725
       ],
-      "avg_output_tokens": 48984.0,
+      "avg_output_tokens": 48725.0,
       "reasoning_tokens": [
-        48852
+        48660
       ],
-      "avg_reasoning_tokens": 48852.0
+      "avg_reasoning_tokens": 48660.0
     },
     "97": {
       "n_epochs": 1,
       "output_tokens": [
-        43126
+        42895
       ],
-      "avg_output_tokens": 43126.0,
+      "avg_output_tokens": 42895.0,
       "reasoning_tokens": [
-        43075
+        42883
       ],
-      "avg_reasoning_tokens": 43075.0
+      "avg_reasoning_tokens": 42883.0
     },
     "14": {
       "n_epochs": 1,
       "output_tokens": [
-        48156
+        47956
       ],
-      "avg_output_tokens": 48156.0,
+      "avg_output_tokens": 47956.0,
       "reasoning_tokens": [
-        48063
+        47935
       ],
-      "avg_reasoning_tokens": 48063.0
+      "avg_reasoning_tokens": 47935.0
     },
     "3": {
       "n_epochs": 1,
       "output_tokens": [
-        51545
+        51382
       ],
-      "avg_output_tokens": 51545.0,
+      "avg_output_tokens": 51382.0,
       "reasoning_tokens": [
-        51481
+        51353
       ],
-      "avg_reasoning_tokens": 51481.0
+      "avg_reasoning_tokens": 51353.0
     },
     "89": {
       "n_epochs": 1,
       "output_tokens": [
-        50466
+        50257
       ],
-      "avg_output_tokens": 50466.0,
+      "avg_output_tokens": 50257.0,
       "reasoning_tokens": [
-        50367
+        50239
       ],
-      "avg_reasoning_tokens": 50367.0
+      "avg_reasoning_tokens": 50239.0
     },
     "50": {
       "n_epochs": 1,
       "output_tokens": [
-        53653
+        53431
       ],
-      "avg_output_tokens": 53653.0,
+      "avg_output_tokens": 53431.0,
       "reasoning_tokens": [
-        53576
+        53384
       ],
-      "avg_reasoning_tokens": 53576.0
+      "avg_reasoning_tokens": 53384.0
     },
     "92": {
       "n_epochs": 1,
       "output_tokens": [
-        59656
+        59365
       ],
-      "avg_output_tokens": 59656.0,
+      "avg_output_tokens": 59365.0,
       "reasoning_tokens": [
-        59540
+        59284
       ],
-      "avg_reasoning_tokens": 59540.0
+      "avg_reasoning_tokens": 59284.0
     },
     "41": {
       "n_epochs": 1,
       "output_tokens": [
-        61530
+        61225
       ],
-      "avg_output_tokens": 61530.0,
+      "avg_output_tokens": 61225.0,
       "reasoning_tokens": [
-        61371
+        61115
       ],
-      "avg_reasoning_tokens": 61371.0
+      "avg_reasoning_tokens": 61115.0
     },
     "98": {
       "n_epochs": 1,
       "output_tokens": [
-        25787
+        25660
       ],
-      "avg_output_tokens": 25787.0,
+      "avg_output_tokens": 25660.0,
       "reasoning_tokens": [
-        25652
+        25588
       ],
-      "avg_reasoning_tokens": 25652.0
+      "avg_reasoning_tokens": 25588.0
     },
     "27": {
       "n_epochs": 1,
       "output_tokens": [
-        26568
+        26416
       ],
-      "avg_output_tokens": 26568.0,
+      "avg_output_tokens": 26416.0,
       "reasoning_tokens": [
-        26532
+        26404
       ],
-      "avg_reasoning_tokens": 26532.0
+      "avg_reasoning_tokens": 26404.0
     },
     "2": {
       "n_epochs": 1,
       "output_tokens": [
-        73277
+        73093
       ],
-      "avg_output_tokens": 73277.0,
+      "avg_output_tokens": 73093.0,
       "reasoning_tokens": [
-        73178
+        73050
       ],
-      "avg_reasoning_tokens": 73178.0
+      "avg_reasoning_tokens": 73050.0
     },
     "57": {
       "n_epochs": 1,
       "output_tokens": [
-        21236
+        21081
       ],
-      "avg_output_tokens": 21236.0,
+      "avg_output_tokens": 21081.0,
       "reasoning_tokens": [
-        21197
+        21069
       ],
-      "avg_reasoning_tokens": 21197.0
+      "avg_reasoning_tokens": 21069.0
     },
     "62": {
       "n_epochs": 1,
       "output_tokens": [
-        73137
+        72875
       ],
-      "avg_output_tokens": 73137.0,
+      "avg_output_tokens": 72875.0,
       "reasoning_tokens": [
-        72969
+        72777
       ],
-      "avg_reasoning_tokens": 72969.0
+      "avg_reasoning_tokens": 72777.0
     },
     "87": {
       "n_epochs": 1,
       "output_tokens": [
-        24571
+        24311
       ],
-      "avg_output_tokens": 24571.0,
+      "avg_output_tokens": 24311.0,
       "reasoning_tokens": [
-        24491
+        24299
       ],
-      "avg_reasoning_tokens": 24491.0
+      "avg_reasoning_tokens": 24299.0
     },
     "70": {
       "n_epochs": 1,
       "output_tokens": [
-        78815
+        78538
       ],
-      "avg_output_tokens": 78815.0,
+      "avg_output_tokens": 78538.0,
       "reasoning_tokens": [
-        78680
+        78488
       ],
-      "avg_reasoning_tokens": 78680.0
+      "avg_reasoning_tokens": 78488.0
     },
     "76": {
       "n_epochs": 1,
       "output_tokens": [
-        70688
+        70471
       ],
-      "avg_output_tokens": 70688.0,
+      "avg_output_tokens": 70471.0,
       "reasoning_tokens": [
-        70651
+        70459
       ],
-      "avg_reasoning_tokens": 70651.0
+      "avg_reasoning_tokens": 70459.0
     },
     "93": {
       "n_epochs": 1,
       "output_tokens": [
-        48237
+        47996
       ],
-      "avg_output_tokens": 48237.0,
+      "avg_output_tokens": 47996.0,
       "reasoning_tokens": [
-        48140
+        47948
       ],
-      "avg_reasoning_tokens": 48140.0
+      "avg_reasoning_tokens": 47948.0
     }
   }
 }

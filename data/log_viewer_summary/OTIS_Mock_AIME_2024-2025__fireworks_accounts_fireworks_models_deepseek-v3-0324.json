@@ -6,9 +6,21 @@
   "run_id": "VpsMexBEhXkPYJBe7v6Fk9",
   "dataset_name": "EpochAI/otis-mock-aime-24-25",
   "epochs_configured": 8,
+  "accuracy": 0.37777777777777777,
+  "stderr": 0.062372203800719374,
+  "scores": [
+    {
+      "scorer": "model_graded",
+      "reducer": "mean",
+      "metrics": {
+        "accuracy": 0.37777777777777777,
+        "stderr": 0.062372203800719374
+      }
+    }
+  ],
   "totals": {
-    "total_output_tokens": 1114018,
-    "total_avg_output_tokens": 139252.25,
+    "total_output_tokens": 1112850,
+    "total_avg_output_tokens": 139106.25,
     "total_reasoning_tokens": null,
     "total_avg_reasoning_tokens": null
   },

@@ -6,9 +6,21 @@
   "run_id": "G5gxbTH33S7LXA29o5fgmv",
   "dataset_name": "EpochAI/otis-mock-aime-24-25",
   "epochs_configured": 8,
+  "accuracy": 0.06111111111111111,
+  "stderr": 0.022340279838327228,
+  "scores": [
+    {
+      "scorer": "model_graded",
+      "reducer": "mean",
+      "metrics": {
+        "accuracy": 0.06111111111111111,
+        "stderr": 0.022340279838327228
+      }
+    }
+  ],
   "totals": {
-    "total_output_tokens": 352667,
-    "total_avg_output_tokens": 44083.375,
+    "total_output_tokens": 351271,
+    "total_avg_output_tokens": 43908.875,
     "total_reasoning_tokens": null,
     "total_avg_reasoning_tokens": null
   },

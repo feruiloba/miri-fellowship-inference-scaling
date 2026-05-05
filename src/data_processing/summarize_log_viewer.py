@@ -43,8 +43,9 @@ def summarize_run(run_dir: Path) -> dict | None:
 
     eval_block = header.get("eval", {})
     dataset = eval_block.get("dataset", {}) or {}
+    primary_model = eval_block.get("model")
 
-    # sample_id -> field -> list of per-epoch totals (summed across models per epoch)
+    # sample_id -> field -> list of per-epoch totals (only for the primary model)
     per_sample: dict[str, dict[str, list[int]]] = defaultdict(
         lambda: {f: [] for f in TOKEN_FIELDS}
     )
@@ -54,17 +55,11 @@ def summarize_run(run_dir: Path) -> dict | None:
         if sid is None:
             continue
         usage = s.get("model_usage") or {}
-        per_field_total = {f: 0 for f in TOKEN_FIELDS}
-        any_seen = {f: False for f in TOKEN_FIELDS}
-        for _model, u in usage.items():
-            for f in TOKEN_FIELDS:
-                v = u.get(f)
-                if v is not None:
-                    per_field_total[f] += v
-                    any_seen[f] = True
+        u = usage.get(primary_model) or {}
         for f in TOKEN_FIELDS:
-            if any_seen[f]:
-                per_sample[sid][f].append(per_field_total[f])
+            v = u.get(f)
+            if v is not None:
+                per_sample[sid][f].append(v)
 
     samples_out: dict[str, dict] = {}
     totals: dict[str, float | None] = {}
@@ -95,14 +90,14 @@ def summarize_run(run_dir: Path) -> dict | None:
         # older ones — check both.
         stats_block = eval_block.get("stats") or header.get("stats") or {}
         agg_usage = stats_block.get("model_usage") or {}
+        u = agg_usage.get(primary_model) or {}
         per_field_total = {f: 0 for f in TOKEN_FIELDS}
         any_seen = {f: False for f in TOKEN_FIELDS}
-        for _model, u in agg_usage.items():
-            for f in TOKEN_FIELDS:
-                v = u.get(f)
-                if v is not None:
-                    per_field_total[f] += v
-                    any_seen[f] = True
+        for f in TOKEN_FIELDS:
+            v = u.get(f)
+            if v is not None:
+                per_field_total[f] = v
+                any_seen[f] = True
         if any(any_seen.values()):
             totals_source = "header_stats"
             for f in TOKEN_FIELDS:
@@ -117,6 +112,28 @@ def summarize_run(run_dir: Path) -> dict | None:
                 totals[f"total_{f}"] = None
                 totals[f"total_avg_{f}"] = None
 
+    # Pull score(s) from results.scores. Most runs have a single scorer with
+    # an `accuracy` metric, but we keep all metrics from all scorers in case.
+    scores_out: list[dict] = []
+    primary_accuracy: float | None = None
+    primary_stderr: float | None = None
+    results_block = eval_block.get("results") or header.get("results") or {}
+    for sc in (results_block.get("scores") or []):
+        metrics = sc.get("metrics") or {}
+        flat: dict[str, float | None] = {}
+        for mname, m in metrics.items():
+            flat[mname] = m.get("value") if isinstance(m, dict) else None
+        scores_out.append(
+            {
+                "scorer": sc.get("scorer") or sc.get("name"),
+                "reducer": sc.get("reducer"),
+                "metrics": flat,
+            }
+        )
+        if primary_accuracy is None and "accuracy" in flat:
+            primary_accuracy = flat["accuracy"]
+            primary_stderr = flat.get("stderr")
+
     return {
         "task": eval_block.get("task"),
         "task_display_name": eval_block.get("task_display_name"),
@@ -125,6 +142,9 @@ def summarize_run(run_dir: Path) -> dict | None:
         "run_id": eval_block.get("run_id"),
         "dataset_name": dataset.get("name"),
         "epochs_configured": (eval_block.get("config") or {}).get("epochs"),
+        "accuracy": primary_accuracy,
+        "stderr": primary_stderr,
+        "scores": scores_out,
         "totals": totals,
         "totals_source": totals_source,
         "samples": samples_out,
