@@ -1,11 +1,11 @@
 """
-Compute ECI scores for models in inference_scaling_tokens_only.csv.
+Compute ECI scores for models in manual_reports_data.csv.
 
 Each (model, x_value) pair is treated as a distinct "model" and projected onto
 the ECI scale using pre-fitted benchmark parameters from the full ECI model.
 
 Steps:
-1. Fit the full ECI model on eci_benchmarks.csv to get benchmark parameters.
+1. Fit the full ECI model on model_benchmark_scores.csv to get benchmark parameters.
 2. Map inference scaling benchmark names to ECI benchmark names.
 3. Apply random baseline correction to inference scaling scores.
 4. For each (model, x_value), use fit_capabilities_given_benchmarks to estimate
@@ -31,10 +31,10 @@ from eci.fitting import (
     compute_eci_scores,
 )
 
-DATA_DIR = Path(__file__).resolve().parent.parent.parent / "data"
-ECI_BENCHMARKS_FILE = DATA_DIR / "eci_benchmarks.csv"
-ISC_FILE = DATA_DIR / "inference_scaling_tokens_only.csv"
-OUTPUT_FILE = DATA_DIR / "inference_scaling_eci_scores.csv"
+DATA_DIR = Path(__file__).resolve().parent.parent.parent.parent / "data"
+ECI_BENCHMARKS_FILE = DATA_DIR / "model_benchmark_scores.csv"
+ISC_FILE = DATA_DIR / "manual_reports_data.csv"
+OUTPUT_FILE = DATA_DIR / "eci_from_manual_reports.csv"
 
 # Map ISC benchmark names -> ECI benchmark names
 BENCHMARK_NAME_MAP = {
@@ -56,7 +56,7 @@ def apply_baseline_correction(performance: float, benchmark: str) -> float:
 
 
 def main():
-    # --- Step 1: Fit the full ECI model on eci_benchmarks.csv ---
+    # --- Step 1: Fit the full ECI model on model_benchmark_scores.csv ---
     print("Loading ECI benchmark data...")
     eci_df = pd.read_csv(ECI_BENCHMARKS_FILE)
 

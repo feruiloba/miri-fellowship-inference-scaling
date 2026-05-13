@@ -4,9 +4,9 @@ Reads all per-run summaries from data/log_viewer_summary/, filters to one
 benchmark, and produces a scatter of accuracy vs total_avg_output_tokens.
 
 Usage:
-    python src/log_viewer_scaling/plot_score_vs_tokens.py <benchmark>
-    python src/log_viewer_scaling/plot_score_vs_tokens.py --list
-    python src/log_viewer_scaling/plot_score_vs_tokens.py --all
+    python src/benchmark_scaling/score_vs_tokens.py <benchmark>
+    python src/benchmark_scaling/score_vs_tokens.py --list
+    python src/benchmark_scaling/score_vs_tokens.py --all
 
 Multiple runs of the same model on the same benchmark are connected with a
 line so it's easy to see how a single model's score changes with token spend
@@ -25,7 +25,7 @@ import matplotlib.pyplot as plt
 
 ROOT = Path(__file__).resolve().parents[2]
 SUMMARY_DIR = ROOT / "data" / "log_viewer_summary"
-OUT_DIR = ROOT / "output" / "14_log_viewer_scaling"
+OUT_DIR = ROOT / "output" / "benchmark_scaling"
 
 FAMILY_COLORS = [
     "#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd",

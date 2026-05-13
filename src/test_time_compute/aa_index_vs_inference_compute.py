@@ -162,9 +162,8 @@ def plot_scaling(df, save_prefix):
     )
 
     plt.savefig(f"{save_prefix}.png", dpi=150, bbox_inches="tight")
-    plt.savefig(f"{save_prefix}.svg", format="svg", bbox_inches="tight")
     plt.close()
-    print(f"Saved: {save_prefix}.png / .svg")
+    print(f"Saved: {save_prefix}.png")
 
 
 def _plot_panel(ax, df, x_col, color_map, xlabel, title, x_unit="tokens"):
@@ -249,7 +248,7 @@ def _plot_panel(ax, df, x_col, color_map, xlabel, title, x_unit="tokens"):
 # =============================================================================
 
 if __name__ == "__main__":
-    OUT_DIR = "output/13_inference_scaling"
+    OUT_DIR = "output/test_time_compute"
     os.makedirs(OUT_DIR, exist_ok=True)
 
     df = load_effort_models()
@@ -289,7 +288,7 @@ if __name__ == "__main__":
         print(f"  Slope: {slope:+.1f} AA per 10× tokens")
         print()
 
-    save_prefix = f"{OUT_DIR}/test_time_compute_vs_aa_index"
+    save_prefix = f"{OUT_DIR}/aa_index_vs_inference_compute"
     plot_scaling(df, save_prefix)
 
     # Save table

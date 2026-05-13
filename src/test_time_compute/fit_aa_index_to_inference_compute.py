@@ -18,7 +18,7 @@ from scipy.optimize import curve_fit, least_squares
 
 sys.path.insert(0, os.path.dirname(__file__))
 from importlib import import_module
-mod = import_module("13a_test_time_compute_vs_aa_index")
+mod = import_module("aa_index_vs_inference_compute")
 load_effort_models = mod.load_effort_models
 LEVEL_ORDER = mod.LEVEL_ORDER
 LEVEL_MARKERS = mod.LEVEL_MARKERS
@@ -38,16 +38,23 @@ def model_sigmoid(x, L, k, h, C):
     L = full span (top - bottom), C = lower asymptote, h = midpoint x, k = steepness."""
     return L / (1.0 + np.exp(-k * (x - h))) + C
 
-MODEL_FUNC = model_sigmoid
-MODEL_NAME = "L/(1+exp(−k·(x−h))) + C"
-PARAM_NAMES = ["L", "k", "h", "C"]
+def model_boxcox(x, m, c, h, C):
+    """f(x) = m * ((1 + x - h)^c - 1) / c + C
+    Box-Cox style power transform. Requires 1 + x - h > 0."""
+    base = 1.0 + x - h
+    base = np.where(base > 1e-12, base, 1e-12)
+    return m * (np.power(base, c) - 1.0) / c + C
+
+MODEL_FUNC = model_boxcox
+MODEL_NAME = "m·((1+x−h)^c − 1)/c + C"
+PARAM_NAMES = ["m", "c", "h", "C"]
 # Initial guess given (x, y) arrays (x = log10 tokens, y = AA index)
 def initial_guess(x, y):
-    A0 = (y.max() - y.min()) / 2 if y.max() > y.min() else 1.0
-    C0 = (y.max() + y.min()) / 2
-    h0 = float(np.median(x))
-    k0 = 1.0
-    return [A0, k0, h0, C0]
+    m0 = (y.max() - y.min()) if y.max() > y.min() else 1.0
+    c0 = 0.5
+    h0 = float(x.min()) - 0.5
+    C0 = float(y.min())
+    return [m0, c0, h0, C0]
 
 
 # =============================================================================
@@ -88,14 +95,14 @@ def fit_joint(family_data):
     """
     fits = {}
     for base, (x, y) in family_data.items():
-        # Per-family bounds, order: [amp, k, h, C]
-        amp0 = (y.max() - y.min()) if y.max() > y.min() else 1.0
-        k0   = 3.0
-        h0   = float(x.min()) - 0.5
-        C0   = float(y.min())
-        p0    = [amp0, k0, h0, C0]
-        lower = [-np.inf, 1e-3, x.min() - 2.0, 0.0]
-        upper = [ np.inf, 50.0, x.min(),       np.inf]
+        # Per-family bounds, order: [m, c, h, C]
+        m0 = (y.max() - y.min()) if y.max() > y.min() else 1.0
+        c0 = 0.5
+        h0 = float(x.min()) - 0.5
+        C0 = float(y.min())
+        p0    = [m0, c0, h0, C0]
+        lower = [0.0,    1e-3, x.min() - 5.0, 0.0]
+        upper = [np.inf, 1.0,  x.min() - 1e-6, np.inf]
 
         try:
             popt, _ = curve_fit(MODEL_FUNC, x, y, p0=p0,
@@ -180,9 +187,8 @@ def plot_fits(df, fits, save_prefix):
     ax.set_axisbelow(True)
 
     plt.savefig(f"{save_prefix}.png", dpi=150, bbox_inches="tight")
-    plt.savefig(f"{save_prefix}.svg", format="svg", bbox_inches="tight")
     plt.close()
-    print(f"Saved: {save_prefix}.png / .svg")
+    print(f"Saved: {save_prefix}.png")
 
 
 # =============================================================================
@@ -190,7 +196,7 @@ def plot_fits(df, fits, save_prefix):
 # =============================================================================
 
 if __name__ == "__main__":
-    OUT_DIR = "output/13_inference_scaling"
+    OUT_DIR = "output/test_time_compute"
     os.makedirs(OUT_DIR, exist_ok=True)
 
     df = load_effort_models()
@@ -222,19 +228,19 @@ if __name__ == "__main__":
 
     fits = fit_joint(family_data)
 
-    amp_name = PARAM_NAMES[0]  # "A" for tanh, "L" for sigmoid
+    p1, p2, p3, p4 = PARAM_NAMES
     rows = []
     for base, (x, y) in family_data.items():
         info = fits[base]
-        P_a, k, h, C = info["params"]
-        param_str = f"{amp_name}={P_a:+.3f}, k={k:+.3f}, h={h:+.3f}, C={C:+.3f}"
+        v1, v2, v3, v4 = info["params"]
+        param_str = f"{p1}={v1:+.3f}, {p2}={v2:+.3f}, {p3}={v3:+.3f}, {p4}={v4:+.3f}"
         print(f"{base}: n={len(x)}  R²={info['r2']:.3f}  {param_str}")
         rows.append({"base": base, "n": len(x), "r2": info["r2"],
-                     amp_name: P_a, "k": k, "h": h, "C": C})
+                     p1: v1, p2: v2, p3: v3, p4: v4})
 
     for base, n in skipped:
         rows.append({"base": base, "n": n, "r2": np.nan,
-                     amp_name: np.nan, "k": np.nan, "h": np.nan, "C": np.nan})
+                     p1: np.nan, p2: np.nan, p3: np.nan, p4: np.nan})
 
     save_prefix = f"{OUT_DIR}/fit_{MODEL_FUNC.__name__}"
     plot_fits(df, fits, save_prefix)

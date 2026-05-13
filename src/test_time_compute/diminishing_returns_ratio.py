@@ -158,13 +158,12 @@ def plot_ratios_over_time(ratios, save_prefix):
     ax.legend()
 
     plt.savefig(f"{save_prefix}.png", dpi=150, bbox_inches="tight")
-    plt.savefig(f"{save_prefix}.svg", format="svg", bbox_inches="tight")
     plt.close()
-    print(f"Saved: {save_prefix}.png / .svg")
+    print(f"Saved: {save_prefix}.png")
 
 
 if __name__ == "__main__":
-    OUT_DIR = "output/13_inference_scaling"
+    OUT_DIR = "output/test_time_compute"
     os.makedirs(OUT_DIR, exist_ok=True)
 
     df = load_effort_models()
@@ -190,5 +189,5 @@ if __name__ == "__main__":
     ratios.to_csv(out_csv, index=False)
     print(f"Saved: {out_csv}")
 
-    plot_prefix = f"{OUT_DIR}/diminishing_returns_over_time"
+    plot_prefix = f"{OUT_DIR}/diminishing_returns_ratio"
     plot_ratios_over_time(ratios, plot_prefix)

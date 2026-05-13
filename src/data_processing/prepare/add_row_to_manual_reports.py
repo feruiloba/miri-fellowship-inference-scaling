@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Interactive CLI to add rows to inference_scaling_tokens_only.csv."""
+"""Interactive CLI to add rows to manual_reports_data.csv."""
 
 import csv
 import os
@@ -9,9 +9,9 @@ import sys
 from thefuzz import fuzz, process
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-DATA_DIR = os.path.join(SCRIPT_DIR, "..", "..", "data")
-ECI_PATH = os.path.join(DATA_DIR, "eci_benchmarks.csv")
-TOKENS_PATH = os.path.join(DATA_DIR, "inference_scaling_tokens_only.csv")
+DATA_DIR = os.path.join(SCRIPT_DIR, "..", "..", "..", "data")
+ECI_PATH = os.path.join(DATA_DIR, "model_benchmark_scores.csv")
+TOKENS_PATH = os.path.join(DATA_DIR, "manual_reports_data.csv")
 EPOCH_MODELS_PATH = os.path.join(DATA_DIR, "epoch_all_ai_models.csv")
 AA_STATS_PATH = os.path.join(DATA_DIR, "artificial_analysis_llm_stats.csv")
 
@@ -127,8 +127,8 @@ def merged_unique_models(eci_rows, tokens_rows, epoch_rows, aa_rows):
     """Merge unique (model, model_id) pairs from all sources.
 
     Priority for model_id:
-    1. ECI (eci_benchmarks) — uses model_id
-    2. Tokens (inference_scaling_tokens_only) — uses model_id
+    1. ECI (model_benchmark_scores) — uses model_id
+    2. Tokens (manual_reports_data) — uses model_id
     3. Epoch (epoch_all_ai_models) — uses slugified name + _unknown
     4. Artificial Analysis — uses slug column
     """
@@ -418,7 +418,7 @@ def collect_one_row(eci_rows, epoch_rows, aa_rows):
         if confirm == "":
             row["human_verified"] = "yes"
             append_row(row)
-            print("\n  ✓ Row appended to inference_scaling_tokens_only.csv")
+            print("\n  ✓ Row appended to manual_reports_data.csv")
             return row
         elif confirm in ("c", "cancel"):
             print("  Row discarded.")
@@ -474,7 +474,7 @@ def main():
     eci_rows = load_eci()
     epoch_rows = load_epoch_models()
     aa_rows = load_aa_stats()
-    print(f"Loaded {len(eci_rows)} rows from eci_benchmarks.csv")
+    print(f"Loaded {len(eci_rows)} rows from model_benchmark_scores.csv")
     print(f"Loaded {len(epoch_rows)} rows from epoch_all_ai_models.csv")
     print(f"Loaded {len(aa_rows)} rows from artificial_analysis_llm_stats.csv")
 

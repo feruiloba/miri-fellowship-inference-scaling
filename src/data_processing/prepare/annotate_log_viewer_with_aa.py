@@ -24,7 +24,7 @@ from datetime import date, datetime
 from difflib import SequenceMatcher
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(__file__).resolve().parents[3]
 SUMMARY_DIR = ROOT / "data" / "log_viewer_summary"
 AA_CSV = ROOT / "data" / "artificial_analysis" / "artificial_analysis_llm_stats.csv"
 

@@ -1,5 +1,5 @@
 """
-Add is_reasoning and reasoning_level columns to data/eci_benchmarks.csv.
+Add is_reasoning and reasoning_level columns to data/model_benchmark_scores.csv.
 
 Detection logic:
 1. Suffix-based: model_version ends with _low, _medium, _high, _xhigh, _max,
@@ -16,8 +16,8 @@ import re
 import pandas as pd
 from pathlib import Path
 
-DATA_DIR = Path(__file__).resolve().parent.parent.parent / "data"
-INPUT_FILE = DATA_DIR / "eci_benchmarks.csv"
+DATA_DIR = Path(__file__).resolve().parent.parent.parent.parent / "data"
+INPUT_FILE = DATA_DIR / "model_benchmark_scores.csv"
 OUTPUT_FILE = INPUT_FILE  # overwrite in place
 
 # Suffix pattern: _low, _medium, _high, _xhigh, _max, _unknown, _NNK, _thinking
