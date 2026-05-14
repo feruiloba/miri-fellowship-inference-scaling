@@ -13,7 +13,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[2]
-OUT = ROOT / "output" / "compute_scaling"
+OUT = ROOT / "output" / "chinchilla_analysis"
 OUT.mkdir(parents=True, exist_ok=True)
 
 LIFETIME_TOKENS = 2e12

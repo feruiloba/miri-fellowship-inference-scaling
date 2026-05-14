@@ -3,7 +3,7 @@ Estimate ECI from AA Index
 ==========================
 
 Method 1: Convert AA Index → ECI using the linear fit from
-aa_index_vs_eci.py:
+get_aa_index_to_eci_fit_params.py:
 
     AA = 1.0515 · ECI - 117.8305     =>     ECI = (AA + 117.8305) / 1.0515
 
@@ -23,11 +23,18 @@ import pandas as pd
 
 AA_FILE = "data/artificial_analysis/artificial_analysis_llm_stats.csv"
 TOKENS_FILE = "data/artificial_analysis/aa_output_tokens.csv"
+FIT_FILE = "output/capability_indices/aa_index_vs_eci_fit.csv"
 OUT_DIR = "data/eci_from_benchmarks"
 
-# Linear fit from aa_index_vs_eci.py: AA = SLOPE * ECI + INTERCEPT
-SLOPE = 1.0515
-INTERCEPT = -117.8305
+
+def load_fit(path: str = FIT_FILE) -> tuple[float, float]:
+    """Load (slope, intercept) for AA = slope * ECI + intercept from the fit CSV
+    written by get_aa_index_to_eci_fit_params.py — keeps this script in sync with the latest fit."""
+    fit = pd.read_csv(path)
+    return float(fit["slope"].iloc[0]), float(fit["intercept"].iloc[0])
+
+
+SLOPE, INTERCEPT = load_fit()
 
 
 def _norm(s):

@@ -163,7 +163,7 @@ def plot_ratios_over_time(ratios, save_prefix):
 
 
 if __name__ == "__main__":
-    OUT_DIR = "output/test_time_compute"
+    OUT_DIR = "output/test_time_scaling_experiments"
     os.makedirs(OUT_DIR, exist_ok=True)
 
     df = load_effort_models()

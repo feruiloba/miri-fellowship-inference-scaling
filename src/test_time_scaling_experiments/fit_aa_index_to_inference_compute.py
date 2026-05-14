@@ -16,9 +16,9 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from scipy.optimize import curve_fit, least_squares
 
-sys.path.insert(0, os.path.dirname(__file__))
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "benchmark_vs_tokens"))
 from importlib import import_module
-mod = import_module("aa_index_vs_inference_compute")
+mod = import_module("score_vs_tokens_aa_index")
 load_effort_models = mod.load_effort_models
 LEVEL_ORDER = mod.LEVEL_ORDER
 LEVEL_MARKERS = mod.LEVEL_MARKERS
@@ -196,7 +196,7 @@ def plot_fits(df, fits, save_prefix):
 # =============================================================================
 
 if __name__ == "__main__":
-    OUT_DIR = "output/test_time_compute"
+    OUT_DIR = "output/test_time_scaling_experiments"
     os.makedirs(OUT_DIR, exist_ok=True)
 
     df = load_effort_models()

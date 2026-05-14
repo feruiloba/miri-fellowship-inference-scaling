@@ -18,7 +18,7 @@ from _chinchilla import (
 )
 
 ROOT = Path(__file__).resolve().parents[2]
-OUT = ROOT / "output" / "compute_scaling"
+OUT = ROOT / "output" / "chinchilla_analysis"
 OUT.mkdir(parents=True, exist_ok=True)
 
 

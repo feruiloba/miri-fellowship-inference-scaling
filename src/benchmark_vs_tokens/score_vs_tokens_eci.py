@@ -1,16 +1,17 @@
-"""Plot model score vs total output tokens for a given benchmark.
+"""Plot model score vs total output tokens for a given benchmark, from ECI logs.
 
-Reads all per-run summaries from data/log_viewer_summary/, filters to one
-benchmark, and produces a scatter of accuracy vs total_avg_output_tokens.
+Data source: per-run summaries in data/log_viewer_summary/, which are
+distilled from the ECI (eci-public) log-viewer JSON exports. Each summary
+gives one model × benchmark run with its accuracy and total_avg_output_tokens.
 
 Usage:
-    python src/benchmark_scaling/score_vs_tokens.py <benchmark>
-    python src/benchmark_scaling/score_vs_tokens.py --list
-    python src/benchmark_scaling/score_vs_tokens.py --all
+    python src/benchmark_vs_tokens/score_vs_tokens_eci.py <benchmark>
+    python src/benchmark_vs_tokens/score_vs_tokens_eci.py --list
+    python src/benchmark_vs_tokens/score_vs_tokens_eci.py --all
 
-Multiple runs of the same model on the same benchmark are connected with a
-line so it's easy to see how a single model's score changes with token spend
-(e.g. across reasoning-effort levels or repeat runs).
+Multiple ECI runs of the same model on the same benchmark are connected with
+a line so it's easy to see how a single model's score changes with token
+spend (e.g. across reasoning-effort levels or repeat runs).
 """
 
 from __future__ import annotations
@@ -25,7 +26,7 @@ import matplotlib.pyplot as plt
 
 ROOT = Path(__file__).resolve().parents[2]
 SUMMARY_DIR = ROOT / "data" / "log_viewer_summary"
-OUT_DIR = ROOT / "output" / "benchmark_scaling"
+OUT_DIR = ROOT / "output" / "benchmark_vs_tokens"
 
 FAMILY_COLORS = [
     "#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd",
@@ -111,15 +112,17 @@ def plot_benchmark(task: str, rows: list[dict], min_runs: int = 1, svg: bool = F
     ax.set_xscale("log")
     ax.set_xlabel("Total avg output tokens (per run, summed across samples)", fontsize=11)
     ax.set_ylabel("Accuracy", fontsize=11)
-    ax.set_title(f"Score vs. tokens — {task}  (n={len(df)} runs, {len(models)} models)",
-                 fontsize=12, fontweight="bold")
+    ax.set_title(
+        f"Score vs. tokens (ECI logs) — {task}  (n={len(df)} runs, {len(models)} models)",
+        fontsize=12, fontweight="bold",
+    )
     ax.grid(True, alpha=0.2, which="both")
     ax.set_axisbelow(True)
     ax.set_ylim(-0.02, 1.02)
 
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     suffix = f"__min{min_runs}runs" if min_runs > 1 else ""
-    out_base = OUT_DIR / f"score_vs_tokens__{_slug(task)}{suffix}"
+    out_base = OUT_DIR / f"score_vs_tokens_eci__{_slug(task)}{suffix}"
     fig.savefig(f"{out_base}.png", dpi=150, bbox_inches="tight")
     if svg:
         fig.savefig(f"{out_base}.svg", format="svg", bbox_inches="tight")

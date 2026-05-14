@@ -8,15 +8,15 @@ ascending, treating token spend as effort proxy), computes:
     R = (y_n - y_{n-1}) / (y_2 - y_1)
 
 where y is accuracy and x is total_avg_output_tokens. This mirrors
-src/test_time_compute/diminishing_returns_ratio.py but uses
+src/test_time_scaling_experiments/diminishing_returns_ratio.py but uses
 the per-benchmark summaries under data/log_viewer_summary/ instead of AA Index.
 
 R < 1: diminishing | R = 1: constant | R > 1: accelerating
 
 Usage:
-    python src/benchmark_scaling/diminishing_returns_over_time.py
-    python src/benchmark_scaling/diminishing_returns_over_time.py --benchmark "GPQA Diamond"
-    python src/benchmark_scaling/diminishing_returns_over_time.py --list
+    python src/benchmark_vs_tokens/diminishing_returns_over_time.py
+    python src/benchmark_vs_tokens/diminishing_returns_over_time.py --benchmark "GPQA Diamond"
+    python src/benchmark_vs_tokens/diminishing_returns_over_time.py --list
 """
 
 from __future__ import annotations
@@ -33,7 +33,7 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[2]
 SUMMARY_DIR = ROOT / "data" / "log_viewer_summary"
-OUT_DIR = ROOT / "output" / "benchmark_scaling"
+OUT_DIR = ROOT / "output" / "benchmark_vs_tokens"
 
 MIN_RUNS = 3
 

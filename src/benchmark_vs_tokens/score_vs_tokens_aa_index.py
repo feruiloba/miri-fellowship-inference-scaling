@@ -248,7 +248,7 @@ def _plot_panel(ax, df, x_col, color_map, xlabel, title, x_unit="tokens"):
 # =============================================================================
 
 if __name__ == "__main__":
-    OUT_DIR = "output/test_time_compute"
+    OUT_DIR = "output/benchmark_vs_tokens"
     os.makedirs(OUT_DIR, exist_ok=True)
 
     df = load_effort_models()
@@ -288,7 +288,7 @@ if __name__ == "__main__":
         print(f"  Slope: {slope:+.1f} AA per 10× tokens")
         print()
 
-    save_prefix = f"{OUT_DIR}/aa_index_vs_inference_compute"
+    save_prefix = f"{OUT_DIR}/score_vs_tokens_aa_index"
     plot_scaling(df, save_prefix)
 
     # Save table
