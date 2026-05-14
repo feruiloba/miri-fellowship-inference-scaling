@@ -9,7 +9,7 @@ ascending, treating token spend as effort proxy), computes:
 
 where y is accuracy and x is total_avg_output_tokens. This mirrors
 src/test_time_scaling_experiments/diminishing_returns_ratio.py but uses
-the per-benchmark summaries under data/log_viewer_summary/ instead of AA Index.
+the per-benchmark summaries under data/eci/log_viewer_summary/ instead of AA Index.
 
 R < 1: diminishing | R = 1: constant | R > 1: accelerating
 
@@ -32,7 +32,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[2]
-SUMMARY_DIR = ROOT / "data" / "log_viewer_summary"
+SUMMARY_DIR = ROOT / "data" / "eci" / "log_viewer_summary"
 OUT_DIR = ROOT / "output" / "benchmark_vs_tokens"
 
 MIN_RUNS = 3

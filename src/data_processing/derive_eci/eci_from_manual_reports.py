@@ -32,9 +32,9 @@ from eci.fitting import (
 )
 
 DATA_DIR = Path(__file__).resolve().parent.parent.parent.parent / "data"
-ECI_BENCHMARKS_FILE = DATA_DIR / "model_benchmark_scores.csv"
-ISC_FILE = DATA_DIR / "manual_reports_data.csv"
-OUTPUT_FILE = DATA_DIR / "eci_from_manual_reports.csv"
+ECI_BENCHMARKS_FILE = DATA_DIR / "eci" / "model_benchmark_scores.csv"
+ISC_FILE = DATA_DIR / "manual_reports" / "manual_reports_data.csv"
+OUTPUT_FILE = DATA_DIR / "derived_eci" / "eci_from_manual_reports.csv"
 
 # Map ISC benchmark names -> ECI benchmark names
 BENCHMARK_NAME_MAP = {

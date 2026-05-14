@@ -10,9 +10,9 @@ from thefuzz import fuzz, process
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR = os.path.join(SCRIPT_DIR, "..", "..", "..", "data")
-ECI_PATH = os.path.join(DATA_DIR, "model_benchmark_scores.csv")
-TOKENS_PATH = os.path.join(DATA_DIR, "manual_reports_data.csv")
-EPOCH_MODELS_PATH = os.path.join(DATA_DIR, "epoch_all_ai_models.csv")
+ECI_PATH = os.path.join(DATA_DIR, "eci", "model_benchmark_scores.csv")
+TOKENS_PATH = os.path.join(DATA_DIR, "manual_reports", "manual_reports_data.csv")
+EPOCH_MODELS_PATH = os.path.join(DATA_DIR, "eci", "epoch_all_ai_models.csv")
 AA_STATS_PATH = os.path.join(DATA_DIR, "artificial_analysis_llm_stats.csv")
 
 TOKENS_COLUMNS = [

@@ -24,7 +24,7 @@ import pandas as pd
 AA_FILE = "data/artificial_analysis/artificial_analysis_llm_stats.csv"
 TOKENS_FILE = "data/artificial_analysis/aa_output_tokens.csv"
 FIT_FILE = "output/capability_indices/aa_index_vs_eci_fit.csv"
-OUT_DIR = "data/eci_from_benchmarks"
+OUT_DIR = "data/derived_eci"
 
 
 def load_fit(path: str = FIT_FILE) -> tuple[float, float]:

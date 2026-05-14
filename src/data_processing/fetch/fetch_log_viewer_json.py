@@ -1,6 +1,6 @@
 """
 Fetch the underlying inspect_ai .eval log for each row of
-data/benchmarks_runs-PUBLIC VIEW.csv, and extract every JSON file inside.
+data/eci/benchmarks_runs-PUBLIC VIEW.csv, and extract every JSON file inside.
 
 Background:
 - The viewer URL has the form
@@ -23,7 +23,7 @@ Two fetch modes:
 This script:
   1. Loads EPOCH_COOKIE from .env (or environment) — needed for the WAF.
   2. Cleans up orphaned tempfiles in the output dir from prior killed runs.
-  3. For each row, fetches and extracts to data/log_viewer_json/<ID>/.
+  3. For each row, fetches and extracts to data/eci/log_viewer_json/<ID>/.
   4. Skips IDs whose target directory already has files (use --overwrite
      to refetch).
 
@@ -53,8 +53,8 @@ except ImportError:
     HAVE_ZSTD = False
 
 
-CSV_IN = "data/benchmarks_runs-PUBLIC VIEW.csv"
-DEFAULT_OUT_DIR = "data/log_viewer_json"
+CSV_IN = "data/eci/benchmarks_runs-PUBLIC VIEW.csv"
+DEFAULT_OUT_DIR = "data/eci/log_viewer_json"
 
 # Files kept in --summaries-only mode (also the default range-mode targets).
 SUMMARY_FILES = ("header.json", "summaries.json")

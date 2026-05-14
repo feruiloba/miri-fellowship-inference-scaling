@@ -2,9 +2,9 @@
 Estimate ECI from log_viewer benchmark accuracy
 ================================================
 
-Method 2: For each (model, benchmark) accuracy in data/log_viewer_summary/,
+Method 2: For each (model, benchmark) accuracy in data/eci/log_viewer_summary/,
 invert the IRT model from eci-public to produce a per-benchmark ECI estimate,
-and append rows to data/eci_from_benchmarks/eci_from_benchmarks.csv.
+and append rows to data/derived_eci/eci_from_benchmarks.csv.
 
 Inversion: given benchmark difficulty D and discriminability α from the
 fitted ECI model,
@@ -13,7 +13,7 @@ fitted ECI model,
     => ECI       = a + b · capability    (linear scaling from compute_eci_scores)
 
 The benchmark params + scaling come from a one-time fit of the public ECI
-data (cached to data/eci_from_benchmarks/_cache/).
+data (cached to data/derived_eci/_cache/).
 """
 
 import json
@@ -37,8 +37,8 @@ from eci.fitting import (  # noqa: E402
 )
 
 
-SUMMARY_DIR = ROOT / "data" / "log_viewer_summary"
-OUT_DIR = ROOT / "data" / "eci_from_benchmarks"
+SUMMARY_DIR = ROOT / "data" / "eci" / "log_viewer_summary"
+OUT_DIR = ROOT / "data" / "derived_eci"
 OUT_CSV = OUT_DIR / "eci_from_benchmarks.csv"
 CACHE_DIR = OUT_DIR / "_cache"
 BENCH_CACHE = CACHE_DIR / "bench_params.csv"

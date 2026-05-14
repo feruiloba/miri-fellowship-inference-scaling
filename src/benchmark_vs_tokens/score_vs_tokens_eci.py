@@ -1,6 +1,6 @@
 """Plot model score vs total output tokens for a given benchmark, from ECI logs.
 
-Data source: per-run summaries in data/log_viewer_summary/, which are
+Data source: per-run summaries in data/eci/log_viewer_summary/, which are
 distilled from the ECI (eci-public) log-viewer JSON exports. Each summary
 gives one model × benchmark run with its accuracy and total_avg_output_tokens.
 
@@ -25,7 +25,7 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 
 ROOT = Path(__file__).resolve().parents[2]
-SUMMARY_DIR = ROOT / "data" / "log_viewer_summary"
+SUMMARY_DIR = ROOT / "data" / "eci" / "log_viewer_summary"
 OUT_DIR = ROOT / "output" / "benchmark_vs_tokens"
 
 FAMILY_COLORS = [

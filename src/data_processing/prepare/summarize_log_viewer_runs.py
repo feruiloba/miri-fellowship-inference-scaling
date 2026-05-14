@@ -1,7 +1,7 @@
 """Summarize log_viewer_json runs into per-run token summaries.
 
-For each folder under data/log_viewer_json/, reads header.json + summaries.json
-and writes data/log_viewer_summary/<task>__<run_id>.json containing:
+For each folder under data/eci/log_viewer_json/, reads header.json + summaries.json
+and writes data/eci/log_viewer_summary/<task>__<run_id>.json containing:
   - task / model / eval_id / run_id / dataset_name / epochs_configured
   - samples: per-sample raw per-epoch tokens (copied from summaries.json) and
     per-sample averages across epochs
@@ -20,8 +20,8 @@ from collections import defaultdict
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[3]
-SRC_DIR = ROOT / "data" / "log_viewer_json"
-OUT_DIR = ROOT / "data" / "log_viewer_summary"
+SRC_DIR = ROOT / "data" / "eci" / "log_viewer_json"
+OUT_DIR = ROOT / "data" / "eci" / "log_viewer_summary"
 
 TOKEN_FIELDS = ("output_tokens", "reasoning_tokens")
 

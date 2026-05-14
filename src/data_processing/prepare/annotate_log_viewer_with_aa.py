@@ -1,6 +1,6 @@
 """Match unique log-viewer model IDs to entries in the AA stats CSV.
 
-For every distinct `model` value in data/log_viewer_summary/*.json, ranks rows
+For every distinct `model` value in data/eci/log_viewer_summary/*.json, ranks rows
 from data/artificial_analysis/artificial_analysis_llm_stats.csv by similarity
 (name / slug / company / company_slug / model_id substrings + release-date
 hint) and lets the user pick the best match. The chosen AA row's name,
@@ -25,7 +25,7 @@ from difflib import SequenceMatcher
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[3]
-SUMMARY_DIR = ROOT / "data" / "log_viewer_summary"
+SUMMARY_DIR = ROOT / "data" / "eci" / "log_viewer_summary"
 AA_CSV = ROOT / "data" / "artificial_analysis" / "artificial_analysis_llm_stats.csv"
 
 WRITE_FIELDS = ("aa_model_id", "aa_model_slug", "aa_name", "company_slug", "release_date")
