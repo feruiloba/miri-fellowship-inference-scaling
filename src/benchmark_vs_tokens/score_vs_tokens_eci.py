@@ -26,7 +26,7 @@ import matplotlib.pyplot as plt
 
 ROOT = Path(__file__).resolve().parents[2]
 SUMMARY_DIR = ROOT / "data" / "eci" / "log_viewer_summary"
-OUT_DIR = ROOT / "output" / "benchmark_vs_tokens"
+OUT_DIR = ROOT / "output" / "benchmark_vs_tokens" / "eci_logs"
 
 FAMILY_COLORS = [
     "#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd",

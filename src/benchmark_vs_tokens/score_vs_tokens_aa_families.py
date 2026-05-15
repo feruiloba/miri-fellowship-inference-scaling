@@ -23,7 +23,7 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[2]
 FAMILY_DIR = ROOT / "data" / "artificial_analysis" / "evaluation_families"
-OUT_DIR = ROOT / "output" / "benchmark_vs_tokens"
+OUT_DIR = ROOT / "output" / "benchmark_vs_tokens" / "aa_evaluations"
 
 FAMILY_COLORS = [
     "#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd",

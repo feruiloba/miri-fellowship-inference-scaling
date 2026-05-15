@@ -14,9 +14,9 @@ the per-benchmark summaries under data/eci/log_viewer_summary/ instead of AA Ind
 R < 1: diminishing | R = 1: constant | R > 1: accelerating
 
 Usage:
-    python src/benchmark_vs_tokens/diminishing_returns_over_time.py
-    python src/benchmark_vs_tokens/diminishing_returns_over_time.py --benchmark "GPQA Diamond"
-    python src/benchmark_vs_tokens/diminishing_returns_over_time.py --list
+    python src/test_time_scaling_experiments/diminishing_returns_over_time.py
+    python src/test_time_scaling_experiments/diminishing_returns_over_time.py --benchmark "GPQA Diamond"
+    python src/test_time_scaling_experiments/diminishing_returns_over_time.py --list
 """
 
 from __future__ import annotations
@@ -33,7 +33,7 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[2]
 SUMMARY_DIR = ROOT / "data" / "eci" / "log_viewer_summary"
-OUT_DIR = ROOT / "output" / "benchmark_vs_tokens"
+OUT_DIR = ROOT / "output" / "test_time_scaling_experiments"
 
 MIN_RUNS = 3
 

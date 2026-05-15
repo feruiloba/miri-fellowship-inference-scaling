@@ -248,7 +248,7 @@ def _plot_panel(ax, df, x_col, color_map, xlabel, title, x_unit="tokens"):
 # =============================================================================
 
 if __name__ == "__main__":
-    OUT_DIR = "output/benchmark_vs_tokens"
+    OUT_DIR = "output/benchmark_vs_tokens/aa_evaluations"
     os.makedirs(OUT_DIR, exist_ok=True)
 
     df = load_effort_models()
