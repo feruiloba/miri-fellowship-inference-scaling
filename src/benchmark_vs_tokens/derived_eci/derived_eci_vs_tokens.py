@@ -18,7 +18,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(__file__).resolve().parents[3]
 ECI_CSV = ROOT / "data" / "derived_eci" / "eci_from_benchmarks.csv"
 OUT_DIR = ROOT / "output" / "benchmark_vs_tokens" / "derived_eci"
 

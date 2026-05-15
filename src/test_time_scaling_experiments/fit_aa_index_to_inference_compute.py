@@ -16,7 +16,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from scipy.optimize import curve_fit, least_squares
 
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "benchmark_vs_tokens"))
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "benchmark_vs_tokens", "aa_evaluations"))
 from importlib import import_module
 mod = import_module("score_vs_tokens_aa_index")
 load_effort_models = mod.load_effort_models
@@ -228,6 +228,14 @@ if __name__ == "__main__":
 
     fits = fit_joint(family_data)
 
+    # Earliest release date per base (variants share the AA model's release_date)
+    base_release = (
+        df.dropna(subset=["release_date"])
+          .groupby("base")["release_date"]
+          .min()
+          .to_dict()
+    )
+
     p1, p2, p3, p4 = PARAM_NAMES
     rows = []
     for base, (x, y) in family_data.items():
@@ -235,11 +243,13 @@ if __name__ == "__main__":
         v1, v2, v3, v4 = info["params"]
         param_str = f"{p1}={v1:+.3f}, {p2}={v2:+.3f}, {p3}={v3:+.3f}, {p4}={v4:+.3f}"
         print(f"{base}: n={len(x)}  R²={info['r2']:.3f}  {param_str}")
-        rows.append({"base": base, "n": len(x), "r2": info["r2"],
+        rows.append({"base": base, "release_date": base_release.get(base),
+                     "n": len(x), "r2": info["r2"],
                      p1: v1, p2: v2, p3: v3, p4: v4})
 
     for base, n in skipped:
-        rows.append({"base": base, "n": n, "r2": np.nan,
+        rows.append({"base": base, "release_date": base_release.get(base),
+                     "n": n, "r2": np.nan,
                      p1: np.nan, p2: np.nan, p3: np.nan, p4: np.nan})
 
     save_prefix = f"{OUT_DIR}/fit_aa_index_{MODEL_FUNC.__name__.removeprefix('model_')}"

@@ -21,7 +21,7 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 import pandas as pd
 
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(__file__).resolve().parents[3]
 FAMILY_DIR = ROOT / "data" / "artificial_analysis" / "evaluation_families"
 OUT_DIR = ROOT / "output" / "benchmark_vs_tokens" / "aa_evaluations"
 

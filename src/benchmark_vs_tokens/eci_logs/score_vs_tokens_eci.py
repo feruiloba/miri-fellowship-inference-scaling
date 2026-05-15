@@ -24,7 +24,7 @@ from pathlib import Path
 
 import matplotlib.pyplot as plt
 
-ROOT = Path(__file__).resolve().parents[2]
+ROOT = Path(__file__).resolve().parents[3]
 SUMMARY_DIR = ROOT / "data" / "eci" / "log_viewer_summary"
 OUT_DIR = ROOT / "output" / "benchmark_vs_tokens" / "eci_logs"
 
