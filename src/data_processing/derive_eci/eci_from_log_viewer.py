@@ -97,18 +97,39 @@ def collect_log_viewer_rows():
         if acc is None:
             continue
         totals = d.get("totals") or {}
+        model_id = d.get("model")
+        # Fallback model name: last "/"-segment of model_id (e.g.
+        # "anthropic/claude-3-5-haiku-20241022" -> "claude-3-5-haiku-20241022")
+        fallback_name = model_id.rsplit("/", 1)[-1] if model_id else ""
+        raw_output = totals.get("total_output_tokens")
+        raw_reasoning = totals.get("total_reasoning_tokens")
+        # Providers split between two conventions for total_output_tokens:
+        #   - Anthropic-style: reasoning ⊆ output, so answer = output − reasoning
+        #   - Google/xAI/OpenAI reasoning-style: reasoning ∥ output (parallel),
+        #     so output already excludes reasoning and answer = output
+        # Detect the parallel case by output < reasoning.
+        if raw_output is None:
+            answer_tokens = None
+            total_tokens = None
+        elif raw_reasoning is not None and raw_output < raw_reasoning:
+            # parallel counters: output is answer-only
+            answer_tokens = raw_output
+            total_tokens = raw_output + raw_reasoning
+        else:
+            answer_tokens = raw_output - (raw_reasoning or 0)
+            total_tokens = raw_output
         rows.append({
             "file": Path(p).name,
             "task": task,
             "eci_benchmark": TASK_TO_ECI_BENCH[task],
-            "model_id": d.get("model"),
+            "model_id": model_id,
+            "aa_name": d.get("aa_name") or fallback_name,
+            "aa_model_slug": d.get("aa_model_slug") or "",
+            "company_slug": d.get("company_slug") or "",
             "accuracy": float(acc),
-            "reasoning_tokens": totals.get("total_reasoning_tokens"),
-            "answer_tokens": (totals.get("total_output_tokens") or 0)
-                             - (totals.get("total_reasoning_tokens") or 0)
-                             if totals.get("total_output_tokens") is not None
-                             else None,
-            "total_output_tokens": totals.get("total_output_tokens"),
+            "reasoning_tokens": raw_reasoning,
+            "answer_tokens": answer_tokens,
+            "total_output_tokens": total_tokens,
         })
     return pd.DataFrame(rows)
 
@@ -157,9 +178,9 @@ if __name__ == "__main__":
     scored = estimate_eci(raw, bench_df, a, b)
 
     out_rows = pd.DataFrame({
-        "model": scored["model_id"],
-        "slug": "",
-        "company": "",
+        "model": scored["aa_name"],
+        "slug": scored["aa_model_slug"],
+        "company": scored["company_slug"],
         "benchmark_source": "log_viewer_" + scored["task"].map(
             lambda t: t.lower().replace(" ", "_").replace("-", "_")
         ),
@@ -167,7 +188,7 @@ if __name__ == "__main__":
         "eci_estimated": scored["eci_estimated"],
         "reasoning_tokens": scored["reasoning_tokens"],
         "answer_tokens": scored["answer_tokens"],
-        "total_output_tokens": scored["total_output_tokens"],
+        "total_inference_tokens": scored["total_output_tokens"],
     })
 
     full = update_output_csv(out_rows)

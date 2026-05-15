@@ -62,7 +62,7 @@ def build_table():
     )
     merged = merged[merged["aa_index"].notna()].copy()
 
-    merged["total_output_tokens"] = (
+    merged["total_inference_tokens"] = (
         merged["reasoning_tokens"].fillna(0) + merged["answer_tokens"].fillna(0)
     )
     merged["benchmark_source"] = "aa_index"
@@ -72,7 +72,7 @@ def build_table():
     out = merged[[
         "name", "slug", "company",
         "benchmark_source", "benchmark_score", "eci_estimated",
-        "reasoning_tokens", "answer_tokens", "total_output_tokens",
+        "reasoning_tokens", "answer_tokens", "total_inference_tokens",
     ]].rename(columns={"name": "model"}).sort_values("eci_estimated", ascending=False)
 
     return out
