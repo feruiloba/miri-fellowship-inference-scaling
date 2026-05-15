@@ -242,7 +242,7 @@ if __name__ == "__main__":
         rows.append({"base": base, "n": n, "r2": np.nan,
                      p1: np.nan, p2: np.nan, p3: np.nan, p4: np.nan})
 
-    save_prefix = f"{OUT_DIR}/fit_{MODEL_FUNC.__name__}"
+    save_prefix = f"{OUT_DIR}/fit_aa_index_{MODEL_FUNC.__name__.removeprefix('model_')}"
     plot_fits(df, fits, save_prefix)
 
     table = pd.DataFrame(rows)

@@ -185,9 +185,9 @@ if __name__ == "__main__":
         print(f"  R = {row['R']:.3f}")
         print()
 
-    out_csv = f"{OUT_DIR}/diminishing_returns_ratio.csv"
+    out_csv = f"{OUT_DIR}/diminishing_returns_ratio_aa_index.csv"
     ratios.to_csv(out_csv, index=False)
     print(f"Saved: {out_csv}")
 
-    plot_prefix = f"{OUT_DIR}/diminishing_returns_ratio"
+    plot_prefix = f"{OUT_DIR}/diminishing_returns_ratio_aa_index"
     plot_ratios_over_time(ratios, plot_prefix)
