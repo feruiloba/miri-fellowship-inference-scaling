@@ -30,12 +30,14 @@ import math
 import sys
 from pathlib import Path
 
+import matplotlib.dates as mdates
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[3]
 EVAL_CSV = ROOT / "data" / "artificial_analysis" / "aa_evaluations_combined.csv"
+STATS_CSV = ROOT / "data" / "artificial_analysis" / "artificial_analysis_llm_stats.csv"
 OUT_DIR = ROOT / "output" / "benchmark_vs_tokens" / "aa_evaluations"
 
 BENCHMARKS = [
@@ -89,13 +91,22 @@ def _summarize(df: pd.DataFrame, stat: str, centers: np.ndarray) -> pd.DataFrame
     return summary
 
 
-def _build_panel(benchmark: str, stat: str) -> tuple[pd.DataFrame, pd.DataFrame] | None:
+def _load_release_dates() -> dict[str, str]:
+    stats = pd.read_csv(STATS_CSV, usecols=["slug", "release_date"])
+    stats = stats.dropna(subset=["slug", "release_date"])
+    return dict(zip(stats["slug"], stats["release_date"]))
+
+
+def _build_panel(benchmark: str, stat: str, slug_to_date: dict[str, str]) -> tuple[pd.DataFrame, pd.DataFrame] | None:
     df = pd.read_csv(EVAL_CSV)
     df = df[df["benchmark"] == benchmark].copy()
     df = df.dropna(subset=["total_output_tokens", "score_raw"])
     df = df[df["total_output_tokens"] > 0]
     if df.empty:
         return None
+    df["release_date"] = pd.to_datetime(
+        df["model_slug"].map(slug_to_date), errors="coerce"
+    )
 
     log_tokens = np.log10(df["total_output_tokens"].to_numpy(dtype=float))
     edges = np.linspace(log_tokens.min(), log_tokens.max(), N_BANDS + 1)
@@ -108,12 +119,29 @@ def _build_panel(benchmark: str, stat: str) -> tuple[pd.DataFrame, pd.DataFrame]
     return df, summary
 
 
-def _draw_panel(ax, benchmark: str, df: pd.DataFrame, summary: pd.DataFrame) -> None:
-    ax.scatter(
-        df["total_output_tokens"], df["score_raw"],
-        s=10, alpha=0.18, color="#888888", edgecolor="none",
-        label=f"individual runs (n={len(df)})",
-    )
+def _draw_panel(ax, benchmark: str, df: pd.DataFrame, summary: pd.DataFrame,
+                date_norm, cmap):
+    # Points with known release date: coloured by date. Points without a date
+    # fall back to a faint gray dot so they're not silently dropped.
+    has_date = df["release_date"].notna()
+    if has_date.any():
+        sub = df[has_date]
+        ax.scatter(
+            sub["total_output_tokens"], sub["score_raw"],
+            s=14, alpha=0.7, edgecolor="none",
+            c=mdates.date2num(sub["release_date"]),
+            cmap=cmap, norm=date_norm,
+        )
+    if (~has_date).any():
+        sub_n = df[~has_date]
+        ax.scatter(
+            sub_n["total_output_tokens"], sub_n["score_raw"],
+            s=8, alpha=0.25, color="#888888", edgecolor="none",
+        )
+    n_total = len(df)
+    n_dated = int(has_date.sum())
+    ax.scatter([], [], s=14, c="#888888",
+               label=f"runs (n={n_total}; {n_dated} dated)")
 
     have_data = summary["n"].fillna(0) > 0
     centers_have = summary.loc[have_data, "band_center_tokens"].to_numpy()
@@ -150,9 +178,11 @@ def main(stat: str = DEFAULT_STAT, benchmarks: list[str] = BENCHMARKS) -> None:
     if stat not in {"mean", "median", "top10"}:
         raise SystemExit(f"stat must be 'mean', 'median', or 'top10', got {stat!r}")
 
+    slug_to_date = _load_release_dates()
+
     panels: list[tuple[str, pd.DataFrame, pd.DataFrame]] = []
     for b in benchmarks:
-        result = _build_panel(b, stat)
+        result = _build_panel(b, stat, slug_to_date)
         if result is None:
             print(f"skipping {b!r} (no rows)")
             continue
@@ -163,12 +193,23 @@ def main(stat: str = DEFAULT_STAT, benchmarks: list[str] = BENCHMARKS) -> None:
         print("Nothing to plot.")
         return
 
+    # Build a shared date colour scale across all panels
+    all_dates = pd.concat([p[1]["release_date"].dropna() for p in panels])
+    if all_dates.empty:
+        date_min = date_max = pd.Timestamp("2024-01-01")
+    else:
+        date_min, date_max = all_dates.min(), all_dates.max()
+    date_norm = plt.Normalize(
+        vmin=mdates.date2num(date_min), vmax=mdates.date2num(date_max)
+    )
+    cmap = plt.get_cmap("viridis")
+
     cols = 2
     rows_n = math.ceil(len(panels) / cols)
     fig, axes = plt.subplots(rows_n, cols, figsize=(7 * cols, 5 * rows_n), squeeze=False)
     for idx, (b, df, summary) in enumerate(panels):
         ax = axes[idx // cols][idx % cols]
-        _draw_panel(ax, b, df, summary)
+        _draw_panel(ax, b, df, summary, date_norm, cmap)
     for j in range(len(panels), rows_n * cols):
         axes[j // cols][j % cols].set_visible(False)
 
@@ -177,7 +218,16 @@ def main(stat: str = DEFAULT_STAT, benchmarks: list[str] = BENCHMARKS) -> None:
         f"({N_BANDS} log-spaced bands, AA evaluations)",
         fontsize=12,
     )
-    fig.tight_layout(rect=(0, 0, 1, 0.96))
+    fig.tight_layout(rect=(0, 0, 0.93, 0.96))
+
+    # Shared colorbar on the right
+    sm = plt.cm.ScalarMappable(norm=date_norm, cmap=cmap)
+    sm.set_array([])
+    cbar_ax = fig.add_axes([0.95, 0.10, 0.015, 0.78])
+    cbar = fig.colorbar(sm, cax=cbar_ax)
+    cbar.ax.yaxis.set_major_locator(mdates.AutoDateLocator())
+    cbar.ax.yaxis.set_major_formatter(mdates.DateFormatter("%Y-%m"))
+    cbar.set_label("Model release date", fontsize=9)
 
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     suffix = "" if stat == "mean" else f"_{stat}"
