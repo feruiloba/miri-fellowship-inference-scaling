@@ -1,33 +1,20 @@
 """
-Bucket models by test-time compute (total inference tokens) and plot a
-per-band central-tendency statistic (mean, median, or top-10 mean) of the
-benchmark score, across several important AA benchmarks.
+Bucket runs into log-spaced inference-token bands and plot the per-band
+top-10 mean score, across several important AA benchmarks.
 
 Idea: a per-row scatter of (tokens, score) is dominated by cross-model
-variation. Reducing within log-spaced compute bands smooths that out and
-shows whether more inference compute correlates with higher scores once
-model identity is collapsed.
+variation. Aggregating within log-spaced inference-token bands smooths
+that out, and the top-10 mean per band traces the frontier of what's
+achievable at each compute level.
 
 One figure with four panels; each panel is one benchmark. The combined CSV
 has a `benchmark` column distinguishing rows.
 
-Usage:
-    python src/benchmark_vs_tokens/score_vs_compute_bands.py [mean|median|top10]
-
-Default stat = mean.
-
-  mean   — average ± SEM of every run in the band
-  median — median + IQR whiskers of every run in the band
-  top10  — average ± SEM of the top-10 scoring runs in the band (frontier view)
-
-Output (stat suffix only added for non-mean variants):
-    output/benchmark_vs_tokens/aa_evaluations/score_vs_compute_bands.{png,csv}
-    output/benchmark_vs_tokens/aa_evaluations/score_vs_compute_bands_median.{png,csv}
-    output/benchmark_vs_tokens/aa_evaluations/score_vs_compute_bands_top10.{png,csv}
+Output:
+    output/benchmark_vs_tokens/aa_evaluations/top10_per_token_band.{png,csv}
 """
 
 import math
-import sys
 from pathlib import Path
 
 import matplotlib.dates as mdates
@@ -46,45 +33,28 @@ BENCHMARKS = [
     "humanitys-last-exam",
     "artificial-analysis-long-context-reasoning",
 ]
-DEFAULT_STAT = "mean"
 N_BANDS = 8
 TOP_K = 10
 
 
-def _summarize(df: pd.DataFrame, stat: str, centers: np.ndarray) -> pd.DataFrame:
-    """Per-band aggregates."""
+def _summarize(df: pd.DataFrame, centers: np.ndarray) -> pd.DataFrame:
+    """Per-band top-K mean ± SEM."""
     grouped = df.groupby("band", observed=True)["score_raw"]
     summary = grouped.size().rename("n").to_frame().reindex(range(N_BANDS))
 
-    if stat == "mean":
-        summary["center"] = grouped.mean().reindex(range(N_BANDS))
-        sem = grouped.std().reindex(range(N_BANDS)) / np.sqrt(
-            summary["n"].clip(lower=1)
-        )
-        summary["spread_lo"] = summary["center"] - sem
-        summary["spread_hi"] = summary["center"] + sem
-        summary["spread_label"] = "mean ± SEM"
-    elif stat == "median":
-        summary["center"] = grouped.median().reindex(range(N_BANDS))
-        summary["spread_lo"] = grouped.quantile(0.25).reindex(range(N_BANDS))
-        summary["spread_hi"] = grouped.quantile(0.75).reindex(range(N_BANDS))
-        summary["spread_label"] = "median (IQR whiskers)"
-    elif stat == "top10":
-        def _top_stats(s: pd.Series) -> pd.Series:
-            top = s.nlargest(TOP_K)
-            return pd.Series({
-                "n_top": len(top),
-                "mean": top.mean(),
-                "sem": top.std() / np.sqrt(len(top)) if len(top) >= 2 else np.nan,
-            })
-        agg = grouped.apply(_top_stats).unstack().reindex(range(N_BANDS))
-        summary["n_top"] = agg["n_top"]
-        summary["center"] = agg["mean"]
-        summary["spread_lo"] = agg["mean"] - agg["sem"]
-        summary["spread_hi"] = agg["mean"] + agg["sem"]
-        summary["spread_label"] = f"top-{TOP_K} mean ± SEM"
-    else:
-        raise ValueError(f"unknown stat {stat!r}")
+    def _top_stats(s: pd.Series) -> pd.Series:
+        top = s.nlargest(TOP_K)
+        return pd.Series({
+            "n_top": len(top),
+            "mean": top.mean(),
+            "sem": top.std() / np.sqrt(len(top)) if len(top) >= 2 else np.nan,
+        })
+    agg = grouped.apply(_top_stats).unstack().reindex(range(N_BANDS))
+    summary["n_top"] = agg["n_top"]
+    summary["center"] = agg["mean"]
+    summary["spread_lo"] = agg["mean"] - agg["sem"]
+    summary["spread_hi"] = agg["mean"] + agg["sem"]
+    summary["spread_label"] = f"top-{TOP_K} mean ± SEM"
 
     summary.loc[summary["n"] < 2, ["spread_lo", "spread_hi"]] = np.nan
     summary["band_center_tokens"] = centers
@@ -97,7 +67,7 @@ def _load_release_dates() -> dict[str, str]:
     return dict(zip(stats["slug"], stats["release_date"]))
 
 
-def _build_panel(benchmark: str, stat: str, slug_to_date: dict[str, str]) -> tuple[pd.DataFrame, pd.DataFrame] | None:
+def _build_panel(benchmark: str, slug_to_date: dict[str, str]) -> tuple[pd.DataFrame, pd.DataFrame] | None:
     df = pd.read_csv(EVAL_CSV)
     df = df[df["benchmark"] == benchmark].copy()
     df = df.dropna(subset=["total_output_tokens", "score_raw"])
@@ -113,7 +83,7 @@ def _build_panel(benchmark: str, stat: str, slug_to_date: dict[str, str]) -> tup
     df["band"] = pd.cut(log_tokens, bins=edges, include_lowest=True, labels=False)
 
     centers = 10 ** ((edges[:-1] + edges[1:]) / 2)
-    summary = _summarize(df, stat, centers)
+    summary = _summarize(df, centers)
     summary["band_lo_tokens"] = 10 ** edges[:-1]
     summary["band_hi_tokens"] = 10 ** edges[1:]
     return df, summary
@@ -174,15 +144,12 @@ def _draw_panel(ax, benchmark: str, df: pd.DataFrame, summary: pd.DataFrame,
     ax.legend(loc="lower right", fontsize=7, framealpha=0.9)
 
 
-def main(stat: str = DEFAULT_STAT, benchmarks: list[str] = BENCHMARKS) -> None:
-    if stat not in {"mean", "median", "top10"}:
-        raise SystemExit(f"stat must be 'mean', 'median', or 'top10', got {stat!r}")
-
+def main(benchmarks: list[str] = BENCHMARKS) -> None:
     slug_to_date = _load_release_dates()
 
     panels: list[tuple[str, pd.DataFrame, pd.DataFrame]] = []
     for b in benchmarks:
-        result = _build_panel(b, stat, slug_to_date)
+        result = _build_panel(b, slug_to_date)
         if result is None:
             print(f"skipping {b!r} (no rows)")
             continue
@@ -214,7 +181,7 @@ def main(stat: str = DEFAULT_STAT, benchmarks: list[str] = BENCHMARKS) -> None:
         axes[j // cols][j % cols].set_visible(False)
 
     fig.suptitle(
-        f"{stat.title()} score per compute band  "
+        f"Top-{TOP_K} mean score per inference-token band  "
         f"({N_BANDS} log-spaced bands, AA evaluations)",
         fontsize=12,
     )
@@ -230,15 +197,14 @@ def main(stat: str = DEFAULT_STAT, benchmarks: list[str] = BENCHMARKS) -> None:
     cbar.set_label("Model release date", fontsize=9)
 
     OUT_DIR.mkdir(parents=True, exist_ok=True)
-    suffix = "" if stat == "mean" else f"_{stat}"
-    out_png = OUT_DIR / f"score_vs_compute_bands{suffix}.png"
+    out_png = OUT_DIR / "top10_per_token_band.png"
     plt.savefig(out_png, dpi=150, bbox_inches="tight")
 
     combined = pd.concat(
         [s.assign(benchmark=b) for b, _, s in panels],
         ignore_index=False,
     ).rename_axis("band_idx").reset_index()
-    out_csv = OUT_DIR / f"score_vs_compute_bands{suffix}.csv"
+    out_csv = OUT_DIR / "top10_per_token_band.csv"
     combined.to_csv(out_csv, index=False)
 
     print(f"Wrote {out_png}")
@@ -249,6 +215,4 @@ def main(stat: str = DEFAULT_STAT, benchmarks: list[str] = BENCHMARKS) -> None:
 
 
 if __name__ == "__main__":
-    args = sys.argv[1:]
-    stat = args[0] if len(args) >= 1 else DEFAULT_STAT
-    main(stat)
+    main()

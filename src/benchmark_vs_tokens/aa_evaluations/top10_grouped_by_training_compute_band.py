@@ -16,7 +16,7 @@ MoE filter is *not* applied here — training compute is well-defined for both
 dense and MoE models, so we keep both.
 
 Output:
-  output/benchmark_vs_tokens/aa_evaluations/score_vs_compute_bands_by_training_compute.{png,csv}
+  output/benchmark_vs_tokens/aa_evaluations/top10_grouped_by_training_compute_band.{png,csv}
 """
 
 import math
@@ -42,9 +42,26 @@ N_BANDS = 8
 TOP_K = 10
 MIN_BAND_N = 2
 
-# Half-decade training-compute edges (in FLOP), exponents 22 → 27 step 0.5.
-_TRAIN_EXPONENTS = np.arange(22, 27.0001, 0.5)
-TRAIN_EDGES = np.power(10.0, _TRAIN_EXPONENTS)
+# Optional horizontal reference line per benchmark: shows how many inference
+# tokens each training-compute curve needs to reach a given score. The
+# crossing for each curve is annotated with the interpolated token count.
+REFERENCE_SCORES: dict[str, float] = {
+    "gpqa-diamond": 0.7,
+}
+
+# Half-decade training-compute bands covering 10^22 to 10^27 FLOP.
+TRAIN_EDGE_EXPONENTS = [22.0, 22.5, 23.0, 23.5, 24.0, 24.5, 25.0, 25.5, 26.0, 26.5, 27.0]
+TRAIN_EDGES = np.array([10.0 ** e for e in TRAIN_EDGE_EXPONENTS])
+
+
+def _fmt_exp(e: float) -> str:
+    return f"{e:.1f}" if (e * 2) % 2 else f"{int(e)}"
+
+
+TRAIN_LABELS = [
+    rf"$10^{{{_fmt_exp(TRAIN_EDGE_EXPONENTS[i])}}}$–$10^{{{_fmt_exp(TRAIN_EDGE_EXPONENTS[i+1])}}}$ FLOP"
+    for i in range(len(TRAIN_EDGE_EXPONENTS) - 1)
+]
 
 
 def slugify(s: str) -> str:
@@ -83,16 +100,6 @@ def _load(benchmark: str, lookup: dict[str, float]) -> pd.DataFrame:
         lambda r: _resolve_compute(r["model"], r["model_slug"], lookup), axis=1
     )
     return ev.dropna(subset=["train_compute"])
-
-
-def _exp_label(exp: float) -> str:
-    return f"$10^{{{exp:g}}}$"
-
-
-TRAIN_LABELS = [
-    f"{_exp_label(_TRAIN_EXPONENTS[i])}–{_exp_label(_TRAIN_EXPONENTS[i + 1])} FLOP"
-    for i in range(len(TRAIN_EDGES) - 1)
-]
 
 
 def _make_train_bands(C: pd.Series) -> pd.Series:
@@ -134,6 +141,32 @@ def _build_panel(benchmark: str, lookup: dict[str, float]) -> tuple | None:
     return df, summary
 
 
+def _abbr_tokens(n: float) -> str:
+    """Human-readable token count: 1234 → '1.2K', 1840000 → '1.8M'."""
+    for div, suf in ((1e9, "B"), (1e6, "M"), (1e3, "K")):
+        if n >= div:
+            return f"{n / div:.1f}{suf}".replace(".0", "")
+    return f"{n:.0f}"
+
+
+def _crossing_tokens(centers: np.ndarray, scores: np.ndarray, y: float
+                     ) -> float | None:
+    """Linearly interpolate (in log10 tokens) the first crossing of `scores`
+    through level `y`, scanning from low → high tokens. Returns the token
+    value, or None if the curve never reaches `y`."""
+    if len(scores) < 2:
+        return None
+    log_x = np.log10(centers)
+    for i in range(len(scores) - 1):
+        y0, y1 = scores[i], scores[i + 1]
+        if (y0 - y) * (y1 - y) <= 0 and y0 != y1:
+            frac = (y - y0) / (y1 - y0)
+            return float(10 ** (log_x[i] + frac * (log_x[i + 1] - log_x[i])))
+        if y0 == y:
+            return float(centers[i])
+    return None
+
+
 def _draw_panel(ax, benchmark: str, df: pd.DataFrame, summary: pd.DataFrame) -> None:
     ax.scatter(
         df["total_output_tokens"], df["score_raw"],
@@ -143,6 +176,7 @@ def _draw_panel(ax, benchmark: str, df: pd.DataFrame, summary: pd.DataFrame) -> 
     cmap = plt.get_cmap("viridis")
     band_total_n = df.groupby("train_band").size()
     bands_used = sorted(summary["train_band"].unique())
+    crossings: list[tuple[int, tuple, float]] = []  # (tband, color, tokens)
     for tband in bands_used:
         sub = summary[summary["train_band"] == tband].sort_values("band_idx")
         # Use global slot index so colours match across panels
@@ -158,6 +192,35 @@ def _draw_panel(ax, benchmark: str, df: pd.DataFrame, summary: pd.DataFrame) -> 
                 (row["band_center_tokens"], row["top_mean"]),
                 xytext=(0, 5), textcoords="offset points",
                 ha="center", fontsize=6, color=color,
+            )
+        ref = REFERENCE_SCORES.get(benchmark)
+        if ref is not None:
+            xc = _crossing_tokens(
+                sub["band_center_tokens"].to_numpy(),
+                sub["top_mean"].to_numpy(),
+                ref,
+            )
+            if xc is not None:
+                crossings.append((int(tband), color, xc))
+
+    ref = REFERENCE_SCORES.get(benchmark)
+    if ref is not None:
+        ax.axhline(ref, color="black", linestyle="--", linewidth=1.0, alpha=0.55,
+                   label=f"reference score = {ref:.2f}")
+        # Sort crossings left-to-right and stagger labels upward to avoid
+        # overlap when multiple curves cross close together in x.
+        crossings_sorted = sorted(crossings, key=lambda c: c[2])
+        for i, (tband, color, xc) in enumerate(crossings_sorted):
+            ax.axvline(xc, color=color, linestyle=":", linewidth=1.0, alpha=0.7)
+            y_off = 10 + 12 * i
+            ax.annotate(
+                _abbr_tokens(xc),
+                (xc, ref),
+                xytext=(0, y_off), textcoords="offset points",
+                fontsize=8, color=color, fontweight="bold",
+                ha="center", va="bottom",
+                bbox=dict(boxstyle="round,pad=0.2", facecolor="white",
+                          edgecolor=color, linewidth=0.6, alpha=0.9),
             )
 
     ax.set_xscale("log")
@@ -194,19 +257,19 @@ def main(benchmarks: list[str] = BENCHMARKS) -> None:
 
     fig.suptitle(
         f"Compute-frontier curves by training compute  "
-        f"(top-{TOP_K} mean, {N_BANDS} inf-token bands × half-decade train-compute bands)",
+        f"(top-{TOP_K} mean, {N_BANDS} inf-token bands × decade train-compute bands)",
         fontsize=12,
     )
     fig.tight_layout(rect=(0, 0, 1, 0.96))
 
     OUT_DIR.mkdir(parents=True, exist_ok=True)
-    out_png = OUT_DIR / "score_vs_compute_bands_by_training_compute.png"
+    out_png = OUT_DIR / "top10_grouped_by_training_compute_band.png"
     plt.savefig(out_png, dpi=150, bbox_inches="tight")
 
     combined = pd.concat(
         [s.assign(benchmark=b) for b, _, s in panels], ignore_index=True
     )
-    out_csv = OUT_DIR / "score_vs_compute_bands_by_training_compute.csv"
+    out_csv = OUT_DIR / "top10_grouped_by_training_compute_band.csv"
     combined.to_csv(out_csv, index=False)
 
     print(f"Wrote {out_png}")

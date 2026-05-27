@@ -7,7 +7,11 @@ Produces a 1x2 figure: ΔL vs. training compute and ΔL vs. publication date.
 from pathlib import Path
 import matplotlib.pyplot as plt
 
-from _chinchilla import load_models_with_chinchilla, filter_for_plotting
+from _chinchilla import (
+    load_models_with_chinchilla,
+    filter_for_plotting,
+    chinchilla_loss,
+)
 
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / "output" / "chinchilla_analysis"
@@ -16,18 +20,25 @@ OUT.mkdir(parents=True, exist_ok=True)
 
 def main():
     d = load_models_with_chinchilla()
-    plot_df = filter_for_plotting(d)
-    dense = plot_df[~plot_df["is_moe"]]
-    moe = plot_df[plot_df["is_moe"]]
-    c_dense = "#4C72B0"
-    c_moe = "#C44E52"
+    plot_df = filter_for_plotting(d).copy()
 
+    # For MoE rows, substitute N_active = C / (6*D) and recompute delta_L.
+    moe_mask = plot_df["is_moe"]
+    n_active = (
+        plot_df.loc[moe_mask, "Training compute (FLOP)"]
+        / (6.0 * plot_df.loc[moe_mask, "D_actual"])
+    )
+    plot_df.loc[moe_mask, "N_actual"] = n_active
+    l_actual = chinchilla_loss(
+        plot_df["N_actual"].to_numpy(), plot_df["D_actual"].to_numpy()
+    )
+    plot_df["delta_L"] = l_actual - plot_df["L_opt"]
+
+    color = "#4C72B0"
     fig, (axa, axb) = plt.subplots(1, 2, figsize=(14, 6))
 
-    axa.scatter(dense["Training compute (FLOP)"], dense["delta_L"],
-                alpha=0.7, color=c_dense, label="Dense")
-    axa.scatter(moe["Training compute (FLOP)"], moe["delta_L"],
-                alpha=0.8, color=c_moe, marker="^", label="MoE")
+    axa.scatter(plot_df["Training compute (FLOP)"], plot_df["delta_L"],
+                alpha=0.7, color=color)
     axa.axhline(0.0, color="red", linestyle="--", linewidth=1,
                 label="Chinchilla-optimal")
     axa.set_xscale("log")
@@ -38,10 +49,8 @@ def main():
     axa.legend()
     axa.grid(True, alpha=0.3)
 
-    axb.scatter(dense["Publication date"], dense["delta_L"],
-                alpha=0.7, color=c_dense, label="Dense")
-    axb.scatter(moe["Publication date"], moe["delta_L"],
-                alpha=0.8, color=c_moe, marker="^", label="MoE")
+    axb.scatter(plot_df["Publication date"], plot_df["delta_L"],
+                alpha=0.7, color=color)
     axb.axhline(0.0, color="red", linestyle="--", linewidth=1,
                 label="Chinchilla-optimal")
     axb.set_yscale("symlog", linthresh=0.01)

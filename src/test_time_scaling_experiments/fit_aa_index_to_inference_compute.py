@@ -18,7 +18,7 @@ from scipy.optimize import curve_fit, least_squares
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "benchmark_vs_tokens", "aa_evaluations"))
 from importlib import import_module
-mod = import_module("score_vs_tokens_aa_index")
+mod = import_module("aa_index_per_family_effort_lines")
 load_effort_models = mod.load_effort_models
 LEVEL_ORDER = mod.LEVEL_ORDER
 LEVEL_MARKERS = mod.LEVEL_MARKERS
@@ -45,16 +45,61 @@ def model_boxcox(x, m, c, h, C):
     base = np.where(base > 1e-12, base, 1e-12)
     return m * (np.power(base, c) - 1.0) / c + C
 
-MODEL_FUNC = model_boxcox
-MODEL_NAME = "m·((1+x−h)^c − 1)/c + C"
-PARAM_NAMES = ["m", "c", "h", "C"]
-# Initial guess given (x, y) arrays (x = log10 tokens, y = AA index)
-def initial_guess(x, y):
-    m0 = (y.max() - y.min()) if y.max() > y.min() else 1.0
-    c0 = 0.5
-    h0 = float(x.min()) - 0.5
-    C0 = float(y.min())
-    return [m0, c0, h0, C0]
+# Per-form metadata + bounds. Pick which one is active via CLI arg
+# (defaults to "boxcox").
+FORM_CONFIGS = {
+    "boxcox": {
+        "func": model_boxcox,
+        "name": "m·((1+x−h)^c − 1)/c + C",
+        "param_names": ["m", "c", "h", "C"],
+        # bounds order: [m, c, h, C]; h ≤ x.min() keeps it on the
+        # diminishing-returns branch.
+        "bounds": lambda x, y: (
+            [0.0,    1e-3, x.min() - 5.0, 0.0],
+            [np.inf, 1.0,  x.min() - 1e-6, np.inf],
+        ),
+        "initial_guess": lambda x, y: [
+            (y.max() - y.min()) if y.max() > y.min() else 1.0,
+            0.5,
+            float(x.min()) - 0.5,
+            float(y.min()),
+        ],
+    },
+    "sigmoid": {
+        "func": model_sigmoid,
+        "name": "L / (1 + exp(−k·(x−h))) + C",
+        "param_names": ["L", "k", "h", "C"],
+        # AA index is roughly 0–60; cap L generously. Forcing h ≤ x.min()
+        # keeps the visible curve on the concave-down (saturating) branch.
+        "bounds": lambda x, y: (
+            [0.0,   1e-2, x.min() - 5.0, 0.0],
+            [100.0, 10.0, x.min() - 1e-6, np.inf],
+        ),
+        "initial_guess": lambda x, y: [
+            max(y.max() - y.min(), 1e-3),
+            1.0,
+            float(x.min()) - 0.5,
+            float(max(y.min(), 0.0)),
+        ],
+    },
+}
+
+# Active config — overridden in main() from CLI arg.
+FORM = "boxcox"
+MODEL_FUNC = FORM_CONFIGS[FORM]["func"]
+MODEL_NAME = FORM_CONFIGS[FORM]["name"]
+PARAM_NAMES = FORM_CONFIGS[FORM]["param_names"]
+
+
+def _select_form(name: str) -> None:
+    """Switch MODEL_FUNC/MODEL_NAME/PARAM_NAMES to the named form."""
+    global FORM, MODEL_FUNC, MODEL_NAME, PARAM_NAMES
+    if name not in FORM_CONFIGS:
+        raise ValueError(f"Unknown form {name!r}; choose from {list(FORM_CONFIGS)}.")
+    FORM = name
+    MODEL_FUNC = FORM_CONFIGS[FORM]["func"]
+    MODEL_NAME = FORM_CONFIGS[FORM]["name"]
+    PARAM_NAMES = FORM_CONFIGS[FORM]["param_names"]
 
 
 # =============================================================================
@@ -93,16 +138,11 @@ def fit_joint(family_data):
     family_data: dict base -> (x, y)
     Returns: dict base -> {"params": (amp, k, h, C), "r2": ..., "success": True}
     """
+    cfg = FORM_CONFIGS[FORM]
     fits = {}
     for base, (x, y) in family_data.items():
-        # Per-family bounds, order: [m, c, h, C]
-        m0 = (y.max() - y.min()) if y.max() > y.min() else 1.0
-        c0 = 0.5
-        h0 = float(x.min()) - 0.5
-        C0 = float(y.min())
-        p0    = [m0, c0, h0, C0]
-        lower = [0.0,    1e-3, x.min() - 5.0, 0.0]
-        upper = [np.inf, 1.0,  x.min() - 1e-6, np.inf]
+        p0 = cfg["initial_guess"](x, y)
+        lower, upper = cfg["bounds"](x, y)
 
         try:
             popt, _ = curve_fit(MODEL_FUNC, x, y, p0=p0,
@@ -198,6 +238,10 @@ def plot_fits(df, fits, save_prefix):
 if __name__ == "__main__":
     OUT_DIR = "output/test_time_scaling_experiments"
     os.makedirs(OUT_DIR, exist_ok=True)
+
+    # Optional CLI arg: "boxcox" (default) or "sigmoid".
+    if len(sys.argv) > 1:
+        _select_form(sys.argv[1])
 
     df = load_effort_models()
 

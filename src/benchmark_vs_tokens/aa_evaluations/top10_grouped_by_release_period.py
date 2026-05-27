@@ -13,7 +13,7 @@ Joins:
   data/artificial_analysis/artificial_analysis_llm_stats.csv  (slug → release_date)
 
 Output:
-  output/benchmark_vs_tokens/aa_evaluations/score_vs_compute_bands_by_period.{png,csv}
+  output/benchmark_vs_tokens/aa_evaluations/top10_grouped_by_release_period.{png,csv}
 
 Each panel is one benchmark; the CSV has a `benchmark` column distinguishing
 the rows.
@@ -169,13 +169,13 @@ def main(benchmarks: list[str] = BENCHMARKS) -> None:
     fig.tight_layout(rect=(0, 0, 1, 0.96))
 
     OUT_DIR.mkdir(parents=True, exist_ok=True)
-    out_png = OUT_DIR / "score_vs_compute_bands_by_period.png"
+    out_png = OUT_DIR / "top10_grouped_by_release_period.png"
     plt.savefig(out_png, dpi=150, bbox_inches="tight")
 
     combined = pd.concat(
         [s.assign(benchmark=b) for b, _, s, _ in panels], ignore_index=True
     )
-    out_csv = OUT_DIR / "score_vs_compute_bands_by_period.csv"
+    out_csv = OUT_DIR / "top10_grouped_by_release_period.csv"
     combined.to_csv(out_csv, index=False)
 
     print(f"Wrote {out_png}")

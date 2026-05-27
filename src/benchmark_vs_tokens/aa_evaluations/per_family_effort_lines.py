@@ -7,9 +7,9 @@ with a line — so you can see how a family's score scales with token spend
 across reasoning-effort levels.
 
 Usage:
-    python src/benchmark_vs_tokens/score_vs_tokens_aa_families.py <benchmark>
-    python src/benchmark_vs_tokens/score_vs_tokens_aa_families.py --list
-    python src/benchmark_vs_tokens/score_vs_tokens_aa_families.py --all
+    python src/benchmark_vs_tokens/per_family_effort_lines.py <benchmark>
+    python src/benchmark_vs_tokens/per_family_effort_lines.py --list
+    python src/benchmark_vs_tokens/per_family_effort_lines.py --all
 """
 
 from __future__ import annotations
@@ -86,7 +86,7 @@ def plot_benchmark(csv_path: Path) -> Path | None:
     ax.set_ylim(-0.02, 1.02)
 
     OUT_DIR.mkdir(parents=True, exist_ok=True)
-    out_base = OUT_DIR / f"score_vs_tokens_aa_families__{_slug(csv_path.stem)}"
+    out_base = OUT_DIR / f"per_family_effort_lines__{_slug(csv_path.stem)}"
     fig.savefig(f"{out_base}.png", dpi=150, bbox_inches="tight")
     plt.close(fig)
     print(f"  saved {out_base}.png ({len(df)} variants, {len(families)} families)")

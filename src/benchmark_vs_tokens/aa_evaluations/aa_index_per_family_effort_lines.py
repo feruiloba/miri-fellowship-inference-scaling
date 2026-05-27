@@ -288,7 +288,7 @@ if __name__ == "__main__":
         print(f"  Slope: {slope:+.1f} AA per 10× tokens")
         print()
 
-    save_prefix = f"{OUT_DIR}/score_vs_tokens_aa_index"
+    save_prefix = f"{OUT_DIR}/aa_index_per_family_effort_lines"
     plot_scaling(df, save_prefix)
 
     # Save table

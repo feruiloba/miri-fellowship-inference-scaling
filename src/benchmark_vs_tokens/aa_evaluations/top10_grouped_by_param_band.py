@@ -13,7 +13,7 @@ models, which would inflate dense vs MoE comparisons. We drop any model whose
 Epoch `Parameters notes` mention "mixture", "MoE", "expert", or "active".
 
 Output:
-  output/benchmark_vs_tokens/aa_evaluations/score_vs_compute_bands_by_params.{png,csv}
+  output/benchmark_vs_tokens/aa_evaluations/top10_grouped_by_param_band.{png,csv}
 """
 
 import math
@@ -195,13 +195,13 @@ def main(benchmarks: list[str] = BENCHMARKS) -> None:
     fig.tight_layout(rect=(0, 0, 1, 0.96))
 
     OUT_DIR.mkdir(parents=True, exist_ok=True)
-    out_png = OUT_DIR / "score_vs_compute_bands_by_params.png"
+    out_png = OUT_DIR / "top10_grouped_by_param_band.png"
     plt.savefig(out_png, dpi=150, bbox_inches="tight")
 
     combined = pd.concat(
         [s.assign(benchmark=b) for b, _, s in panels], ignore_index=True
     )
-    out_csv = OUT_DIR / "score_vs_compute_bands_by_params.csv"
+    out_csv = OUT_DIR / "top10_grouped_by_param_band.csv"
     combined.to_csv(out_csv, index=False)
 
     print(f"Wrote {out_png}")
