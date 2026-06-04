@@ -64,8 +64,14 @@ def _argmax_tokens_per_cell() -> pd.DataFrame:
         columns={"total_output_tokens": "argmax_tokens",
                  "score_raw": "argmax_score",
                  "model_slug": "argmax_model"}
+    ).reset_index(drop=True)
+
+    # Max inference tokens used by any model in each (benchmark, semester).
+    max_tok = (
+        ev.groupby(["benchmark", "period"])["total_output_tokens"]
+          .max().reset_index(name="max_tokens")
     )
-    return out.reset_index(drop=True)
+    return out.merge(max_tok, on=["benchmark", "period"], how="left")
 
 
 def main() -> None:
@@ -111,11 +117,17 @@ def main() -> None:
 
         am = sub.dropna(subset=["argmax_tokens"])
         ax_a.plot(am["period_decimal"], am["argmax_tokens"],
-                  "o-", color=color, linewidth=1.8, markersize=6)
+                  "o-", color=color, linewidth=1.8, markersize=6,
+                  label="argmax tokens")
+        mam = sub.dropna(subset=["max_tokens"])
+        ax_a.scatter(mam["period_decimal"], mam["max_tokens"],
+                     marker="*", color=color, s=130, edgecolor="white",
+                     linewidth=0.5, zorder=4, label="max tokens (any model)")
         ax_a.set_yscale("log")
-        ax_a.set_ylabel("Argmax tokens")
-        ax_a.set_title(f"{b} — argmax tokens")
+        ax_a.set_ylabel("Tokens")
+        ax_a.set_title(f"{b} — tokens")
         ax_a.grid(True, which="both", alpha=0.3)
+        ax_a.legend(fontsize=7, loc="lower right", framealpha=0.9)
 
     for ax in axes[-1]:
         ax.set_xticks(semester_ticks)
@@ -132,7 +144,7 @@ def main() -> None:
 
     out_csv = OUT_DIR / "semester_fit_trends.csv"
     df[["benchmark", "period", "slope_per_decade", "intercept",
-        "argmax_tokens", "argmax_score", "argmax_model",
+        "argmax_tokens", "argmax_score", "argmax_model", "max_tokens",
         "delta_slope", "delta_intercept", "argmax_token_ratio",
         "r2", "n_fit_points"]].to_csv(out_csv, index=False)
 

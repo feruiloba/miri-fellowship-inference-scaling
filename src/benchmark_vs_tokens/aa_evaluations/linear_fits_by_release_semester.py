@@ -2,11 +2,11 @@
 Score vs. inference tokens with one OLS line per half-year (semester).
 
 Procedure (per benchmark):
-  1. Bin runs into N_BANDS log-spaced inference-token bands.
-  2. Within each (semester, band) cell take the top-K runs by score
-     (one row per model — best run per model in the cell).
-  3. Fit a straight line score = a + b * log10(tokens) per semester
-     across all of that semester's top-K cell points.
+  1. For each semester, find the peak = the run with the highest score that
+     semester. Drop every run with more inference tokens than the peak run
+     (keep only runs up to and including the peak's token budget).
+  2. Fit a straight line score = a + b * log10(tokens) per semester across the
+     surviving runs.
 
 Output:
   output/benchmark_vs_tokens/aa_evaluations/linear_fits_by_release_semester.{png,csv}
@@ -30,9 +30,7 @@ BENCHMARKS = [
     "humanitys-last-exam",
     "artificial-analysis-long-context-reasoning",
 ]
-TOP_K_MODELS = 10           # top-K models per (semester, band) by best score
-N_BANDS = 8                  # log-spaced inference-token bands
-MIN_POINTS_FOR_FIT = 4       # need at least this many cell points to fit a line
+MIN_POINTS_FOR_FIT = 2       # need at least this many surviving runs to fit a line
 
 
 def _period_label(dt: pd.Series) -> pd.Series:
@@ -62,31 +60,24 @@ def _load(benchmark: str) -> pd.DataFrame:
     return ev
 
 
-def _top_per_cell(df: pd.DataFrame) -> pd.DataFrame:
-    """For each (period, band), one row per model = its best run in that cell,
-    keeping only the top-K models by score."""
-    best_per_cell_model = (
-        df.sort_values("score_raw", ascending=False)
-          .drop_duplicates(subset=["period", "band", "model_slug"])
-    )
-    return (
-        best_per_cell_model
-        .sort_values("score_raw", ascending=False)
-        .groupby(["period", "band"], observed=True)
-        .head(TOP_K_MODELS)
-    )
+def _truncate_after_peak(sub: pd.DataFrame) -> pd.DataFrame:
+    """Keep only runs with at most as many tokens as the highest-scoring run
+    that semester (drop everything past the peak)."""
+    peak_log_tokens = sub.loc[sub["score_raw"].idxmax(), "log_tokens"]
+    return sub[sub["log_tokens"] <= peak_log_tokens]
 
 
-def _fit_per_period(top_pts: pd.DataFrame) -> tuple[pd.DataFrame, dict[str, pd.DataFrame]]:
-    """Fit OLS per semester on its top-K-per-band points."""
+def _fit_per_period(df: pd.DataFrame) -> tuple[pd.DataFrame, dict[str, pd.DataFrame]]:
+    """Fit OLS per semester on the runs up to that semester's peak-score budget."""
     fits = []
     points: dict[str, pd.DataFrame] = {}
-    for period, sub in top_pts.groupby("period"):
-        n = len(sub)
+    for period, sub in df.groupby("period"):
+        kept = _truncate_after_peak(sub)
+        n = len(kept)
         if n < MIN_POINTS_FOR_FIT:
             continue
-        x = sub["log_tokens"].to_numpy()
-        y = sub["score_raw"].to_numpy()
+        x = kept["log_tokens"].to_numpy()
+        y = kept["score_raw"].to_numpy()
         if x.max() - x.min() < 1e-9:
             continue
         b, a = np.polyfit(x, y, 1)
@@ -97,15 +88,15 @@ def _fit_per_period(top_pts: pd.DataFrame) -> tuple[pd.DataFrame, dict[str, pd.D
 
         fits.append({
             "period": period,
-            "n_bands_used": int(sub["band"].nunique()),
             "n_fit_points": n,
+            "n_models": int(kept["model_slug"].nunique()),
             "intercept": a,
             "slope_per_decade": b,
             "r2": r2,
             "x_min": float(x.min()),
             "x_max": float(x.max()),
         })
-        points[period] = sub
+        points[period] = kept
     return pd.DataFrame(fits), points
 
 
@@ -124,7 +115,7 @@ def _draw_panel(ax, benchmark: str, df: pd.DataFrame,
         pts = points[period]
         ax.scatter(
             pts["total_output_tokens"], pts["score_raw"],
-            s=22, color=color, alpha=0.85, edgecolor="white", linewidth=0.4,
+            s=18, color=color, alpha=0.75, edgecolor="white", linewidth=0.3,
         )
         xs = np.linspace(row["x_min"], row["x_max"], 50)
         ys = row["intercept"] + row["slope_per_decade"] * xs
@@ -141,7 +132,7 @@ def _draw_panel(ax, benchmark: str, df: pd.DataFrame,
     ax.set_ylabel("Score (raw)")
     ax.set_title(benchmark, fontsize=11)
     ax.grid(True, which="both", linestyle=":", alpha=0.4)
-    ax.legend(title=f"semester fit (top-{TOP_K_MODELS}/band)",
+    ax.legend(title="semester fit (runs up to peak)",
               loc="lower right", fontsize=7, framealpha=0.9)
 
 
@@ -153,14 +144,9 @@ def main(benchmarks: list[str] = BENCHMARKS) -> None:
         if df.empty:
             print(f"skipping {b!r} (no rows)")
             continue
-        edges = np.linspace(df["log_tokens"].min(), df["log_tokens"].max(),
-                            N_BANDS + 1)
-        df["band"] = pd.cut(df["log_tokens"], bins=edges,
-                            include_lowest=True, labels=False)
-        top_pts = _top_per_cell(df)
-        fits, points = _fit_per_period(top_pts)
+        fits, points = _fit_per_period(df)
         if fits.empty:
-            print(f"skipping {b!r} (no period had enough top-K points)")
+            print(f"skipping {b!r} (no period had enough points)")
             continue
         panels.append((b, df, fits, points))
         all_fits.append(fits.assign(benchmark=b))
@@ -180,9 +166,8 @@ def main(benchmarks: list[str] = BENCHMARKS) -> None:
         axes[j // cols][j % cols].set_visible(False)
 
     fig.suptitle(
-        f"Per-semester linear fit of score vs log10(tokens)  "
-        f"(top-{TOP_K_MODELS} models per (semester, band); "
-        f"{N_BANDS} log-spaced bands)",
+        "Per-semester OLS fit of score vs log10(tokens)  "
+        "(runs truncated after each semester's peak-score budget)",
         fontsize=12,
     )
     fig.tight_layout(rect=(0, 0, 1, 0.96))
