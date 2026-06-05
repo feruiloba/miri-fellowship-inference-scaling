@@ -19,6 +19,9 @@ OUT.mkdir(parents=True, exist_ok=True)
 C_DENSE_N = "#4C72B0"
 C_DENSE_D = "#DD8452"
 
+MARKER_DENSE = "o"
+MARKER_MOE = "^"
+
 
 def _fit_log_y_vs_date(dates, y):
     """Fit log10(y) = m * years + b, where years is float-year (e.g. 2024.5).
@@ -62,14 +65,18 @@ def _plot(dense, moe, title_suffix, out_png):
     (ax1, ax2), (ax3, ax4) = axes
 
     all_pts = pd.concat([dense, moe], ignore_index=True)
-    ax1.scatter(all_pts["Training compute (FLOP)"], all_pts["N_ratio"],
-                alpha=0.7, color=C_DENSE_N)
-    ax2.scatter(all_pts["Training compute (FLOP)"], all_pts["D_ratio"],
-                alpha=0.7, color=C_DENSE_D)
-    ax3.scatter(all_pts["Publication date"], all_pts["N_ratio"],
-                alpha=0.7, color=C_DENSE_N)
-    ax4.scatter(all_pts["Publication date"], all_pts["D_ratio"],
-                alpha=0.7, color=C_DENSE_D)
+
+    def _scatter(ax, frame, xcol, ycol, color):
+        ax.scatter(dense[xcol], dense[ycol], alpha=0.7, color=color,
+                   marker=MARKER_DENSE, label="dense")
+        ax.scatter(moe[xcol], moe[ycol], alpha=0.7, color=color,
+                   marker=MARKER_MOE, edgecolor="black", linewidth=0.5,
+                   label="MoE (active params)")
+
+    _scatter(ax1, all_pts, "Training compute (FLOP)", "N_ratio", C_DENSE_N)
+    _scatter(ax2, all_pts, "Training compute (FLOP)", "D_ratio", C_DENSE_D)
+    _scatter(ax3, all_pts, "Publication date", "N_ratio", C_DENSE_N)
+    _scatter(ax4, all_pts, "Publication date", "D_ratio", C_DENSE_D)
     _draw_fit_vs_date(ax3, all_pts["Publication date"],
                       all_pts["N_ratio"], "#222222")
     _draw_fit_vs_date(ax4, all_pts["Publication date"],
